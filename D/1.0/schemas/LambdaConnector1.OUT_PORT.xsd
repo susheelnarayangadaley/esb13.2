@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fiorano.com/fesb/LambdaConnector/Out"
+           xmlns="http://www.fiorano.com/fesb/LambdaConnector/Out" elementFormDefault="qualified">
+    <xs:element name="LambdaConnectorResponse">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="Response" type="xs:string"/>
+                <xs:element name="Status" type="xs:string"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

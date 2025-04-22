@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_211" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.wsstub.configuration.WSStubPM"> 
+  <void property="additionalConfiguration"> 
+   <void property="port"> 
+    <string></string> 
+   </void> 
+   <void property="publicHost"> 
+    <string></string> 
+   </void> 
+   <void property="targetNamespace"> 
+    <string></string> 
+   </void> 
+  </void> 
+  <void property="attachmentsConfiguration"> 
+   <void property="attachmentsDirectory"> 
+    <string></string> 
+   </void> 
+   <void property="timeStampFormat"> 
+    <string>ddMMyyyy_HHmmssSSS</string> 
+   </void> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1300</int> 
+  </void> 
+  <void property="encryptDecryptElementsMap"> 
+   <void method="put"> 
+    <string>SOAP11_loadGasUser_REQUEST</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>SOAP11_loadGasUser_RESPONSE</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="fesConnectionConfig"> 
+   <void property="password" isEncrypted="true"> 
+    <string>DMSLzKckc/JLgIUhIpdeyw==</string> 
+   </void> 
+  </void> 
+  <void property="transportConfiguration"> 
+   <void property="connectionConfiguration"> 
+    <void property="password" isEncrypted="true"> 
+     <string>zcC6SXzF+bh4BGN4YJKKfw==</string> 
+    </void> 
+   </void> 
+   <void property="jndiConfiguration"> 
+    <void property="password" isEncrypted="true"> 
+     <string>CVuEpOIpQJAIVeUQIs7kBQ==</string> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="wsDefinitionConfiguration"> 
+   <void property="baseURI"> 
+    <string>C:\Users\Aditya\Downloads</string> 
+   </void> 
+   <void property="wsdl"> 
+    <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;wsdl:definitions name=&quot;loadGasUser&quot; targetNamespace=&quot;http://example.com/loadGasUser&quot; xmlns:jms=&quot;http://www.w3.org/2010/soapjms/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:tns=&quot;http://example.com/loadGasUser&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsdlsoap12=&quot;http://schemas.xmlsoap.org/wsdl/soap12/&quot;&gt;&#13;
+  &lt;wsdl:types&gt;&#13;
+    &lt;xsd:schema targetNamespace=&quot;http://example.com/loadGasUser&quot;&gt;&#13;
+            &lt;!-- Request Schema --&gt;&#13;
+            &lt;xsd:element name=&quot;loadGasUserRequest&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;quotedBy&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;1&quot; name=&quot;gasIcpDetail&quot; type=&quot;complexType&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;customerGasAddress&quot; type=&quot;complexType&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;eventDate&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;number&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;postCode&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;region&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;street&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;town&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;customerGasStatus&quot; type=&quot;complexType&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;connectionStatus&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;eventDate&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;status&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;customerGasNetwork&quot; type=&quot;complexType&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;eventDate&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;expectedRetailer&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gasGate&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;icpAltitude&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;icpType&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;loadSheddingCategory&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;networkPressure&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;responsibleDistributor&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;customerGasRetailer&quot; type=&quot;complexType&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;allocationGroup&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;eventDate&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;profileCode&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;responsibleMeterOwner&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;responsibleRetailer&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;customerGasMetering&quot; type=&quot;complexType&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;advanced&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;eventDate&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;meterIdentifier&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;meterLocation&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;meterPressure&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;meteringPriceCategry&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;operatingAtNetworkPressure&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;prepay&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;registerMultiplier&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;registerReadingDigits&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;tou&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;typeStandard&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;customerGasPricing&quot; type=&quot;complexType&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;lossFactorCode&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;maximumHourlyQuantity&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;networkPricingCategory&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gasICP&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&lt;xsd:element minOccurs=&quot;1&quot; name=&quot;rpid&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&#13;
+&#13;
+            &lt;!-- Response Schema --&gt;&#13;
+            &lt;xsd:element name=&quot;loadGasUserResponse&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;item&quot;&gt;&lt;xsd:complexType&gt;&lt;xsd:sequence&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;userClassCode&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element minOccurs=&quot;0&quot; name=&quot;userClassDescription&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:element&gt;&#13;
+        &lt;/xsd:schema&gt;&#13;
+  &lt;/wsdl:types&gt;&#13;
+  &lt;wsdl:message name=&quot;loadGasUserResponse&quot;&gt;&#13;
+    &lt;wsdl:part name=&quot;ResponseMsg&quot; element=&quot;tns:loadGasUserResponse&quot;&gt;&#13;
+    &lt;/wsdl:part&gt;&#13;
+  &lt;/wsdl:message&gt;&#13;
+  &lt;wsdl:message name=&quot;loadGasUserRequest&quot;&gt;&#13;
+    &lt;wsdl:part name=&quot;RequestMsg&quot; element=&quot;tns:loadGasUserRequest&quot;&gt;&#13;
+    &lt;/wsdl:part&gt;&#13;
+  &lt;/wsdl:message&gt;&#13;
+  &lt;wsdl:portType name=&quot;loadGasUserPortType&quot;&gt;&#13;
+    &lt;wsdl:operation name=&quot;loadGasUser&quot;&gt;&#13;
+      &lt;wsdl:input message=&quot;tns:loadGasUserRequest&quot;&gt;&#13;
+    &lt;/wsdl:input&gt;&#13;
+      &lt;wsdl:output message=&quot;tns:loadGasUserResponse&quot;&gt;&#13;
+    &lt;/wsdl:output&gt;&#13;
+    &lt;/wsdl:operation&gt;&#13;
+  &lt;/wsdl:portType&gt;&#13;
+  &lt;wsdl:binding name=&quot;loadGasUserBinding&quot; type=&quot;tns:loadGasUserPortType&quot;&gt;&#13;
+    &lt;soap:binding style=&quot;document&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;/&gt;&#13;
+    &lt;wsdl:operation name=&quot;loadGasUser&quot;&gt;&#13;
+      &lt;soap:operation soapAction=&quot;http://example.com/loadGasUser/loadGasUser&quot; style=&quot;document&quot;/&gt;&#13;
+      &lt;wsdl:input&gt;&#13;
+        &lt;soap:body use=&quot;literal&quot;/&gt;&#13;
+      &lt;/wsdl:input&gt;&#13;
+      &lt;wsdl:output&gt;&#13;
+        &lt;soap:body use=&quot;literal&quot;/&gt;&#13;
+      &lt;/wsdl:output&gt;&#13;
+    &lt;/wsdl:operation&gt;&#13;
+  &lt;/wsdl:binding&gt;&#13;
+  &lt;wsdl:service name=&quot;loadGasUser&quot;&gt;&#13;
+    &lt;wsdl:port name=&quot;loadGasUserPort&quot; binding=&quot;tns:loadGasUserBinding&quot;&gt;&#13;
+      &lt;soap:address location=&quot;https://gidufi4du7.execute-api.ap-southeast-2.amazonaws.com/dev/gas/user-classes&quot;/&gt;&#13;
+    &lt;/wsdl:port&gt;&#13;
+  &lt;/wsdl:service&gt;&#13;
+&lt;/wsdl:definitions&gt;&#13;
+</string> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

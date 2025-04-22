@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:tnsd="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jms="http://www.w3.org/2010/soapjms/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://example.com/loadGasUser" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/">
+    <xsd:import namespace="http://example.com/loadGasUser"/>
+    <xsd:element name="Envelope">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="tnsd:Header"/>
+                <xsd:element ref="tnsd:Body"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Header">
+        <xsd:complexType>
+            <xsd:sequence/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Body">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="tns:loadGasUserRequest"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

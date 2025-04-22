@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:tns="http://www.fiorano.com/services/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wadl="http://wadl.dev.java.net/2009/02" targetNamespace="http://www.fiorano.com/services/rest">
+   <xsd:element name="Request">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element minOccurs="0" name="ResourceURL" type="xsd:string" />
+            <xsd:element minOccurs="0" name="ResourceParameters">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" name="Res1">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element minOccurs="0" name="Res2">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:element minOccurs="0" name="Res3">
+                                          <xsd:complexType>
+                                             <xsd:sequence />
+                                          </xsd:complexType>
+                                       </xsd:element>
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="Representations">
+               <xsd:complexType>
+                  <xsd:choice>
+                     <xsd:element name="Representation">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="Element">
+                                 <xsd:complexType>
+                                    <xsd:sequence>
+                                       <xsd:any />
+                                    </xsd:sequence>
+                                 </xsd:complexType>
+                              </xsd:element>
+                           </xsd:sequence>
+                           <xsd:attribute default="application/json" name="MediaType" type="xsd:string" use="optional" />
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:choice>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Parameters">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" name="Parameter">
+                        <xsd:complexType>
+                           <xsd:simpleContent>
+                              <xsd:extension base="xsd:string">
+                                 <xsd:attribute name="name" type="xsd:string" use="required" />
+                                 <xsd:attribute name="style" use="optional" />
+                              </xsd:extension>
+                           </xsd:simpleContent>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

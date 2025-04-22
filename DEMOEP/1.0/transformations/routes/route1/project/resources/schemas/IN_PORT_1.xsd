@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="quotedBy" type="xs:string" />
+        <xs:element name="gasIcpDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="customerGasAddress">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="eventDate" type="xs:string" />
+                    <xs:element name="number" type="xs:unsignedByte" />
+                    <xs:element name="postCode" type="xs:unsignedShort" />
+                    <xs:element name="region" type="xs:string" />
+                    <xs:element name="street" type="xs:string" />
+                    <xs:element name="town" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="customerGasStatus">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="connectionStatus" type="xs:string" />
+                    <xs:element name="eventDate" type="xs:string" />
+                    <xs:element name="status" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="customerGasNetwork">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="eventDate" type="xs:string" />
+                    <xs:element name="expectedRetailer" type="xs:string" />
+                    <xs:element name="gasGate" type="xs:string" />
+                    <xs:element name="icpAltitude" type="xs:unsignedByte" />
+                    <xs:element name="icpType" type="xs:string" />
+                    <xs:element name="loadSheddingCategory" type="xs:string" />
+                    <xs:element name="networkPressure" type="xs:unsignedShort" />
+                    <xs:element name="responsibleDistributor" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="customerGasRetailer">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="allocationGroup" type="xs:unsignedByte" />
+                    <xs:element name="eventDate" type="xs:string" />
+                    <xs:element name="profileCode" type="xs:string" />
+                    <xs:element name="responsibleMeterOwner" type="xs:string" />
+                    <xs:element name="responsibleRetailer" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="customerGasMetering">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="advanced" type="xs:boolean" />
+                    <xs:element name="eventDate" type="xs:string" />
+                    <xs:element name="meterIdentifier" type="xs:string" />
+                    <xs:element name="meterLocation" type="xs:string" />
+                    <xs:element name="meterPressure" type="xs:decimal" />
+                    <xs:element name="meteringPriceCategry" type="xs:string" />
+                    <xs:element name="operatingAtNetworkPressure" type="xs:boolean" />
+                    <xs:element name="prepay" type="xs:boolean" />
+                    <xs:element name="registerMultiplier" type="xs:unsignedByte" />
+                    <xs:element name="registerReadingDigits" type="xs:unsignedByte" />
+                    <xs:element name="tou" type="xs:boolean" />
+                    <xs:element name="typeStandard" type="xs:boolean" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="customerGasPricing">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="lossFactorCode" type="xs:string" />
+                    <xs:element name="maximumHourlyQuantity" type="xs:unsignedByte" />
+                    <xs:element name="networkPricingCategory" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="gasICP" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="rpid" type="xs:unsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

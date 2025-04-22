@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://example.com/loadGasUser" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_SOAP11_loadGasUser_REQUEST" select="document('SOAP11_loadGasUser_REQUEST')"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <quotedBy>
+        <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/quotedBy"></xsl:value-of>
+      </quotedBy>
+      <gasIcpDetail>
+        <customerGasAddress>
+          <eventDate>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasAddress/eventDate"></xsl:value-of>
+          </eventDate>
+          <number>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasAddress/number"></xsl:value-of>
+          </number>
+          <postCode>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasAddress/postCode"></xsl:value-of>
+          </postCode>
+          <region>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasAddress/region"></xsl:value-of>
+          </region>
+          <street>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasAddress/street"></xsl:value-of>
+          </street>
+          <town>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasAddress/town"></xsl:value-of>
+          </town>
+        </customerGasAddress>
+        <customerGasStatus>
+          <connectionStatus>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasStatus/connectionStatus"></xsl:value-of>
+          </connectionStatus>
+          <eventDate>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasStatus/eventDate"></xsl:value-of>
+          </eventDate>
+          <status>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasStatus/status"></xsl:value-of>
+          </status>
+        </customerGasStatus>
+        <customerGasNetwork>
+          <eventDate>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasNetwork/eventDate"></xsl:value-of>
+          </eventDate>
+          <expectedRetailer>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasNetwork/expectedRetailer"></xsl:value-of>
+          </expectedRetailer>
+          <gasGate>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasNetwork/gasGate"></xsl:value-of>
+          </gasGate>
+          <icpAltitude>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasNetwork/icpAltitude"></xsl:value-of>
+          </icpAltitude>
+          <icpType>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasNetwork/icpType"></xsl:value-of>
+          </icpType>
+          <loadSheddingCategory>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasNetwork/loadSheddingCategory"></xsl:value-of>
+          </loadSheddingCategory>
+          <networkPressure>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasNetwork/networkPressure"></xsl:value-of>
+          </networkPressure>
+          <responsibleDistributor>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasNetwork/responsibleDistributor"></xsl:value-of>
+          </responsibleDistributor>
+        </customerGasNetwork>
+        <customerGasRetailer>
+          <allocationGroup>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasRetailer/allocationGroup"></xsl:value-of>
+          </allocationGroup>
+          <eventDate>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasRetailer/eventDate"></xsl:value-of>
+          </eventDate>
+          <profileCode>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasRetailer/profileCode"></xsl:value-of>
+          </profileCode>
+          <responsibleMeterOwner>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasRetailer/responsibleMeterOwner"></xsl:value-of>
+          </responsibleMeterOwner>
+          <responsibleRetailer>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasRetailer/responsibleRetailer"></xsl:value-of>
+          </responsibleRetailer>
+        </customerGasRetailer>
+        <customerGasMetering>
+          <advanced>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/advanced"></xsl:value-of>
+          </advanced>
+          <eventDate>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/eventDate"></xsl:value-of>
+          </eventDate>
+          <meterIdentifier>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/meterIdentifier"></xsl:value-of>
+          </meterIdentifier>
+          <meterLocation>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/meterLocation"></xsl:value-of>
+          </meterLocation>
+          <meterPressure>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/meterPressure"></xsl:value-of>
+          </meterPressure>
+          <meteringPriceCategry>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/meteringPriceCategry"></xsl:value-of>
+          </meteringPriceCategry>
+          <operatingAtNetworkPressure>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/operatingAtNetworkPressure"></xsl:value-of>
+          </operatingAtNetworkPressure>
+          <prepay>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/prepay"></xsl:value-of>
+          </prepay>
+          <registerMultiplier>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/registerMultiplier"></xsl:value-of>
+          </registerMultiplier>
+          <registerReadingDigits>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/registerReadingDigits"></xsl:value-of>
+          </registerReadingDigits>
+          <tou>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/tou"></xsl:value-of>
+          </tou>
+          <typeStandard>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasMetering/typeStandard"></xsl:value-of>
+          </typeStandard>
+        </customerGasMetering>
+        <customerGasPricing>
+          <lossFactorCode>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasPricing/lossFactorCode"></xsl:value-of>
+          </lossFactorCode>
+          <maximumHourlyQuantity>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasPricing/maximumHourlyQuantity"></xsl:value-of>
+          </maximumHourlyQuantity>
+          <networkPricingCategory>
+            <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/customerGasPricing/networkPricingCategory"></xsl:value-of>
+          </networkPricingCategory>
+        </customerGasPricing>
+        <gasICP>
+          <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/gasIcpDetail/gasICP"></xsl:value-of>
+        </gasICP>
+      </gasIcpDetail>
+      <rpid>
+        <xsl:value-of select="$document_SOAP11_loadGasUser_REQUEST/ns2:Envelope/ns2:Body/ns1:loadGasUserRequest/rpid"></xsl:value-of>
+      </rpid>
+    </root>
+  </xsl:template>
+</xsl:stylesheet>

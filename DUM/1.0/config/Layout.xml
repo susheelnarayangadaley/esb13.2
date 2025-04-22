@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="DBQuery1" x="568" y="214"/>
+    <service-instance name="DBProc1" x="445" y="120"/>
+    <service-instance name="DB1" x="806" y="185"/>
+    <service-instance name="DB2" x="258" y="152"/>
+    <service-instance name="DBProc2" x="586" y="177"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>
