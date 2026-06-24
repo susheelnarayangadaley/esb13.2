@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+<!-- Root element -->
+<xs:element name="request">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="requestId" type="xs:string"/>
+<!-- requestData block -->
+<xs:element name="requestData">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="id" type="xs:string"/>
+<xs:element name="type" type="xs:string"/>
+<xs:element name="fullName" type="xs:string"/>
+<xs:element name="sex" type="xs:string"/>
+<!-- nationalities with class="array" -->
+<xs:element name="nationalities">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="item" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+</xs:sequence>
+<xs:attribute name="class" type="xs:string" fixed="array"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="dateOfBirth" type="xs:string"/>
+<xs:element name="placesOfBirth" type="xs:string"/>
+<!-- identityDocuments with class="array" -->
+<xs:element name="identityDocuments">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="number" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute name="class" type="xs:string" fixed="array"/>
+</xs:complexType>
+</xs:element>
+<!-- addresses with class="array" -->
+<xs:element name="addresses">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="item" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+</xs:sequence>
+<xs:attribute name="class" type="xs:string" fixed="array"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="profile" type="xs:string"/>
+<xs:element name="SaveForRescreening" type="xs:string"/>
+<xs:element name="rescreeningProfiles" nillable="true" minOccurs="0" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>

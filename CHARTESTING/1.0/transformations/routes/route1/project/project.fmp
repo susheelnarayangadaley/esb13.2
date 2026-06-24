@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="out_JMSMessage.DTD" mime="DTD" name="JMS-Message" rootName="Text"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Text:0" x="948" y="91">
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="618" y="107">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getText" type="154" x="261" y="44">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="293" y="214">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="[\x00-\x08\x0B\x0C\x0E-\x1F]" type="22" x="147" y="110">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="g" type="22" x="277" y="159">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="2" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="3" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema_NEW.xsd" mime="XSD" name="Application-Context" rootName="AccountDetails"/>
+    <mappermodel:Structure duplicates="" filePath="OUT_PORT_1.xsd" mime="XSD" name="OUT_PORT_1" rootName="FDCreate"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="out_JMSMessage.DTD" mime="DTD" name="JMS-Message" rootName="Text"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Text:0" x="689" y="242">
+      <mappermodel:FunctionGraphNode label="LOLC.IPAY.PRE.VAL.FD,," type="22" x="41" y="28">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="user" type="22" x="-62" y="60">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="pass" type="22" x="-59" y="112">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="99" y="64">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="99" y="125">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="479" y="127">
+        <mappermodel:InputPins>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="/" type="22" x="242" y="92">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=",," type="22" x="179" y="157">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,FDDetails:0,customerID:0" x="71" y="191">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="," type="22" x="239" y="223">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,FDDetails:0,fdType:0" x="18" y="284">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,FDDetails:0,currency:0" x="91" y="301">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,FDDetails:0,amount:0" x="85" y="344">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,FDDetails:0,term:0" x="126" y="380">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,FDDetails:0,effectiveDate:0" x="69" y="418">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,FDDetails:0,product:0" x="71" y="252">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="2" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="3" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="4" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="5" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="6" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="8" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="9" outputID="12" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="10" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="11" outputID="13" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="12" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="13" outputID="14" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="14" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="15" outputID="15" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="7" outputID="16" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

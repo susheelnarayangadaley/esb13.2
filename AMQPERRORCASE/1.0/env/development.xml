@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="AMQP1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="SSLConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.services.common.security.SSLConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.services.common.security&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:useSSL>false&lt;/ns1:useSSL>
+    &lt;ns1:acceptServerCertificate>false&lt;/ns1:acceptServerCertificate>
+    &lt;ns1:ignoreHostnameMismatch>false&lt;/ns1:ignoreHostnameMismatch>
+    &lt;ns1:trustStoreType>JKS&lt;/ns1:trustStoreType>
+    &lt;ns1:trustManagerFactoryType>SunX509&lt;/ns1:trustManagerFactoryType>
+    &lt;ns1:keyStoreType>JKS&lt;/ns1:keyStoreType>
+    &lt;ns1:keyManagerFactoryType>SunX509&lt;/ns1:keyManagerFactoryType>
+    &lt;ns1:protocolHandlerPackages>com.sun.net.ssl.internal.www.protocol&lt;/ns1:protocolHandlerPackages>
+    &lt;ns1:securityProviderClass>com.sun.net.ssl.internal.ssl.Provider&lt;/ns1:securityProviderClass>
+    &lt;ns1:securityProtocol>TLS&lt;/ns1:securityProtocol>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="AMQPConnectionConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.esb.amqp.config.AMQPConnectionConfiguration&quot;>
+    &lt;passwordFromVault>false&lt;/passwordFromVault>
+    &lt;customPasswordEncryption>false&lt;/customPasswordEncryption>
+    &lt;hostname>file:E:\bindings&lt;/hostname>
+    &lt;username>test&lt;/username>
+    &lt;password>LnAf62xJ0fHUm51AJdIdsA==&lt;/password>
+    &lt;cfLookupName>ConnectionFactory&lt;/cfLookupName>
+&lt;/namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="AMQPDestinationConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.esb.amqp.config.AMQPDestinationConfiguration&quot;>
+    &lt;destinationName>q1&lt;/destinationName>
+    &lt;destinationType>QUEUE&lt;/destinationType>
+&lt;/namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="AMQPConsumerConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.esb.amqp.config.AMQPConsumerConfiguration&quot;>
+    &lt;listenerMode>SYNCHRONOUS&lt;/listenerMode>
+&lt;/namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="ErrorHandlingConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;errorHandlingConfiguration CLASS_NAME=&quot;com.fiorano.edbc.framework.service.configuration.ErrorHandlingConfiguration&quot; xmlns:ns2=&quot;uri:com.fiorano.services.common.jaxb.adapter&quot;>
+    &lt;errorActionMap>
+        &lt;entry>
+            &lt;key>
+                &lt;id>4&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>7&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values xsi:type=&quot;retryAction&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>
+                &lt;id>3&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+                &lt;configuration>
+                    &lt;otherActions>
+                        &lt;ns2:property>
+                            &lt;ns2:key xsi:type=&quot;errorHandlingAction&quot;>
+                                &lt;id>1&lt;/id>
+                                &lt;enabled>false&lt;/enabled>
+                            &lt;/ns2:key>
+                            &lt;ns2:value xsi:type=&quot;xs:int&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;>2&lt;/ns2:value>
+                        &lt;/ns2:property>
+                        &lt;ns2:property>
+                            &lt;ns2:key xsi:type=&quot;errorHandlingAction&quot;>
+                                &lt;id>0&lt;/id>
+                                &lt;enabled>false&lt;/enabled>
+                            &lt;/ns2:key>
+                            &lt;ns2:value xsi:type=&quot;xs:int&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;>1&lt;/ns2:value>
+                        &lt;/ns2:property>
+                    &lt;/otherActions>
+                    &lt;retryCount>10&lt;/retryCount>
+                    &lt;retryInterval>300000&lt;/retryInterval>
+                &lt;/configuration>
+            &lt;/values>
+            &lt;values>
+                &lt;id>1&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>5&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>4&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+        &lt;entry>
+            &lt;key>
+                &lt;id>3&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>5&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+        &lt;entry>
+            &lt;key>
+                &lt;id>2&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>1&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+        &lt;entry>
+            &lt;key>
+                &lt;id>1&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values xsi:type=&quot;retryAction&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>
+                &lt;id>2&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+                &lt;configuration>
+                    &lt;otherActions>
+                        &lt;ns2:property>
+                            &lt;ns2:key xsi:type=&quot;errorHandlingAction&quot;>
+                                &lt;id>1&lt;/id>
+                                &lt;enabled>false&lt;/enabled>
+                            &lt;/ns2:key>
+                            &lt;ns2:value xsi:type=&quot;xs:int&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;>1&lt;/ns2:value>
+                        &lt;/ns2:property>
+                        &lt;ns2:property>
+                            &lt;ns2:key xsi:type=&quot;errorHandlingAction&quot;>
+                                &lt;id>0&lt;/id>
+                                &lt;enabled>false&lt;/enabled>
+                            &lt;/ns2:key>
+                            &lt;ns2:value xsi:type=&quot;xs:int&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;>1&lt;/ns2:value>
+                        &lt;/ns2:property>
+                    &lt;/otherActions>
+                    &lt;retryCount>-1&lt;/retryCount>
+                    &lt;retryInterval>30000&lt;/retryInterval>
+                &lt;/configuration>
+            &lt;/values>
+            &lt;values>
+                &lt;id>1&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>5&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>4&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+        &lt;entry>
+            &lt;key>
+                &lt;id>0&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>6&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>1&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>5&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+    &lt;/errorActionMap>
+&lt;/errorHandlingConfiguration>
+</target:property>
+      <target:property encrypt="false" name="AMQPProducerConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.esb.amqp.config.AMQPProducerConfiguration&quot;>
+    &lt;deliveryMode>PERSISTENT&lt;/deliveryMode>
+    &lt;priority>4&lt;/priority>
+    &lt;timeToLive>0&lt;/timeToLive>
+    &lt;mandatory>false&lt;/mandatory>
+&lt;/namedConfiguration>
+</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Feeder1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="Display1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="AMQP2">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="SSLConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.services.common.security.SSLConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.services.common.security&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:useSSL>false&lt;/ns1:useSSL>
+    &lt;ns1:acceptServerCertificate>false&lt;/ns1:acceptServerCertificate>
+    &lt;ns1:ignoreHostnameMismatch>false&lt;/ns1:ignoreHostnameMismatch>
+    &lt;ns1:trustStoreType>JKS&lt;/ns1:trustStoreType>
+    &lt;ns1:trustManagerFactoryType>SunX509&lt;/ns1:trustManagerFactoryType>
+    &lt;ns1:keyStoreType>JKS&lt;/ns1:keyStoreType>
+    &lt;ns1:keyManagerFactoryType>SunX509&lt;/ns1:keyManagerFactoryType>
+    &lt;ns1:protocolHandlerPackages>com.sun.net.ssl.internal.www.protocol&lt;/ns1:protocolHandlerPackages>
+    &lt;ns1:securityProviderClass>com.sun.net.ssl.internal.ssl.Provider&lt;/ns1:securityProviderClass>
+    &lt;ns1:securityProtocol>TLS&lt;/ns1:securityProtocol>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="AMQPConnectionConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.esb.amqp.config.AMQPConnectionConfiguration&quot;>
+    &lt;passwordFromVault>false&lt;/passwordFromVault>
+    &lt;customPasswordEncryption>false&lt;/customPasswordEncryption>
+    &lt;hostname>file:E:\bindings&lt;/hostname>
+    &lt;username>test&lt;/username>
+    &lt;password>LnAf62xJ0fHUm51AJdIdsA==&lt;/password>
+    &lt;cfLookupName>ConnectionFactory&lt;/cfLookupName>
+&lt;/namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="AMQPDestinationConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.esb.amqp.config.AMQPDestinationConfiguration&quot;>
+    &lt;destinationName>q1&lt;/destinationName>
+    &lt;destinationType>QUEUE&lt;/destinationType>
+&lt;/namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="AMQPConsumerConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.esb.amqp.config.AMQPConsumerConfiguration&quot;>
+    &lt;listenerMode>ASYNCHRONOUS&lt;/listenerMode>
+    &lt;messageSelector>&lt;/messageSelector>
+&lt;/namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="ErrorHandlingConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;errorHandlingConfiguration CLASS_NAME=&quot;com.fiorano.edbc.framework.service.configuration.ErrorHandlingConfiguration&quot; xmlns:ns2=&quot;uri:com.fiorano.services.common.jaxb.adapter&quot;>
+    &lt;errorActionMap>
+        &lt;entry>
+            &lt;key>
+                &lt;id>4&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>7&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values xsi:type=&quot;retryAction&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>
+                &lt;id>3&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+                &lt;configuration>
+                    &lt;otherActions>
+                        &lt;ns2:property>
+                            &lt;ns2:key xsi:type=&quot;errorHandlingAction&quot;>
+                                &lt;id>1&lt;/id>
+                                &lt;enabled>false&lt;/enabled>
+                            &lt;/ns2:key>
+                            &lt;ns2:value xsi:type=&quot;xs:int&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;>2&lt;/ns2:value>
+                        &lt;/ns2:property>
+                        &lt;ns2:property>
+                            &lt;ns2:key xsi:type=&quot;errorHandlingAction&quot;>
+                                &lt;id>0&lt;/id>
+                                &lt;enabled>false&lt;/enabled>
+                            &lt;/ns2:key>
+                            &lt;ns2:value xsi:type=&quot;xs:int&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;>1&lt;/ns2:value>
+                        &lt;/ns2:property>
+                    &lt;/otherActions>
+                    &lt;retryCount>10&lt;/retryCount>
+                    &lt;retryInterval>300000&lt;/retryInterval>
+                &lt;/configuration>
+            &lt;/values>
+            &lt;values>
+                &lt;id>1&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>5&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>4&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+        &lt;entry>
+            &lt;key>
+                &lt;id>3&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+        &lt;entry>
+            &lt;key>
+                &lt;id>2&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>1&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+        &lt;entry>
+            &lt;key>
+                &lt;id>1&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values xsi:type=&quot;retryAction&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>
+                &lt;id>2&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+                &lt;configuration>
+                    &lt;otherActions>
+                        &lt;ns2:property>
+                            &lt;ns2:key xsi:type=&quot;errorHandlingAction&quot;>
+                                &lt;id>1&lt;/id>
+                                &lt;enabled>false&lt;/enabled>
+                            &lt;/ns2:key>
+                            &lt;ns2:value xsi:type=&quot;xs:int&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;>1&lt;/ns2:value>
+                        &lt;/ns2:property>
+                        &lt;ns2:property>
+                            &lt;ns2:key xsi:type=&quot;errorHandlingAction&quot;>
+                                &lt;id>0&lt;/id>
+                                &lt;enabled>false&lt;/enabled>
+                            &lt;/ns2:key>
+                            &lt;ns2:value xsi:type=&quot;xs:int&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;>1&lt;/ns2:value>
+                        &lt;/ns2:property>
+                    &lt;/otherActions>
+                    &lt;retryCount>-1&lt;/retryCount>
+                    &lt;retryInterval>30000&lt;/retryInterval>
+                &lt;/configuration>
+            &lt;/values>
+            &lt;values>
+                &lt;id>1&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>5&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>4&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+        &lt;entry>
+            &lt;key>
+                &lt;id>0&lt;/id>
+            &lt;/key>
+            &lt;values>
+                &lt;id>0&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>6&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>1&lt;/id>
+                &lt;enabled>true&lt;/enabled>
+            &lt;/values>
+            &lt;values>
+                &lt;id>5&lt;/id>
+                &lt;enabled>false&lt;/enabled>
+            &lt;/values>
+        &lt;/entry>
+    &lt;/errorActionMap>
+&lt;/errorHandlingConfiguration>
+</target:property>
+      <target:property encrypt="false" name="AMQPProducerConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.esb.amqp.config.AMQPProducerConfiguration&quot;>
+    &lt;deliveryMode>PERSISTENT&lt;/deliveryMode>
+    &lt;priority>4&lt;/priority>
+    &lt;timeToLive>0&lt;/timeToLive>
+    &lt;mandatory>false&lt;/mandatory>
+&lt;/namedConfiguration>
+</target:property>
+    </target:configuration-properties>
+  </target:instance>
+</target:target>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns12="http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2" xmlns:ns33="http://temenos.com/CUSTOMER" xmlns:ns24="http://temenos.com/CPBGETACCOUNTINFO" xmlns:ns20="http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT" xmlns:ns7="http://temenos.com/CPBGETINTERESTRATE" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:ns14="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT" xmlns:ns26="http://temenos.com/CPBGETACCOUNTSTMT" xmlns:ns30="http://temenos.com/AAARRANGEMENTACTIVITY" xmlns:ns27="http://temenos.com/FUNDSTRANSFERCPBMBBILL" xmlns:ns25="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB" xmlns:ns38="http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT" xmlns:ns40="http://www.w3.org/2001/XMLSchema" xmlns:ns36="http://temenos.com/AAARRANGEMENTACTIVITYOPENFD" xmlns:ns39="http://temenos.com/DEVMB3" xmlns:ns31="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB" xmlns:ns2="http://temenos.com/DEVMB3/ETAXPAYMENT/Output" xmlns:ns18="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB" xmlns:ns23="http://temenos.com/CPBGETCUSTOMERINFO" xmlns:ns16="http://temenos.com/FUNDSTRANSFERCPBBKGMB" xmlns:ns15="http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT" xmlns:ns21="http://temenos.com/CPBGETACCOUNTLIST" xmlns:ns28="http://temenos.com/FUNDSTRANSFERCPBWATERBILL" xmlns:ns34="http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT" xmlns:ns6="http://temenos.com/CPBGETEXCHANGERATE" xmlns:ns9="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT" xmlns:ns8="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD" xmlns:ns32="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL" xmlns:ns17="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL" xmlns:ns35="http://temenos.com/FUNDSTRANSFER" xmlns:ns19="http://temenos.com/FUNDSTRANSFERCPBACBILL" xmlns:ns5="http://temenos.com/FUNDSTRANSFERCPBMBTOPUP" xmlns:ns4="http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND" xmlns:ns13="http://temenos.com/FUNDSTRANSFERCPBWINGOUT" xmlns:ns11="http://temenos.com/FUNDSTRANSFERCPBEDCBILL" xmlns:ns10="http://temenos.com/FUNDSTRANSFERCPBSRBILL" xmlns:ns37="http://temenos.com/CUSTOMERCPBDMD" xmlns:ns29="http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE" xmlns:ns22="http://temenos.com/FUNDSTRANSFERCPBFUNANBILL" xmlns:AppendZero="AppendZero" xmlns:MD5Hex="http://xml.apache.org/xslt/java" xmlns:ReplaceText="ReplaceText" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:multifields="multifields" xmlns:multifieldsstring="multifieldsstring" xmlns:myext="myext" xmlns:rounding="rounding" xmlns:sringindex="sringindex" xmlns:strings="strings" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math AppendZero MD5Hex ReplaceText StringLength dateConversion multifields multifieldsstring myext rounding sringindex strings truncateString">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_ETAXPAYMENT__OUT_PORT" select="document('ETAXPAYMENT__OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <TxnCommitRp>
+      <ErrorCode>
+        <xsl:value-of select="$document_ETAXPAYMENT__OUT_PORT/ns2:Envelope/ns2:Body/ns39:ETAXPAYMENTResponse/FUNDSTRANSFERType/ns35:STATUSCODE"></xsl:value-of>
+      </ErrorCode>
+      <ErrorMsg>
+        <xsl:value-of select="$document_ETAXPAYMENT__OUT_PORT/ns2:Envelope/ns2:Body/ns39:ETAXPAYMENTResponse/FUNDSTRANSFERType/ns35:STATUDESC"></xsl:value-of>
+      </ErrorMsg>
+      <TransRefNo>
+        <xsl:value-of select="$document_ETAXPAYMENT__OUT_PORT/ns2:Envelope/ns2:Body/ns39:ETAXPAYMENTResponse/FUNDSTRANSFERType/ns35:gPAYMENTDETAILS/ns35:PAYMENTDETAILS"></xsl:value-of>
+      </TransRefNo>
+      <TxnCommitTime>
+        <xsl:value-of select="$document_ETAXPAYMENT__OUT_PORT/ns2:Envelope/ns2:Body/ns39:ETAXPAYMENTResponse/FUNDSTRANSFERType/ns35:gDATETIME/ns35:DATETIME"></xsl:value-of>
+      </TxnCommitTime>
+      <AccountBalance>
+        <xsl:value-of select="$document_ETAXPAYMENT__OUT_PORT/ns2:Envelope/ns2:Body/ns39:ETAXPAYMENTResponse/FUNDSTRANSFERType/ns35:FTAVLBAL"></xsl:value-of>
+      </AccountBalance>
+    </TxnCommitRp>
+  </xsl:template>
+</xsl:stylesheet>

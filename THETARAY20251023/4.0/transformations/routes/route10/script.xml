@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out" xmlns:EXT="EXT" xmlns:MT2MX="http://xml.apache.org/xslt/java" xmlns:MTtoMX="http://xml.apache.org/xslt/java" xmlns:MTtoMXUtil="http://xml.apache.org/xslt/java" xmlns:MX2MT="http://xml.apache.org/xslt/java" xmlns:MXToMT="http://xml.apache.org/xslt/java" xmlns:MXtoMT="http://xml.apache.org/xslt/java" xmlns:QueryGenerator="QueryGenerator" xmlns:URA="http://xml.apache.org/xslt/java" xmlns:abc="abc" xmlns:dateConversion="dateConversion" xmlns:digitalSignature="http://xml.apache.org/xslt/java" xmlns:dsa="dsa" xmlns:egf="egf" xmlns:etx="etx" xmlns:gen="gen" xmlns:jar="http://xml.apache.org/xslt/java" xmlns:m="m" xmlns:may="may" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:sec="sec" xmlns:secc="secc" xmlns:strings="strings" xmlns:tes="tes" xmlns:tets="tets" xmlns:xz="xz" extension-element-prefixes="datetime set math EXT MT2MX MTtoMX MTtoMXUtil MX2MT MXToMT MXtoMT QueryGenerator URA abc dateConversion digitalSignature dsa egf etx gen jar m may myext nestedJsonParser sec secc strings tes tets xz">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <requestId>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:ID"></xsl:value-of>
+      </requestId>
+      <transactionAmount>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:AMOUNTTRAN_100"></xsl:value-of>
+      </transactionAmount>
+      <transactionCurrency>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:WALLETCURRENCY"></xsl:value-of>
+      </transactionCurrency>
+      <transactionDate>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:DATE_TRANS"></xsl:value-of>
+      </transactionDate>
+      <parties>
+        <partyId>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:MOBILENUMBER"></xsl:value-of>
+        </partyId>
+        <partyType>
+          <xsl:value-of select="'Debitor'"></xsl:value-of>
+        </partyType>
+        <fullName>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:FULLNAME"></xsl:value-of>
+        </fullName>
+      </parties>
+      <parties>
+        <partyId>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:DESTACCOUNT"></xsl:value-of>
+        </partyId>
+        <partyType>
+          <xsl:value-of select="'Creditor'"></xsl:value-of>
+        </partyType>
+        <fullName>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:SERVICENAME"></xsl:value-of>
+        </fullName>
+      </parties>
+    </root>
+  </xsl:template>
+</xsl:stylesheet>

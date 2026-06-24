@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <STO>
+      <stoIDWithSeq>
+        <xsl:value-of select="substring-before($document_OUT_PORT/root/header,'/')"></xsl:value-of>
+      </stoIDWithSeq>
+      <stoCurrency>
+        <xsl:value-of select="$document_OUT_PORT/root/CURRENCY/value"></xsl:value-of>
+      </stoCurrency>
+      <stoAmount>
+        <xsl:value-of select="$document_OUT_PORT/root/CURRENT.AMOUNT.BAL/value"></xsl:value-of>
+      </stoAmount>
+      <stoFrequency>
+        <xsl:value-of select="substring($document_OUT_PORT/root/CURRENT.FREQUENCY/value,'10')"></xsl:value-of>
+      </stoFrequency>
+      <stoAccount>
+        <xsl:value-of select="$document_OUT_PORT/root/CPTY.ACCT.NO/value"></xsl:value-of>
+      </stoAccount>
+      <startDate>
+        <xsl:value-of select="$document_OUT_PORT/root/CURR.FREQ.DATE/value"></xsl:value-of>
+      </startDate>
+      <endDate>
+        <xsl:value-of select="$document_OUT_PORT/root/CURRENT.END.DATE/value"></xsl:value-of>
+      </endDate>
+      <status>
+        <xsl:value-of select="$document_OUT_PORT/root/RECORD.STATUS/value"></xsl:value-of>
+      </status>
+    </STO>
+  </xsl:template>
+</xsl:stylesheet>

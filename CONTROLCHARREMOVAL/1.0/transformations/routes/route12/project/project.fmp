@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="DBSelect.OUT_PORT.xsd" mime="XSD" name="OUT_PORT" rootName="{http://www.fiorano.com/fesb/activity/DB1/Response}SQL_CFG_1"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="out_JMSMessage.DTD" mime="DTD" name="JMS-Message" rootName="Text"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Text:0" x="860" y="98">
+      <mappermodel:FunctionGraphNode label="getText" type="154" x="266" y="14">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="543" y="127">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="g" type="22" x="202" y="179">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="218" y="234">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="[\x00-\x08\x0B\x0C\x0E-\x1F]" type="22" x="72" y="130">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="2" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="3" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="5" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="javascript" name="myext">
+      <mappermodel:Script>function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(&quot;.&quot;)    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return &quot;There are only &quot; + days + &quot; days remaining to the start of the next millennium.&quot;; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}
+
+
+function replaceLFWithCRLF(input) {
+  return input.replace(/\r?\n/g, '\r\n');
+}</mappermodel:Script>
+      <mappermodel:Function name="replace" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+        <mappermodel:Argument datatype="String" name="pattern"/>
+        <mappermodel:Argument datatype="String" name="flags"/>
+        <mappermodel:Argument datatype="String" name="str"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+</mappermodel:MapperProject>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="DBQueryOnInput1.OUT_PORT.xsd" mime="XSD" name="OUT_PORT" rootName="{http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out}Result"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT_10.xsd" mime="XSD" name="IN_PORT_1" rootName="request"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="IN_PORT_1:0,request:0,requestId:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,MOBILENUMBER:0" x="187" y="243">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,ID:0" x="98" y="112">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,id:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,CUSTOMER_ID:0" x="97" y="49">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,type:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="individual" type="22" x="124" y="81">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,fullName:0" x="551" y="68">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,FIRSTNAME:0" x="66" y="28">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,LASTNAME:0" x="84" y="116">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="299" y="49">
+        <mappermodel:InputPins>1,2,3,4</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,MIDNAME:0" x="41" y="66">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="2" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="3" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,sex:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,GENDER:0" x="114" y="93">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,nationalities:0,[ONE MANY]:0,item:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,NATIONALITY:0" x="132" y="75">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,dateOfBirth:0" x="808" y="50">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,DATEOFBIRTH:0" x="114" y="29">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="422" y="52">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="10" type="22" x="190" y="122">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="1" type="22" x="202" y="61">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="2" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,placesOfBirth:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,PLACEOFBIRTH:0" x="95" y="37">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,identityDocuments:0,[ONE MANY]:0,item:0,number:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,CNIC:0" x="115" y="87">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,requestData:0,addresses:0,[ONE MANY]:0,item:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,HOMEADDRESS:0" x="100" y="89">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,request:0,profile:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,Result:0,row:0,KYC_STATUS:0" x="100" y="77">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

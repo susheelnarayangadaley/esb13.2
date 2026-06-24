@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context1.XSD" mime="XSD" name="Application-Context" rootName="Root"/>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.XSD" mime="XSD" name="IN_PORT" rootName="{http://temenos.com/DEVMB3/TogetCustomerInformation/Output}Envelope">
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFER"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext1.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext2.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTINFO"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext3.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext4.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext5.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext6.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBACBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext7.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBEDCBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext8.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSRBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext9.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext10.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext11.XSD" mime="XSD" name="http://temenos.com/CPBGETCUSTOMERINFO"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext12.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext13.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTLIST"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext14.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext15.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext16.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWINGOUT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext17.XSD" mime="XSD" name="http://temenos.com/DEVMB3"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext18.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYOPENFD"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext19.XSD" mime="XSD" name="http://temenos.com/CUSTOMERCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext20.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext21.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext22.XSD" mime="XSD" name="http://temenos.com/CUSTOMER"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext23.XSD" mime="XSD" name="http://temenos.com/CPBGETEXCHANGERATE"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext24.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext25.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext26.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBTOPUP"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext27.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext28.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext29.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWATERBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext30.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext31.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTSTMT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext32.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext33.XSD" mime="XSD" name="http://temenos.com/CPBGETINTERESTRATE"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext34.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBFUNANBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext73.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext74.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITY"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext75.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMB"/>
+    </mappermodel:Structure>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Output1.XSD" mime="XSD" name="Output1" rootName="GetLegalIDRp"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="Output1:0,GetLegalIDRp:0,ErrorCode:0" x="587" y="47">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,STATUSCODE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0" x="-77" y="90">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="598" y="135">
+        <mappermodel:InputPins>bool,then,bool,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&lt;=" type="36" x="182" y="203">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Count" type="76" x="292" y="261">
+        <mappermodel:InputPins>nodes</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="86" y="267">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="124" type="22" x="597" y="229">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="3" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="3" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,ErrorMsg:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,STATUDESC:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,CifNo:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,CIFNO:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,FullName:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,FULLNAME:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,IDNumber:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,IDNUMBER:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,BranchCode:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,BRANCHCODE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,Residence:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,RESIDENCE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,CustomerType:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,CUSTOMERTYPE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,Sex:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,SEX:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,Birthday:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,BIRTHDAY:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,Email:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,EMAIL:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,Address:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="120" y="95">
+        <mappermodel:InputPins>1,2,3,4,5</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="," type="22" x="220" y="42">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,TOWNCOUNTRY:0" x="110" y="18">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,COUNTRY:0" x="91" y="30">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,POSTCODE:0" x="84" y="67">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="2" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="3" outputID="5" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,GetLegalIDRp:0,ContactMobile:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,TogetCustomerInformationResponse:0,[ZERO MANY]:0,CPBGETCUSTOMERINFOType:0,gCPBGETCUSTOMERINFODetailType:0,[ZERO MANY]:0,mCPBGETCUSTOMERINFODetailType:0,CONTACTMOBILE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

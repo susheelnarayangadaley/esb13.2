@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://www.fiorano.com/fesb/activity/DB1/Response" xmlns:api="api" xmlns:apipicker="apipicker" xmlns:csa="csa" xmlns:dateConversion="dateConversion" xmlns:md5="md5" xmlns:myext="myext" xmlns:pt="pt" xmlns:strings="strings" xmlns:util="util" extension-element-prefixes="datetime set math api apipicker csa dateConversion md5 myext pt strings util">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <order>
+      <comment>
+        <xsl:variable name="if0">
+          <xsl:choose>
+            <xsl:when test="(string-length(normalize-space($document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:NOTE)))=('0')">
+              <xsl:value-of select="'skids'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:NOTE"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if0"></xsl:value-of>
+      </comment>
+      <customer>
+        <email>
+          <xsl:variable name="if1">
+            <xsl:choose>
+              <xsl:when test="(string-length(normalize-space('radaro.test@polaristransport.com')))=('0')">
+                <xsl:value-of select="'Radaro.Test@polaristransport.com '"></xsl:value-of>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="'radaro.test@polaristransport.com'"></xsl:value-of>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:value-of select="$if1"></xsl:value-of>
+        </email>
+        <name>
+          <xsl:variable name="if2">
+            <xsl:choose>
+              <xsl:when test="(string-length(normalize-space($document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTNAME)))=('0')">
+                <xsl:value-of select="' '"></xsl:value-of>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTNAME"></xsl:value-of>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:value-of select="$if2"></xsl:value-of>
+        </name>
+      </customer>
+      <deliver_address>
+        <address>
+          <xsl:variable name="if3">
+            <xsl:choose>
+              <xsl:when test="(string-length(normalize-space(concat($document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTADDR1,';',$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTADDR2,';',$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTCITY,';',$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTPROV,';',$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTPC,';'))))=('0')">
+                <xsl:value-of select="' '"></xsl:value-of>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="concat($document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTADDR1,';',$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTADDR2,';',$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTCITY,';',$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTPROV,';',$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESTPC,';')"></xsl:value-of>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:value-of select="$if3"></xsl:value-of>
+        </address>
+        <description>
+          <xsl:value-of select="'Constant'"></xsl:value-of>
+        </description>
+      </deliver_address>
+      <description>
+        <xsl:variable name="if4">
+          <xsl:choose>
+            <xsl:when test="(string-length(normalize-space($document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESCRIPTION)))=('0')">
+              <xsl:value-of select="' '"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DESCRIPTION"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if4"></xsl:value-of>
+      </description>
+      <external_id>
+        <xsl:value-of select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:EXTERNAL_ID"></xsl:value-of>
+      </external_id>
+      <title>
+        <xsl:variable name="if5">
+          <xsl:choose>
+            <xsl:when test="(string-length(normalize-space($document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:BILL_NUMBER)))=('0')">
+              <xsl:value-of select="' '"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:BILL_NUMBER"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if5"></xsl:value-of>
+      </title>
+      <skill_sets>
+        <xsl:value-of select="'[ ]'"></xsl:value-of>
+      </skill_sets>
+      <status>
+        <xsl:value-of select="'assigned'"></xsl:value-of>
+      </status>
+      <driver>
+        <xsl:value-of select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:RADARO_DRIVER_ID"></xsl:value-of>
+      </driver>
+      <customer_comment>
+        <xsl:value-of select="''"></xsl:value-of>
+      </customer_comment>
+      <rating>
+        <xsl:value-of select="''"></xsl:value-of>
+      </rating>
+      <error_comment>
+        <xsl:value-of select="''"></xsl:value-of>
+      </error_comment>
+      <customer_tracking_url>
+        <xsl:value-of select="''"></xsl:value-of>
+      </customer_tracking_url>
+      <pre_inspection_comment>
+        <xsl:value-of select="''"></xsl:value-of>
+      </pre_inspection_comment>
+      <pre_inspection_signature>
+        <xsl:value-of select="''"></xsl:value-of>
+      </pre_inspection_signature>
+      <pre_inspection_photos>
+        <xsl:value-of select="''"></xsl:value-of>
+      </pre_inspection_photos>
+      <labels>
+        <xsl:value-of select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:LABELS"></xsl:value-of>
+      </labels>
+      <driver_checklist>
+        <is_correct>
+          <xsl:value-of select="'Constant'"></xsl:value-of>
+        </is_correct>
+        <checklist_confirmed>
+          <xsl:value-of select="'Constant'"></xsl:value-of>
+        </checklist_confirmed>
+        <checklist_passed>
+          <xsl:value-of select="'Constant'"></xsl:value-of>
+        </checklist_passed>
+      </driver_checklist>
+      <delivery_interval>
+        <upper>
+          <xsl:value-of select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:ARRIVE_END"></xsl:value-of>
+        </upper>
+        <lower>
+          <xsl:value-of select="''"></xsl:value-of>
+        </lower>
+      </delivery_interval>
+      <cargoes>
+        <skids>
+          <xsl:attribute name="class">
+            <xsl:value-of select="'array'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:for-each select="$document_OUT_PORT/ns3:Root/ns3:Radaro_Select"><xsl:if test="normalize-space($document_OUT_PORT/ns3:Root/ns3:Radaro_Select/ns3:DIM_DESC)" >
+            <skid>
+              <name>
+                <xsl:value-of select="./ns3:DIM_DESC"></xsl:value-of>
+              </name>
+              <quantity>
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </quantity>
+              <weight>
+                <value>
+                  <xsl:value-of select="./ns3:DIM_WEIGHT"></xsl:value-of>
+                </value>
+                <unit>
+                  <xsl:value-of select="translate(normalize-space(./ns3:WEIGHT_UNIT),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"></xsl:value-of>
+                </unit>
+              </weight>
+              <sizes>
+                <unit>
+                  <xsl:value-of select="translate(normalize-space(./ns3:DIM_UNIT),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"></xsl:value-of>
+                </unit>
+                <width>
+                  <xsl:value-of select="./ns3:WIDTH"></xsl:value-of>
+                </width>
+                <height>
+                  <xsl:value-of select="./ns3:HEIGHT"></xsl:value-of>
+                </height>
+                <length>
+                  <xsl:value-of select="./ns3:LENGTH"></xsl:value-of>
+                </length>
+              </sizes>
+            </skid></xsl:if></xsl:for-each>
+        </skids>
+      </cargoes>
+    </order>
+  </xsl:template>
+</xsl:stylesheet>

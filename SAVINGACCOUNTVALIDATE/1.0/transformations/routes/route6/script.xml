@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT_1" select="document('OUT_PORT_1')"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <currency>
+        <xsl:value-of select="'KHR'"></xsl:value-of>
+      </currency>
+      <inputChCode>
+        <xsl:value-of select="'CBS'"></xsl:value-of>
+      </inputChCode>
+      <inquiryAmount>
+        <xsl:value-of select="'4000'"></xsl:value-of>
+      </inquiryAmount>
+      <receiverAccountNo>
+        <xsl:value-of select="$document_OUT_PORT_1/root/account"></xsl:value-of>
+      </receiverAccountNo>
+      <receiverBankCode>
+        <xsl:variable name="if0">
+          <xsl:choose>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'SBPL')">
+              <xsl:value-of select="'056'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'FTCC')">
+              <xsl:value-of select="'001'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'CPBL')">
+              <xsl:value-of select="'004'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'CADI')">
+              <xsl:value-of select="'005'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'ACLB')">
+              <xsl:value-of select="'041'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'VBLC')">
+              <xsl:value-of select="'043'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'SHBK')">
+              <xsl:value-of select="'053'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'PPCB')">
+              <xsl:value-of select="'058'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'CZNB')">
+              <xsl:value-of select="'066'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'CPBP')">
+              <xsl:value-of select="'079'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'PRAS')">
+              <xsl:value-of select="'088'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'WBFM')">
+              <xsl:value-of select="'094'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'PINC')">
+              <xsl:value-of select="'096'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'LOLC')">
+              <xsl:value-of select="'090'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'DGB')">
+              <xsl:value-of select="'106'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/root/bank,'IBK')">
+              <xsl:value-of select="'097'"></xsl:value-of>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if0"></xsl:value-of>
+      </receiverBankCode>
+      <senderAccountNo>
+        <xsl:value-of select="'73130969624001'"></xsl:value-of>
+      </senderAccountNo>
+      <senderName>
+        <xsl:value-of select="'LOLC'"></xsl:value-of>
+      </senderName>
+    </root>
+  </xsl:template>
+</xsl:stylesheet>

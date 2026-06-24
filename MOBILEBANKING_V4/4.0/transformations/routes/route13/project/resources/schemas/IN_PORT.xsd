@@ -1,0 +1,25 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="FTBakongWalletRq">
+        
+                       <xsd:complexType>
+                              <xsd:sequence>
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="CifNo" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="TxnFee" type="xsd:string"/>
+                                      <xsd:element maxOccurs="1" minOccurs="0" name="WalletNumber" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="WalletName" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="SenderName" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="ToAccount" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Remark" type="xsd:string"/>
+                                      <xsd:element maxOccurs="1" minOccurs="0" name="TransId" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Currency" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="QRData" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryBankName" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="SignData" type="xsd:string"/>
+                                       
+                    </xsd:sequence>
+                      
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

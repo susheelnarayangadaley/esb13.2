@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.fiorano.com/SOA/bc/cache" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:Array="Array" xmlns:EXT="EXT" xmlns:MT2MX="http://xml.apache.org/xslt/java" xmlns:MTtoMX="http://xml.apache.org/xslt/java" xmlns:MTtoMXUtil="http://xml.apache.org/xslt/java" xmlns:MX2MT="http://xml.apache.org/xslt/java" xmlns:MXToMT="http://xml.apache.org/xslt/java" xmlns:MXtoMT="http://xml.apache.org/xslt/java" xmlns:QueryGenerator="QueryGenerator" xmlns:URA="http://xml.apache.org/xslt/java" xmlns:aa="aa" xmlns:abc="abc" xmlns:alwathba="alwathba" xmlns:codeWathba="codeWathba" xmlns:comme="comme" xmlns:dateConversion="dateConversion" xmlns:digitalSignature="http://xml.apache.org/xslt/java" xmlns:dsa="dsa" xmlns:egf="egf" xmlns:etx="etx" xmlns:gen="gen" xmlns:jar="http://xml.apache.org/xslt/java" xmlns:m="m" xmlns:may="may" xmlns:mob="mob" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:nurext="nurext" xmlns:purpose="purpose" xmlns:removeHyphens="removeHyphens" xmlns:sa="sa" xmlns:sec="sec" xmlns:secc="secc" xmlns:strings="strings" xmlns:tes="tes" xmlns:tets="tets" xmlns:thetaray="thetaray" xmlns:thetaray_minus1="thetaray_minus1" xmlns:ww="ww" xmlns:xz="xz" extension-element-prefixes="datetime set math Array EXT MT2MX MTtoMX MTtoMXUtil MX2MT MXToMT MXtoMT QueryGenerator URA aa abc alwathba codeWathba comme dateConversion digitalSignature dsa egf etx gen jar m may mob myext nestedJsonParser nurext purpose removeHyphens sa sec secc strings tes tets thetaray thetaray_minus1 ww xz">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <Property>
+      <xsl:attribute name="name">
+        <xsl:value-of select="'genericCheck'"></xsl:value-of>
+      </xsl:attribute>
+      <xsl:value-of select="$_TIF_BODY_TEXT_"></xsl:value-of>
+    </Property>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_BODY_TEXT_"></xsl:param>
+</xsl:stylesheet>

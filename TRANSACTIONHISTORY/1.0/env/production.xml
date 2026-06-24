@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="TranHis">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps_01"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property configurationType="component" encrypt="false" name="SeylanESBConnectionConfiguration" type="NamedObject">Equation</target:property>
+      <target:property encrypt="false" name="Request TimeOut" type="java.lang.Integer">-1</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="RestStub-TranHistory">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps_01"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="Xslt1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="JavaScript1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="apigateway"/>
+    </target:instance-properties>
+  </target:instance>
+</target:target>

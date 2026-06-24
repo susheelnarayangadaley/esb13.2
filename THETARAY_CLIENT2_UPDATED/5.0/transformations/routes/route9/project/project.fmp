@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="TIMER_PORT.xsd" mime="XSD" name="TIMER_PORT" rootName="Timer"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.xsd" mime="XSD" name="IN_PORT" rootName="{http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In}COMPLEX"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,COMPLEX:0,query:0" x="1395" y="31">
+      <mappermodel:FunctionGraphNode label="select id,servicename,amounttran/100,trancurrency,mobilenumber,(select homeaddress from wallet.cms_customer where user_id = userid)as adresse,(select nationality from wallet.cms_customer where user_id = userid)as nationality,(select gender from wallet.cms_customer where user_id = userid)as gender,(select nvl(placeofbirth,nationality) as placeofb from  wallet.cms_customer where user_id = userid) as placeofbirth,destaccount,nvl(DESTMOBILENUMBER,MOBILENUMBER)as DESTMOBILENUMBER,walletcurrency, " type="22" x="146" y="15">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="1202" y="15">
+        <mappermodel:InputPins>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="subtractDate" type="175" x="244" y="317">
+        <mappermodel:InputPins>Date String,Input Format,Days,Hours,Minutes,Seconds</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Date" type="99" x="36" y="312">
+        <mappermodel:InputPins>1</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="yyyy-mm-dd" type="22" x="26" y="351">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="1" type="22" x="71" y="386">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="81" y="421">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="101" y="450">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="140" y="489">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="604" y="326">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="g" type="22" x="466" y="458">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="-" type="22" x="421" y="427">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="465" y="500">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="648" y="606">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="791" y="492">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="g" type="22" x="629" y="553">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="-" type="22" x="638" y="508">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Date" type="99" x="611" y="471">
+        <mappermodel:InputPins>1</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="' AND '" type="22" x="672" y="412">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="1078" y="383">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="1" type="22" x="899" y="572">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="8" type="22" x="909" y="613">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="DateTime" type="100" x="10" y="59">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=",respcode,userid,concat(firstname,lastname)as fullName, " type="22" x="174" y="93">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Date" type="99" x="43" y="131">
+        <mappermodel:InputPins>1</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="thetaray:convertToYYYYMMDDHH24MISS(input)" type="69" x="183" y="53">
+        <mappermodel:InputPins>input</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="426" y="129">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="-" type="22" x="182" y="149">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="g" type="22" x="73" y="159">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="79" y="185">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Date" type="99" x="498" y="201">
+        <mappermodel:InputPins>1</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="'" type="22" x="1067" y="322">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="DateTime" type="100" x="82" y="265">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="thetaray:convertToYYYYMMDDHH24MISS(input)" type="69" x="254" y="268">
+        <mappermodel:InputPins>input</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=" BETWEEN '" type="22" x="693" y="293">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=" as date_trans," type="22" x="711" y="175">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=" as date_trans, destuserid,destaddress,destfirstname,destmerchantname,destcustomername, ,(select p.abbreviation as nationality from  wallet.fine_contact_country p where nationality = p.name)as nationality_code ,(select city from wallet.cms_customer where user_id = userid)as city from WALLET.ws_log WHERE servicename in (select service_name from wallet.transactioncodes where is_financial='1') and " type="22" x="375" y="227">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="and servicename not  in('InitSendMoneyInternational','SendMoneyInternational')" type="22" x="1071" y="490">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="2" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="3" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="4" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="5" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="2" outputID="11" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="1" outputID="12" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="3" outputID="13" outputIndex="0"/>
+      <mappermodel:Link inputID="15" inputIndex="2" outputID="16" outputIndex="0"/>
+      <mappermodel:Link inputID="15" inputIndex="1" outputID="17" outputIndex="0"/>
+      <mappermodel:Link inputID="15" inputIndex="3" outputID="14" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="15" inputIndex="0" outputID="18" outputIndex="0"/>
+      <mappermodel:Link inputID="20" inputIndex="0" outputID="15" outputIndex="0"/>
+      <mappermodel:Link inputID="20" inputIndex="1" outputID="21" outputIndex="0"/>
+      <mappermodel:Link inputID="20" inputIndex="2" outputID="22" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="2" outputID="24" outputIndex="0"/>
+      <mappermodel:Link inputID="26" inputIndex="0" outputID="23" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="26" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="3" outputID="27" outputIndex="0"/>
+      <mappermodel:Link inputID="27" inputIndex="0" outputID="25" outputIndex="0"/>
+      <mappermodel:Link inputID="27" inputIndex="1" outputID="28" outputIndex="0"/>
+      <mappermodel:Link inputID="27" inputIndex="2" outputID="29" outputIndex="0"/>
+      <mappermodel:Link inputID="27" inputIndex="3" outputID="30" outputIndex="0"/>
+      <mappermodel:Link inputID="34" inputIndex="0" outputID="33" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="5" outputID="31" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="4" outputID="36" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="6" outputID="37" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="7" outputID="34" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="9" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="8" outputID="35" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="10" outputID="19" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="11" outputID="20" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="12" outputID="32" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="13" outputID="38" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="javascript" name="thetaray">
+      <mappermodel:Script>function convertToYYYYMMDDHH24MISS(input) {&#xD;
+&#xD;
+  // Extract timezone part without the 00000&#xD;
+  var timezoneMatch = input.match(/([+\-]\d{2}:\d{2})/);&#xD;
+  if (!timezoneMatch) {&#xD;
+    throw &quot;Invalid input: timezone not found in +/-HH:MM00000 format.&quot;;&#xD;
+  }&#xD;
+&#xD;
+  var tz = timezoneMatch[1];  // e.g. &quot;+05:30&quot;&#xD;
+&#xD;
+  // Remove trailing &quot;00000&quot;&#xD;
+  var cleanInput = input.replace(/00000$/, &quot;&quot;);&#xD;
+&#xD;
+  // ISO string is already correct once trimmed&#xD;
+  var isoString = cleanInput;&#xD;
+&#xD;
+  // Create Date object&#xD;
+  var date = new Date(isoString);&#xD;
+&#xD;
+  // Helper to pad numbers&#xD;
+  function pad(num) {&#xD;
+    num = String(num);&#xD;
+    return (num.length &lt; 2 ? &quot;0&quot; + num : num);&#xD;
+  }&#xD;
+&#xD;
+  var YYYY = date.getFullYear();&#xD;
+  var MM = pad(date.getMonth() + 1);&#xD;
+  var DD = pad(date.getDate());&#xD;
+  var HH = pad(date.getHours());&#xD;
+  var MI = pad(date.getMinutes());&#xD;
+  var SS = pad(date.getSeconds());&#xD;
+&#xD;
+  return &quot;&quot; + YYYY + MM + DD + HH + MI + SS;&#xD;
+}</mappermodel:Script>
+      <mappermodel:Function name="convertToYYYYMMDDHH24MISS" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+    <mappermodel:Extension language="javascript" name="myext">
+      <mappermodel:Script>function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(&quot;.&quot;)    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return &quot;There are only &quot; + days + &quot; days remaining to the start of the next millennium.&quot;; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}</mappermodel:Script>
+      <mappermodel:Function name="replace" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+        <mappermodel:Argument datatype="String" name="pattern"/>
+        <mappermodel:Argument datatype="String" name="flags"/>
+        <mappermodel:Argument datatype="String" name="str"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+</mappermodel:MapperProject>

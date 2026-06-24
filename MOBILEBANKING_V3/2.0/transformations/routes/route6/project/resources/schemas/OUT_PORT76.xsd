@@ -1,0 +1,26 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="InterestRateRp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:byte" name="ErrorCode"/>
+        <xs:element type="xs:string" name="ErrorMsg"/>
+        <xs:element name="ListInterestRate">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InterestRateDetail" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+				    <xs:element type="xs:string" name="LoanCategory"/>
+                    <xs:element type="xs:string" name="CurrenCy"/>
+                    <xs:element type="xs:byte" name="MinRate"/>
+                    <xs:element type="xs:short" name="MaxRate"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

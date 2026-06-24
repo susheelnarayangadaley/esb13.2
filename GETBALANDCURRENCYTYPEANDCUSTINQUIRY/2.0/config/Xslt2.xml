@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_211" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.xslt.configuration.XsltPM"> 
+  <void property="JMSMessageXSL"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns1=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:string=&quot;string&quot; xmlns:strings=&quot;strings&quot; xmlns:thetaray=&quot;thetaray&quot; xmlns:thetaray_minus1=&quot;thetaray_minus1&quot; xmlns:thetaray_trans=&quot;thetaray_trans&quot; extension-element-prefixes=&quot;datetime set math dateConversion myext string strings thetaray thetaray_minus1 thetaray_trans&quot;&gt;
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;&gt;&lt;/xsl:import&gt;
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;&gt;&lt;/xsl:output&gt;
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;Text&gt;
+      &lt;xsl:value-of select=&quot;java:_getText($_TIF_MESSAGE_)&quot;&gt;&lt;/xsl:value-of&gt;
+    &lt;/Text&gt;
+  &lt;/xsl:template&gt;
+&lt;!--The list of parameters defined by user--&gt;
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;&gt;&lt;/xsl:param&gt;
+&lt;/xsl:stylesheet&gt;</string> 
+  </void> 
+  <void property="JMSMessageXSL1"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns1=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:string=&quot;string&quot; xmlns:strings=&quot;strings&quot; xmlns:thetaray=&quot;thetaray&quot; xmlns:thetaray_minus1=&quot;thetaray_minus1&quot; xmlns:thetaray_trans=&quot;thetaray_trans&quot; extension-element-prefixes=&quot;datetime set math dateConversion myext string strings thetaray thetaray_minus1 thetaray_trans&quot;&gt;
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;&gt;&lt;/xsl:import&gt;
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;&gt;&lt;/xsl:output&gt;
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;Text&gt;
+      &lt;xsl:value-of select=&quot;java:_getText($_TIF_MESSAGE_)&quot;&gt;&lt;/xsl:value-of&gt;
+    &lt;/Text&gt;
+  &lt;/xsl:template&gt;
+&lt;!--The list of parameters defined by user--&gt;
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;&gt;&lt;/xsl:param&gt;
+&lt;/xsl:stylesheet&gt;</string> 
+  </void> 
+  <void property="XSL"> 
+   <null/> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1300</int> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="inputStructures"> 
+   <string>Context</string> 
+  </void> 
+  <void property="processMessageBasedOnProperty"> 
+   <boolean>true</boolean> 
+  </void> 
+  <void property="project"> 
+   <string>project</string> 
+  </void> 
+  <void property="propertyValue"> 
+   <string>True</string> 
+  </void> 
+ </object> 
+</java> 

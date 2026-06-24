@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="THETARAY3.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="THETARAY3.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3,4" outputNode="Application-Context:0,Context:0" x="1254" y="20">
+      <mappermodel:FunctionGraphNode label="g" type="22" x="184" y="144">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="[/\s+/T:-]" type="22" x="184" y="82">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="20251017000000" type="22" x="487" y="90">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getText" type="154" x="184" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="184" y="206">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="487" y="152">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="1000" y="20">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="756" y="82">
+        <mappermodel:InputPins>bool,then,bool,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="DateTime" type="100" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SI" type="22" x="756" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="19" type="22" x="20" y="144">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="=" type="31" x="487" y="20">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="subtractDate" type="175" x="683" y="271">
+        <mappermodel:InputPins>Date String,Input Format,Days,Hours,Minutes,Seconds</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="317" y="273">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="1" type="22" x="34" y="242">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="69" y="297">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="yyyy-MM-dd'T'HH:mm:ss" type="22" x="236" y="325">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="877" y="180">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="EI" type="22" x="713" y="200">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="976" y="269">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="902" y="365">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="LEDT" type="22" x="508" y="389">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="12" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="3" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="2" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="3" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="2" outputID="16" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="3" outputID="16" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="4" outputID="16" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="5" outputID="15" outputIndex="0"/>
+      <mappermodel:Link inputID="14" inputIndex="1" outputID="15" outputIndex="0"/>
+      <mappermodel:Link inputID="14" inputIndex="2" outputID="11" outputIndex="0"/>
+      <mappermodel:Link inputID="14" inputIndex="0" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="0" outputID="14" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="1" outputID="17" outputIndex="0"/>
+      <mappermodel:Link inputID="18" inputIndex="0" outputID="19" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="18" outputIndex="0"/>
+      <mappermodel:Link inputID="18" inputIndex="1" outputID="20" outputIndex="0"/>
+      <mappermodel:Link inputID="20" inputIndex="0" outputID="13" outputIndex="0"/>
+      <mappermodel:Link inputID="20" inputIndex="2" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="20" inputIndex="3" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="20" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="21" inputIndex="0" outputID="22" outputIndex="0"/>
+      <mappermodel:Link inputID="21" inputIndex="1" outputID="14" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="2" outputID="21" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="javascript" name="myext">
+      <mappermodel:Script>function repeat(n,c){
+	return Array(n).join(c);
+}
+function getGIPNarration(str){
+	var c, sender = '', desc = '', narration = '';
+
+	if(str.indexOf('P01') != -1){
+		c = Number.parseInt(str.indexOf('P01'))+3;
+		sender = str.substr((c+3),str.substr(c,3));
+	}
+	
+	if(str.indexOf('P03') != -1){
+		c = Number.parseInt(str.indexOf('P03'))+3;
+		desc = str.substr((c+3),str.substr(c,3));
+	}
+	if(sender != '') narration+=sender;
+	if(desc != '') narration+=' ' + desc;
+
+	//narration = narration.replace(/&quot;|\*|;|~|`|\||!|@|%|&amp;|\\|&lt;|>/gi,' ');
+	narration = narration.replace(/&quot;|\,|\*|;|~|`|\||!|@|%|&amp;|\\|&lt;|>/gi,' ');
+	return narration;
+}
+
+function replaceStrangeChars(str){
+	return str.replace(/&quot;|\*|;|~|`|\||!|@|%|&amp;|\\|&lt;|>/gi,' ');
+}
+
+function multiConcat(ctx, delim){
+    var ipString = &quot;&quot;;
+    if (ctx.length){
+	for (var i=0; i &lt; ctx.getLength(); i++){
+  	    ctxN  = ctx.item(i);
+	    if (ctxN.nodeType == 1){
+	        ipString +=  _wander(ctxN, delim);
+	    }
+	    if (ctxN.nodeType == 2){
+	        ipString += ctxN.nodeValue;
+   	    }
+	}
+    }else{
+	return '';
+    }
+    return ipString.length>1 ? ipString.substring(delim.length) : ipString;
+}
+function   _wander(ctx, delim){
+	var retStr = &quot;&quot;;
+	var nodelist = ctx.childNodes;
+	
+	for (var i=0; i &lt; ctx.childNodes.length; i++){
+		
+		ctxN = nodelist.item(i);//ctx.childNodes[i];
+		
+		switch(ctxN.nodeType){
+			case 1:
+				retStr +=   _wander(ctxN);
+				break;
+			case 3:
+				retStr += delim +ctxN.nodeValue;
+				break;
+			default:
+				break;
+		}
+	}
+	return retStr;
+}
+
+function FTID(str)
+{
+  var n = str.lastIndexOf(&quot;FT&quot;);
+return str.substring(n,n+12);
+
+}
+
+
+
+function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(&quot;.&quot;)    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return &quot;There are only &quot; + days + &quot; days remaining to the start of the next millennium.&quot;; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}
+
+function trimBOM(str){
+ var n = str.indexOf(&quot;?xml&quot;);
+  var x = str.substr(n-1);
+	return   x;
+}
+
+
+function zerofill(number, length) {
+    var result = number.toString();
+    var pad = length - result.length;
+
+    while(pad > 0) {
+        result = '0' + result;
+        pad--;
+    }
+
+    return result;
+}
+
+function getNthSubstrPos(str, sub, n) {
+    if (n > str.split(sub).length - 1) return -1;
+    var recursePosition = function(n) {
+        if (n === 0) return str.indexOf(sub);
+        return str.indexOf(sub, recursePosition(n - 1) + 1);
+    };
+    return recursePosition(n);
+};
+
+function XformEnquiryResults(inq){
+	var ds = getNthSubstrPos(inq,',',1);
+	var t = (inq.substr(ds+1).replace(/,[a-zA-Z0-9\.\:]+?\=/gi,'&quot;'+&quot;\t&quot;+'&quot;')+'&quot;').replace(/[a-zA-Z0-9\.\:]+?\=/gi,'&quot;');
+	return inq.substring(0,ds+1)+t;
+	
+	//return inq;
+};
+
+function getJSONValue(str,key){
+	var val = '';
+	//var kp = getNthSubstrPos(str,key,1);
+	//var sa = str.split(/&amp;#13;\n/g);
+	var sa = str.split(/&amp;#xD;\n/g);
+	return str;
+
+/*
+	for(i=0; i&lt; sa.length; i++){
+		la = sa[i].split(':');
+		if(la.length > 1){
+			if(la[0].trim() == key){
+				val = la[1].trim();
+				break;
+			}
+		}
+	}
+	return val;
+*/
+};
+
+
+function replaceControlCharacters(inputString) {
+   
+    return inputString.replace(/[\x00-\x1F\x7F]/g, '');
+}
+
+
+
+function getLastIndexOfDoubleUnderscore(str) {
+    return str.lastIndexOf(&quot;__&quot;)+3;
+}
+
+
+function appendETX(str) {
+  return str + String.fromCharCode(3);
+}
+
+
+function split35chars(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[0];
+}
+
+
+function Line1(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[0];
+
+}
+
+function Line2(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[1];
+}
+
+function Line3(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[2];
+}
+
+
+
+function read35Chars(input, start, end){
+ return input.substring(start, end);
+}
+
+
+
+// Returns a Date that is 5 seconds before &quot;now&quot;
+function fiveSecondsAgo() {
+  return new Date(Date.now() - 5000).toISOString();;
+}
+
+
+
+</mappermodel:Script>
+      <mappermodel:Function name="replace" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+        <mappermodel:Argument datatype="String" name="pattern"/>
+        <mappermodel:Argument datatype="String" name="flags"/>
+        <mappermodel:Argument datatype="String" name="str"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+</mappermodel:MapperProject>

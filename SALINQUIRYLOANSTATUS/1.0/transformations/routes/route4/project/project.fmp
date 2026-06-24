@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT_10.xsd" mime="XSD" name="IN_PORT_1" rootName="root"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,response_code:0" x="664" y="24">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="78" y="37">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="126" y="68">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="281" y="50">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="3" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,response_msg:0" x="684" y="51">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="185" y="64">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="243" y="91">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="388" y="67">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="376" y="104">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,loan_amount:0" x="707" y="1">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="55" y="48">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="239" y="58">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="238" y="95">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="220" y="134">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="114" y="72">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,arrangement_fee:0" x="669" y="51">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="134" y="83">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="193" y="107">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="318" y="93">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="317" y="130">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="320" y="167">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="313" y="214">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="6" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,disbursed_amount:0" x="725" y="96">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="194" y="71">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="233" y="132">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="378" y="81">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="377" y="118">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="380" y="155">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="383" y="197">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="363" y="242">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="7" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,salary_account:0" x="682" y="18">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="182" y="47">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="241" y="77">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="393" y="48">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="392" y="85">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="395" y="122">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="398" y="164">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="395" y="203">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="389" y="247">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="8" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,disbursed_date:0" x="636" y="28">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="60" y="91">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="119" y="121">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="271" y="92">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="270" y="129">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="273" y="166">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="276" y="208">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="273" y="247">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="273" y="284">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="264" y="325">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="9" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,due_date_1:0" x="627" y="68">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="22" y="62">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="81" y="92">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="233" y="63">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="232" y="100">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="235" y="137">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="238" y="179">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="235" y="218">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="235" y="255">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="233" y="288">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="228" y="326">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="10" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="0" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="10" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,repayment_amount_1:0" x="707" y="29">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="52" y="22">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="58" y="159">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="263" y="23">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="262" y="60">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="265" y="97">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="268" y="139">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="265" y="178">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="265" y="215">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="263" y="248">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="261" y="281">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="247" y="320">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="11" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="0" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="0" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="11" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,status_1:0" x="710" y="152">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="28" y="80">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="34" y="217">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="239" y="81">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="238" y="118">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="241" y="155">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="244" y="197">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="241" y="236">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="241" y="273">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="239" y="306">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="237" y="339">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="225" y="430">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="236" y="385">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="11" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="0" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="0" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="0" outputID="12" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="11" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,due_date_2:0" x="651" y="196">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="99" y="58">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="105" y="195">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="310" y="59">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="309" y="96">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="312" y="133">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="315" y="175">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="312" y="214">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="312" y="251">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="310" y="284">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="308" y="317">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="307" y="363">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="293" y="469">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="300" y="411">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="12" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="0" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="0" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="0" outputID="11" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="0" outputID="13" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="12" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,repayment_amount_2:0" x="660" y="261">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="126" y="43">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="132" y="180">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="339" y="26">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="339" y="74">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="339" y="118">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="342" y="160">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="339" y="206">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="340" y="244">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="335" y="288">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="335" y="346">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="324" y="382">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="325" y="425">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="305" y="519">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="319" y="470">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="13" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="0" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="0" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="0" outputID="11" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="14" inputIndex="0" outputID="12" outputIndex="0"/>
+      <mappermodel:Link inputID="14" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="0" outputID="14" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="13" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT_1:0,root:0,status_2:0" x="649" y="252">
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="50" y="56">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="*" type="22" x="56" y="193">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="263" y="39">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="263" y="87">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="263" y="131">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="266" y="173">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="263" y="219">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="264" y="257">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="259" y="301">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="259" y="359">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="248" y="395">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="249" y="438">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="243" y="483">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="221" y="566">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="235" y="527">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="14" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="8" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="0" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="10" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="0" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="0" outputID="11" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="0" outputID="12" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="15" inputIndex="0" outputID="13" outputIndex="0"/>
+      <mappermodel:Link inputID="14" inputIndex="0" outputID="15" outputIndex="0"/>
+      <mappermodel:Link inputID="15" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="14" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

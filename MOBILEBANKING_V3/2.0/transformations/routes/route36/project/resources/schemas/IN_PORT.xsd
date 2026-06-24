@@ -1,0 +1,19 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="AccountStmtRq">
+        
+                       <xsd:complexType>
+                              <xsd:sequence>
+                              <xsd:element maxOccurs="1" minOccurs="1" name="AccountType" type="xsd:string"/>
+                                   
+                                       <xsd:element maxOccurs="1" minOccurs="1" name="AccountNo" type="xsd:string"/>
+                                         <xsd:element maxOccurs="1" minOccurs="1" name="FromDate" type="xsd:string"/>
+                                           <xsd:element maxOccurs="1" minOccurs="1" name="ToDate" type="xsd:string"/>
+                                             <xsd:element maxOccurs="1" minOccurs="1" name="LastId" type="xsd:string"/>
+                                              <xsd:element maxOccurs="1" minOccurs="1" name="branch" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="SignData" type="xsd:string"/>
+                                       
+                    </xsd:sequence>
+                      
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

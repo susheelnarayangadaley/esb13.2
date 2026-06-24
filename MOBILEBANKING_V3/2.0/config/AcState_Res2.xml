@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.xslt.configuration.XsltPM"> 
+  <void property="JMSMessageXSL"> 
+   <null/> 
+  </void> 
+  <void property="JMSMessageXSL1"> 
+   <null/> 
+  </void> 
+  <void property="XSL"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns4=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns1=&quot;http://cpbank.com/statement&quot; xmlns:ns2=&quot;http://cpbank.com/statement/GetStatement/Output&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:EnDe=&quot;http://xml.apache.org/xslt/java&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Md5UniCode=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Remove=&quot;Remove&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:replaceStr=&quot;http://xml.apache.org/xslt/java&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:stringtext=&quot;stringtext&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero EnDe MD5Hex Md5UniCode Remove ReplaceText StringLength dateConversion myext replace replaceStr rounding sringindex strings stringtext truncateString&quot;&gt;
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;&gt;&lt;/xsl:import&gt;
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;&gt;&lt;/xsl:output&gt;
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document(&apos;IN_PORT&apos;)&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;AccountStmtRp&gt;
+      &lt;ErrorCode&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns1:GetStatementResponse/ns1:status/ns1:code&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/ErrorCode&gt;
+      &lt;ErrorMsg&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns1:GetStatementResponse/ns1:status/ns1:message&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/ErrorMsg&gt;
+      &lt;ListTxn&gt;
+        &lt;xsl:for-each select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns1:GetStatementResponse/ns1:transactions/ns1:transaction&quot;&gt;&lt;xsl:variable name=&quot;pos&quot; select=&quot;position()&quot;/&gt;
+          &lt;TxnDetail&gt;&lt;TxnCcy&gt;&#13;
+              &lt;xsl:value-of select=&quot;./ns3:currency&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/TxnCcy&gt;&#13;
+&lt;Txntype&gt;&#13;
+              &lt;xsl:value-of select=&quot;./ns3:txnType&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/Txntype&gt;&#13;
+&lt;TxnContent&gt;&#13;
+&lt;xsl:variable name=&quot;if0&quot;&gt;&#13;
+                &lt;xsl:choose&gt;&#13;
+	 &lt;xsl:when test=&quot;(starts-with(./ns3:bakongDesc,&apos;AC-&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:txnTypeDescription,&apos; Fee &apos;)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	 &lt;xsl:when test=&quot;(starts-with(./ns3:bakongDesc,&apos;SVGATE&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:txnTypeDescription,&apos; from Mobile Banking &apos;)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	 &lt;xsl:when test=&quot;(starts-with(./ns3:txnTypeDescription,&apos;PP&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:bakongDesc,&apos;&apos;)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+		 &lt;xsl:when test=&quot;(string-length(./ns3:bakongDesc)!=(&apos;0&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:bakongDesc,&apos;&apos;)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+		 &lt;xsl:otherwise&gt;&#13;
+              &lt;xsl:value-of select=&quot;concat(./ns3:txnTypeDescription,&apos; &apos;,./ns3:bakongDesc)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+			  &#13;
+                  &lt;/xsl:otherwise&gt;&#13;
+                &lt;/xsl:choose&gt;&#13;
+              &lt;/xsl:variable&gt;&#13;
+              &lt;xsl:value-of select=&quot;$if0&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/TxnContent&gt;&#13;
+			&lt;LastId&gt;&#13;
+&lt;xsl:value-of select = &quot;position()&quot; /&gt;&#13;
+&lt;/LastId&gt;
+            &lt;DrCr&gt;
+              &lt;xsl:value-of select=&quot;./ns1:drCr&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/DrCr&gt;&lt;TxnAmount&gt;&#13;
+    &lt;xsl:value-of select=&quot;./ns3:amount&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+  &lt;/TxnAmount&gt;&#13;
+            &lt;TxnDate&gt;&#13;
+ 				&lt;xsl:value-of select=&quot;./ns3:trxDt&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/TxnDate&gt;&#13;
+            &lt;TxnRefNo&gt;&#13;
+			&lt;xsl:value-of select=&quot;./ns3:reference&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/TxnRefNo&gt;&#13;
+    &lt;DrAcctNo&gt;&#13;
+              &lt;xsl:variable name=&quot;if0&quot;&gt;&#13;
+                &lt;xsl:choose&gt;&#13;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:debitAcc,&apos;USD&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:debitAcc,&apos;000001966&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+			&lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,&apos;000001578&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/xsl:when&gt;&#13;
+                  &lt;xsl:when test=&quot;(./ns3:debitAcc)=(&apos;000001558&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+                  &lt;xsl:otherwise&gt;&#13;
+                    &lt;xsl:value-of select=&quot;./ns3:debitAcc&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:otherwise&gt;&#13;
+                &lt;/xsl:choose&gt;&#13;
+              &lt;/xsl:variable&gt;&#13;
+              &lt;xsl:value-of select=&quot;$if0&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+           &lt;/DrAcctNo&gt;&#13;
+ &lt;CrAcctName&gt;&#13;
+  &lt;xsl:variable name=&quot;if0&quot;&gt;&#13;
+                &lt;xsl:choose&gt;&#13;
+			&lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,&apos;000001966&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/xsl:when&gt;&#13;
+			&lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,&apos;000001578&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/xsl:when&gt;&#13;
+			&lt;xsl:when test=&quot;starts-with(./ns3:txnTypeDescription,&apos;BKG Outward Transfer&apos;)&quot;&gt;&#13;
+                    &#13;
+					  &lt;xsl:value-of select=&quot;concat(./ns3:acboCrName,&apos;Account No:&apos;,./ns3:acboCrAcc)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+					            &lt;/xsl:when&gt;&#13;
+			&#13;
+     &lt;xsl:otherwise&gt;&#13;
+  	&lt;xsl:value-of select=&quot;./ns3:cbsCrName&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+    &lt;/xsl:otherwise&gt;&#13;
+           &lt;/xsl:choose&gt;&#13;
+              &lt;/xsl:variable&gt;&#13;
+              &lt;xsl:value-of select=&quot;$if0&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+&lt;/CrAcctName&gt;&#13;
+&lt;DrAcctName&gt;&#13;
+ &lt;xsl:variable name=&quot;if0&quot;&gt;&#13;
+                &lt;xsl:choose&gt;&#13;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:debitAcc,&apos;000001966&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+				&lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,&apos;000001578&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+				&lt;/xsl:when&gt;&#13;
+	   &lt;xsl:otherwise&gt;&#13;
+  	&lt;xsl:value-of select=&quot;./ns3:cbsDrName&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+    &lt;/xsl:otherwise&gt;&#13;
+           &lt;/xsl:choose&gt;&#13;
+              &lt;/xsl:variable&gt;&#13;
+              &lt;xsl:value-of select=&quot;$if0&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+&lt;/DrAcctName&gt;&#13;
+      &lt;CrAcctNo&gt;&#13;
+              &lt;xsl:variable name=&quot;if0&quot;&gt;&#13;
+                &lt;xsl:choose&gt;&#13;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,&apos;USD&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,&apos;000001966&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+				 &lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,&apos;000001578&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+				&lt;/xsl:when&gt;&#13;
+                  &lt;xsl:when test=&quot;(./ns3:creditAcc)=(&apos;000001558&apos;)&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+                  &lt;xsl:otherwise&gt;&#13;
+                    &lt;xsl:value-of select=&quot;./ns3:creditAcc&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:otherwise&gt;&#13;
+                &lt;/xsl:choose&gt;&#13;
+              &lt;/xsl:variable&gt;&#13;
+              &lt;xsl:value-of select=&quot;$if0&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/CrAcctNo&gt;&#13;
+&lt;TxnTittle&gt;		&#13;
+&lt;xsl:variable name=&quot;if0&quot;&gt;&#13;
+                &lt;xsl:choose&gt;&#13;
+                  &lt;xsl:when test=&quot;(string(./ns3:txnTypeDescription)=(&apos;Mobile Banking FT&apos;) and string-length(./ns3:drCr)=(&apos;+&apos;) and string-length(./ns3:cbsCrName)!=(&apos;0&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;concat(&apos;Received From &apos;,./ns3:cbsDrName)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+                  &lt;xsl:when test=&quot;(string(./ns3:txnTypeDescription)=(&apos;Mobile Banking FT&apos;) and string-length(./ns3:Credit)=(&apos;0&apos;) and string-length(./ns3:cbsCrName)!=(&apos;0&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;concat(&apos;Transfer To &apos;,./ns3:cbsCrName)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+                  &lt;xsl:when test=&quot;(string(./ns3:txnTypeDescription)=(&apos;Mobile Banking FT&apos;) and string-length(./ns3:Credit)=(&apos;0&apos;) and string-length(./ns3:cbsCrName)=(&apos;0&apos;)  and string(./ns3:bakongDesc)!=(&apos;CBC fee charge#&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;Topup to e-Wallet&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+				    &lt;xsl:when test=&quot;(string(./ns3:txnTypeDescription)=(&apos;Mobile Banking FT&apos;) and string-length(./ns3:Credit)=(&apos;0&apos;) and string-length(./ns3:cbsCrName)=(&apos;0&apos;) and string(./ns3:bakongDesc)=(&apos;CBC fee charge#&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;&apos;CBC Fee Charge&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	    &lt;xsl:when test=&quot;(string-length(./ns3:txnTypeDescription)=(&apos;0&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:description,&apos; &apos;,./ns3:bakongDesc)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	    &lt;xsl:when test=&quot;(starts-with(./ns3:bakongDesc,&apos;AC-&apos;))&quot;&gt;&#13;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:txnTypedescription,&apos; Fee &apos;)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	    &lt;xsl:when test=&quot;(string(./ns3:description)=(&apos;VISA Pay Dr&apos;) and starts-with(./ns3:bakongDesc,&apos;SVGATE&apos;))&quot;&gt;&#13;
+                     &lt;xsl:value-of select=&quot;&apos;Credit Card Payment&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	    &lt;xsl:when test=&quot;(string(./ns3:txnTypedescription)=(&apos;BKG Outward Transfer&apos;))&quot;&gt;&#13;
+                     &lt;xsl:value-of select=&quot;concat(&apos;Transfer to Bakong &apos;,./ns3:acboCrName)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+		&lt;xsl:when test=&quot;(string(./ns3:txnTypedescription)=(&apos;BKG Inwrd Transfer&apos;))&quot;&gt;&#13;
+                     &lt;xsl:value-of select=&quot;concat(&apos;Bakong Cash Deposit from &apos;,./ns3:acbiDrName)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	    &lt;xsl:when test=&quot;(string(./ns3:txnTypedescription)=(&apos;Mobile Banking Bills Topup&apos;) or (string(./ns3:txnTypedescription)=(&apos;PPSolid Wast bill payment&apos;)))&quot;&gt;&#13;
+                     &lt;xsl:value-of select=&quot;&apos;Bill Payment&apos;&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	    &lt;xsl:when test=&quot;(string(./ns3:description)=(&apos;ATM FtMobile Out&apos;) and (string(./ns3:creditAcc)=(&apos;000286644&apos;) or string(./ns3:creditAcc)=(&apos;000286645&apos;)))&quot;&gt;&#13;
+		   &lt;xsl:value-of select=&quot;concat(&apos;Cash by Code at &apos;,./ns3:bakongDesc)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:when&gt;&#13;
+	    &lt;xsl:otherwise&gt;&#13;
+&lt;xsl:value-of select=&quot;concat(./ns3:txnTypedescription,&apos; &apos;,./ns3:bakongDesc)&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+                  &lt;/xsl:otherwise&gt;&#13;
+                &lt;/xsl:choose&gt;&#13;
+              &lt;/xsl:variable&gt;&#13;
+              &lt;xsl:value-of select=&quot;$if0&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+&lt;/TxnTittle&gt;&#13;
+  &lt;TxnValDateTime&gt;&#13;
+  &lt;xsl:value-of select=&quot;./ns3:trxTime&quot;&gt;&lt;/xsl:value-of&gt;&#13;
+            &lt;/TxnValDateTime&gt;&lt;/TxnDetail&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/ListTxn&gt;
+    &lt;/AccountStmtRp&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</string> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1200</int> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="esbDefInPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="importedStructures"> 
+     <object class="java.util.Hashtable"> 
+      <void method="put"> 
+       <string>http://cpbank.com/statement</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xs:schema elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://cpbank.com/statement&quot; xmlns:sch=&quot;http://cpbank.com/statement&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:stat=&quot;http://cpbank.com/statement&quot; xmlns:tns=&quot;http://cpbank.com/statement&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+&#13;
+    &lt;!-- GetStatementRequest --&gt;&#13;
+    &lt;xs:element name=&quot;GetStatementRequest&quot;&gt;&#13;
+        &lt;xs:complexType&gt;&#13;
+            &lt;xs:sequence&gt;&#13;
+                &lt;xs:element name=&quot;username&quot; type=&quot;xs:string&quot;/&gt;&#13;
+                &lt;xs:element name=&quot;password&quot; type=&quot;xs:string&quot;/&gt;&#13;
+                &lt;xs:element name=&quot;accountNumber&quot; type=&quot;xs:string&quot;/&gt;&#13;
+                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;fromDate&quot; type=&quot;stat:YYYYMMDDDate&quot;/&gt;&#13;
+                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;toDate&quot; type=&quot;stat:YYYYMMDDDate&quot;/&gt;&#13;
+            &lt;/xs:sequence&gt;&#13;
+        &lt;/xs:complexType&gt;&#13;
+    &lt;/xs:element&gt;&#13;
+&#13;
+    &lt;!-- GetStatementResponse --&gt;&#13;
+    &lt;xs:element name=&quot;GetStatementResponse&quot;&gt;&#13;
+        &lt;xs:complexType&gt;&#13;
+            &lt;xs:sequence&gt;&#13;
+                &lt;xs:element name=&quot;status&quot; type=&quot;stat:statusType&quot;/&gt;&#13;
+                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;transactions&quot; type=&quot;stat:transactionList&quot;/&gt;&#13;
+            &lt;/xs:sequence&gt;&#13;
+        &lt;/xs:complexType&gt;&#13;
+    &lt;/xs:element&gt;&#13;
+&#13;
+    &lt;!-- Status Type with code and message --&gt;&#13;
+    &lt;xs:complexType name=&quot;statusType&quot;&gt;&#13;
+        &lt;xs:sequence&gt;&#13;
+            &lt;xs:element name=&quot;code&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element name=&quot;message&quot; type=&quot;xs:string&quot;/&gt;&#13;
+        &lt;/xs:sequence&gt;&#13;
+    &lt;/xs:complexType&gt;&#13;
+&#13;
+    &lt;!-- Date Format --&gt;&#13;
+    &lt;xs:simpleType name=&quot;YYYYMMDDDate&quot;&gt;&#13;
+        &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#13;
+            &lt;xs:pattern value=&quot;[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])&quot;/&gt;&#13;
+            &lt;xs:length value=&quot;8&quot;/&gt;&#13;
+        &lt;/xs:restriction&gt;&#13;
+    &lt;/xs:simpleType&gt;&#13;
+&#13;
+    &lt;!-- Transaction List --&gt;&#13;
+    &lt;xs:complexType name=&quot;transactionList&quot;&gt;&#13;
+        &lt;xs:sequence&gt;&#13;
+            &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;transaction&quot; type=&quot;stat:transaction&quot;/&gt;&#13;
+        &lt;/xs:sequence&gt;&#13;
+    &lt;/xs:complexType&gt;&#13;
+&#13;
+    &lt;!-- Transaction --&gt;&#13;
+    &lt;xs:complexType name=&quot;transaction&quot;&gt;&#13;
+        &lt;xs:sequence&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;recid&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;bookingDate&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;reference&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;narrative&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;valueDate&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;drCr&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;amount&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;currency&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;description&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;txnType&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;debitAcc&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;creditAcc&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acboCrAcc&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acboCrName&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acboDrName&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acbiCrName&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acbiDrName&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;bakongDesc&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;trxDt&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;trxTime&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;txnTypeDescription&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;cbsCrName&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;cbsDrName&quot; type=&quot;xs:string&quot;/&gt;&#13;
+        &lt;/xs:sequence&gt;&#13;
+    &lt;/xs:complexType&gt;&#13;
+&lt;/xs:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="rootElementName"> 
+     <string>Envelope</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xsd:schema xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:tns=&quot;http://cpbank.com/statement&quot; xmlns:sch=&quot;http://cpbank.com/statement&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:ftns=&quot;http://cpbank.com/statement/GetStatement/Output&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; targetNamespace=&quot;http://cpbank.com/statement/GetStatement/Output&quot;&gt;&#13;
+    &lt;xsd:import namespace=&quot;http://cpbank.com/statement&quot;/&gt;&#13;
+    &lt;xsd:element name=&quot;Envelope&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence&gt;&#13;
+                &lt;xsd:element ref=&quot;ftns:Header&quot;/&gt;&#13;
+                &lt;xsd:element ref=&quot;ftns:Body&quot;/&gt;&#13;
+            &lt;/xsd:sequence&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+    &lt;xsd:element name=&quot;Header&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence/&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+    &lt;xsd:element name=&quot;Body&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence&gt;&#13;
+                &lt;xsd:element ref=&quot;sch:GetStatementResponse&quot;/&gt;&#13;
+            &lt;/xsd:sequence&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string>http://cpbank.com/statement/GetStatement/Output</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="esbDefOutPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>AccountStmtRp</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+    &lt;xsd:element name=&quot;AccountStmtRp&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence&gt;&#13;
+          &#13;
+                &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ErrorCode&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                 &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ErrorMsg&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+            &#13;
+			      &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;ListTxn&quot;&gt;&#13;
+                       &lt;xsd:complexType&gt;&#13;
+                              &lt;xsd:sequence&gt;&#13;
+                              &lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;TxnDetail&quot;&gt;&#13;
+									&lt;xsd:complexType&gt;&#13;
+									&lt;xsd:sequence&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;DrCr&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TxnCcy&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;TxnContent&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;LastId &quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									 &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;TxnAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TxnDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									  &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TxnRefNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									   &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;DrAcctNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									    &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;CrAcctNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;DrAcctName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									      &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;CrAcctName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									        &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TxnValDateTime&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									         &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TxnTittle&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+									         &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Txntype&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                       &lt;/xsd:sequence&gt;&#13;
+									&lt;/xsd:complexType&gt;&#13;
+									&lt;/xsd:element&gt; &#13;
+                    &lt;/xsd:sequence&gt;&#13;
+                       &lt;/xsd:complexType&gt;&#13;
+                &lt;/xsd:element&gt;&#13;
+            &lt;/xsd:sequence&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string></string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="inputStructureName"> 
+   <string>IN_PORT</string> 
+  </void> 
+  <void property="project"> 
+   <string>project</string> 
+  </void> 
+  <void property="tfClassName"> 
+   <string></string> 
+  </void> 
+ </object> 
+</java> 

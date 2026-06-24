@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="RESTStub1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="true" name="HTTP Password" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="FESConnectionConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.esb.common.connections.configuration.FESConnectionConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.esb.common.connections.configuration&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:isUseConnectionDetailsFromFPS>false&lt;/ns1:isUseConnectionDetailsFromFPS>
+    &lt;ns1:url>tsp_tcp://localhost:1947&lt;/ns1:url>
+    &lt;ns1:backupUrl>tsp_tcp://localhost:1948&lt;/ns1:backupUrl>
+    &lt;ns1:username>admin&lt;/ns1:username>
+    &lt;ns1:password>DMSLzKckc/JLgIUhIpdeyw==&lt;/ns1:password>
+    &lt;ns1:fspCallTimeout>180000&lt;/ns1:fspCallTimeout>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="Authentication Type" type="java.lang.String">BASIC</target:property>
+      <target:property encrypt="false" name="HTTP Basic Authentication" type="java.lang.Boolean">false</target:property>
+      <target:property encrypt="false" name="HTTP Username" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="JSONConverter1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="T24Outbound1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="AuthenticationConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.services.common.security.AuthenticationConfiguration&quot; xmlns:ns2=&quot;uri:com.fiorano.services.common.jaxb.adapter&quot; xmlns:ns1=&quot;uri:com.fiorano.services.common.security&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:authenticationRequired>true&lt;/ns1:authenticationRequired>
+    &lt;ns1:type>BASIC&lt;/ns1:type>
+    &lt;ns1:username>da&lt;/ns1:username>
+    &lt;ns1:password>dsfaf&lt;/ns1:password>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="TAFJConnectionConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.services.libraries.t24.model.TAFJConnectionConfiguration&quot; xmlns:ns2=&quot;uri:com.fiorano.services.common.jaxb.adapter&quot;>
+    &lt;passwordFromVault>false&lt;/passwordFromVault>
+    &lt;customPasswordEncryption>false&lt;/customPasswordEncryption>
+    &lt;securityPrincipal>FIO.USER&lt;/securityPrincipal>
+    &lt;securityCredential>OAYK5rvpLIOV5MiHhK5LKg==&lt;/securityCredential>
+    &lt;applicationServer>JBoss 7.2&lt;/applicationServer>
+    &lt;lookupProperties>
+        &lt;ns2:property>
+            &lt;ns2:key xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>TafjEjbBeanName&lt;/ns2:key>
+            &lt;ns2:value xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>IntegrationFrameworkServiceBeanTAFJOB&lt;/ns2:value>
+        &lt;/ns2:property>
+        &lt;ns2:property>
+            &lt;ns2:key xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>RemoteConnectionHosts&lt;/ns2:key>
+            &lt;ns2:value xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>192.168.162.45&lt;/ns2:value>
+        &lt;/ns2:property>
+        &lt;ns2:property>
+            &lt;ns2:key xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>RemoteConnectionPorts&lt;/ns2:key>
+            &lt;ns2:value xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>9089&lt;/ns2:value>
+        &lt;/ns2:property>
+        &lt;ns2:property>
+            &lt;ns2:key xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>TAFJSSL&lt;/ns2:key>
+            &lt;ns2:value xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>false&lt;/ns2:value>
+        &lt;/ns2:property>
+        &lt;ns2:property>
+            &lt;ns2:key xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>T24ProductIds&lt;/ns2:key>
+            &lt;ns2:value xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>AK&lt;/ns2:value>
+        &lt;/ns2:property>
+        &lt;ns2:property>
+            &lt;ns2:key xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>RemoteServerType&lt;/ns2:key>
+            &lt;ns2:value xsi:type=&quot;xs:string&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;>JBoss 7.2&lt;/ns2:value>
+        &lt;/ns2:property>
+    &lt;/lookupProperties>
+    &lt;nodeName>node1&lt;/nodeName>
+&lt;/namedConfiguration>
+</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="JSONConverter3">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+</target:target>

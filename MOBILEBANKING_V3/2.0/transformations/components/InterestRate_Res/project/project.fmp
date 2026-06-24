@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context.DTD" mime="DTD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.XSD" mime="XSD" name="IN_PORT" rootName="InterestRateRp"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Output1.XSD" mime="XSD" name="Output1" rootName="InterestRateRp"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0,LoanCategory:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0,LoanCategory:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0,CurrenCy:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0,CurrenCy:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0,MinRate:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0,MinRate:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0,MaxRate:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0,MaxRate:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,InterestRateRp:0,ErrorMsg:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,InterestRateRp:0,ErrorMsg:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,InterestRateRp:0,ErrorCode:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,InterestRateRp:0,ErrorCode:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,InterestRateRp:0,ListInterestRate:0,[ZERO MANY]:0,InterestRateDetail:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

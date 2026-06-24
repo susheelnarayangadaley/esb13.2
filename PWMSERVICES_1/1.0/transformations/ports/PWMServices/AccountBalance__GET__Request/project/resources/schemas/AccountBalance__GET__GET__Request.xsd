@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:tns="http://www.fiorano.com/services/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:ns1="http://www.seylan.lk/AccountBalanceInquiryPWM" xmlns:ns2="http://www.seylan.lk/FundsTransferPWM" xmlns:ns3="http://www.seylan.lk/CEFTTransferPWM" xmlns:ns4="http://www.seylan.lk/AccountTransactionHistoryPWM" targetNamespace="http://www.fiorano.com/services/rest">
+   <xsd:import namespace="http://www.seylan.lk/AccountBalanceInquiryPWM" schemaLocation="PWMServices.xsd" />
+   <xsd:import namespace="http://www.seylan.lk/FundsTransferPWM" schemaLocation="PWMServices_1.xsd" />
+   <xsd:import namespace="http://www.seylan.lk/CEFTTransferPWM" schemaLocation="PWMServices_2.xsd" />
+   <xsd:import namespace="http://www.seylan.lk/AccountTransactionHistoryPWM" schemaLocation="PWMServices_3.xsd" />
+   <xsd:element name="Request">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="ResourceParameters">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" name="AccountBalance">
+                        <xsd:complexType>
+                           <xsd:sequence />
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestParameters">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" name="AccountCategory" type="xsd:string" />
+                     <xsd:element minOccurs="0" name="AccountNumber" type="xsd:string" />
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Parameters">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" name="Parameter">
+                        <xsd:complexType>
+                           <xsd:simpleContent>
+                              <xsd:extension base="xsd:string">
+                                 <xsd:attribute name="name" type="xsd:string" use="required" />
+                                 <xsd:attribute name="style" use="optional" />
+                              </xsd:extension>
+                           </xsd:simpleContent>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

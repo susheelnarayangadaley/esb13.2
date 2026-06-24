@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="TranHis" x="171" y="35"/>
+    <service-instance name="RestStub-TranHistory" x="8" y="119"/>
+    <service-instance name="JavaScript1" x="361" y="86"/>
+    <service-instance name="Xslt1" x="571" y="111"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

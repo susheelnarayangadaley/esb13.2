@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" suppressEmptyItems="false" suppressPattern="" version="3.0.2">
+  <mappermodel:XSLTVersion>1.0</mappermodel:XSLTVersion>
+  <mappermodel:XSLTEngine>org.apache.xalan.processor.TransformerFactoryImpl</mappermodel:XSLTEngine>
+  <mappermodel:XSLTEncoding>UTF-8</mappermodel:XSLTEncoding>
+  <mappermodel:OutputMethod>text</mappermodel:OutputMethod>
+  <mappermodel:OutputEncoding>UTF-8</mappermodel:OutputEncoding>
+  <mappermodel:indent>true</mappermodel:indent>
+  <mappermodel:setDTD>false</mappermodel:setDTD>
+  <mappermodel:omit-xml-declaration>false</mappermodel:omit-xml-declaration>
+  <mappermodel:createEmptyOutputTags>false</mappermodel:createEmptyOutputTags>
+  <mappermodel:copyUnmappedFromInput enabled="false"/>
+  <mappermodel:disableOutputEscapingForANY>false</mappermodel:disableOutputEscapingForANY>
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:excludeResultPrefixes></mappermodel:excludeResultPrefixes>
+  <mappermodel:addDefaultXSTypeAttributes>false</mappermodel:addDefaultXSTypeAttributes>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="MMS_V3.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="MMS_WSStub.SOAP11_checkAccount_REQUEST.xsd" mime="XSD" name="SOAP11_FTCollection_REQUEST" rootName="{http://schemas.xmlsoap.org/soap/envelope/}Envelope"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.xsd" mime="XSD" name="IN_PORT" rootName="FTCollectRq"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Namespaces/>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,FTCollectRq:0,Amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="SOAP11_FTCollection_REQUEST:0,Envelope:0,Body:0,Request:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,FTCollectRq:0,TxnFee:0" x="-1" y="-1"/>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="OUT_PORT_1.xsd" mime="XSD" name="OUT_PORT_1" rootName="root"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.xsd" mime="XSD" name="IN_PORT" rootName="{http://www.moneygram.com/AgentConnect1512/feeLookup/Input}Envelope">
+      <mappermodel:ExternalStructure filePath="IN_PORT0.xsd" name="http://www.moneygram.com/AgentConnect1512"/>
+    </mappermodel:Structure>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,unitProfileID:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="166531" type="22" x="228" y="102">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,agentID:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="43293913" type="22" x="154" y="62">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,agentSequence:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="01" type="22" x="185" y="95">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,token:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="TEST" type="22" x="120" y="115">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,language:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="en" type="22" x="116" y="118">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,timeStamp:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="2024-08-02T11:13:14.641+03:00" type="22" x="39" y="110">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,apiVersion:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="1512" type="22" x="102" y="80">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,clientSoftwareVersion:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="1.1" type="22" x="163" y="117">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,channelType:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="LOCATION" type="22" x="55" y="97">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,productType:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="SEND" type="22" x="121" y="100">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,allOptions:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="true" type="22" x="66" y="123">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,[Choice]:0,amountExcludingFee:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,root:0,amountExcludingFee:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,Envelope:0,Body:0,feeLookupRequest:0,receiveCountry:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,root:0,receiveCountry:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

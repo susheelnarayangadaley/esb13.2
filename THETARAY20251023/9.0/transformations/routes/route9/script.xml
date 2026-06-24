@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:string="string" xmlns:strings="strings" xmlns:thetaray="thetaray" extension-element-prefixes="datetime set math dateConversion myext nestedJsonParser string strings thetaray">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <ns2:COMPLEX>
+      <ns2:query><xsl:variable name="var0">select  id,servicename,amounttran/100,trancurrency,mobilenumber,(select homeaddress from wallet.cms_customer where user_id = userid)as adresse,(select nationality from wallet.cms_customer where user_id = userid)as nationality,(select gender from wallet.cms_customer where user_id = userid)as gender,(select nvl(placeofbirth,nationality) as placeofb from  wallet.cms_customer where user_id = userid) as placeofbirth, destaccount,nvl(DESTMOBILENUMBER,MOBILENUMBER)as DESTMOBILENUMBER,walletcurrency,TRANSDATETIME,respcode,userid,concat(firstname,lastname)as fullName ,substr(TRANSDATETIME,0,8) as date_trans,TO_CHAR(TO_DATE(transdatetime, 'YYYYMMDDHH24MISS'), 'YYYY-MM-DD') as date_trans,destuserid,destaddress,destfirstname,destmerchantname,destcustomername
+,(select p.abbreviation as nationality from  wallet.fine_contact_country p where nationality = p.name)as nationality_code ,(select city from wallet.cms_customer where user_id = userid)as city
+from WALLET.ws_log
+WHERE servicename 
+     in (select service_name from wallet.transactioncodes where is_financial='1')  and 
+TRANSDATETIME BETWEEN '</xsl:variable>
+        <xsl:variable name="var1">' AND '</xsl:variable>
+        <xsl:variable name="var2">' and servicename in ('InitSendMoneyInternational','SendMoneyInternational')</xsl:variable>
+        <xsl:value-of select="concat($var0,myext:replace(string(java:com.fiorano.xslt.functions.datetime.DateConverter.subtractDate(datetime:date(datetime:dateTime()),'yyyy-mm-dd','1','0','0','0')),string('-'),string('g'),string('')),$var1,substring(myext:replace(string(datetime:date(datetime:dateTime())),string('-'),string('g'),string('')),'1','8'),$var2)"></xsl:value-of>
+
+<!--
+        <xsl:value-of select="myext:replace(string('Constant'),string('Constant'),string('Constant'),string('Constant'))"></xsl:value-of>
+        <xsl:value-of select="java:_getText($_TIF_MESSAGE_)"></xsl:value-of>--></ns2:query>
+    </ns2:COMPLEX>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="myext" functions="replace">
+    <lxslt:script lang="javascript"><![CDATA[function repeat(n,c){
+	return Array(n).join(c);
+}
+function getGIPNarration(str){
+	var c, sender = '', desc = '', narration = '';
+
+	if(str.indexOf('P01') != -1){
+		c = Number.parseInt(str.indexOf('P01'))+3;
+		sender = str.substr((c+3),str.substr(c,3));
+	}
+	
+	if(str.indexOf('P03') != -1){
+		c = Number.parseInt(str.indexOf('P03'))+3;
+		desc = str.substr((c+3),str.substr(c,3));
+	}
+	if(sender != '') narration+=sender;
+	if(desc != '') narration+=' ' + desc;
+
+	//narration = narration.replace(/"|\*|;|~|`|\||!|@|%|&|\\|<|>/gi,' ');
+	narration = narration.replace(/"|\,|\*|;|~|`|\||!|@|%|&|\\|<|>/gi,' ');
+	return narration;
+}
+
+function replaceStrangeChars(str){
+	return str.replace(/"|\*|;|~|`|\||!|@|%|&|\\|<|>/gi,' ');
+}
+
+function multiConcat(ctx, delim){
+    var ipString = "";
+    if (ctx.length){
+	for (var i=0; i < ctx.getLength(); i++){
+  	    ctxN  = ctx.item(i);
+	    if (ctxN.nodeType == 1){
+	        ipString +=  _wander(ctxN, delim);
+	    }
+	    if (ctxN.nodeType == 2){
+	        ipString += ctxN.nodeValue;
+   	    }
+	}
+    }else{
+	return '';
+    }
+    return ipString.length>1 ? ipString.substring(delim.length) : ipString;
+}
+function   _wander(ctx, delim){
+	var retStr = "";
+	var nodelist = ctx.childNodes;
+	
+	for (var i=0; i < ctx.childNodes.length; i++){
+		
+		ctxN = nodelist.item(i);//ctx.childNodes[i];
+		
+		switch(ctxN.nodeType){
+			case 1:
+				retStr +=   _wander(ctxN);
+				break;
+			case 3:
+				retStr += delim +ctxN.nodeValue;
+				break;
+			default:
+				break;
+		}
+	}
+	return retStr;
+}
+
+function FTID(str)
+{
+  var n = str.lastIndexOf("FT");
+return str.substring(n,n+12);
+
+}
+
+
+
+function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(".")    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return "There are only " + days + " days remaining to the start of the next millennium."; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}
+
+function trimBOM(str){
+ var n = str.indexOf("?xml");
+  var x = str.substr(n-1);
+	return   x;
+}
+
+
+function zerofill(number, length) {
+    var result = number.toString();
+    var pad = length - result.length;
+
+    while(pad > 0) {
+        result = '0' + result;
+        pad--;
+    }
+
+    return result;
+}
+
+function getNthSubstrPos(str, sub, n) {
+    if (n > str.split(sub).length - 1) return -1;
+    var recursePosition = function(n) {
+        if (n === 0) return str.indexOf(sub);
+        return str.indexOf(sub, recursePosition(n - 1) + 1);
+    };
+    return recursePosition(n);
+};
+
+function XformEnquiryResults(inq){
+	var ds = getNthSubstrPos(inq,',',1);
+	var t = (inq.substr(ds+1).replace(/,[a-zA-Z0-9\.\:]+?\=/gi,'"'+"\t"+'"')+'"').replace(/[a-zA-Z0-9\.\:]+?\=/gi,'"');
+	return inq.substring(0,ds+1)+t;
+	
+	//return inq;
+};
+
+function getJSONValue(str,key){
+	var val = '';
+	//var kp = getNthSubstrPos(str,key,1);
+	//var sa = str.split(/&#13;\n/g);
+	var sa = str.split(/&#xD;\n/g);
+	return str;
+
+/*
+	for(i=0; i< sa.length; i++){
+		la = sa[i].split(':');
+		if(la.length > 1){
+			if(la[0].trim() == key){
+				val = la[1].trim();
+				break;
+			}
+		}
+	}
+	return val;
+*/
+};
+
+
+function replaceControlCharacters(inputString) {
+   
+    return inputString.replace(/[\x00-\x1F\x7F]/g, '');
+}
+
+
+
+function getLastIndexOfDoubleUnderscore(str) {
+    return str.lastIndexOf("__")+3;
+}
+
+
+function appendETX(str) {
+  return str + String.fromCharCode(3);
+}
+
+
+function split35chars(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[0];
+}
+
+
+function Line1(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[0];
+
+}
+
+function Line2(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[1];
+}
+
+function Line3(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[2];
+}
+
+
+
+function read35Chars(input, start, end){
+ return input.substring(start, end);
+}
+
+
+
+// Returns a Date that is 5 seconds before "now"
+function fiveSecondsAgo() {
+  return new Date(Date.now() - 5000).toISOString();;
+}
+
+
+
+]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

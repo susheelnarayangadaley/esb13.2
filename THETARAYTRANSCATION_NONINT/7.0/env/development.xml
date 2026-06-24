@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="RESTConsumer1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="Base Path URL" type="java.lang.String">https://apps-demo-screening.sonar.thetaray.cloud/security</target:property>
+      <target:property encrypt="true" name="HTTP Password" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="Authentication Type" type="java.lang.String">BASIC</target:property>
+      <target:property encrypt="false" name="HTTP Basic Authentication" type="java.lang.Boolean">false</target:property>
+      <target:property encrypt="false" name="HTTP Username" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="JSONConverter1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="DB1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property configurationType="resource" encrypt="false" name="DBConfigurations" type="NamedObject">postgre</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="JSONConverter2">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="DBQueryOnInput1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="DBConfigurations" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.adapter.db.jdbc.DBConfigurations&quot; xmlns:ns2=&quot;uri:com.fiorano.services.common.jaxb.adapter&quot; xmlns:ns1=&quot;uri:com.fiorano.adapter.db.jdbc&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:database>Oracle&lt;/ns1:database>
+    &lt;ns1:driver>oracle.jdbc.driver.OracleDriver&lt;/ns1:driver>
+    &lt;ns1:url>jdbc:oracle:thin:@192.168.206.12:1522:walletdb&lt;/ns1:url>
+    &lt;ns1:username>jkwilu&lt;/ns1:username>
+    &lt;ns1:password>94WNjK6AuI34SxPRxpDtNA9SVWVO7bWwjlSv8UCshrg=&lt;/ns1:password>
+    &lt;ns1:pingSQL>select * from dual&lt;/ns1:pingSQL>
+    &lt;ns1:connectionProperties/>
+&lt;/ns1:namedConfiguration>
+</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="FileReader1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="Post Processing Action" type="java.lang.String">NO_ACTION</target:property>
+      <target:property encrypt="false" name="FileReaderConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.adapter.jca.filereader.cci.FileReaderConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.adapter.jca.filereader.cci&quot;>
+    &lt;ns1:connectedToDiffMachine>false&lt;/ns1:connectedToDiffMachine>
+    &lt;ns1:relativeDirectory>C:\&lt;/ns1:relativeDirectory>
+    &lt;ns1:fileName>lastexecinterval.txt&lt;/ns1:fileName>
+    &lt;ns1:sourceDirectory>ws_logs&lt;/ns1:sourceDirectory>
+    &lt;ns1:useWorkingDirectory>false&lt;/ns1:useWorkingDirectory>
+    &lt;ns1:workingDirectory>&lt;/ns1:workingDirectory>
+    &lt;ns1:processPendingFilesInWork>false&lt;/ns1:processPendingFilesInWork>
+    &lt;ns1:errorDirectory>&lt;/ns1:errorDirectory>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="Pre Processing Arguments" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="Post Processing Directory" type="java.lang.String">.</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="FileWriter1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="Post Processing Arguments" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="FileWriterConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.adapter.jca.filewriter.cci.FileWriterConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.adapter.jca.filewriter.cci&quot;>
+    &lt;ns1:connectedToDiffMachine>true&lt;/ns1:connectedToDiffMachine>
+    &lt;ns1:relativeDirectory>/opt&lt;/ns1:relativeDirectory>
+    &lt;ns1:fileName>lastexecinterval.txt&lt;/ns1:fileName>
+    &lt;ns1:targetDirectory>wslog&lt;/ns1:targetDirectory>
+    &lt;ns1:workingDirectory>work&lt;/ns1:workingDirectory>
+    &lt;ns1:errorDirectory>error&lt;/ns1:errorDirectory>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="File Encoding" type="java.lang.String">UTF-8</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="RESTConsumer3">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="Base Path URL" type="java.lang.String">https://apps-demo-screening.sonar.thetaray.cloud/screening/transaction/generic</target:property>
+      <target:property encrypt="true" name="HTTP Password" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="Authentication Type" type="java.lang.String">BASIC</target:property>
+      <target:property encrypt="false" name="HTTP Basic Authentication" type="java.lang.Boolean">false</target:property>
+      <target:property encrypt="false" name="HTTP Username" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Cache12">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+</target:target>

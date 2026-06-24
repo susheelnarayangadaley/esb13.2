@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="resource__POST__Response.xsd" mime="XSD" name="resource__GET__Response" rootName="{http://www.fiorano.com/services/rest}Responses"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="out_JMSMessage.DTD" mime="DTD" name="JMS-Message" rootName="Message"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="JMS-Message:0,Message:0,Text:0" x="962" y="31">
+      <mappermodel:FunctionGraphNode label="IsNot200" type="22" x="178" y="132">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="!=" type="32" x="410" y="-27">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="200" type="22" x="194" y="26">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="690" y="18">
+        <mappermodel:InputPins>bool,then,bool,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="status" type="22" x="152" y="82">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="353" y="84">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="resource__GET__Response:0,Responses:0,[Choice]:0,Response:0,Status:0" x="84" y="-43">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="Constant" type="22" x="454" y="231">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getText" type="154" x="697" y="-32">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="3" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="9" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

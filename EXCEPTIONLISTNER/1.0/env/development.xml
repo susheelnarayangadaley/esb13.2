@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="ExceptionListener1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="JNDIConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.services.libraries.jms.configuration.JNDIConfiguration&quot; xmlns:ns2=&quot;uri:com.fiorano.services.common.jaxb.adapter&quot; xmlns:ns1=&quot;uri:com.fiorano.services.libraries.jms.configuration&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:initialContextFactory>fiorano.jms.runtime.naming.FioranoInitialContextFactory&lt;/ns1:initialContextFactory>
+    &lt;ns1:username>anonymous&lt;/ns1:username>
+    &lt;ns1:password>CVuEpOIpQJAIVeUQIs7kBQ==&lt;/ns1:password>
+    &lt;ns1:additionalProperties/>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="FESConnectionConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.esb.common.connections.configuration.FESConnectionConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.esb.common.connections.configuration&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:isUseConnectionDetailsFromFPS>false&lt;/ns1:isUseConnectionDetailsFromFPS>
+    &lt;ns1:url>tsp_tcp://localhost:1947&lt;/ns1:url>
+    &lt;ns1:backupUrl>tsp_tcp://localhost:1948&lt;/ns1:backupUrl>
+    &lt;ns1:username>admin&lt;/ns1:username>
+    &lt;ns1:password>DMSLzKckc/JLgIUhIpdeyw==&lt;/ns1:password>
+    &lt;ns1:fspCallTimeout>180000&lt;/ns1:fspCallTimeout>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="Admin Configuration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.adapter.jms.messagelistenerservice.model.AdminConfiguration&quot;>
+    &lt;passwordFromVault>false&lt;/passwordFromVault>
+    &lt;customPasswordEncryption>false&lt;/customPasswordEncryption>
+    &lt;adminUserName>admin&lt;/adminUserName>
+    &lt;adminPassword>DMSLzKckc/JLgIUhIpdeyw==&lt;/adminPassword>
+&lt;/namedConfiguration>
+</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="FileWriter1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="Post Processing Arguments" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="FileWriterConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.adapter.jca.filewriter.cci.FileWriterConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.adapter.jca.filewriter.cci&quot;>
+    &lt;ns1:connectedToDiffMachine>false&lt;/ns1:connectedToDiffMachine>
+    &lt;ns1:relativeDirectory>D:\&lt;/ns1:relativeDirectory>
+    &lt;ns1:fileName>except.txt&lt;/ns1:fileName>
+    &lt;ns1:targetDirectory>D:\File\filewriter\target&lt;/ns1:targetDirectory>
+    &lt;ns1:workingDirectory>D:\File\filewriter\working&lt;/ns1:workingDirectory>
+    &lt;ns1:errorDirectory>D:\File\filewriter\error&lt;/ns1:errorDirectory>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="File Encoding" type="java.lang.String">UTF-8</target:property>
+    </target:configuration-properties>
+  </target:instance>
+</target:target>

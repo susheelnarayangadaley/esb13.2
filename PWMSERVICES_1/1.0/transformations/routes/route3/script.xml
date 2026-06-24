@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.fiorano.com/SeylanESB" xmlns:ns5="http://www.seylan.lk/AccountBalanceInquiryPWM" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/services/rest" xmlns:ns3="http://www.seylan.lk/AccountTransactionHistoryPWM" xmlns:CEFT_JPAY="CEFT_JPAY" xmlns:CardWS="CardWS" xmlns:CenturyDateConverter="CenturyDateConverter" xmlns:Currency="Currency" xmlns:DateConversion="DateConversion" xmlns:DateTime="DateTime" xmlns:Decimals="Decimals" xmlns:ENIQR="ENIQR" xmlns:ESB="ESB" xmlns:RSA="http://xml.apache.org/xslt/java" xmlns:RateConverter="RateConverter" xmlns:SHA256="http://xml.apache.org/xslt/java" xmlns:Text="Text" xmlns:TimeConversion="TimeConversion" xmlns:Utility="Utility" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:str="str" xmlns:strings="strings" extension-element-prefixes="datetime set math CEFT_JPAY CardWS CenturyDateConverter Currency DateConversion DateTime Decimals ENIQR ESB RSA RateConverter SHA256 Text TimeConversion Utility dateConversion myext str strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OutputPort" select="document('OutputPort')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Responses>
+      <Response>
+        <xsl:attribute name="Status">
+          <xsl:value-of select="'200'"></xsl:value-of>
+        </xsl:attribute>
+        <Representations>
+          <Representation>
+            <xsl:attribute name="MediaType">
+              <xsl:value-of select="'application/xml'"></xsl:value-of>
+            </xsl:attribute>
+            <Element>
+              <ns5:AccountBalanceInquiryPWM_Response>
+                <ns5:Status>
+                  <ns5:Transaction_reference>
+                    <xsl:value-of select="AppContext/Transaction_ref"></xsl:value-of>
+                  </ns5:Transaction_reference>
+                  <ns5:Timestamp>
+                    <xsl:value-of select="DateTime:getISOTimestamp()"></xsl:value-of>
+                  </ns5:Timestamp>
+                  <ns5:Code>
+                    <xsl:value-of select="'9040'"></xsl:value-of>
+                  </ns5:Code>
+                  <ns5:Message>
+                    <xsl:value-of select="ESB:getErrorDescriptionMapped(string('9040'),string(concat('9040|',AppContext/Account_number)))"></xsl:value-of>
+                  </ns5:Message>
+                  <ns5:Description></ns5:Description>
+                </ns5:Status>
+                <ns5:Account>
+                  <ns5:Account_branch></ns5:Account_branch>
+                  <ns5:Basic_part_of_account_number></ns5:Basic_part_of_account_number>
+                  <ns5:Account_suffix></ns5:Account_suffix>
+                  <ns5:Account_short_name></ns5:Account_short_name>
+                  <ns5:Arabic_short_name></ns5:Arabic_short_name>
+                  <ns5:Customer_mnemonic></ns5:Customer_mnemonic>
+                  <ns5:Customer_location></ns5:Customer_location>
+                  <ns5:Customer_full_name></ns5:Customer_full_name>
+                  <ns5:Arabic_customer_full_name></ns5:Arabic_customer_full_name>
+                  <ns5:Account_Type></ns5:Account_Type>
+                  <ns5:Owning_application_code></ns5:Owning_application_code>
+                  <ns5:Account_structure></ns5:Account_structure>
+                  <ns5:Currency_mnemonic></ns5:Currency_mnemonic>
+                  <ns5:Currency_edit_field></ns5:Currency_edit_field>
+                  <ns5:Internal_non_customer_account></ns5:Internal_non_customer_account>
+                  <ns5:Deceased_or_liquidated></ns5:Deceased_or_liquidated>
+                  <ns5:Account_status_Blocked></ns5:Account_status_Blocked>
+                  <ns5:Account_status_Inactive></ns5:Account_status_Inactive>
+                  <ns5:Account_closing></ns5:Account_closing>
+                  <ns5:Overdraft_limit></ns5:Overdraft_limit>
+                  <ns5:Limit_expiry_date></ns5:Limit_expiry_date>
+                  <ns5:Overdraft_expired></ns5:Overdraft_expired>
+                  <ns5:Reserved_balance></ns5:Reserved_balance>
+                  <ns5:Ledger_balance></ns5:Ledger_balance>
+                  <ns5:Status_balance></ns5:Status_balance>
+                  <ns5:Previous_cleared_balance></ns5:Previous_cleared_balance>
+                  <ns5:Current_cleared_balance></ns5:Current_cleared_balance>
+                  <ns5:Current_available_balance></ns5:Current_available_balance>
+                  <ns5:Is_Current_available_balance></ns5:Is_Current_available_balance>
+                  <ns5:Later_available_balance></ns5:Later_available_balance>
+                  <ns5:Is_Later_available_balance></ns5:Is_Later_available_balance>
+                  <ns5:Next_available_balance_1></ns5:Next_available_balance_1>
+                  <ns5:Next_available_balance_2></ns5:Next_available_balance_2>
+                  <ns5:Is_Next_available_balance></ns5:Is_Next_available_balance>
+                  <ns5:Forward_balance></ns5:Forward_balance>
+                  <ns5:Is_Forward_balance></ns5:Is_Forward_balance>
+                  <ns5:Clearing_today></ns5:Clearing_today>
+                  <ns5:Clearing_later_today></ns5:Clearing_later_today>
+                  <ns5:Clearing_tomorrow></ns5:Clearing_tomorrow>
+                  <ns5:Clearing_after_tomorrow></ns5:Clearing_after_tomorrow>
+                  <ns5:Shadow_debits></ns5:Shadow_debits>
+                  <ns5:Shadow_credits></ns5:Shadow_credits>
+                  <ns5:Shadow_adjustments></ns5:Shadow_adjustments>
+                  <ns5:OD_against_uc_cheques></ns5:OD_against_uc_cheques>
+                  <ns5:Susp_OD_UC_cheques></ns5:Susp_OD_UC_cheques>
+                  <ns5:Notice_AC_special_condition></ns5:Notice_AC_special_condition>
+                  <ns5:Withdrawals_maturing_today></ns5:Withdrawals_maturing_today>
+                  <ns5:Closing_withdrawal></ns5:Closing_withdrawal>
+                  <ns5:Withdrawals_maturing_tomorrow></ns5:Withdrawals_maturing_tomorrow>
+                  <ns5:Closing_withdrawal_1></ns5:Closing_withdrawal_1>
+                  <ns5:Withdrawals_maturing_after_tomorrow></ns5:Withdrawals_maturing_after_tomorrow>
+                  <ns5:Closing_withdrawal_2></ns5:Closing_withdrawal_2>
+                  <ns5:Hold_queued_amount></ns5:Hold_queued_amount>
+                  <ns5:Customer_Group></ns5:Customer_Group>
+                  <ns5:Real_time_balance_order></ns5:Real_time_balance_order>
+                  <ns5:Ext_Account_No></ns5:Ext_Account_No>
+                  <ns5:Edited_Ext_Account_No></ns5:Edited_Ext_Account_No>
+                  <ns5:International_bank_account></ns5:International_bank_account>
+                  <ns5:Edited_international_bank></ns5:Edited_international_bank>
+                  <ns5:Date_account_opened></ns5:Date_account_opened>
+                  <ns5:Date_account_closed></ns5:Date_account_closed>
+                  <ns5:Customer_type></ns5:Customer_type>
+                  <ns5:SCL_Credit_authorized_amount></ns5:SCL_Credit_authorized_amount>
+                  <ns5:SCL_Credit_not_authorized_amount></ns5:SCL_Credit_not_authorized_amount>
+                  <ns5:SCL_Credit_returned_amount></ns5:SCL_Credit_returned_amount>
+                  <ns5:SCL_Debit_authorized_amount></ns5:SCL_Debit_authorized_amount>
+                  <ns5:SCL_Debit_not_authorized_amount></ns5:SCL_Debit_not_authorized_amount>
+                  <ns5:OCL_Unrealized_cheques_amount></ns5:OCL_Unrealized_cheques_amount>
+                  <ns5:OCL_Clearing_today_amount></ns5:OCL_Clearing_today_amount>
+                  <ns5:OCL_Purchased_cheques_amount></ns5:OCL_Purchased_cheques_amount>
+                  <ns5:OCL_Returned_cheques_amount></ns5:OCL_Returned_cheques_amount>
+                  <ns5:Calculated_credit_interest></ns5:Calculated_credit_interest>
+                  <ns5:Net_interest_amount_credit></ns5:Net_interest_amount_credit>
+                  <ns5:Net_interest_accrued_credit></ns5:Net_interest_accrued_credit>
+                  <ns5:Tax_amount_1_credit></ns5:Tax_amount_1_credit>
+                  <ns5:Calculated_debit_interest></ns5:Calculated_debit_interest>
+                  <ns5:Net_interest_amount_debit></ns5:Net_interest_amount_debit>
+                  <ns5:Net_interest_accrued_debit></ns5:Net_interest_accrued_debit>
+                  <ns5:Tax_amount_1_debit></ns5:Tax_amount_1_debit>
+                  <ns5:Account_dormant></ns5:Account_dormant>
+                  <ns5:Account_freezed></ns5:Account_freezed>
+                  <ns5:Account_freezed_manually></ns5:Account_freezed_manually>
+                </ns5:Account>
+              </ns5:AccountBalanceInquiryPWM_Response>
+            </Element>
+          </Representation>
+        </Representations>
+      </Response>
+    </ns1:Responses>
+  </xsl:template>
+<!--The list of Extensions defined by user-->
+</xsl:stylesheet>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.xslt.configuration.XsltPM"> 
+  <void property="JMSMessageXSL"> 
+   <null/> 
+  </void> 
+  <void property="JMSMessageXSL1"> 
+   <null/> 
+  </void> 
+  <void property="XSL"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns2=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:strings=&quot;strings&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText dateConversion myext replace strings&quot;&gt;
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;&gt;&lt;/xsl:import&gt;
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;&gt;&lt;/xsl:output&gt;
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document(&apos;IN_PORT&apos;)&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;checkAccountRp&gt;
+      &lt;ErrorCode&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/ErrorCode&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/ErrorCode&gt;
+      &lt;ErrorMsg&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/ErrorMsg&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/ErrorMsg&gt;
+      &lt;AccountCcy&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountCcy&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/AccountCcy&gt;
+      &lt;AccountBalance&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountBalance&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/AccountBalance&gt;
+      &lt;AccountBalanceAvaliable&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountBalanceAvaliable&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/AccountBalanceAvaliable&gt;
+      &lt;AccountBranchOpen&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountBranchOpen&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/AccountBranchOpen&gt;
+      &lt;AccountName&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountName&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/AccountName&gt;
+      &lt;CustomerID&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/CustomerID&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/CustomerID&gt;
+      &lt;Phonenumber&gt;
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/Phonenumber&quot;&gt;&lt;/xsl:value-of&gt;
+      &lt;/Phonenumber&gt;
+    &lt;/checkAccountRp&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</string> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1200</int> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="esbDefInPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>checkAccountRp</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+    &lt;xsd:element name=&quot;checkAccountRp&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence&gt;&#13;
+          &#13;
+                &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ErrorCode&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                 &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ErrorMsg&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &#13;
+			      &#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountCcy&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;AccountBalance&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountBalanceAvaliable&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                        &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountBranchOpen&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                    &#13;
+                       &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                       &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;CustomerID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                          &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;Phonenumber&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+&#13;
+            &lt;/xsd:sequence&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string></string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="esbDefOutPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>checkAccountRp</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+    &lt;xsd:element name=&quot;checkAccountRp&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence&gt;&#13;
+          &#13;
+                &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ErrorCode&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                 &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ErrorMsg&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &#13;
+			      &#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountCcy&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;AccountBalance&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountBalanceAvaliable&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                        &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountBranchOpen&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                    &#13;
+                       &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                       &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;CustomerID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                          &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;Phonenumber&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+&#13;
+            &lt;/xsd:sequence&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string></string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="inputStructureName"> 
+   <string>IN_PORT</string> 
+  </void> 
+  <void property="project"> 
+   <string>project</string> 
+  </void> 
+  <void property="tfClassName"> 
+   <string></string> 
+  </void> 
+ </object> 
+</java> 

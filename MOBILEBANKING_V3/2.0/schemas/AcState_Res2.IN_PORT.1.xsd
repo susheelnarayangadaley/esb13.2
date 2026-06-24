@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://cpbank.com/statement" xmlns:sch="http://cpbank.com/statement" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:stat="http://cpbank.com/statement" xmlns:tns="http://cpbank.com/statement" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- GetStatementRequest -->
+    <xs:element name="GetStatementRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="accountNumber" type="xs:string"/>
+                <xs:element minOccurs="0" name="fromDate" type="stat:YYYYMMDDDate"/>
+                <xs:element minOccurs="0" name="toDate" type="stat:YYYYMMDDDate"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- GetStatementResponse -->
+    <xs:element name="GetStatementResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="stat:statusType"/>
+                <xs:element minOccurs="0" name="transactions" type="stat:transactionList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Status Type with code and message -->
+    <xs:complexType name="statusType">
+        <xs:sequence>
+            <xs:element name="code" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Date Format -->
+    <xs:simpleType name="YYYYMMDDDate">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])"/>
+            <xs:length value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Transaction List -->
+    <xs:complexType name="transactionList">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="transaction" type="stat:transaction"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Transaction -->
+    <xs:complexType name="transaction">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="recid" type="xs:string"/>
+            <xs:element minOccurs="0" name="bookingDate" type="xs:string"/>
+            <xs:element minOccurs="0" name="reference" type="xs:string"/>
+            <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+            <xs:element minOccurs="0" name="valueDate" type="xs:string"/>
+            <xs:element minOccurs="0" name="drCr" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" type="xs:string"/>
+            <xs:element minOccurs="0" name="currency" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+            <xs:element minOccurs="0" name="txnType" type="xs:string"/>
+            <xs:element minOccurs="0" name="debitAcc" type="xs:string"/>
+            <xs:element minOccurs="0" name="creditAcc" type="xs:string"/>
+            <xs:element minOccurs="0" name="acboCrAcc" type="xs:string"/>
+            <xs:element minOccurs="0" name="acboCrName" type="xs:string"/>
+            <xs:element minOccurs="0" name="acboDrName" type="xs:string"/>
+            <xs:element minOccurs="0" name="acbiCrName" type="xs:string"/>
+            <xs:element minOccurs="0" name="acbiDrName" type="xs:string"/>
+            <xs:element minOccurs="0" name="bakongDesc" type="xs:string"/>
+            <xs:element minOccurs="0" name="trxDt" type="xs:string"/>
+            <xs:element minOccurs="0" name="trxTime" type="xs:string"/>
+            <xs:element minOccurs="0" name="txnTypeDescription" type="xs:string"/>
+            <xs:element minOccurs="0" name="cbsCrName" type="xs:string"/>
+            <xs:element minOccurs="0" name="cbsDrName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

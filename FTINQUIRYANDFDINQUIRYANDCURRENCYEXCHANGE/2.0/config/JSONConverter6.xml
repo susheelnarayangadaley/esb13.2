@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_121" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.edbc.jsonconverter.model.JSONConverterPM"> 
+  <void property="JSON2XML"> 
+   <boolean>false</boolean> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1200</int> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="inputSchemaDefinition"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>FDDetails</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;xs:schema attributeFormDefault=&quot;unqualified&quot; elementFormDefault=&quot;qualified&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+  &lt;xs:element name=&quot;FDDetails&quot;&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+&lt;xs:element name=&quot;FD&quot;&gt;
+      &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;    
+&lt;xs:element name=&quot;Element&quot; maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot;&gt;
+      &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;   
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Arrangement&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Account&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;CustomerName&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Renewal_Date&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Product&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Ccy&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Amount&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Term&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Value_Date&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Maturity_Date&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Principal_CR_Account&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Interest_CR_Account&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;FDType&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Interest_Rate&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Channel&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Interest_After_Tax&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Rollover&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Update_Rollover_Type&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Close_Applicable&quot;/&gt;
+              &lt;xs:element type=&quot;xs:string&quot; name=&quot;Tax&quot;/&gt;
+            &lt;/xs:sequence&gt;
+          &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;xs:attribute type=&quot;xs:string&quot; name=&quot;class&quot;/&gt;
+          &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+          &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string></string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 

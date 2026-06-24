@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context.XSD" mime="XSD" name="Application-Context" rootName="Root"/>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.XSD" mime="XSD" name="IN_PORT" rootName="ExchangeRateRp"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Output1.XSD" mime="XSD" name="Output1" rootName="ExchangeRateRp"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ErrorCode:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,ExchangeRateRp:0,ErrorCode:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ErrorMsg:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,ExchangeRateRp:0,ErrorMsg:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,UpdateDay:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,ExchangeRateRp:0,UpdateDay:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,CurrenCy:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,CurrenCy:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,Purchase:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,Purchase:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,Sell:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,Sell:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

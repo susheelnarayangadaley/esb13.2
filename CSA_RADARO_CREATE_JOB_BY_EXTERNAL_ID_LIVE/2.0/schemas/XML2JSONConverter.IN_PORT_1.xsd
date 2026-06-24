@@ -1,0 +1,99 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="order">
+		<xs:complexType>
+			<xs:sequence minOccurs="0"  maxOccurs="unbounded">
+				<xs:element type="xs:string" name="comment"/>
+				<xs:element name="customer">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="email"/>
+							<xs:element type="xs:string" name="name"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="deliver_address">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="address"/>
+							<xs:element type="xs:string" name="description"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element type="xs:string" name="description"/>
+				<xs:element type="xs:string" name="external_id"/>
+				<xs:element type="xs:string" name="title"/>
+				<xs:element type="xs:string" name="skill_sets"/>
+				<xs:element type="xs:string" name="status"/>
+				<xs:element type="xs:string" name="driver"/>
+				
+				<xs:element type="xs:string" name="customer_comment"/>
+				<xs:element type="xs:string" name="rating"/>
+				
+				<xs:element type="xs:string" name="error_comment"/>
+				<xs:element type="xs:string" name="customer_tracking_url"/>
+				<xs:element type="xs:string" name="pre_inspection_comment"/>
+				<xs:element type="xs:string" name="pre_inspection_signature"/>
+				<xs:element type="xs:string" name="pre_inspection_photos"/>
+				
+				<xs:element type="xs:string" name="labels"/>
+				<xs:element name="driver_checklist">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="is_correct"/>
+							<xs:element type="xs:string" name="checklist_confirmed"/>
+							<xs:element type="xs:string" name="checklist_passed"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="delivery_interval">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="upper"/>
+							<xs:element type="xs:string" name="lower"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="cargoes">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="skids"> 
+								<xs:complexType>
+									<xs:sequence minOccurs="0"  maxOccurs="unbounded">
+										<xs:element name="skid">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="name"/>
+													<xs:element type="xs:string" name="quantity"/>
+													<xs:element name="weight">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="value"/>
+																<xs:element type="xs:string" name="unit"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="sizes">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element type="xs:string" name="unit"/>
+																<xs:element type="xs:string" name="width"/>
+																<xs:element type="xs:string" name="height"/>
+																<xs:element type="xs:string" name="length"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="class" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

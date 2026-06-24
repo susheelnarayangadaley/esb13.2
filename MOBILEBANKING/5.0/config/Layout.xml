@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="MB" x="182" y="-503"/>
+    <service-instance name="T24" x="846" y="-70"/>
+    <service-instance name="GLegalID" x="857" y="-153"/>
+    <service-instance name="GetAccInfo" x="541" y="11"/>
+    <service-instance name="GetLegal" x="570" y="-196"/>
+    <service-instance name="AccInfo" x="363" y="0"/>
+    <service-instance name="GetCustInfo" x="500" y="235"/>
+    <service-instance name="CustInfo" x="319" y="117"/>
+    <service-instance name="GetAccList" x="569" y="121"/>
+    <service-instance name="ExRate_Req" x="531" y="-75"/>
+    <service-instance name="Ex_Rate" x="378" y="-116"/>
+    <service-instance name="Legal" x="435" y="-173"/>
+    <service-instance name="GetLegal_Res" x="1017" y="-203"/>
+    <service-instance name="CustInfor" x="1360" y="210"/>
+    <service-instance name="AccInfor" x="1482" y="53"/>
+    <service-instance name="AccList_Res" x="1397" y="107"/>
+    <service-instance name="ExRate_Res" x="1270" y="-161"/>
+    <service-instance name="LegalID_Res" x="1191" y="-213"/>
+    <service-instance name="ResCustInfo" x="1029" y="171"/>
+    <service-instance name="GetCurrencyes" x="1068" y="-122"/>
+    <service-instance name="RespAccInfo" x="1177" y="62"/>
+    <service-instance name="AccountReq" x="1215" y="-75"/>
+    <service-instance name="CBS1" x="853" y="231"/>
+    <service-instance name="GetAccListNew" x="497" y="308"/>
+    <service-instance name="AccList_Res1" x="1268" y="342"/>
+    <service-instance name="AccountReq1" x="1072" y="281"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

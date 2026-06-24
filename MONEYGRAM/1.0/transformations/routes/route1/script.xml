@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.moneygram.com/AgentConnect1512" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.moneygram.com/AgentConnect1512/feeLookup/Input" xmlns:MX2MT="http://xml.apache.org/xslt/java" xmlns:MXtoMT="http://xml.apache.org/xslt/java" xmlns:add="add" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math MX2MT MXtoMT add dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT_1" select="document('OUT_PORT_1')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Envelope>
+      <ns1:Body>
+        <ns2:feeLookupRequest>
+          <ns2:unitProfileID>
+            <xsl:value-of select="'166531'"></xsl:value-of>
+          </ns2:unitProfileID>
+          <ns2:agentID>
+            <xsl:value-of select="'43293913'"></xsl:value-of>
+          </ns2:agentID>
+          <ns2:agentSequence>
+            <xsl:value-of select="'01'"></xsl:value-of>
+          </ns2:agentSequence>
+          <ns2:token>
+            <xsl:value-of select="'TEST'"></xsl:value-of>
+          </ns2:token>
+          <ns2:language>
+            <xsl:value-of select="'en'"></xsl:value-of>
+          </ns2:language>
+          <ns2:timeStamp>
+            <xsl:value-of select="'2024-08-02T11:13:14.641+03:00'"></xsl:value-of>
+          </ns2:timeStamp>
+          <ns2:apiVersion>
+            <xsl:value-of select="'1512'"></xsl:value-of>
+          </ns2:apiVersion>
+          <ns2:clientSoftwareVersion>
+            <xsl:value-of select="'1.1'"></xsl:value-of>
+          </ns2:clientSoftwareVersion>
+          <ns2:channelType>
+            <xsl:value-of select="'LOCATION'"></xsl:value-of>
+          </ns2:channelType>
+          <ns2:productType>
+            <xsl:value-of select="'SEND'"></xsl:value-of>
+          </ns2:productType>
+          <ns2:amountExcludingFee>
+            <xsl:value-of select="$document_OUT_PORT_1/root/amountExcludingFee"></xsl:value-of>
+          </ns2:amountExcludingFee>
+          <ns2:receiveCountry>
+            <xsl:value-of select="$document_OUT_PORT_1/root/receiveCountry"></xsl:value-of>
+          </ns2:receiveCountry>
+          <ns2:allOptions>
+            <xsl:value-of select="'true'"></xsl:value-of>
+          </ns2:allOptions>
+        </ns2:feeLookupRequest>
+      </ns1:Body>
+    </ns1:Envelope>
+  </xsl:template>
+</xsl:stylesheet>

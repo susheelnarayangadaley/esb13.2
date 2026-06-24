@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema_NEW.xsd" mime="XSD" name="Application-Context" rootName="AccountDetails"/>
+    <mappermodel:Structure duplicates="" filePath="OUT_PORT_112.xsd" mime="XSD" name="OUT_PORT_1" rootName="FDCreate"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema_NEW.xsd" mime="XSD" name="Application-Context" rootName="AccountDetails"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,fdType:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,fdType:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,customerID:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,customerID:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,effectiveDate:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,effectiveDate:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,currency:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,currency:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,introducer:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,introducer:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,accountType:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,accountType:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,modeOfOperation:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,modeOfOperation:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,term:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,term:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,debitAccount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,debitAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,principalCreditAccount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,principalCreditAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,interestCreditAccount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,interestCreditAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,maturityDate:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,maturityDate:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,changePeriod:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,changePeriod:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,product:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,product:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,branchid:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,branchid:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,channel:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,channel:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Application-Context:0,AccountDetails:0,FDDetails:0,operator:0" x="800" y="62">
+      <mappermodel:FunctionGraphNode label="calculate" type="22" x="177" y="188">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Contains" type="48" x="400" y="104">
+        <mappermodel:InputPins>str,searchStr</mappermodel:InputPins>
+        <mappermodel:OutputPins>bool</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT_1:0,FDCreate:0,operator:0" x="160" y="80">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="413" y="195">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

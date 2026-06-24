@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="THETARAYTRANSCATION_INT_NEW.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.xsd" mime="XSD" name="IN_PORT" rootName="{http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In}COMPLEX"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="IN_PORT:0,COMPLEX:0,query:0" x="901" y="89">
+      <mappermodel:FunctionGraphNode label="thetaray:convertToYYYYMMDDHH24MISS(input)" type="69" x="433" y="115">
+        <mappermodel:InputPins>input</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="DateTime" type="100" x="52" y="31">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="DateTime" type="100" x="164" y="151">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="thetaray_trans:convertToYYYYMMDDHH24MISS_minus1(input)" type="69" x="287" y="43">
+        <mappermodel:InputPins>input</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="javascript" name="thetaray_trans">
+      <mappermodel:Script>function convertToYYYYMMDDHH24MISS_minus1(input) {
+
+    if (!input || typeof input !== &quot;string&quot;) {
+
+        throw new Error(&quot;Invalid input: expected non-empty string in format YYYY-MM-DDTHH:MI:SS±HH:MM00000&quot;);
+
+    }
+ 
+    // Trim and remove trailing &quot;00000&quot; if present
+
+    var raw = input.trim();
+
+    var clean = raw.replace(/00000$/, &quot;&quot;);
+ 
+    // Extract timezone like &quot;+05:30&quot; or &quot;-04:00&quot;
+
+    var tzMatch = clean.match(/([+\-]\d{2}:\d{2})$/);
+
+    if (!tzMatch) {
+
+        tzMatch = clean.match(/([+\-]\d{2}:\d{2})/);
+
+    }
+
+    if (!tzMatch) {
+
+        throw new Error(&quot;Timezone not found in input: &quot; + input);
+
+    }
+
+    var tz = tzMatch[1];
+ 
+    // Parse ISO string (let JS engine interpret timezone)
+
+    var parsedMs = Date.parse(clean);
+
+    if (isNaN(parsedMs)) {
+
+        throw new Error(&quot;Failed to parse date after cleaning: &quot; + clean);
+
+    }
+ 
+    // Subtract exactly one day (24 * 60 * 60 * 1000)
+
+    var ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+    var newUtcMs = parsedMs - ONE_DAY_MS;
+ 
+    // Compute timezone offset minutes from tz string
+
+    var sign = (tz.charAt(0) === &quot;-&quot;) ? -1 : 1;
+
+    var tzParts = tz.substring(1).split(&quot;:&quot;);
+
+    var tzH = parseInt(tzParts[0], 10);
+
+    var tzM = parseInt(tzParts[1], 10);
+
+    if (isNaN(tzH) || isNaN(tzM)) {
+
+        throw new Error(&quot;Invalid timezone format: &quot; + tz);
+
+    }
+
+    var offsetMinutes = sign * (tzH * 60 + tzM);
+ 
+    // Convert the new UTC instant back to &quot;local fields&quot; in the original timezone:
+
+    // localMs = newUtcMs + offsetMinutes*60000
+
+    var localMs = newUtcMs + (offsetMinutes * 60000);
+
+    var outDate = new Date(localMs);
+ 
+    // Helper pad
+
+    function pad(n) { n = String(n); return (n.length &lt; 2 ? &quot;0&quot; + n : n); }
+ 
+    // Use UTC getters because we adjusted ms to represent the local fields
+
+    var outY = outDate.getUTCFullYear();
+
+    var outMo = outDate.getUTCMonth() + 1;
+
+    var outD = outDate.getUTCDate();
+
+    var outH = outDate.getUTCHours();
+
+    var outMin = outDate.getUTCMinutes();
+
+    var outS = outDate.getUTCSeconds();
+ 
+    return String(outY) + pad(outMo) + pad(outD) + pad(outH) + pad(outMin) + pad(outS);
+
+}
+ </mappermodel:Script>
+      <mappermodel:Function name="convertToYYYYMMDDHH24MISS_minus1" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+    <mappermodel:Extension language="javascript" name="thetaray">
+      <mappermodel:Script>function convertToYYYYMMDDHH24MISS(input) {
+
+  // Extract timezone part without the 00000
+  var timezoneMatch = input.match(/([+\-]\d{2}:\d{2})/);
+  if (!timezoneMatch) {
+    throw &quot;Invalid input: timezone not found in +/-HH:MM00000 format.&quot;;
+  }
+
+  var tz = timezoneMatch[1];  // e.g. &quot;+05:30&quot;
+
+  // Remove trailing &quot;00000&quot;
+  var cleanInput = input.replace(/00000$/, &quot;&quot;);
+
+  // ISO string is already correct once trimmed
+  var isoString = cleanInput;
+
+  // Create Date object
+  var date = new Date(isoString);
+
+  // Helper to pad numbers
+  function pad(num) {
+    num = String(num);
+    return (num.length &lt; 2 ? &quot;0&quot; + num : num);
+  }
+
+  var YYYY = date.getFullYear();
+  var MM = pad(date.getMonth() + 1);
+  var DD = pad(date.getDate());
+  var HH = pad(date.getHours());
+  var MI = pad(date.getMinutes());
+  var SS = pad(date.getSeconds());
+
+  return &quot;&quot; + YYYY + MM + DD + HH + MI + SS;
+}</mappermodel:Script>
+      <mappermodel:Function name="convertToYYYYMMDDHH24MISS" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+  <mappermodel:UserXSL index="2" node="IN_PORT:0,COMPLEX:0,query:0">--></mappermodel:UserXSL>
+  <mappermodel:UserXSL index="1" node="IN_PORT:0,COMPLEX:0,query:0">&lt;xsl:variable name=&quot;var0&quot;>select  id,servicename,amounttran/100,trancurrency,mobilenumber,(select homeaddress from wallet.cms_customer where user_id = userid)as adresse,(select nationality from wallet.cms_customer where user_id = userid)as nationality,(select gender from wallet.cms_customer where user_id = userid)as gender,(select nvl(placeofbirth,nationality) as placeofb from  wallet.cms_customer where user_id = userid) as placeofbirth, destaccount,nvl(DESTMOBILENUMBER,MOBILENUMBER)as DESTMOBILENUMBER,walletcurrency,TRANSDATETIME,respcode,userid,concat(firstname,lastname)as fullName ,substr(TRANSDATETIME,0,8) as date_trans,TO_CHAR(TO_DATE(transdatetime, 'YYYYMMDDHH24MISS'), 'YYYY-MM-DD') as date_trans,destuserid,destaddress,destfirstname,destmerchantname,destcustomername&#xD;
+ &#xD;
+,(select p.abbreviation as nationality from  wallet.fine_contact_country p where nationality = p.name)as nationality_code ,(select city from wallet.cms_customer where user_id = userid)as city&#xD;
+ &#xD;
+from WALLET.ws_log&#xD;
+ &#xD;
+WHERE servicename&#xD;
+ &#xD;
+     in (select service_name from wallet.transactioncodes where is_financial='1')  and&#xD;
+ &#xD;
+TRANSDATETIME BETWEEN '&lt;/xsl:variable>&#xD;
+&lt;xsl:value-of select=&quot;$var0&quot;>&lt;/xsl:value-of>&#xD;
+&lt;xsl:value-of select=&quot;thetaray_trans:convertToYYYYMMDDHH24MISS_minus1(string(datetime:dateTime()))&quot;>&lt;/xsl:value-of>&#xD;
+&lt;xsl:variable name=&quot;var1&quot;>' AND '&lt;/xsl:variable>&#xD;
+&lt;xsl:value-of select=&quot;$var1&quot;>&lt;/xsl:value-of>&#xD;
+&lt;xsl:value-of select=&quot;thetaray:convertToYYYYMMDDHH24MISS(string(datetime:dateTime()))&quot;>&lt;/xsl:value-of>&#xD;
+&lt;xsl:variable name=&quot;var2&quot;>'&lt;/xsl:variable>&#xD;
+&lt;xsl:value-of select=&quot;$var2&quot;>&lt;/xsl:value-of>&#xD;
+&lt;xsl:variable name=&quot;var3&quot;>and servicename in ('InitSendMoneyInternational','SendMoneyInternational')&lt;/xsl:variable>&#xD;
+&lt;xsl:value-of select=&quot;$var3&quot;>&lt;/xsl:value-of>&#xD;
+&lt;!--</mappermodel:UserXSL>
+</mappermodel:MapperProject>

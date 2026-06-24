@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.cbr.model.CBRPropertyModel"> 
+  <void property="XPaths"> 
+   <void method="add"> 
+    <string>/fundtransfer</string> 
+   </void> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1200</int> 
+  </void> 
+  <void property="elementsToDecrypt"> 
+   <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+    <void property="elements"> 
+     <void method="add"> 
+      <string>fundtransfer</string> 
+     </void> 
+    </void> 
+    <void property="namespaces"> 
+     <void method="put"> 
+      <string>xsd</string> 
+      <string>http://www.w3.org/2001/XMLSchema</string> 
+     </void> 
+     <void method="put"> 
+      <string>xml</string> 
+      <string>http://www.w3.org/XML/1998/namespace</string> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="elementsToEncrypt"> 
+   <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="namespaces"> 
+   <object class="java.util.HashMap"> 
+    <void method="put"> 
+     <string>ns1</string> 
+     <string>http://www.w3.org/2001/XMLSchema</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="outPortNames"> 
+   <void method="add"> 
+    <string>request</string> 
+   </void> 
+  </void> 
+  <void property="schemaDefinition"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>fundtransfer</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+    &lt;xsd:element name=&quot;fundtransfer&quot;&gt;&#13;
+        &#13;
+                       &lt;xsd:complexType&gt;&#13;
+                              &lt;xsd:sequence&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;Amount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;TxnFee&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;FromAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ToAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Remark&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;TransId&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                      &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;CurrenCy&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                      &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TxnType&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                        &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;debitcurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                          &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;merchantID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                          &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;merchantName&quot; type=&quot;xsd:string&quot;/&gt;                                             &lt;/xsd:sequence&gt;&#13;
+                      &#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string></string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 

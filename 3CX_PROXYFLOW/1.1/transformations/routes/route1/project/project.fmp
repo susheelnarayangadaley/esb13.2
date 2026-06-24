@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="callcontrol__GET__Request2.xsd" mime="XSD" name="callcontrol__GET__Request" rootName="{http://www.fiorano.com/services/rest}Responses"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="callcontrol__GET__Request4.xsd" mime="XSD" name="callcontrol__GET__Request" rootName="{http://www.fiorano.com/services/rest}Request"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="callcontrol__GET__Request:0,Request:0,ResourceURL:0" x="671" y="20">
+      <mappermodel:FunctionGraphNode label="https://demopbxeze.3cx.asia/callcontrol/" type="22" x="153" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="153" y="82">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="dn" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="488" y="20">
+        <mappermodel:InputPins>1,2,3,4</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="/" type="22" x="334" y="169">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="2" outputID="5" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="callcontrol__GET__Request:0,Request:0,RequestParameters:0,Authorization:0" x="917" y="20">
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="226" y="20">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&quot;access_token&quot;:&quot;" type="22" x="20" y="82">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&quot;" type="22" x="226" y="90">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="734" y="20">
+        <mappermodel:InputPins>1,2,3,4</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Bearer " type="22" x="471" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="471" y="82">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="callcontrol__GET__Request:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,ANY:0" x="20" y="20">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

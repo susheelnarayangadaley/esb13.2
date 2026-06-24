@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ns1="http://www.fiorano.com/SeylanESB" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/SeylanESB">
+   <xsd:element name="Input">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element minOccurs="0" name="WSID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="BRNM" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="USER" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="APPID" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="APPTYPE" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ACATG" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ACCOUNT" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SDATE" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="EDATE" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="RCNTRAN" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="TRANDATA" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="TRNCOUNT" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="RREC" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="RMSG" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DELAY" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <ListLoan>
+      <response_code>
+        <xsl:variable name="if0">
+          <xsl:choose>
+            <xsl:when test="contains($document_OUT_PORT/Root/Record/AMOUNT,'Customer is invalid')">
+              <xsl:value-of select="'100'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT/Root/Record/AMOUNT,'Customer has no loan')">
+              <xsl:value-of select="'101'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="'200'"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if0"></xsl:value-of>
+      </response_code>
+      <response_msg>
+        <xsl:variable name="if1">
+          <xsl:choose>
+            <xsl:when test="contains($document_OUT_PORT/Root/Record/AMOUNT,'Customer is invalid')">
+              <xsl:value-of select="'Customer is invalid'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT/Root/Record/AMOUNT,'Customer has no loan')">
+              <xsl:value-of select="'Customer has no loan'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="'Transaction success'"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if1"></xsl:value-of>
+      </response_msg>
+      <Loan>
+        <xsl:attribute name="class">
+          <xsl:value-of select="'array'"></xsl:value-of>
+        </xsl:attribute>
+        <xsl:for-each select="$document_OUT_PORT/Root/Record">
+          <Element>
+            <Loan_ID>
+              <xsl:variable name="if2">
+                <xsl:choose>
+                  <xsl:when test="contains(./AMOUNT,'Customer is invalid')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:when test="contains(./AMOUNT,'Customer has no loan')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="./ID"></xsl:value-of>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:value-of select="$if2"></xsl:value-of>
+            </Loan_ID>
+            <Amount>
+              <xsl:variable name="if3">
+                <xsl:choose>
+                  <xsl:when test="contains(./AMOUNT,'Customer is invalid')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:when test="contains(./AMOUNT,'Customer has no loan')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="./AMOUNT"></xsl:value-of>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:value-of select="$if3"></xsl:value-of>
+            </Amount>
+            <Installment_Due_Date>
+              <xsl:variable name="if4">
+                <xsl:choose>
+                  <xsl:when test="contains(./AMOUNT,'Customer is invalid')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:when test="contains(./AMOUNT,'Customer has no loan')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:when test="(string-length(./INSTALL))&gt;('0')">
+                    <xsl:value-of select="./INSTALL"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:value-of select="$if4"></xsl:value-of>
+            </Installment_Due_Date>
+            <Loan_Balance>
+              <xsl:variable name="if5">
+                <xsl:choose>
+                  <xsl:when test="contains(./AMOUNT,'Customer is invalid')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:when test="contains(./AMOUNT,'Customer has no loan')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="./OS"></xsl:value-of>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:value-of select="$if5"></xsl:value-of>
+            </Loan_Balance>
+            <AA>
+              <xsl:variable name="if6">
+                <xsl:choose>
+                  <xsl:when test="contains(./AMOUNT,'Customer is invalid')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:when test="contains(./AMOUNT,'Customer has no loan')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="./AA"></xsl:value-of>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:value-of select="$if6"></xsl:value-of>
+            </AA>
+            <Loan_Currency>
+              <xsl:variable name="if7">
+                <xsl:choose>
+                  <xsl:when test="contains(./AMOUNT,'Customer is invalid')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:when test="contains(./AMOUNT,'Customer has no loan')">
+                    <xsl:value-of select="'null'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="./CYY"></xsl:value-of>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:value-of select="$if7"></xsl:value-of>
+            </Loan_Currency>
+          </Element>
+        </xsl:for-each>
+      </Loan>
+    </ListLoan>
+  </xsl:template>
+</xsl:stylesheet>

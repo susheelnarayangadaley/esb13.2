@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://cpbank.com/statement" xmlns:sch="http://cpbank.com/statement" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:stat="http://cpbank.com/statement" xmlns:tns="http://cpbank.com/statement" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Request -->
+    <xs:element name="GetStatementRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="accountNumber" type="xs:string"/>
+                <xs:element minOccurs="0" name="fromDate" type="stat:YYYYMMDDDate"/>
+                <xs:element minOccurs="0" name="toDate" type="stat:YYYYMMDDDate"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Response -->
+    <xs:element name="GetStatementResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="stat:status"/>
+                <xs:element minOccurs="0" name="transactions" type="stat:transactionList"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Status -->
+    <xs:simpleType name="status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SUCCESS"/>
+            <xs:enumeration value="FAILURE"/>
+            <xs:enumeration value="ERROR"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Date Format -->
+    <xs:simpleType name="YYYYMMDDDate">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])"/>
+            <xs:length value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Transaction List -->
+    <xs:complexType name="transactionList">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="transaction" type="stat:transaction"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Transaction with new fields -->
+    <xs:complexType name="transaction">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="recid" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="bookingDate" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="reference" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="narrative" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="valueDate" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="debit" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="credit" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="currency" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="txnType" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="drCr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="amount" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="acboCrAcc" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="acboCrName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="acboDrName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="acbiCrName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="acbiDrName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="bakongDesc" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="trxDt" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="txnTypeDescription" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cbsCrName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="cbsDrName" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

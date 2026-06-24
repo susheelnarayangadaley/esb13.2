@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://www.fiorano.com/services/rest" xmlns:ns1="http://www.fiorano.com/fesb/activity/DB1/Response" xmlns:api="api" xmlns:apipicker="apipicker" xmlns:csa="csa" xmlns:dateConversion="dateConversion" xmlns:md5="md5" xmlns:myext="myext" xmlns:pt="pt" xmlns:strings="strings" xmlns:util="util" extension-element-prefixes="datetime set math api apipicker csa dateConversion md5 myext pt strings util">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <ns3:Request>
+      <ResourceURL>
+        <xsl:value-of select="'https://api-3.radaro.com.au/api/webhooks/jobs'"></xsl:value-of>
+      </ResourceURL>
+      <RequestParameters>
+        <key>
+          <xsl:value-of select="ns1:AppCtx/ns1:Infoplus_Select/ns1:Api-Key"></xsl:value-of>
+        </key>
+        <Content-Type>
+          <xsl:value-of select="'application/json'"></xsl:value-of>
+        </Content-Type>
+      </RequestParameters>
+      <Representations>
+        <Representation>
+          <xsl:attribute name="MediaType">
+            <xsl:value-of select="'application/json'"></xsl:value-of>
+          </xsl:attribute>
+          <Element>
+            <xsl:value-of disable-output-escaping="no" select="substring(substring-after(java:_getText($_TIF_MESSAGE_),'{&quot;order&quot;:'),'0',(myext:lastIndex(string(substring-after(java:_getText($_TIF_MESSAGE_),'{&quot;order&quot;:')),string('}')))+('1'))"></xsl:value-of>
+          </Element>
+        </Representation>
+      </Representations>
+      <Parameters>
+        <Parameter>
+          <xsl:attribute name="name">
+            <xsl:value-of select="'User-Agent'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="style">
+            <xsl:value-of select="'header'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'Fiorano'"></xsl:value-of>
+        </Parameter>
+      </Parameters>
+    </ns3:Request>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="myext" functions="lastIndex">
+    <lxslt:script lang="javascript"><![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(".")    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return "There are only " + days + " days remaining to the start of the next millennium."; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}
+function lastIndex(input, str){
+return input.lastIndexOf(str);
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

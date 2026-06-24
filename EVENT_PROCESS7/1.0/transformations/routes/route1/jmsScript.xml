@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:EnDe="http://xml.apache.org/xslt/java" xmlns:Md5UniCode="http://xml.apache.org/xslt/java" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:string="string" xmlns:strings="strings" xmlns:thetaray="thetaray" xmlns:thetaray_minus1="thetaray_minus1" xmlns:thetaray_trans="thetaray_trans" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math EnDe Md5UniCode StringLength dateConversion myext string strings thetaray thetaray_minus1 thetaray_trans truncateString">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <Text>
+      <xsl:value-of select="myext:replace(string(null),string('&amp;'),string('g'),string('&amp;amp;'))"></xsl:value-of>
+    </Text>
+  </xsl:template>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="myext" functions="compute replace">
+    <lxslt:script lang="javascript"><![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(".")    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return "There are only " + days + " days remaining to the start of the next millennium."; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT_1" select="document('OUT_PORT_1')"></xsl:variable>
+  <xsl:template match="/">
+    <Root>
+      <monthly_principle>
+        <xsl:variable name="if0">
+          <xsl:choose>
+            <xsl:when test="contains($document_OUT_PORT_1/Root/type,'Monthly')">
+              <xsl:value-of select="'0'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/Root/type,'Maturity')">
+              <xsl:value-of select="format-number($document_OUT_PORT_1/Root/requestamount,'#.##')"></xsl:value-of>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if0"></xsl:value-of>
+      </monthly_principle>
+      <monthly_interest>
+        <xsl:variable name="if1">
+          <xsl:choose>
+            <xsl:when test="contains($document_OUT_PORT_1/Root/type,'Maturity')">
+              <xsl:value-of select="format-number((substring-before($document_OUT_PORT_1/Root/requestterm,'M'))*(format-number((($document_OUT_PORT_1/Root/requestamount)*(($document_OUT_PORT_1/Root/loanrate)div('100')))div('12'),'#.#############')),'#.##')"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="format-number(format-number((($document_OUT_PORT_1/Root/requestamount)*(($document_OUT_PORT_1/Root/loanrate)div('100')))div('12'),'#.#############'),'#.##')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if1"></xsl:value-of>
+      </monthly_interest>
+      <monthly_fee>
+        <xsl:value-of select="($document_OUT_PORT_1/Root/requestamount)*('0.005')"></xsl:value-of>
+      </monthly_fee>
+      <total_pay>
+        <xsl:variable name="if2">
+          <xsl:choose>
+            <xsl:when test="contains($document_OUT_PORT_1/Root/type,'Monthly')">
+              <xsl:value-of select="'0'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/Root/type,'Maturity')">
+              <xsl:value-of select="format-number($document_OUT_PORT_1/Root/requestamount,'#.##')"></xsl:value-of>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="if3">
+          <xsl:choose>
+            <xsl:when test="contains($document_OUT_PORT_1/Root/type,'Monthly')">
+              <xsl:value-of select="format-number(format-number((($document_OUT_PORT_1/Root/requestamount)*(($document_OUT_PORT_1/Root/loanrate)div('100')))div('12'),'#.#############'),'#.##')"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($document_OUT_PORT_1/Root/type,'Maturity')">
+              <xsl:value-of select="format-number((format-number((($document_OUT_PORT_1/Root/requestamount)*(($document_OUT_PORT_1/Root/loanrate)div('100')))div('12'),'#.#############'))*(substring-before($document_OUT_PORT_1/Root/requestterm,'M')),'#.##')"></xsl:value-of>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="(($if2)+($if3))+(($document_OUT_PORT_1/Root/requestamount)*('0.005'))"></xsl:value-of>
+      </total_pay>
+    </Root>
+  </xsl:template>
+</xsl:stylesheet>

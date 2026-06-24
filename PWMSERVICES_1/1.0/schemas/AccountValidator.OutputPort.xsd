@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ns1="http://www.fiorano.com/SeylanESB" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/SeylanESB">
+   <xsd:element name="Output">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element minOccurs="0" name="status" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="rrec" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="msg" type="xsd:string"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

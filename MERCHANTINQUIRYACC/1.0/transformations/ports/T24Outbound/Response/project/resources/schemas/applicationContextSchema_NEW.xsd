@@ -1,0 +1,18 @@
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+			<xs:element type="xs:string" name="account"/>
+        	<xs:element type="xs:string" name="network"/>
+        	<xs:element type="xs:string" name="bank"/>
+			<xs:element type="xs:string" name="channel"/>
+        	<xs:element type="xs:string" name="subChannel"/>
+        	<xs:element type="xs:string" name="accountType"/>
+        	<xs:element type="xs:string" name="participantCode"/>
+        	<xs:element type="xs:string" name="id_token"/>
+			<xs:element type="xs:string" name="switch"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

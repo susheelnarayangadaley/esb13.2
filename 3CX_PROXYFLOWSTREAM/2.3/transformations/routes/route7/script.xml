@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/services/rest" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:jsonToOfs="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:ofsConverterRequest="http://xml.apache.org/xslt/java" xmlns:ofsConverterResponse="http://xml.apache.org/xslt/java" xmlns:ofsConverterResponseCode="http://xml.apache.org/xslt/java" xmlns:ofsToJson="http://xml.apache.org/xslt/java" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion jsonToOfs myext ofsConverterRequest ofsConverterResponse ofsConverterResponseCode ofsToJson strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_makecall__POST__Request" select="document('makecall__POST__Request')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Request>
+      <ResourceURL>
+        <xsl:value-of select="'https://demopbxeze.3cx.asia/connect/token'"></xsl:value-of>
+      </ResourceURL>
+      <Representations>
+        <Representation>
+          <RepresentationParameters>
+            <client_id>
+              <xsl:value-of select="'api'"></xsl:value-of>
+            </client_id>
+            <client_secret>
+              <xsl:value-of select="'2gijbTMUq1G7YMJ4E7StVYws00pbJT7L'"></xsl:value-of>
+            </client_secret>
+            <grant_type>
+              <xsl:value-of select="'client_credentials'"></xsl:value-of>
+            </grant_type>
+          </RepresentationParameters>
+        </Representation>
+      </Representations>
+    </ns1:Request>
+  </xsl:template>
+</xsl:stylesheet>

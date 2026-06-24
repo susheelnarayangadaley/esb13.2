@@ -1,0 +1,60 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fiorano.com/accountinquiryreq">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+      <xs:element type="xs:string" name="refundFromCurrency"/>
+        <xs:element type="xs:string" name="fromCurrency"/>
+        <xs:element type="xs:string" name="toCurrency"/>
+        <xs:element type="xs:string" name="fromBank"/>
+        <xs:element type="xs:string" name="toBank"/>
+        <xs:element type="xs:string" name="acmt023AssigneeBicfi"/>
+        <xs:element type="xs:string" name="acmt023AssignerBicfi"/>
+        <xs:element type="xs:string" name="acmt023CreationDateTime"/>
+        <xs:element type="xs:string" name="acmt023MsgId"/>
+        <xs:element type="xs:string" name="acmt023ReceiverAccountNo"/>
+        <xs:element type="xs:string" name="acmt023ReceiverBicfi"/>
+        <xs:element type="xs:string" name="acmt023VerficationId"/>
+        <xs:element type="xs:string" name="acmt024AssigneeBicfi"/>
+        <xs:element type="xs:string" name="acmt024AssignerBicfi"/>
+        <xs:element type="xs:string" name="acmt024CreationDateTime"/>
+        <xs:element type="xs:string" name="acmt024OriginalCreationDateTime"/>
+        <xs:element type="xs:string" name="acmt024OriginalMsgId"/>
+        <xs:element type="xs:string" name="acmt024OriginalReceiverAccountNo"/>
+        <xs:element type="xs:string" name="acmt024OriginalReceiverBicfi"/>
+        <xs:element type="xs:string" name="acmt024RmsgId"/>
+        <xs:element type="xs:string" name="acmt024RptOriginalId"/>
+        <xs:element type="xs:string" name="acmt024VerificationContent"/>
+        <xs:element type="xs:string" name="centerFee"/>
+        <xs:element type="xs:string" name="currency"/>
+        <xs:element type="xs:string" name="errorMsg"/>
+        <xs:element type="xs:string" name="handlingUserId"/>
+        <xs:element type="xs:string" name="handlingUserIp"/>
+        <xs:element type="xs:string" name="inputChCode"/>
+        <xs:element type="xs:string" name="inquiryAmount"/>
+        <xs:element type="xs:string" name="receiverAccountNo"/>
+        <xs:element type="xs:string" name="receiverBankCode"/>
+        <xs:element type="xs:string" name="receiverFee"/>
+        <xs:element type="xs:string" name="receiverName"/>
+        <xs:element type="xs:string" name="responseCode"/>
+        <xs:element type="xs:string" name="sendDate"/>
+        <xs:element type="xs:string" name="sendTime"/>
+        <xs:element type="xs:string" name="senderAccountNo"/>
+        <xs:element type="xs:string" name="senderAccountPinNo"/>
+        <xs:element type="xs:string" name="senderBankCode"/>
+        <xs:element type="xs:string" name="senderFee"/>
+        <xs:element type="xs:string" name="senderName"/>
+        <xs:element type="xs:string" name="traceNo"/>
+        <xs:element type="xs:string" name="transactionCode"/>
+        <xs:element type="xs:string" name="transactionUniqueNumber"/>
+        <xs:element type="xs:string" name="userDepartment"/>
+        <xs:element type="xs:string" name="userJobPosition"/>
+        <xs:element type="xs:string" name="passcode"/>
+        <xs:element type="xs:string" name="senderPhoneNo"/>
+        <xs:element type="xs:string" name="receiverPhoneNo"/>
+        <xs:element type="xs:string" name="remittanceTransactionUniqueNumber"/>
+        <xs:element type="xs:string" name="channel"/>
+        <xs:element type="xs:string" name="sourceAmount"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

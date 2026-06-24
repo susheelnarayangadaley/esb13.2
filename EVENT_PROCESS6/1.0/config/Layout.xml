@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="Feeder1" x="149" y="125"/>
+    <service-instance name="FTBankWallet1" x="562" y="107"/>
+    <service-instance name="CBS1" x="996" y="60"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_181" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.feeder.model.FeederPM"> 
+  <void property="attachment"> 
+   <object class="java.util.LinkedHashMap"/> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1300</int> 
+  </void> 
+  <void property="defaultMessage"> 
+   <string>{1:F01BBAIIDJAXXXX0000000000}{2:I101CITIUS33XXXXN}{4:&#13;
+:20:FT112233YXXL&#13;
+:28D:1/1&#13;
+:30:241122&#13;
+:21:FT998877YXXL&#13;
+:32B:USD9812,&#13;
+:59F:/NURRAHMAT1&#13;
+1/JAKARTA TIMUR&#13;
+:71A:SHA&#13;
+-}${1:F01BBAIIDJAXXXX0000000000}{2:I101CITIUS33XXXXN}{4:&#13;
+:20:FT112233YXXL&#13;
+:28D:1/1&#13;
+:30:241122&#13;
+:21:FT998877YXXL&#13;
+:32B:USD9812,&#13;
+:59F:/NURRAHMAT1&#13;
+1/JAKARTA TIMUR&#13;
+:71A:SHA&#13;
+-}${1:F01BBAIIDJAXXXX0000000000}{2:I101CITIUS33XXXXN}{4:&#13;
+:20:FT112233YXXL&#13;
+:28D:1/1&#13;
+:30:241122&#13;
+:21:FT998877YXXL&#13;
+:32B:USD9812,&#13;
+:59F:/NURRAHMAT1&#13;
+1/JAKARTA TIMUR&#13;
+:71A:SHA&#13;
+-}$</string> 
+  </void> 
+  <void property="elementsToEncrypt"> 
+   <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+    <void property="namespaces"> 
+     <void method="put"> 
+      <string>xsd</string> 
+      <string>http://www.w3.org/2001/XMLSchema</string> 
+     </void> 
+     <void method="put"> 
+      <string>xml</string> 
+      <string>http://www.w3.org/XML/1998/namespace</string> 
+     </void> 
+     <void method="put"> 
+      <string>ns1</string> 
+      <string>http://www.fiorano.com/fesb/activity/Splitter1</string> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="header"> 
+   <object class="java.util.LinkedHashMap"/> 
+  </void> 
+  <void property="messageFormat"> 
+   <int>0</int> 
+  </void> 
+ </object> 
+</java> 

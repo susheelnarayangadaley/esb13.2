@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/fault" xmlns:AppendZero="AppendZero" xmlns:EnDe="http://xml.apache.org/xslt/java" xmlns:MD5Hex="http://xml.apache.org/xslt/java" xmlns:Md5UniCode="http://xml.apache.org/xslt/java" xmlns:ReplaceText="ReplaceText" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:replace="replace" xmlns:rounding="rounding" xmlns:sringindex="sringindex" xmlns:strings="strings" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math AppendZero EnDe MD5Hex Md5UniCode ReplaceText StringLength dateConversion myext replace rounding sringindex strings truncateString">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_ON_EXCEPTION" select="document('ON_EXCEPTION')"></xsl:variable>
+  <xsl:template match="/">
+    <AccountStmtRp>
+      <ErrorCode>
+        <xsl:value-of select="'801'"></xsl:value-of>
+      </ErrorCode>
+      <ErrorMsg>
+        <xsl:value-of select="'timeout'"></xsl:value-of>
+      </ErrorMsg>
+    </AccountStmtRp>
+  </xsl:template>
+</xsl:stylesheet>

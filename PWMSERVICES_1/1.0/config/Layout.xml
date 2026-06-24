@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="PWMServices" x="66" y="92"/>
+    <service-instance name="AccountValidator" x="306" y="95"/>
+    <service-instance name="AccountBalance" x="501" y="196"/>
+    <service-instance name="AccountTransactionHistory" x="519" y="10"/>
+  </subflow>
+</layout>

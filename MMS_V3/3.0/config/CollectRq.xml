@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_345" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.xslt.configuration.XsltPM"> 
+  <void property="JMSMessageXSL"> 
+   <null/> 
+  </void> 
+  <void property="JMSMessageXSL1"> 
+   <null/> 
+  </void> 
+  <void property="XSL"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns2=&quot;http://jaxb.dev.java.net/array&quot; xmlns:ns9=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; xmlns:ns7=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns1=&quot;http://temenos.com/CPTWS/WSCPBTWSCPBWINGAPI/Input&quot; xmlns:ns4=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; xmlns:ns8=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns6=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot; xmlns:ns10=&quot;http://temenos.com/CPTWS&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:multifields=&quot;multifields&quot; xmlns:multifieldsstring=&quot;multifieldsstring&quot; xmlns:myext=&quot;myext&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero MD5Hex ReplaceText StringLength dateConversion multifields multifieldsstring myext rounding sringindex strings truncateString&quot;&gt;
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;&gt;&lt;/xsl:import&gt;
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;&gt;&lt;/xsl:output&gt;
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:variable name=&quot;document_Input1&quot; select=&quot;document(&apos;Input1&apos;)&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;ns1:Envelope&gt;
+      &lt;ns1:Body&gt;
+        &lt;ns10:WSCPBTWSCPBWINGAPI&gt;
+          &lt;WebRequestCommon&gt;
+            &lt;password&gt;
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, &apos;password&apos;)&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/password&gt;
+            &lt;userName&gt;
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, &apos;username&apos;)&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/userName&gt;
+          &lt;/WebRequestCommon&gt;
+          &lt;OfsFunction&gt;
+            &lt;assignReason&gt;
+              &lt;xsl:value-of select=&quot;&apos;&apos;&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/assignReason&gt;
+          &lt;/OfsFunction&gt;
+          &lt;FUNDSTRANSFERCPBWINGAPIType&gt;
+            &lt;ns7:DEBITACCTNO&gt;
+              &lt;xsl:variable name=&quot;if0&quot;&gt;
+                &lt;xsl:choose&gt;
+                  &lt;xsl:when test=&quot;($document_Input1/FTCollectRq/Channel)=(&apos;MOBAPP&apos;)&quot;&gt;
+                    &lt;xsl:value-of select=&quot;myext:replace(string($document_Input1/FTCollectRq/FromAccount),string(&apos;1403300010001&apos;),string(&apos;g&apos;),string(&apos;1403800010001&apos;))&quot;&gt;&lt;/xsl:value-of&gt;
+                  &lt;/xsl:when&gt;
+                  &lt;xsl:otherwise&gt;
+                    &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/FromAccount&quot;&gt;&lt;/xsl:value-of&gt;
+                  &lt;/xsl:otherwise&gt;
+                &lt;/xsl:choose&gt;
+              &lt;/xsl:variable&gt;
+              &lt;xsl:value-of select=&quot;$if0&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/ns7:DEBITACCTNO&gt;
+            &lt;ns7:DEBITTHEIRREF&gt;
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/Remark&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/ns7:DEBITTHEIRREF&gt;
+            &lt;ns7:CREDITTHEIRREF&gt;
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/Remark&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/ns7:CREDITTHEIRREF&gt;
+            &lt;ns7:CREDITACCTNO&gt;
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/ToAccount&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/ns7:CREDITACCTNO&gt;
+            &lt;ns7:CREDITCURRENCY&gt;
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/Currency&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/ns7:CREDITCURRENCY&gt;
+            &lt;ns7:CREDITAMOUNT&gt;
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/Amount&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/ns7:CREDITAMOUNT&gt;
+            &lt;ns7:gPAYMENTDETAILS&gt;
+              &lt;xsl:attribute name=&quot;g&quot;&gt;
+                &lt;xsl:value-of select=&quot;&apos;1&apos;&quot;&gt;&lt;/xsl:value-of&gt;
+              &lt;/xsl:attribute&gt;
+              &lt;ns7:PAYMENTDETAILS&gt;
+                &lt;xsl:value-of select=&quot;&apos;COLLECTION&apos;&quot;&gt;&lt;/xsl:value-of&gt;
+              &lt;/ns7:PAYMENTDETAILS&gt;
+            &lt;/ns7:gPAYMENTDETAILS&gt;
+            &lt;ns7:gCOMMISSIONTYPE&gt;
+              &lt;xsl:attribute name=&quot;g&quot;&gt;
+                &lt;xsl:value-of select=&quot;&apos;1&apos;&quot;&gt;&lt;/xsl:value-of&gt;
+              &lt;/xsl:attribute&gt;
+              &lt;ns7:mCOMMISSIONTYPE&gt;
+                &lt;xsl:attribute name=&quot;m&quot;&gt;
+                  &lt;xsl:value-of select=&quot;&apos;1&apos;&quot;&gt;&lt;/xsl:value-of&gt;
+                &lt;/xsl:attribute&gt;&lt;/ns7:mCOMMISSIONTYPE&gt;
+            &lt;/ns7:gCOMMISSIONTYPE&gt;
+            &lt;ns7:INITBANK&gt;
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/TransId&quot;&gt;&lt;/xsl:value-of&gt;
+            &lt;/ns7:INITBANK&gt;
+          &lt;/FUNDSTRANSFERCPBWINGAPIType&gt;
+        &lt;/ns10:WSCPBTWSCPBWINGAPI&gt;
+      &lt;/ns1:Body&gt;
+    &lt;/ns1:Envelope&gt;
+  &lt;/xsl:template&gt;
+&lt;!--The list of parameters defined by user--&gt;
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;&gt;&lt;/xsl:param&gt;
+&lt;!--The list of Extensions defined by user--&gt;
+  &lt;lxslt:component prefix=&quot;myext&quot; functions=&quot;replace&quot;&gt;
+    &lt;lxslt:script lang=&quot;javascript&quot;&gt;&lt;![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today&apos;s date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(&quot;.&quot;)    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return &quot;There are only &quot; + days + &quot; days remaining to the start of the next millennium.&quot;; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}]]&gt;&lt;/lxslt:script&gt;
+  &lt;/lxslt:component&gt;
+&lt;/xsl:stylesheet&gt;</string> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1200</int> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="esbDefInPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>FTCollectRq</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+    &lt;xsd:element name=&quot;FTCollectRq&quot;&gt;&#13;
+                               &lt;xsd:complexType&gt;&#13;
+                              &lt;xsd:sequence&gt;&#13;
+                                    &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;Amount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TxnFee&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;FromAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ToAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Remark&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TransId&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                      &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Currency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                      &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;TxnType&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                       &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;merchantID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                        &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;merchantName&quot; type=&quot;xsd:string&quot;/&gt;                                  &#13;
+										&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Channel&quot; type=&quot;xsd:string&quot;/&gt;   &#13;
+                    &lt;/xsd:sequence&gt;&#13;
+                   &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string></string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="esbDefOutPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="importedStructures"> 
+     <object class="java.util.Hashtable"> 
+      <void method="put"> 
+       <string>http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot; elementFormDefault=&quot;qualified&quot; xmlns=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot; targetNamespace=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot;&gt;&#13;
+   &lt;xsd:complexType name=&quot;FUNDSTRANSFERCPBSWIFTOUTMBType&quot;&gt;&#13;
+      &lt;xsd:sequence&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitCurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitValueDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditCurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditValueDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gORDERINGBANK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;OrderingBank&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionCode&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCOMMISSIONTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mCOMMISSIONTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionType&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ProfitCentreDept&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;Nameofbeneficiarybank&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;Sendercustomername&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderStreet&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderBuildingNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;Sendertownname&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderCountry&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;NameofIntermediarybank&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditorCustomerAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;Creditorcustomername&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;Creditorstreet&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditorBuildingNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditorTownname&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CountryCode&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTREMARK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;Purpos&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AddressofIntermediaryBank&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AddressofBeneficiarybank&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+      &lt;/xsd:sequence&gt;&#13;
+      &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;&#13;
+   &lt;/xsd:complexType&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="put"> 
+       <string>http://temenos.com/FUNDSTRANSFER</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://temenos.com/FUNDSTRANSFER&quot; elementFormDefault=&quot;qualified&quot; xmlns=&quot;http://temenos.com/FUNDSTRANSFER&quot; targetNamespace=&quot;http://temenos.com/FUNDSTRANSFER&quot;&gt;&#13;
+   &lt;xsd:complexType name=&quot;FUNDSTRANSFERType&quot;&gt;&#13;
+      &lt;xsd:sequence&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TRANSACTIONTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INDEBITACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CURRENCYMKTDR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITCURRENCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITAMOUNT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITVALUEDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INDEBITVDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITTHEIRREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITTHEIRREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CURRENCYMKTCR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITCURRENCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITAMOUNT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITVALUEDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TREASURYRATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;NEGDEALERREFNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;PROCESSINGDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gORDERINGCUST&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;ORDERINGCUST&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINORDERINGCUS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INORDERINGCUS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gORDERINGBANK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;ORDERINGBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINORDERINGBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INORDERINGBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gACCTWITHBANK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;ACCTWITHBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gACCTWITHBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;ACCTWITHBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BENACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INBENACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gBENCUSTOMER&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;BENCUSTOMER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINBENCUSTOMER&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INBENCUSTOMER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gBENBANK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;BENBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINBENBANK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INBENBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHEQUENUMBER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gPAYMENTDETAILS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;PAYMENTDETAILS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINPAYDETAILS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INPAYDETAILS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BCBANKSORTCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RECEIVERBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gRECCORRBANK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;RECCORRBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINTERMEDBANK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INTERMEDBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gININTMEDBANK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;ININTMEDBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;MAILING&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;PAYMETHOD&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BENOURCHARGES&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INBENOURCHARGES&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHARGESACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHARGECOMDISPLAY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCOMMISSIONTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mCOMMISSIONTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONFOR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHARGECODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCHARGETYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mCHARGETYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHARGETYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHARGEAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHARGEFOR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CUSTOMERSPREAD&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BASECURRENCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;PROFITCENTRECUST&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;PROFITCENTREDEPT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RETURNTODEPT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;PRIORITYTXN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gBKTOBKINFO&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;BKTOBKINFO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINBKTOBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INBKTOBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;EXPOSUREDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;FEDFUNDS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;POSITIONTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;NOOFBATCHITEMS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gFREETEXTMSGTO&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;FREETEXTMSGTO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gMESSAGE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;MESSAGE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gTAXTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mTAXTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TAXTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TAXAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AMOUNTDEBITED&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AMOUNTCREDITED&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TOTALCHARGEAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TOTALTAXAMOUNT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CUSTOMERRATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINRECCORRBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INRECCORRBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INWARDPAYTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINSENDCORRBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INSENDCORRBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TELEXFROMCUST&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DELIVERYINREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gDELIVERYOUTREF&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;DELIVERYOUTREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITCOMPCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITCOMPCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;STATUS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DELIVERYMKR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ORDCUSTCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ACCTWITHBKACNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LOCAMTDEBITED&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LOCAMTCREDITED&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LOCTOTTAXAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LOCALCHARGEAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LOCPOSCHGSAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;MKTGEXCHPROFIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RATEINPUTMKR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CUSTGROUPLEVEL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITCUSTOMER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITCUSTOMER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SENDPAYMENTYN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DRADVICEREQDYN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CRADVICEREQDYN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEALMARKET&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHARGEDCUSTOMER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINREASONOVE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INREASONOVE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEALERDESK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RECALCFWDRATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RETURNCHEQUE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DRAWNACCOUNT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ACCOUNTINGDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINSTRCTNCODE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INSTRCTNCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COLLREMBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;EXPECTEDRECSID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TOTRECCOMM&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TOTRECCOMMLCL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TOTRECCHG&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TOTRECCHGLCL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHEQTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gRELATEDMSG&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mRELATEDMSG&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RELATEDMSG&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;sgTIMEIND&quot;&gt;&#13;
+                              &lt;xsd:complexType&gt;&#13;
+                                 &lt;xsd:sequence&gt;&#13;
+                                    &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;TIMEIND&quot;&gt;&#13;
+                                       &lt;xsd:complexType&gt;&#13;
+                                          &lt;xsd:sequence&gt;&#13;
+                                             &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TIMEIND&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                          &lt;/xsd:sequence&gt;&#13;
+                                          &lt;xsd:attribute name=&quot;s&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                                       &lt;/xsd:complexType&gt;&#13;
+                                    &lt;/xsd:element&gt;&#13;
+                                 &lt;/xsd:sequence&gt;&#13;
+                                 &lt;xsd:attribute name=&quot;sg&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                              &lt;/xsd:complexType&gt;&#13;
+                           &lt;/xsd:element&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINTIMEIND&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INTIMEIND&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gSENDTOPARTY&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mSENDTOPARTY&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SENDTOPARTY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;sgBKTOBKOUT&quot;&gt;&#13;
+                              &lt;xsd:complexType&gt;&#13;
+                                 &lt;xsd:sequence&gt;&#13;
+                                    &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;BKTOBKOUT&quot;&gt;&#13;
+                                       &lt;xsd:complexType&gt;&#13;
+                                          &lt;xsd:sequence&gt;&#13;
+                                             &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BKTOBKOUT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                          &lt;/xsd:sequence&gt;&#13;
+                                          &lt;xsd:attribute name=&quot;s&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                                       &lt;/xsd:complexType&gt;&#13;
+                                    &lt;/xsd:element&gt;&#13;
+                                 &lt;/xsd:sequence&gt;&#13;
+                                 &lt;xsd:attribute name=&quot;sg&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                              &lt;/xsd:complexType&gt;&#13;
+                           &lt;/xsd:element&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;MESSAGETYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;REVERSALMKR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RELATEDREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gININSTRCODE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;ININSTRCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINPROCESSERR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INPROCESSERR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINSWIFTMSG&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INSWIFTMSG&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ACCTWITHBANKACC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INACCTBANKACC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RECCORRBANKACC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INRECCORRACC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INTERMEDBANKACC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ININTERMEDACC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INSTRUCTEDAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gININTERMEDBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;ININTERMEDBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INEXCHRATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RATEFIXING&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COVERMETHOD&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gIN3RDREIMBBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;IN3RDREIMBBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IN3RDREIMBACC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;MT103TYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;EXTENDFORMAT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gEXTENDINFO&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;EXTENDINFO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RATEFIXINGIND&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INWSENDBIC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINSENDCHG&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INSENDCHG&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INRECCHG&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ACCHGREQID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TOTRECCHGCRCCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TOTSNDCHGCRCCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHGADVICEMSG&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;EXPECTEDCOVERID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;NETTINGSTATUS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AUTHDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BKOPERATIONCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AMINFLOWRATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;PARENTTXNID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ROUNDTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BENEFICIARYID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gMSGTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mMSGTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;MSGTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;MSGDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gSIGNATORY&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;SIGNATORY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CARDNUMBER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCARDTXNDETAIL&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;CARDTXNDETAIL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINCORDBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INCORDBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINCINTMEDBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INCINTMEDBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINCACCWITBK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INCACCWITBK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINCBKTBKIN&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INCBKTBKIN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TFSREFERENCE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHEQUEDRAWN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ISSUECHEQUETYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;STOCKNUMBER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;PAYEENAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;STOCKREGISTER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SERIESID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ORDCUSTACCT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INORDCUSTACCT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBANDEBIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBANCREDIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBANBEN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBANACCTWITHBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBANRECCORRBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBANINTERMEDBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBANORDCUSTACC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBANCHARGESACCT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BICIBANBEN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gBICIBANBENNAME&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;BICIBANBENNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BICIBANBENCITY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gBENNAME&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;BENNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gBENADDRESS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;BENADDRESS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BENCOUNTRY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gBENTOWN&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;BENTOWN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINBENNAME&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INBENNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINBENADDRESS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INBENADDRESS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INBENCOUNTRY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINBENTOWN&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INBENTOWN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gREFDATAITEM&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mREFDATAITEM&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;REFDATAITEM&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;REFDATAVALUE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gLOCEQUIVCHGS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;LOCEQUIVCHGS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gFOREQUIVCHGS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;FOREQUIVCHGS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;REGCOMPLIANCE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CBCREDITACCOUNT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CBCREDITCCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CBDEBITACCOUNT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CBDEBITCCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TCSIMACCEPTED&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LASTSIMTIME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INHDR3UETR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gSPLITEXPOSUREDATE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mSPLITEXPOSUREDATE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SPLITEXPOSUREDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SPLITEXPOSUREAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AUTHORISATIONID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;EXEMPTFROMSCA&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;STATUSREASONCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RESERVED4&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RESERVED3&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RESERVED2&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RESERVED1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gSTMTNOS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;STMTNOS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gOVERRIDE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;OVERRIDE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RECORDSTATUS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CURRNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gINPUTTER&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;INPUTTER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gDATETIME&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;DATETIME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AUTHORISER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEPTCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AUDITORCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AUDITDATETIME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBLCCODECR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBLCCODECH&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBLCCOUNTRYDR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBLCCOUNTRYCR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBLCCOUNTRYCH&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;FUTUREDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IBLCCODEDR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;IMMEDIATELY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gTRANSINSTR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;TRANSINSTR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTCREX&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHNLCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBRCVACTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBRTCODEV1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSSTMTLIST&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHRGBEN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHGIACQ&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHGIISS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHGIBEN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSAMTTXN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSAMTSTL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSAMTBILL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSEXGRATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCURRBILL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSISOMAP&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCURRTXN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCURRBASE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHGINBC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gLTXNNARRDR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;LTXNNARRDR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gLTXNNARRCR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;LTXNNARRCR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHQSTOCKREG&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHQSERIESID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHQISSUENO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHQSTARTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTTRANREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTBNKSDR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTBNKRCV&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTACCTRCV&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSDRNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSDRID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSDRPN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTSDRQS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;CPBFTSDRQS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTRCVNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTRCVID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTRCVPN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTRCVANS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;CPBFTRCVANS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;FASTTXNCCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INITBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DBRTNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DBTRSTREET&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DBTRBLDNNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DBRTPSTCD&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DBRTTWNNM&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DBRTCTRY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RECIEVEBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CDRTACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CDRTNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CDRTSTRNM&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CDRTBDLNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CDRTTWNNM&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CDRTCTRY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHRGACQ&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHRGISS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LNSSCHRGNBC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTREMARK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;CPBFTREMARK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBRTCODE1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;FASTPAYID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTBNKINAD&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTBNKRCAD&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSWMSGTP&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSWSDCBNK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBCHRGMODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHQISSUEREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBROUNDING&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTDRAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTCRAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;FASTMSGID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;FTAVLBAL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSMS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTDBEX&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;LOB&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;PRODUCT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gKHQR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;KHQR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ATMRESPCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;STATUDESC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;STATUSCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;REVBANKNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TRXHASH&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSDRIDTY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSDRADD&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTRCVIDTY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTRCVADD&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSDRIDEX&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSDRIDCT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTSDRIDAU&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTRCVIDEX&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTRCVIDCT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTRCVIDAU&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CPBFTGRPTRN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+      &lt;/xsd:sequence&gt;&#13;
+      &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;&#13;
+   &lt;/xsd:complexType&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="put"> 
+       <string>http://temenos.com/FUNDSTRANSFERCPBWINGAPI</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot; elementFormDefault=&quot;qualified&quot; xmlns=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot; targetNamespace=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot;&gt;&#13;
+   &lt;xsd:complexType name=&quot;FUNDSTRANSFERCPBWINGAPIType&quot;&gt;&#13;
+      &lt;xsd:sequence&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITVALUEDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DEBITTHEIRREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITTHEIRREF&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITCURRENCY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITAMOUNT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CREDITVALUEDATE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gPAYMENTDETAILS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;PAYMENTDETAILS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCOMMISSIONTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mCOMMISSIONTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CHARGECODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;INITBANK&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CDRTACCTNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+      &lt;/xsd:sequence&gt;&#13;
+      &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;&#13;
+   &lt;/xsd:complexType&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="put"> 
+       <string>http://temenos.com/CPTWS</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;&lt;!-- Published by JAX-WS RI (http://jax-ws.java.net). RI&apos;s version is JAX-WS RI 2.3.2-1 git-revision#dbe58a8. --&gt;&lt;xsd:schema xmlns:ns0=&quot;http://temenos.com/CPTWS&quot; xmlns:ns1=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; xmlns:ns2=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns3=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot; xmlns:ns4=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot; xmlns:ns6=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; targetNamespace=&quot;http://temenos.com/CPTWS&quot;&gt;&lt;xsd:import schemaLocation=&quot;https://tap.cambodiapostbank.com.kh:7002/CPTWS/services?xsd=5&quot; namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot;/&gt;&lt;xsd:import schemaLocation=&quot;https://tap.cambodiapostbank.com.kh:7002/CPTWS/services?xsd=2&quot; namespace=&quot;http://temenos.com/FUNDSTRANSFER&quot;/&gt;&lt;xsd:import schemaLocation=&quot;https://tap.cambodiapostbank.com.kh:7002/CPTWS/services?xsd=7&quot; namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot;/&gt;&lt;xsd:import schemaLocation=&quot;https://tap.cambodiapostbank.com.kh:7002/CPTWS/services?xsd=3&quot; namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot;/&gt;&lt;xsd:import schemaLocation=&quot;https://tap.cambodiapostbank.com.kh:7002/CPTWS/services?xsd=6&quot; namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot;/&gt;&lt;xsd:import schemaLocation=&quot;https://tap.cambodiapostbank.com.kh:7002/CPTWS/services?xsd=4&quot; namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot;/&gt;&lt;xsd:complexType name=&quot;BakongFullFundsTransfer&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBBKGMBType&quot; type=&quot;ns6:FUNDSTRANSFERCPBBKGMBType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;BakongFullFundsTransferResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;BakongFullFundsTransfer_Validate&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBBKGMBType&quot; type=&quot;ns6:FUNDSTRANSFERCPBBKGMBType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;BakongFullFundsTransfer_ValidateResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;BakongWalletTransfer&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBBKGMWTMBType&quot; type=&quot;ns1:FUNDSTRANSFERCPBBKGMWTMBType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;BakongWalletTransferResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;BakongWalletTransfer_Validate&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBBKGMWTMBType&quot; type=&quot;ns1:FUNDSTRANSFERCPBBKGMWTMBType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;BakongWalletTransfer_ValidateResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBACRTMB&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBACRTMBType&quot; type=&quot;ns4:FUNDSTRANSFERCPBACRTMBType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBACRTMBResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBACRTMB_Validate&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBACRTMBType&quot; type=&quot;ns4:FUNDSTRANSFERCPBACRTMBType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBACRTMB_ValidateResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBSWIFTOUTMB&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBSWIFTOUTMBType&quot; type=&quot;ns5:FUNDSTRANSFERCPBSWIFTOUTMBType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBSWIFTOUTMBResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBSWIFTOUTMB_Validate&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBSWIFTOUTMBType&quot; type=&quot;ns5:FUNDSTRANSFERCPBSWIFTOUTMBType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBSWIFTOUTMB_ValidateResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBWINGAPI&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBWINGAPIType&quot; type=&quot;ns3:FUNDSTRANSFERCPBWINGAPIType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBWINGAPIResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBWINGAPI_Validate&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;WebRequestCommon&quot; type=&quot;ns0:webRequestCommon&quot;/&gt;&lt;xsd:element name=&quot;OfsFunction&quot; type=&quot;ns0:ofsFunction&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERCPBWINGAPIType&quot; type=&quot;ns3:FUNDSTRANSFERCPBWINGAPIType&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;WSCPBTWSCPBWINGAPI_ValidateResponse&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;Status&quot; type=&quot;ns0:Status&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;FUNDSTRANSFERType&quot; type=&quot;ns2:FUNDSTRANSFERType&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;webRequestCommon&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;company&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;password&quot; type=&quot;xsd:string&quot;/&gt;&lt;xsd:element name=&quot;userName&quot; type=&quot;xsd:string&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;ofsFunction&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;activityName&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;assignReason&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;dueDate&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;extProcess&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;extProcessID&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;gtsControl&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;messageId&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;noOfAuth&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;owner&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;replace&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;startDate&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;user&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:complexType name=&quot;Status&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;transactionId&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;messageId&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;successIndicator&quot; type=&quot;ns0:successIndicator&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;application&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot;/&gt;&lt;xsd:element name=&quot;messages&quot; type=&quot;xsd:string&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; nillable=&quot;true&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;xsd:element name=&quot;BakongFullFundsTransfer&quot; type=&quot;ns0:BakongFullFundsTransfer&quot;/&gt;&lt;xsd:element name=&quot;BakongFullFundsTransferResponse&quot; type=&quot;ns0:BakongFullFundsTransferResponse&quot;/&gt;&lt;xsd:element name=&quot;BakongFullFundsTransfer_Validate&quot; type=&quot;ns0:BakongFullFundsTransfer_Validate&quot;/&gt;&lt;xsd:element name=&quot;BakongFullFundsTransfer_ValidateResponse&quot; type=&quot;ns0:BakongFullFundsTransfer_ValidateResponse&quot;/&gt;&lt;xsd:element name=&quot;BakongWalletTransfer&quot; type=&quot;ns0:BakongWalletTransfer&quot;/&gt;&lt;xsd:element name=&quot;BakongWalletTransferResponse&quot; type=&quot;ns0:BakongWalletTransferResponse&quot;/&gt;&lt;xsd:element name=&quot;BakongWalletTransfer_Validate&quot; type=&quot;ns0:BakongWalletTransfer_Validate&quot;/&gt;&lt;xsd:element name=&quot;BakongWalletTransfer_ValidateResponse&quot; type=&quot;ns0:BakongWalletTransfer_ValidateResponse&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBACRTMB&quot; type=&quot;ns0:WSCPBTWSCPBACRTMB&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBACRTMBResponse&quot; type=&quot;ns0:WSCPBTWSCPBACRTMBResponse&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBACRTMB_Validate&quot; type=&quot;ns0:WSCPBTWSCPBACRTMB_Validate&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBACRTMB_ValidateResponse&quot; type=&quot;ns0:WSCPBTWSCPBACRTMB_ValidateResponse&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBSWIFTOUTMB&quot; type=&quot;ns0:WSCPBTWSCPBSWIFTOUTMB&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBSWIFTOUTMBResponse&quot; type=&quot;ns0:WSCPBTWSCPBSWIFTOUTMBResponse&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBSWIFTOUTMB_Validate&quot; type=&quot;ns0:WSCPBTWSCPBSWIFTOUTMB_Validate&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBSWIFTOUTMB_ValidateResponse&quot; type=&quot;ns0:WSCPBTWSCPBSWIFTOUTMB_ValidateResponse&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBWINGAPI&quot; type=&quot;ns0:WSCPBTWSCPBWINGAPI&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBWINGAPIResponse&quot; type=&quot;ns0:WSCPBTWSCPBWINGAPIResponse&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBWINGAPI_Validate&quot; type=&quot;ns0:WSCPBTWSCPBWINGAPI_Validate&quot;/&gt;&lt;xsd:element name=&quot;WSCPBTWSCPBWINGAPI_ValidateResponse&quot; type=&quot;ns0:WSCPBTWSCPBWINGAPI_ValidateResponse&quot;/&gt;&lt;xsd:simpleType name=&quot;successIndicator&quot;&gt;&lt;xsd:restriction base=&quot;xsd:string&quot;&gt;&lt;xsd:enumeration value=&quot;Success&quot;/&gt;&lt;xsd:enumeration value=&quot;TWSError&quot;/&gt;&lt;xsd:enumeration value=&quot;T24Error&quot;/&gt;&lt;xsd:enumeration value=&quot;T24Override&quot;/&gt;&lt;xsd:enumeration value=&quot;T24Offline&quot;/&gt;&lt;/xsd:restriction&gt;&lt;/xsd:simpleType&gt;&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="put"> 
+       <string>http://temenos.com/FUNDSTRANSFERCPBBKGMB</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; elementFormDefault=&quot;qualified&quot; xmlns=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; targetNamespace=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot;&gt;&#13;
+   &lt;xsd:complexType name=&quot;FUNDSTRANSFERCPBBKGMBType&quot;&gt;&#13;
+      &lt;xsd:sequence&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditCurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ChargesAcctNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCOMMISSIONTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mCOMMISSIONTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gLTXNNARRDR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;LTXNNARRDR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gLTXNNARRCR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;LTXNNARRCR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderBankBIC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RecievingBankBIC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;OtherBankCreditAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;Creditorcustomername&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+      &lt;/xsd:sequence&gt;&#13;
+      &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;&#13;
+   &lt;/xsd:complexType&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="put"> 
+       <string>http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; elementFormDefault=&quot;qualified&quot; xmlns=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; targetNamespace=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot;&gt;&#13;
+   &lt;xsd:complexType name=&quot;FUNDSTRANSFERCPBBKGMWTMBType&quot;&gt;&#13;
+      &lt;xsd:sequence&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditCurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ChargesAcctNO&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONCODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCOMMISSIONTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mCOMMISSIONTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;COMMISSIONAMT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gLTXNNARRDR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;LTXNNARRDR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gLTXNNARRCR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;LTXNNARRCR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderBankBIC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;RecievingBankBIC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;OtherBankCreditAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;Creditorcustomername&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gKHQR&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;KHQR&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;REVBANKNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TRXHASH&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+      &lt;/xsd:sequence&gt;&#13;
+      &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;&#13;
+   &lt;/xsd:complexType&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="put"> 
+       <string>http://jaxb.dev.java.net/array</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;&lt;!-- Published by JAX-WS RI (http://jax-ws.java.net). RI&apos;s version is JAX-WS RI 2.3.2-1 git-revision#dbe58a8. --&gt;&lt;xsd:schema xmlns:ns0=&quot;http://jaxb.dev.java.net/array&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; targetNamespace=&quot;http://jaxb.dev.java.net/array&quot;&gt;&lt;xsd:complexType name=&quot;anyTypeArray&quot;&gt;&lt;xsd:sequence&gt;&lt;xsd:element name=&quot;item&quot; type=&quot;xsd:anyType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; nillable=&quot;true&quot;/&gt;&lt;/xsd:sequence&gt;&lt;/xsd:complexType&gt;&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="put"> 
+       <string>http://temenos.com/FUNDSTRANSFERCPBACRTMB</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot; elementFormDefault=&quot;qualified&quot; xmlns=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot; targetNamespace=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot;&gt;&#13;
+   &lt;xsd:complexType name=&quot;FUNDSTRANSFERCPBACRTMBType&quot;&gt;&#13;
+      &lt;xsd:sequence&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TransactionType&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitCurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitValueDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditCurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditValueDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TreasuryRate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ChargesAcctNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionCode&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCOMMISSIONTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mCOMMISSIONTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionType&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CustomerRate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BankBranchSender&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BankBranchReceiver&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AcctOtherBank&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderCardID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderPhone&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTSDRQS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;Question&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ReceiverName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ReceiverCardID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ReceiverPhone&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTRCVANS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;Answer&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTREMARK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;Purpose&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+      &lt;/xsd:sequence&gt;&#13;
+      &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;&#13;
+   &lt;/xsd:complexType&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="put"> 
+       <string></string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns1=&quot;http://jaxb.dev.java.net/array&quot; xmlns:tns=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot; elementFormDefault=&quot;qualified&quot; xmlns=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot; targetNamespace=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot;&gt;&#13;
+   &lt;xsd:complexType name=&quot;FUNDSTRANSFERCPBACRTMBType&quot;&gt;&#13;
+      &lt;xsd:sequence&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TransactionType&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitCurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitValueDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;DebitNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditNarrative&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAccount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditCurrency&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CreditValueDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;TreasuryRate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ChargesAcctNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionCode&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCOMMISSIONTYPE&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;mCOMMISSIONTYPE&quot;&gt;&#13;
+                     &lt;xsd:complexType&gt;&#13;
+                        &lt;xsd:sequence&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionType&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CommissionAmount&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                        &lt;/xsd:sequence&gt;&#13;
+                        &lt;xsd:attribute name=&quot;m&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+                     &lt;/xsd:complexType&gt;&#13;
+                  &lt;/xsd:element&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;CustomerRate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BankBranchSender&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;BankBranchReceiver&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;AcctOtherBank&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderCardID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;SenderPhone&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTSDRQS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;Question&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ReceiverName&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ReceiverCardID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;ReceiverPhone&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTRCVANS&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;Answer&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+         &lt;xsd:element minOccurs=&quot;0&quot; name=&quot;gCPBFTREMARK&quot;&gt;&#13;
+            &lt;xsd:complexType&gt;&#13;
+               &lt;xsd:sequence&gt;&#13;
+                  &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;Purpose&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+               &lt;/xsd:sequence&gt;&#13;
+               &lt;xsd:attribute name=&quot;g&quot; type=&quot;xsd:positiveInteger&quot; use=&quot;optional&quot;/&gt;&#13;
+            &lt;/xsd:complexType&gt;&#13;
+         &lt;/xsd:element&gt;&#13;
+      &lt;/xsd:sequence&gt;&#13;
+      &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;&#13;
+   &lt;/xsd:complexType&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="rootElementName"> 
+     <string>Envelope</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xsd:schema xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:wsp=&quot;http://www.w3.org/ns/ws-policy&quot; xmlns:tns=&quot;http://temenos.com/CPTWS&quot; xmlns:wsp1_2=&quot;http://schemas.xmlsoap.org/ws/2004/09/policy&quot; xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:wsam=&quot;http://www.w3.org/2007/05/addressing/metadata&quot; xmlns:ftns=&quot;http://temenos.com/CPTWS/WSCPBTWSCPBWINGAPI/Input&quot; targetNamespace=&quot;http://temenos.com/CPTWS/WSCPBTWSCPBWINGAPI/Input&quot;&gt;&#13;
+   &lt;xsd:import namespace=&quot;http://temenos.com/CPTWS&quot;/&gt;&#13;
+   &lt;xsd:import namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot;/&gt;&#13;
+   &lt;xsd:import namespace=&quot;http://temenos.com/FUNDSTRANSFER&quot;/&gt;&#13;
+   &lt;xsd:import namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot;/&gt;&#13;
+   &lt;xsd:import namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot;/&gt;&#13;
+   &lt;xsd:import namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot;/&gt;&#13;
+   &lt;xsd:import namespace=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot;/&gt;&#13;
+   &lt;xsd:import namespace=&quot;http://jaxb.dev.java.net/array&quot;/&gt;&#13;
+   &lt;xsd:element name=&quot;Envelope&quot;&gt;&#13;
+      &lt;xsd:complexType&gt;&#13;
+         &lt;xsd:sequence&gt;&#13;
+            &lt;xsd:element ref=&quot;ftns:Header&quot;/&gt;&#13;
+            &lt;xsd:element ref=&quot;ftns:Body&quot;/&gt;&#13;
+         &lt;/xsd:sequence&gt;&#13;
+      &lt;/xsd:complexType&gt;&#13;
+   &lt;/xsd:element&gt;&#13;
+   &lt;xsd:element name=&quot;Header&quot;&gt;&#13;
+      &lt;xsd:complexType&gt;&#13;
+         &lt;xsd:sequence/&gt;&#13;
+      &lt;/xsd:complexType&gt;&#13;
+   &lt;/xsd:element&gt;&#13;
+   &lt;xsd:element name=&quot;Body&quot;&gt;&#13;
+      &lt;xsd:complexType&gt;&#13;
+         &lt;xsd:sequence&gt;&#13;
+            &lt;xsd:element ref=&quot;tns:WSCPBTWSCPBWINGAPI&quot;/&gt;&#13;
+         &lt;/xsd:sequence&gt;&#13;
+      &lt;/xsd:complexType&gt;&#13;
+   &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string>http://temenos.com/CPTWS/WSCPBTWSCPBWINGAPI/Input</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="inputStructureName"> 
+   <string>Input1</string> 
+  </void> 
+  <void property="project"> 
+   <string>project</string> 
+  </void> 
+  <void property="tfClassName"> 
+   <string></string> 
+  </void> 
+ </object> 
+</java> 

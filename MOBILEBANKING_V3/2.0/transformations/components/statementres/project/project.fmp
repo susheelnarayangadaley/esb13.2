@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context1.XSD" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.XSD" mime="XSD" name="IN_PORT" rootName="{http://temenos.com/CPBAPI/WSCPBAPISTMTENTBOOK/Output}Envelope">
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext1.XSD" mime="XSD" name="http://temenos.com/CPBAPISTMTENTBOOK"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext2.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext3.XSD" mime="XSD" name="http://temenos.com/CPBAPI"/>
+    </mappermodel:Structure>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Output1.XSD" mime="XSD" name="Output1" rootName="AccountStmtRp"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ErrorCode:0" x="884" y="46">
+      <mappermodel:FunctionGraphNode label="=" type="31" x="385" y="94">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Success" type="22" x="233" y="114">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="564" y="109">
+        <mappermodel:InputPins>bool,then,bool,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="00" type="22" x="391" y="147">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="05" type="22" x="330" y="189">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,Status:0,successIndicator:0" x="154" y="34">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="3" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="6" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0,TxnDate:0" x="847" y="20">
+      <mappermodel:FunctionGraphNode label="=" type="31" x="288" y="51">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="435" y="136">
+        <mappermodel:InputPins>bool,then,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="115" y="41">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,gCPBAPISTMTENTBOOKDetailType:0,[ZERO MANY]:0,mCPBAPISTMTENTBOOKDetailType:0,BookDate:0" x="57" y="118">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="2" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ErrorMsg:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,Status:0,successIndicator:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,AccountName:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,PRTNM:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,AccountNumber:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,DACC:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,CustomerNumber:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,CUS:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,CCY:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,CHKCCY:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,EndingBalance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,ClosingBalance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,StartBalance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,OPENINGBALANCE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,gCPBAPISTMTENTBOOKDetailType:0,[ZERO MANY]:0,mCPBAPISTMTENTBOOKDetailType:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0,TxnRef:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,gCPBAPISTMTENTBOOKDetailType:0,[ZERO MANY]:0,mCPBAPISTMTENTBOOKDetailType:0,Reference:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0,TxnContent:0" x="520" y="60">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,gCPBAPISTMTENTBOOKDetailType:0,[ZERO MANY]:0,mCPBAPISTMTENTBOOKDetailType:0,Description:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0,MoneyOut:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,gCPBAPISTMTENTBOOKDetailType:0,[ZERO MANY]:0,mCPBAPISTMTENTBOOKDetailType:0,Debit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0,MoneyIn:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,gCPBAPISTMTENTBOOKDetailType:0,[ZERO MANY]:0,mCPBAPISTMTENTBOOKDetailType:0,Credit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0,Balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,gCPBAPISTMTENTBOOKDetailType:0,[ZERO MANY]:0,mCPBAPISTMTENTBOOKDetailType:0,ClosingBalance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0,ValueDate:0" x="1197" y="111">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,WSCPBAPISTMTENTBOOKResponse:0,[ZERO MANY]:0,CPBAPISTMTENTBOOKType:0,gCPBAPISTMTENTBOOKDetailType:0,[ZERO MANY]:0,mCPBAPISTMTENTBOOKDetailType:0,ValueDate:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="=" type="31" x="797" y="55">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="624" y="45">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="944" y="140">
+        <mappermodel:InputPins>bool,then,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="2" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

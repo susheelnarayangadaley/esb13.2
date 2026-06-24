@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrGatewayConfigurations>
+    <BCConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.bcdk.BCDKConfigurationInfo"> 
+  <void property="JCAAdapterConfig"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;ESBAdapterConfigurations&gt;&#13;
+    &lt;ConnectionLess&gt;false&lt;/ConnectionLess&gt;&#13;
+    &lt;isConfigurationRequired&gt;true&lt;/isConfigurationRequired&gt;&#13;
+    &lt;isLicensed&gt;false&lt;/isLicensed&gt;&#13;
+    &lt;Inbound&gt;false&lt;/Inbound&gt;&#13;
+    &lt;AdapterInstanceProperties&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_40-ea&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ESBAdapterInstanceProperties&quot;&gt; &#13;
+  &lt;void property=&quot;GUID&quot;&gt; &#13;
+   &lt;string&gt;WebServiceConsumer&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appName&quot;&gt; &#13;
+   &lt;string&gt;MOBILEBANKING_V3&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;domain&quot;&gt; &#13;
+   &lt;string&gt;BCConfigPropertySheet&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;instanceName&quot;&gt; &#13;
+   &lt;string&gt;WebServiceConsumer1&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;logCategories&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;WSInvokerInteractionSpec&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;WSInvokerInteractionSpec&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;WSInvokerInteractionSpec&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.webservices.invoker.cci.WSInvokerInteractionSpec&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;WSInvokerManagedConnectionFactory&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;WSInvokerManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;WSInvokerManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.webservices.invoker.spi.outbound.WSInvokerManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/AdapterInstanceProperties&gt;&#13;
+    &lt;ConfigurationObjects&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_40-ea&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.webservices.invoker.spi.outbound.WSInvokerManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;JNDIName&quot;&gt; &#13;
+    &lt;string&gt;WebServiceConsumer&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1100&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;WebServiceConsumer&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;MOBILEBANKING_V3__WebServiceConsumer1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;wsdl&quot;&gt; &#13;
+    &lt;object class=&quot;com.fiorano.webservices.invoker.model.WSDLInfo&quot;&gt; &#13;
+     &lt;void property=&quot;wsdlURL&quot;&gt; &#13;
+      &lt;string&gt;http://192.168.103.106:8022/ws/statement.wsdl&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;WSInvoker Connection&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;wsinvoker.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.webservices.invoker.spi.outbound.WSInvokerManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;WebServiceConsumer&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.spi.ManagedConnectionFactory&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_40-ea&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;fiorano.esb.adapter.jca.cci.ESBConnectionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;MCFClassName&quot;&gt; &#13;
+    &lt;string&gt;com.fiorano.webservices.invoker.spi.outbound.WSInvokerManagedConnectionFactory&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;WSInvoker Connection&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;wsinvoker.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;fiorano.esb.adapter.jca.cci.ESBConnectionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;WebServiceConsumer&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.ConnectionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_40-ea&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.webservices.invoker.cci.WSInvokerInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1200&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;connectionConfiguration&quot;&gt; &#13;
+    &lt;void property=&quot;password&quot; isEncrypted=&quot;true&quot;&gt; &#13;
+     &lt;string&gt;zcC6SXzF+bh4BGN4YJKKfw==&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;endpointAddress&quot;&gt; &#13;
+    &lt;string&gt;http://192.168.103.106:8022/ws&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorActionsMap&quot;&gt; &#13;
+     &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;2&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;4&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;1&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;3&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;1&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;active&quot;&gt; &#13;
+           &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;4&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;active&quot;&gt; &#13;
+           &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;noOfRetries&quot;&gt; &#13;
+           &lt;int&gt;10&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;repeatInterval&quot;&gt; &#13;
+           &lt;long&gt;300000&lt;/long&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;sendErrorAfterTries&quot;&gt; &#13;
+           &lt;int&gt;2&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;0&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;/&gt; &#13;
+      &lt;/void&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;WebServiceConsumer&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;MOBILEBANKING_V3__WebServiceConsumer1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;jndiConfiguration&quot;&gt; &#13;
+    &lt;void property=&quot;password&quot; isEncrypted=&quot;true&quot;&gt; &#13;
+     &lt;string&gt;CVuEpOIpQJAIVeUQIs7kBQ==&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;mimeHeaders&quot;&gt; &#13;
+    &lt;object class=&quot;org.apache.axis.message.MimeHeaders&quot;/&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;operationInputParam&quot;&gt; &#13;
+    &lt;string&gt;GetStatementRequest&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;operationName&quot;&gt; &#13;
+    &lt;string&gt;GetStatement&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;operationOutputParam&quot;&gt; &#13;
+    &lt;string&gt;GetStatementResponse&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;portName&quot;&gt; &#13;
+    &lt;string&gt;StatementPortSoap11&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;properties&quot;&gt; &#13;
+    &lt;void method=&quot;put&quot;&gt; &#13;
+     &lt;string&gt;TargetNamespace.Prefix&lt;/string&gt; &#13;
+     &lt;string&gt;tns&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void method=&quot;put&quot;&gt; &#13;
+     &lt;string&gt;javax.xml.rpc.soap.operation.style&lt;/string&gt; &#13;
+     &lt;string&gt;document&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void method=&quot;put&quot;&gt; &#13;
+     &lt;string&gt;SOAP.version&lt;/string&gt; &#13;
+     &lt;string&gt;http://schemas.xmlsoap.org/wsdl/soap/&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void method=&quot;put&quot;&gt; &#13;
+     &lt;string&gt;javax.xml.rpc.soap.http.soapaction.uri&lt;/string&gt; &#13;
+     &lt;string&gt;&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;service&quot;&gt; &#13;
+    &lt;string&gt;{http://cpbank.com/statement}StatementPortService&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;soapBodyNS&quot;&gt; &#13;
+    &lt;string&gt;http://schemas.xmlsoap.org/wsdl/soap/&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;WebService&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;WebService Invoker component&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;wsinvoker.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.webservices.invoker.cci.WSInvokerInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;WebServiceConsumer&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.InteractionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+    &lt;/ConfigurationObjects&gt;&#13;
+    &lt;InputRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_40-ea&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;importedStructures&quot;&gt; &#13;
+   &lt;object class=&quot;java.util.HashMap&quot;&gt; &#13;
+    &lt;void method=&quot;put&quot;&gt; &#13;
+     &lt;string&gt;http://cpbank.com/statement&lt;/string&gt; &#13;
+     &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+      &lt;void method=&quot;add&quot;&gt; &#13;
+       &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;xs:schema elementFormDefault=&amp;quot;qualified&amp;quot; targetNamespace=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:sch=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:soap=&amp;quot;http://schemas.xmlsoap.org/wsdl/soap/&amp;quot; xmlns:stat=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:tns=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:wsdl=&amp;quot;http://schemas.xmlsoap.org/wsdl/&amp;quot; xmlns:xs=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- GetStatementRequest --&amp;gt;&#13;
+    &amp;lt;xs:element name=&amp;quot;GetStatementRequest&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:complexType&amp;gt;&#13;
+            &amp;lt;xs:sequence&amp;gt;&#13;
+                &amp;lt;xs:element name=&amp;quot;username&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element name=&amp;quot;password&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element name=&amp;quot;accountNumber&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;fromDate&amp;quot; type=&amp;quot;stat:YYYYMMDDDate&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;toDate&amp;quot; type=&amp;quot;stat:YYYYMMDDDate&amp;quot;/&amp;gt;&#13;
+            &amp;lt;/xs:sequence&amp;gt;&#13;
+        &amp;lt;/xs:complexType&amp;gt;&#13;
+    &amp;lt;/xs:element&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- GetStatementResponse --&amp;gt;&#13;
+    &amp;lt;xs:element name=&amp;quot;GetStatementResponse&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:complexType&amp;gt;&#13;
+            &amp;lt;xs:sequence&amp;gt;&#13;
+                &amp;lt;xs:element name=&amp;quot;status&amp;quot; type=&amp;quot;stat:statusType&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;transactions&amp;quot; type=&amp;quot;stat:transactionList&amp;quot;/&amp;gt;&#13;
+            &amp;lt;/xs:sequence&amp;gt;&#13;
+        &amp;lt;/xs:complexType&amp;gt;&#13;
+    &amp;lt;/xs:element&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- Status Type with code and message --&amp;gt;&#13;
+    &amp;lt;xs:complexType name=&amp;quot;statusType&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:sequence&amp;gt;&#13;
+            &amp;lt;xs:element name=&amp;quot;code&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element name=&amp;quot;message&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xs:sequence&amp;gt;&#13;
+    &amp;lt;/xs:complexType&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- Date Format --&amp;gt;&#13;
+    &amp;lt;xs:simpleType name=&amp;quot;YYYYMMDDDate&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:restriction base=&amp;quot;xs:string&amp;quot;&amp;gt;&#13;
+            &amp;lt;xs:pattern value=&amp;quot;[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:length value=&amp;quot;8&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xs:restriction&amp;gt;&#13;
+    &amp;lt;/xs:simpleType&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- Transaction List --&amp;gt;&#13;
+    &amp;lt;xs:complexType name=&amp;quot;transactionList&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:sequence&amp;gt;&#13;
+            &amp;lt;xs:element maxOccurs=&amp;quot;unbounded&amp;quot; minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;transaction&amp;quot; type=&amp;quot;stat:transaction&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xs:sequence&amp;gt;&#13;
+    &amp;lt;/xs:complexType&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- Transaction --&amp;gt;&#13;
+    &amp;lt;xs:complexType name=&amp;quot;transaction&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:sequence&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;recid&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;bookingDate&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;reference&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;narrative&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;valueDate&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;drCr&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;amount&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;currency&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;description&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;txnType&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;debitAcc&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;creditAcc&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acboCrAcc&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acboCrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acboDrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acbiCrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acbiDrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;bakongDesc&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;trxDt&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;trxTime&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;txnTypeDescription&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;cbsCrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;cbsDrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xs:sequence&amp;gt;&#13;
+    &amp;lt;/xs:complexType&amp;gt;&#13;
+&amp;lt;/xs:schema&amp;gt;&lt;/string&gt; &#13;
+      &lt;/void&gt; &#13;
+     &lt;/object&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/object&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;Envelope&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;xsd:schema xmlns:wsdl=&amp;quot;http://schemas.xmlsoap.org/wsdl/&amp;quot; xmlns:tns=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:sch=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:soap=&amp;quot;http://schemas.xmlsoap.org/wsdl/soap/&amp;quot; xmlns:ftns=&amp;quot;http://cpbank.com/statement/GetStatement/Input&amp;quot; xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; targetNamespace=&amp;quot;http://cpbank.com/statement/GetStatement/Input&amp;quot;&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:import namespace=&amp;quot;http://cpbank.com/statement&amp;quot;/&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Envelope&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element ref=&amp;quot;ftns:Header&amp;quot;/&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element ref=&amp;quot;ftns:Body&amp;quot;/&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Header&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence/&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Body&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element ref=&amp;quot;sch:GetStatementRequest&amp;quot;/&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+&amp;lt;/xsd:schema&amp;gt;&amp;#13;&#13;
+&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://cpbank.com/statement/GetStatement/Input&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/InputRecordDefinition&gt;&#13;
+    &lt;OutputRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_40-ea&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;importedStructures&quot;&gt; &#13;
+   &lt;object class=&quot;java.util.HashMap&quot;&gt; &#13;
+    &lt;void method=&quot;put&quot;&gt; &#13;
+     &lt;string&gt;http://cpbank.com/statement&lt;/string&gt; &#13;
+     &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+      &lt;void method=&quot;add&quot;&gt; &#13;
+       &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;xs:schema elementFormDefault=&amp;quot;qualified&amp;quot; targetNamespace=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:sch=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:soap=&amp;quot;http://schemas.xmlsoap.org/wsdl/soap/&amp;quot; xmlns:stat=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:tns=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:wsdl=&amp;quot;http://schemas.xmlsoap.org/wsdl/&amp;quot; xmlns:xs=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- GetStatementRequest --&amp;gt;&#13;
+    &amp;lt;xs:element name=&amp;quot;GetStatementRequest&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:complexType&amp;gt;&#13;
+            &amp;lt;xs:sequence&amp;gt;&#13;
+                &amp;lt;xs:element name=&amp;quot;username&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element name=&amp;quot;password&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element name=&amp;quot;accountNumber&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;fromDate&amp;quot; type=&amp;quot;stat:YYYYMMDDDate&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;toDate&amp;quot; type=&amp;quot;stat:YYYYMMDDDate&amp;quot;/&amp;gt;&#13;
+            &amp;lt;/xs:sequence&amp;gt;&#13;
+        &amp;lt;/xs:complexType&amp;gt;&#13;
+    &amp;lt;/xs:element&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- GetStatementResponse --&amp;gt;&#13;
+    &amp;lt;xs:element name=&amp;quot;GetStatementResponse&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:complexType&amp;gt;&#13;
+            &amp;lt;xs:sequence&amp;gt;&#13;
+                &amp;lt;xs:element name=&amp;quot;status&amp;quot; type=&amp;quot;stat:statusType&amp;quot;/&amp;gt;&#13;
+                &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;transactions&amp;quot; type=&amp;quot;stat:transactionList&amp;quot;/&amp;gt;&#13;
+            &amp;lt;/xs:sequence&amp;gt;&#13;
+        &amp;lt;/xs:complexType&amp;gt;&#13;
+    &amp;lt;/xs:element&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- Status Type with code and message --&amp;gt;&#13;
+    &amp;lt;xs:complexType name=&amp;quot;statusType&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:sequence&amp;gt;&#13;
+            &amp;lt;xs:element name=&amp;quot;code&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element name=&amp;quot;message&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xs:sequence&amp;gt;&#13;
+    &amp;lt;/xs:complexType&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- Date Format --&amp;gt;&#13;
+    &amp;lt;xs:simpleType name=&amp;quot;YYYYMMDDDate&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:restriction base=&amp;quot;xs:string&amp;quot;&amp;gt;&#13;
+            &amp;lt;xs:pattern value=&amp;quot;[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:length value=&amp;quot;8&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xs:restriction&amp;gt;&#13;
+    &amp;lt;/xs:simpleType&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- Transaction List --&amp;gt;&#13;
+    &amp;lt;xs:complexType name=&amp;quot;transactionList&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:sequence&amp;gt;&#13;
+            &amp;lt;xs:element maxOccurs=&amp;quot;unbounded&amp;quot; minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;transaction&amp;quot; type=&amp;quot;stat:transaction&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xs:sequence&amp;gt;&#13;
+    &amp;lt;/xs:complexType&amp;gt;&#13;
+&#13;
+    &amp;lt;!-- Transaction --&amp;gt;&#13;
+    &amp;lt;xs:complexType name=&amp;quot;transaction&amp;quot;&amp;gt;&#13;
+        &amp;lt;xs:sequence&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;recid&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;bookingDate&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;reference&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;narrative&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;valueDate&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;drCr&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;amount&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;currency&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;description&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;txnType&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;debitAcc&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;creditAcc&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acboCrAcc&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acboCrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acboDrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acbiCrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;acbiDrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;bakongDesc&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;trxDt&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;trxTime&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;txnTypeDescription&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;cbsCrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xs:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;cbsDrName&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xs:sequence&amp;gt;&#13;
+    &amp;lt;/xs:complexType&amp;gt;&#13;
+&amp;lt;/xs:schema&amp;gt;&lt;/string&gt; &#13;
+      &lt;/void&gt; &#13;
+     &lt;/object&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/object&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;Envelope&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;xsd:schema xmlns:wsdl=&amp;quot;http://schemas.xmlsoap.org/wsdl/&amp;quot; xmlns:tns=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:sch=&amp;quot;http://cpbank.com/statement&amp;quot; xmlns:soap=&amp;quot;http://schemas.xmlsoap.org/wsdl/soap/&amp;quot; xmlns:ftns=&amp;quot;http://cpbank.com/statement/GetStatement/Output&amp;quot; xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; targetNamespace=&amp;quot;http://cpbank.com/statement/GetStatement/Output&amp;quot;&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:import namespace=&amp;quot;http://cpbank.com/statement&amp;quot;/&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Envelope&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element ref=&amp;quot;ftns:Header&amp;quot;/&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element ref=&amp;quot;ftns:Body&amp;quot;/&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Header&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence/&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Body&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element ref=&amp;quot;sch:GetStatementResponse&amp;quot;/&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+&amp;lt;/xsd:schema&amp;gt;&amp;#13;&#13;
+&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://cpbank.com/statement/GetStatement/Output&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/OutputRecordDefinition&gt;&#13;
+    &lt;FaultRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_40-ea&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;Error&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&#13;
+&amp;lt;xsd:schema xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/fault&amp;quot; xmlns:tns=&amp;quot;http://www.fiorano.com/fesb/activity/fault&amp;quot; xmlns:soapenv=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot;&amp;gt;&#13;
+    &amp;lt;xsd:import namespace=&amp;quot;http://schemas.xmlsoap.org/soap/envelope/&amp;quot;/&amp;gt;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Error&amp;quot;&amp;gt;&#13;
+       &amp;lt;xsd:complexType&amp;gt;&#13;
+          &amp;lt;xsd:sequence&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorCode&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorMessage&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorDetail&amp;quot; type=&amp;quot;tns:errorDetail&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;data&amp;quot; type=&amp;quot;tns:data&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+          &amp;lt;/xsd:sequence&amp;gt;&#13;
+       &amp;lt;/xsd:complexType&amp;gt;&#13;
+    &amp;lt;/xsd:element&amp;gt;&#13;
+    &amp;lt;xsd:complexType name=&amp;quot;errorDetail&amp;quot;&amp;gt;&#13;
+	  &amp;lt;xsd:sequence&amp;gt;&#13;
+            &amp;lt;xsd:element ref=&amp;quot;soapenv:Fault&amp;quot;/&amp;gt;&#13;
+          &amp;lt;/xsd:sequence&amp;gt;&#13;
+    &amp;lt;/xsd:complexType&amp;gt;&#13;
+    &amp;lt;xsd:complexType name=&amp;quot;data&amp;quot;&amp;gt;&#13;
+	  &amp;lt;xsd:sequence&amp;gt;&#13;
+         &amp;lt;xsd:any namespace=&amp;quot;##any&amp;quot; minOccurs=&amp;quot;0&amp;quot; maxOccurs=&amp;quot;unbounded&amp;quot; processContents=&amp;quot;lax&amp;quot;/&amp;gt;&#13;
+      &amp;lt;/xsd:sequence&amp;gt;&#13;
+    &amp;lt;/xsd:complexType&amp;gt;&#13;
+&amp;lt;/xsd:schema&amp;gt;&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/fault&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/FaultRecordDefinition&gt;&#13;
+&lt;/ESBAdapterConfigurations&gt;&#13;
+</string> 
+  </void> 
+ </object> 
+</java> 
+]]></BCConfigurations>
+    <TransportConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.tr.TrConfigurationInfo"/> 
+</java> 
+]]></TransportConfigurations>
+    <ErrorConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.error.ErrorConfigurationInfo"> 
+  <void property="errorActionsMap"> 
+   <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorActionsMap"> 
+    <void property="errorActionsMap"> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>4</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="errorActionID"> 
+          <int>1</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>3</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>4</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="noOfRetries"> 
+          <int>10</int> 
+         </void> 
+         <void property="repeatInterval"> 
+          <long>300000</long> 
+         </void> 
+         <void property="sendErrorAfterTries"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>0</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 
+]]></ErrorConfigurations>
+    <SchedulerConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.scheduler.SchedulerConfigurationInfo"> 
+  <void property="startDate"> 
+   <object class="java.util.Date"> 
+    <long>1759370773000</long> 
+   </object> 
+  </void> 
+  <void property="unit"> 
+   <string>seconds</string> 
+  </void> 
+ </object> 
+</java> 
+]]></SchedulerConfigurations>
+</TrGatewayConfigurations>

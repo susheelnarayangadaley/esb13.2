@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <response_code>
+        <xsl:value-of select="substring-before($_TIF_BODY_TEXT_,'*')"></xsl:value-of>
+      </response_code>
+      <response_msg>
+        <xsl:value-of select="substring-before(substring-after($_TIF_BODY_TEXT_,'*'),'*')"></xsl:value-of>
+      </response_msg>
+      <loan_amount>
+        <xsl:value-of select="substring-before(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*')"></xsl:value-of>
+      </loan_amount>
+      <arrangement_fee>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*')"></xsl:value-of>
+      </arrangement_fee>
+      <disbursed_amount>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </disbursed_amount>
+      <salary_account>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </salary_account>
+      <disbursed_date>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </disbursed_date>
+      <due_date_1>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </due_date_1>
+      <repayment_amount_1>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </repayment_amount_1>
+      <status_1>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </status_1>
+      <due_date_2>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </due_date_2>
+      <repayment_amount_2>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </repayment_amount_2>
+      <status_2>
+        <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+      </status_2>
+    </root>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_BODY_TEXT_"></xsl:param>
+</xsl:stylesheet>

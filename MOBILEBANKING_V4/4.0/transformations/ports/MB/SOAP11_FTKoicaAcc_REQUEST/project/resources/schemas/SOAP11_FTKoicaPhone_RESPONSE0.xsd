@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/MB/CPBank" xmlns="http://www.fiorano.com/services/serviceName" xmlns:fesb1="http://www.fiorano.com/MB/CPBank" xmlns:jms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdlsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	
+	  <xs:element name="FTBakongAccRq">
+        
+                       <xs:complexType>
+                              <xs:sequence>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="CifNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Amount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="TxnFee" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="BeneficiaryBank" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="BeneficiaryAccount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="BeneficiaryAccountName" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="SenderName" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="ToAccount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Remark" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="TransId" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Currency" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="SignData" type="xs:string"/>
+                                       
+                    </xs:sequence>
+                      
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="FTBakongAccResp">
+        <xs:complexType>
+            <xs:sequence>
+          
+                <xs:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xs:string"/>
+                 <xs:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xs:string"/>
+            
+                                     <xs:element maxOccurs="1" minOccurs="1" name="TransRefNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="TxnCommitTime" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="AccountBalance" type="xs:string"/>
+                                     
+                                      
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	   <xs:element name="FTBakongWalletRq">
+        
+                       <xs:complexType>
+                              <xs:sequence>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="CifNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Amount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="TxnFee" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="WalletNumber" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="WalletName" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="SenderName" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="ToAccount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Remark" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="TransId" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Currency" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="SignData" type="xs:string"/>
+                                       
+                    </xs:sequence>
+                      
+        </xs:complexType>
+    </xs:element>
+	 <xs:element name="FTBakongWalletResp">
+        <xs:complexType>
+            <xs:sequence>
+          
+                <xs:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xs:string"/>
+                 <xs:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xs:string"/>
+            
+                                     <xs:element maxOccurs="1" minOccurs="1" name="TransRefNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="TxnCommitTime" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="AccountBalance" type="xs:string"/>
+                                     
+                                      
+            </xs:sequence>
+        </xs:complexType>
+		   </xs:element>
+		  <xs:element name="FTKoicaAccRq">
+        
+                       <xs:complexType>
+                              <xs:sequence>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="CifNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Amount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="senderFee" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="ReceiverFee" type="xs:string"/>
+                                       <xs:element maxOccurs="1" minOccurs="0" name="NBCFee" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="BeneficiaryAccount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="BeneficiaryAccountName" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="BeneficiaryBank" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="FromAccountName" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="ToAccount" type="xs:string"/>
+                                       <xs:element maxOccurs="1" minOccurs="0" name="TxnUniqID" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Remark" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="TransId" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Currency" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="SignData" type="xs:string"/>
+                                       
+                    </xs:sequence>
+                      
+        </xs:complexType>
+    </xs:element>
+	
+	  <xs:element name="FTKoicaAccResp">
+        <xs:complexType>
+            <xs:sequence>
+          
+                <xs:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xs:string"/>
+                 <xs:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xs:string"/>
+            
+                                     <xs:element maxOccurs="1" minOccurs="1" name="TransRefNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="TxnCommitTime" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="AccountBalance" type="xs:string"/>          
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	
+	<xs:element name="FTKoicaPhoneRq">
+        
+                       <xs:complexType>
+                              <xs:sequence>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="CifNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Amount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="txnFee" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="BeneficiaryPhone" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="BeneficiaryName" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="FromAccountName" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="ToAccount" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="Remark" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="TransId" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Currency" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="senderphone" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="SignData" type="xs:string"/>
+                                       
+                    </xs:sequence>
+                      
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="FTKoicaPhoneResp">
+        <xs:complexType>
+            <xs:sequence>
+          
+                <xs:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xs:string"/>
+                 <xs:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xs:string"/>
+            
+                                     <xs:element maxOccurs="1" minOccurs="1" name="TransRefNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="TxnCommitTime" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="CashCode" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="AccountBalance" type="xs:string"/>
+                                     
+                                      
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="OpenFDRq">
+        
+                       <xs:complexType>
+                              <xs:sequence>
+                                     <xs:element maxOccurs="1" minOccurs="1" name="CifNo" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Amount" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="txnFee" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Product" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Effective_date" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="RollOver" type="xs:string"/>
+                                      <xs:element maxOccurs="1" minOccurs="0" name="TransId" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="Currency" type="xs:string"/>
+                                     <xs:element maxOccurs="1" minOccurs="0" name="SignData" type="xs:string"/>
+                                       
+                    </xs:sequence>
+                      
+        </xs:complexType>
+    </xs:element>
+	   <xs:element name="OpenFDResp">
+        <xs:complexType>
+            <xs:sequence>
+          
+                <xs:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xs:string"/>
+                 <xs:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xs:string"/>
+                     <xs:element maxOccurs="1" minOccurs="1" name="TransRefNo" type="xs:string"/>
+                      <xs:element maxOccurs="1" minOccurs="0" name="TxnCommitTime" type="xs:string"/>
+                     <xs:element maxOccurs="1" minOccurs="1" name="FDAccount" type="xs:string"/>
+                     <xs:element maxOccurs="1" minOccurs="1" name="MaturityDate" type="xs:string"/>
+                    <xs:element maxOccurs="1" minOccurs="1" name="AccountBalance" type="xs:string"/>
+                                     
+                                      
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

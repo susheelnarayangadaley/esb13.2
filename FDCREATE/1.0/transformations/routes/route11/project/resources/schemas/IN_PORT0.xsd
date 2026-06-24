@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+   <xsd:element name="root">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="header" type="xsd:string"/>
+            <xsd:element name="ARRANGEMENT">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ACTIVITY">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="EFFECTIVE.DATE">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CUSTOMER">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PRODUCT">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CURRENCY">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="PROPERTY">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="FIELD.NAME">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="FIELD.VALUE">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:attribute name="totalPositions" type="xsd:int"/>
+   <xsd:attribute name="position" type="xsd:int"/>
+   <xsd:attribute name="subPosition" type="xsd:int"/>
+   <xsd:element name="value">
+      <xsd:complexType>
+         <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+               <xsd:attribute ref="position" use="optional"/>
+               <xsd:attribute ref="subPosition" use="optional"/>
+            </xsd:extension>
+         </xsd:simpleContent>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

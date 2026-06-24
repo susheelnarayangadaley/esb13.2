@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="{http://www.fiorano.com/fesb/activity/ISOMessage}Context"/>
+    <mappermodel:Structure duplicates="" filePath="set__POST__Request.xsd" mime="XSD" name="set__POST__Request" rootName="{http://www.fiorano.com/services/rest}Request"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT0.xsd" mime="XSD" name="IN_PORT" rootName="{http://www.fiorano.com/fesb/activity/Token/HTTP/In}HTTPRequest"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,HTTPRequest:0,URI:0" x="455" y="20">
+      <mappermodel:FunctionGraphNode label="eclipse-conductor/rest/v1/authentication/login" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,HTTPRequest:0,Header:0,Content-Type:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="application/json" type="22" x="168" y="81">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2,3,4,5,6" outputNode="IN_PORT:0,HTTPRequest:0,Entity:0,Text:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="&quot;,&quot;password&quot;:&quot;" type="22" x="166" y="133">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="ESB_BK" type="22" x="166" y="-127">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="{&quot;identity&quot;:&quot;" type="22" x="166" y="3">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&quot;}" type="22" x="166" y="68">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="ESBAdmin@311$#@!" type="22" x="166" y="-62">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="2" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="3" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="4" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

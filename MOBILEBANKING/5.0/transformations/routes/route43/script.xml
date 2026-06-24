@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:AppendZero="AppendZero" xmlns:EnDe="http://xml.apache.org/xslt/java" xmlns:MD5Hex="http://xml.apache.org/xslt/java" xmlns:Md5UniCode="http://xml.apache.org/xslt/java" xmlns:Remove="Remove" xmlns:ReplaceText="ReplaceText" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:replace="replace" xmlns:replaceStr="http://xml.apache.org/xslt/java" xmlns:rounding="rounding" xmlns:sringindex="sringindex" xmlns:strings="strings" xmlns:stringtext="stringtext" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math AppendZero EnDe MD5Hex Md5UniCode Remove ReplaceText StringLength dateConversion myext replace replaceStr rounding sringindex strings stringtext truncateString">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="text" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_SOAP11_GetAccountList_REQUEST" select="document('SOAP11_GetAccountList_REQUEST')"></xsl:variable>
+  <xsl:template match="/">
+    <AccountListRq>
+      <CifNo>
+        <xsl:value-of select="$document_SOAP11_GetAccountList_REQUEST/ns2:Envelope/ns2:Body/Request"></xsl:value-of>
+      </CifNo>
+    </AccountListRq>
+  </xsl:template>
+</xsl:stylesheet>

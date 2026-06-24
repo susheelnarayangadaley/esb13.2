@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:tns="http://www.fiorano.com/SOA/bc/cache" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/SOA/bc/cache">
+    <xsd:element name="Cache">
+        <xsd:complexType>
+            <xsd:choice>
+                <xsd:element name="All">
+                    <xsd:complexType/>
+                </xsd:element>
+                <xsd:element maxOccurs="unbounded" ref="tns:CacheEntry"/>
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="CacheEntry">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="tns:Keys"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Keys">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element minOccurs="0" name="id" type="xsd:int"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

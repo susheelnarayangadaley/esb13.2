@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://temenos.com/CPBAPI" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:ftns="http://temenos.com/CPBAPI/WSCPBAPISTMTENTBOOK/Input" targetNamespace="http://temenos.com/CPBAPI/WSCPBAPISTMTENTBOOK/Input">
+    <xsd:import namespace="http://temenos.com/CPBAPI"/>
+    <xsd:import namespace="http://temenos.com/CPBAPISTMTENTBOOK"/>
+    <xsd:import namespace="http://jaxb.dev.java.net/array"/>
+    <xsd:element name="Envelope">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="ftns:Header"/>
+                <xsd:element ref="ftns:Body"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Header">
+        <xsd:complexType>
+            <xsd:sequence/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Body">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="tns:WSCPBAPISTMTENTBOOK"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

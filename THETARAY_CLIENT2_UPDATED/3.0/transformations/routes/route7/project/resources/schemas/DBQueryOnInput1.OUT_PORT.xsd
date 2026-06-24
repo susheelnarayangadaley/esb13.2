@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="query" type="xs:string" />
+        <xs:element name="row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:unsignedShort" />
+              <xs:element name="CUSTOMER_ID" type="xs:string" />
+              <xs:element name="MOBILENUMBER" type="xs:unsignedLong" />
+              <xs:element name="CLIENT_ID" />
+              <xs:element name="FIRSTNAME" type="xs:string" />
+              <xs:element name="MIDNAME" type="xs:string" />
+              <xs:element name="LASTNAME" type="xs:string" />
+              <xs:element name="KYC_STATUS" type="xs:unsignedByte" />
+              <xs:element name="CNIC" type="xs:string" />
+              <xs:element name="HOMEADDRESS" type="xs:string" />
+              <xs:element name="COUNTRY" type="xs:string" />
+              <xs:element name="CITY" type="xs:string" />
+              <xs:element name="STATUS" type="xs:unsignedByte" />
+              <xs:element name="CUSTOMERTYPE" type="xs:string" />
+              <xs:element name="GENDER" type="xs:string" />
+              <xs:element name="PLACEOFBIRTH" type="xs:string" />
+              <xs:element name="NATIONALITY" type="xs:string" />
+              <xs:element name="DATEOFBIRTH" type="xs:dateTime" />
+              <xs:element name="CREATEDATE" type="xs:dateTime" />
+              <xs:element name="ACTIVATIONDATE" type="xs:dateTime" />
+            </xs:sequence>
+            <xs:attribute name="resultcount" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

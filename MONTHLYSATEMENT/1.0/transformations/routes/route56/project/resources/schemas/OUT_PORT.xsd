@@ -1,0 +1,22 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Record" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="VALUE.DATE"/>
+              <xs:element type="xs:string" name="BOOKING.DATE"/>
+              <xs:element type="xs:string" name="DESCRIPTION"/>
+              <xs:element type="xs:string" name="CURRENCY"/>
+              <xs:element type="xs:string" name="AMOUNT.CREDIT"/>
+              <xs:element type="xs:string" name="AMOUNT.DEBIT"/>
+              <xs:element type="xs:string" name="AMOUNT"/>
+              <xs:element type="xs:string" name="TXN.REF"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

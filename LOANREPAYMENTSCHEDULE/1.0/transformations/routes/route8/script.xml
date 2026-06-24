@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_Input1" select="document('Input1')"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <response_code>
+        <xsl:value-of select="'200'"></xsl:value-of>
+      </response_code>
+      <response_msg>
+        <xsl:value-of select="'Transaction success'"></xsl:value-of>
+      </response_msg>
+      <paymentSchedule>
+        <xsl:attribute name="class">
+          <xsl:value-of select="'array'"></xsl:value-of>
+        </xsl:attribute>
+        <xsl:for-each select="$document_Input1/root/Record">
+          <Element>
+            <date>
+              <xsl:value-of select="./Date"></xsl:value-of>
+            </date>
+            <totalDue>
+              <xsl:value-of select="./Total.Due"></xsl:value-of>
+            </totalDue>
+            <totalCap>
+              <xsl:value-of select="./Total_Cap"></xsl:value-of>
+            </totalCap>
+            <principal>
+              <xsl:value-of select="./Principal"></xsl:value-of>
+            </principal>
+            <interest>
+              <xsl:value-of select="./Interest"></xsl:value-of>
+            </interest>
+            <charge>
+              <xsl:value-of select="./Charge"></xsl:value-of>
+            </charge>
+            <tax>
+              <xsl:value-of select="./Tax"></xsl:value-of>
+            </tax>
+            <totalPayment>
+              <xsl:value-of select="./Total.Pymt"></xsl:value-of>
+            </totalPayment>
+            <outstanding>
+              <xsl:value-of select="(./Outstanding)*('-1')"></xsl:value-of>
+            </outstanding>
+          </Element>
+        </xsl:for-each>
+      </paymentSchedule>
+    </root>
+  </xsl:template>
+</xsl:stylesheet>

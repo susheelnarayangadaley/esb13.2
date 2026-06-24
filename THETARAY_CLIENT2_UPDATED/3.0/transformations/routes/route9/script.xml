@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:string="string" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext nestedJsonParser string strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_TIMER_PORT" select="document('TIMER_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:COMPLEX>
+      <ns1:query>
+        <xsl:variable name="var0">select id,customer_id,mobilenumber,client_id,firstname,midname,lastname,kyc_status,cnic,homeaddress,country,city,status,customertype, gender,nvl(placeofbirth,nationality)as placeofbirth ,nationality,dateofbirth,createdate,activationdate from wallet.cms_customer where  createdate between to_date('</xsl:variable>
+        <xsl:variable name="var1">','yyyyMMDD') AND to_date('</xsl:variable>
+        <xsl:variable name="var2">','yyyyMMDD')</xsl:variable>
+        <xsl:value-of select="concat($var0,myext:replace(string(java:com.fiorano.xslt.functions.datetime.DateConverter.subtractDate(datetime:date(datetime:dateTime()),'yyyy-mm-dd','1','0','0','0')),string('-'),string('g'),string('')),$var1,substring(myext:replace(string(datetime:date(datetime:dateTime())),string('-'),string('g'),string('')),'1','8'),$var2)"></xsl:value-of>
+      </ns1:query>
+    </ns1:COMPLEX>
+  </xsl:template>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="myext" functions="compute replace">
+    <lxslt:script lang="javascript"><![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(".")    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return "There are only " + days + " days remaining to the start of the next millennium."; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

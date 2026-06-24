@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="MB">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="hafps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="T24">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="GLegalID">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="GetAccInfo">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="GetLegal">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="GetCustInfo">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="CustInfo">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="AccInfo">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="GetAccList">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="Ex_Rate">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="ExRate_Req">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="Legal">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="GetLegal_Res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="CustInfor">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="AccInfor">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="AccList_Res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="ExRate_Res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="LegalID_Res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="ResCustInfo">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="GetCurrencyes">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="RespAccInfo">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="AccountReq">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="CBS1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="GetAccListNew">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="AccList_Res1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="AccountReq1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+</target:target>

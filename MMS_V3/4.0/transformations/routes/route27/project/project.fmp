@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" suppressEmptyItems="false" suppressPattern="" version="3.0.2">
+  <mappermodel:XSLTVersion>1.0</mappermodel:XSLTVersion>
+  <mappermodel:XSLTEngine>org.apache.xalan.processor.TransformerFactoryImpl</mappermodel:XSLTEngine>
+  <mappermodel:XSLTEncoding>UTF-8</mappermodel:XSLTEncoding>
+  <mappermodel:OutputMethod>unspecified</mappermodel:OutputMethod>
+  <mappermodel:OutputEncoding>UTF-8</mappermodel:OutputEncoding>
+  <mappermodel:indent>true</mappermodel:indent>
+  <mappermodel:setDTD>false</mappermodel:setDTD>
+  <mappermodel:omit-xml-declaration>false</mappermodel:omit-xml-declaration>
+  <mappermodel:createEmptyOutputTags>false</mappermodel:createEmptyOutputTags>
+  <mappermodel:copyUnmappedFromInput enabled="false"/>
+  <mappermodel:disableOutputEscapingForANY>false</mappermodel:disableOutputEscapingForANY>
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:excludeResultPrefixes></mappermodel:excludeResultPrefixes>
+  <mappermodel:addDefaultXSTypeAttributes>false</mappermodel:addDefaultXSTypeAttributes>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="COPY_OF_MMS_V3_NEW.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="MMS_WSStub.SOAP11_checkAccount_REQUEST.xsd" mime="XSD" name="SOAP11_khqrincoming_REQUEST" rootName="{http://schemas.xmlsoap.org/soap/envelope/}Envelope"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Output1.XSD" mime="XSD" name="Output1" rootName="{http://schemas.xmlsoap.org/soap/envelope/}Envelope"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Namespaces/>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,Envelope:0,Body:0,Request:0" x="1378" y="20">
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="203" y="20">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&lt;Request>" type="22" x="20" y="82">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=">" type="22" x="711" y="182">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&lt;/Request>" type="22" x="203" y="90">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&amp;lt;" type="22" x="448" y="90">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Before" type="23" x="448" y="20">
+        <mappermodel:InputPins>str,before</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&amp;gt;" type="22" x="711" y="120">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Text-Content" type="131" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="g" type="22" x="448" y="152">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&lt;" type="22" x="448" y="214">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="711" y="20">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="CDATA" type="63" x="1201" y="20">
+        <mappermodel:InputPins>1</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="956" y="20">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="2" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="3" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="0" outputID="11" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="1" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="2" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="3" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="12" inputIndex="0" outputID="13" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="12" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="javascript" name="myext">
+      <mappermodel:Script>function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(&quot;.&quot;)    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return &quot;There are only &quot; + days + &quot; days remaining to the start of the next millennium.&quot;; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}</mappermodel:Script>
+      <mappermodel:Function name="replace" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+        <mappermodel:Argument datatype="String" name="pattern"/>
+        <mappermodel:Argument datatype="String" name="flags"/>
+        <mappermodel:Argument datatype="String" name="str"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+</mappermodel:MapperProject>

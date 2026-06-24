@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <AccountDetails>
+      <Status>
+        <xsl:variable name="if0">
+          <xsl:choose>
+            <xsl:when test="(contains($_TIF_BODY_TEXT_,'No records were found') or contains($_TIF_BODY_TEXT_,'SECURITY VIOLATION DURING SIGN ON PROCESS'))">
+              <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'STOI', 'false')"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'STOI', 'true')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if0"></xsl:value-of>
+      </Status>
+    </AccountDetails>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_BODY_TEXT_"></xsl:param>
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

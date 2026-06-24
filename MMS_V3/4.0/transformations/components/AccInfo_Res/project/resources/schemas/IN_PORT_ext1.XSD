@@ -1,0 +1,28 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:tns="http://temenos.com/CPBGETINTERESTRATE" elementFormDefault="qualified" xmlns="http://temenos.com/CPBGETINTERESTRATE" targetNamespace="http://temenos.com/CPBGETINTERESTRATE">
+   <xsd:complexType name="CPBGETINTERESTRATEType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="gCPBGETINTERESTRATEDetailType">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCPBGETINTERESTRATEDetailType">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="ID" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="LOANCATEGORY" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="CURRENCY" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="MININTRATE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="MAXINTRATE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="STATUSCODE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="STATUDESC" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ATMRESPCODE" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

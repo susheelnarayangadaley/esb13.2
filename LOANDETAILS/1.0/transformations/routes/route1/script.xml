@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <Root>
+      <response_code>
+        <xsl:variable name="if0">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'100'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'SECURITY VIOLATION DURING SIGN ON PROCESS')">
+              <xsl:value-of select="'102'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="'200'"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if0"></xsl:value-of>
+      </response_code>
+      <response_msg>
+        <xsl:variable name="if1">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'Loan is invalid'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'SECURITY VIOLATION DURING SIGN ON PROCESS')">
+              <xsl:value-of select="'Transaction fail on CBS.'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="'Transaction success'"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if1"></xsl:value-of>
+      </response_msg>
+      <Start_Date>
+        <xsl:variable name="if2">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before($_TIF_BODY_TEXT_,'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if2"></xsl:value-of>
+      </Start_Date>
+      <Amount>
+        <xsl:variable name="if3">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after($_TIF_BODY_TEXT_,'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if3"></xsl:value-of>
+      </Amount>
+      <Term>
+        <xsl:variable name="if4">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if4"></xsl:value-of>
+      </Term>
+      <Term_Remain>
+        <xsl:variable name="if5">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if5"></xsl:value-of>
+      </Term_Remain>
+      <Due_Date>
+        <xsl:variable name="if6">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if6"></xsl:value-of>
+      </Due_Date>
+      <Monthly_Payment>
+        <xsl:variable name="if7">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if7"></xsl:value-of>
+      </Monthly_Payment>
+      <Remain_Balance>
+        <xsl:variable name="if8">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if8"></xsl:value-of>
+      </Remain_Balance>
+      <Due_Installment>
+        <xsl:variable name="if9">
+          <xsl:choose>
+            <xsl:when test="(string-length(substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')))=('0')">
+              <xsl:value-of select="'0.00'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if9"></xsl:value-of>
+      </Due_Installment>
+      <Penalty_charge>
+        <xsl:variable name="if10">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if10"></xsl:value-of>
+      </Penalty_charge>
+      <Customer_name>
+        <xsl:variable name="if11">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-before(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if11"></xsl:value-of>
+      </Customer_name>
+      <Currency>
+        <xsl:variable name="if12">
+          <xsl:choose>
+            <xsl:when test="contains($_TIF_BODY_TEXT_,'100*Loan is invalid')">
+              <xsl:value-of select="'null'"></xsl:value-of>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after(substring-after($_TIF_BODY_TEXT_,'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*'),'*')"></xsl:value-of>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:value-of select="$if12"></xsl:value-of>
+      </Currency>
+    </Root>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_BODY_TEXT_"></xsl:param>
+</xsl:stylesheet>

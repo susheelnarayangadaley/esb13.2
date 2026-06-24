@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_371" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.xslt.configuration.XsltPM"> 
+  <void property="JMSMessageXSL"> 
+   <null/> 
+  </void> 
+  <void property="JMSMessageXSL1"> 
+   <null/> 
+  </void> 
+  <void property="XSL"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns2=&quot;http://www.fiorano.com/fesb/activity/DB1/Response&quot; xmlns:MX2MT=&quot;http://xml.apache.org/xslt/java&quot; xmlns:QueryGenerator=&quot;QueryGenerator&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:nestedjson=&quot;nestedjson&quot; xmlns:strings=&quot;strings&quot; extension-element-prefixes=&quot;datetime set math MX2MT QueryGenerator dateConversion myext nestedjson strings&quot;&gt;
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;&gt;&lt;/xsl:import&gt;
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;&gt;&lt;/xsl:output&gt;
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document(&apos;IN_PORT&apos;)&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;ns2:SQL_CFG_1&gt;
+      &lt;xsl:for-each select=&quot;$document_IN_PORT/ns2:SQL_CFG_1/ns2:spRadaroSelect/ns2:RS1&quot;&gt;
+        &lt;ns2:Radaro_Select&gt;
+          &lt;ns2:MSGID&gt;
+            &lt;xsl:value-of select=&quot;./ns2:MSGID&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:MSGID&gt;
+          &lt;ns2:MSGTYPE&gt;
+            &lt;xsl:value-of select=&quot;./ns2:MSGTYPE&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:MSGTYPE&gt;
+          &lt;ns2:DRIVER_ID&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DRIVER_ID&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DRIVER_ID&gt;
+          &lt;ns2:PU&gt;
+            &lt;xsl:value-of select=&quot;./ns2:PU&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:PU&gt;
+          &lt;ns2:TRAILER&gt;
+            &lt;xsl:value-of select=&quot;./ns2:TRAILER&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:TRAILER&gt;
+          &lt;ns2:TRIP_NUMBER&gt;
+            &lt;xsl:value-of select=&quot;./ns2:TRIP_NUMBER&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:TRIP_NUMBER&gt;
+          &lt;ns2:BILL_NUMBER&gt;
+            &lt;xsl:value-of select=&quot;./ns2:BILL_NUMBER&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:BILL_NUMBER&gt;
+          &lt;ns2:DETAIL_LINE_ID&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DETAIL_LINE_ID&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DETAIL_LINE_ID&gt;
+          &lt;ns2:REFERENCE1&gt;
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE1&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:REFERENCE1&gt;
+          &lt;ns2:REFERENCE2&gt;
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE2&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:REFERENCE2&gt;
+          &lt;ns2:REFERENCE3&gt;
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE3&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:REFERENCE3&gt;
+          &lt;ns2:REFERENCE4&gt;
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE4&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:REFERENCE4&gt;
+          &lt;ns2:REFERENCE5&gt;
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE5&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:REFERENCE5&gt;
+          &lt;ns2:ORIGIN&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGIN&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGIN&gt;
+          &lt;ns2:ORIGNAME&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGNAME&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGNAME&gt;
+          &lt;ns2:ORIGADDR1&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGADDR1&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGADDR1&gt;
+          &lt;ns2:ORIGADDR2&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGADDR2&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGADDR2&gt;
+          &lt;ns2:ORIGCITY&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGCITY&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGCITY&gt;
+          &lt;ns2:ORIGPROV&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGPROV&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGPROV&gt;
+          &lt;ns2:ORIGPC&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGPC&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGPC&gt;
+          &lt;ns2:ORIGPHONE&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGPHONE&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGPHONE&gt;
+          &lt;ns2:ORIGPHONEEXT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGPHONEEXT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGPHONEEXT&gt;
+          &lt;ns2:DESTINATION&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTINATION&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTINATION&gt;
+          &lt;ns2:DESTNAME&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTNAME&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTNAME&gt;
+          &lt;ns2:DESTADDR1&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTADDR1&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTADDR1&gt;
+          &lt;ns2:DESTADDR2&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTADDR2&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTADDR2&gt;
+          &lt;ns2:DESTCITY&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTCITY&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTCITY&gt;
+          &lt;ns2:DESTPROV&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTPROV&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTPROV&gt;
+          &lt;ns2:DESTPC&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTPC&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTPC&gt;
+          &lt;ns2:DESTPHONE&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTPHONE&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTPHONE&gt;
+          &lt;ns2:DESTPHONEEXT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTPHONEEXT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTPHONEEXT&gt;
+          &lt;ns2:PCS&gt;
+            &lt;xsl:value-of select=&quot;./ns2:PCS&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:PCS&gt;
+          &lt;ns2:WEIGHT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:WEIGHT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:WEIGHT&gt;
+          &lt;ns2:PALLETS&gt;
+            &lt;xsl:value-of select=&quot;./ns2:PALLETS&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:PALLETS&gt;
+          &lt;ns2:PCUNIT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:PCUNIT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:PCUNIT&gt;
+          &lt;ns2:WGTUNIT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:WGTUNIT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:WGTUNIT&gt;
+          &lt;ns2:PLTUNIT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:PLTUNIT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:PLTUNIT&gt;
+          &lt;ns2:ARRIVE_START&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ARRIVE_START&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ARRIVE_START&gt;
+          &lt;ns2:ARRIVE_END&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ARRIVE_END&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ARRIVE_END&gt;
+          &lt;ns2:APPOINTMENT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:APPOINTMENT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:APPOINTMENT&gt;
+          &lt;ns2:NOTE&gt;
+            &lt;xsl:value-of select=&quot;./ns2:NOTE&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:NOTE&gt;
+          &lt;ns2:RADARO_DRIVER_ID&gt;
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_DRIVER_ID&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:RADARO_DRIVER_ID&gt;
+          &lt;ns2:RADARO_STATUS&gt;
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_STATUS&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:RADARO_STATUS&gt;
+          &lt;ns2:RADARO_TIMESTAMP&gt;
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_TIMESTAMP&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:RADARO_TIMESTAMP&gt;
+          &lt;ns2:RADARO_LAT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_LAT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:RADARO_LAT&gt;
+          &lt;ns2:RADARO_LONG&gt;
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_LONG&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:RADARO_LONG&gt;
+          &lt;ns2:RADARO_ERROR_MESSAGE&gt;
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_ERROR_MESSAGE&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:RADARO_ERROR_MESSAGE&gt;
+          &lt;ns2:DESTEMAIL&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESTEMAIL&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESTEMAIL&gt;
+          &lt;ns2:ORIGEMAIL&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ORIGEMAIL&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ORIGEMAIL&gt;
+          &lt;ns2:DESCRIPTION&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESCRIPTION&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DESCRIPTION&gt;
+          &lt;ns2:ADDRESS_DESCRIPTION&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ADDRESS_DESCRIPTION&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ADDRESS_DESCRIPTION&gt;
+          &lt;ns2:LABELS&gt;
+            &lt;xsl:value-of select=&quot;./ns2:LABELS&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:LABELS&gt;
+          &lt;ns2:TMW_STATUS&gt;
+            &lt;xsl:value-of select=&quot;./ns2:TMW_STATUS&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:TMW_STATUS&gt;
+          &lt;ns2:EXTERNAL_ID&gt;
+            &lt;xsl:value-of select=&quot;./ns2:EXTERNAL_ID&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:EXTERNAL_ID&gt;
+          &lt;ns2:ADDED&gt;
+            &lt;xsl:value-of select=&quot;./ns2:ADDED&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:ADDED&gt;
+          &lt;ns2:BAR_CODE&gt;
+            &lt;xsl:value-of select=&quot;./ns2:BAR_CODE&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:BAR_CODE&gt;
+          &lt;ns2:DIM_DESC&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DESCRIPTION2&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DIM_DESC&gt;
+          &lt;ns2:DIM_UNIT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:DIM_UNIT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DIM_UNIT&gt;
+          &lt;ns2:LENGTH&gt;
+            &lt;xsl:value-of select=&quot;./ns2:LENGTH&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:LENGTH&gt;
+          &lt;ns2:WIDTH&gt;
+            &lt;xsl:value-of select=&quot;./ns2:WIDTH&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:WIDTH&gt;
+          &lt;ns2:HEIGHT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:HEIGHT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:HEIGHT&gt;
+          &lt;ns2:DIM_WEIGHT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:WEIGHT2&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:DIM_WEIGHT&gt;
+          &lt;ns2:WEIGHT_UNIT&gt;
+            &lt;xsl:value-of select=&quot;./ns2:WEIGHT_UNIT&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:WEIGHT_UNIT&gt;
+        &lt;/ns2:Radaro_Select&gt;
+      &lt;/xsl:for-each&gt;
+    &lt;/ns2:SQL_CFG_1&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</string> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1300</int> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="esbDefInPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>SQL_CFG_1</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://www.fiorano.com/fesb/activity/DB1/Response&quot;&gt;&#13;
+   &lt;xsd:element name=&quot;SQL_CFG_1&quot;&gt;&#13;
+      &lt;xsd:complexType&gt;&#13;
+         &lt;xsd:sequence&gt;&#13;
+            &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;spRadaroSelect&quot;&gt;&#13;
+               &lt;xsd:complexType&gt;&#13;
+                  &lt;xsd:sequence&gt;&#13;
+                     &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;RS1&quot;&gt;&#13;
+                        &lt;xsd:complexType&gt;&#13;
+                           &lt;xsd:sequence&gt;&#13;
+                              &lt;xsd:element name=&quot;MSGID&quot; type=&quot;xsd:int&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;MSGTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DRIVER_ID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;PU&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;TRAILER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;TRIP_NUMBER&quot; type=&quot;xsd:int&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;BILL_NUMBER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DETAIL_LINE_ID&quot; type=&quot;xsd:int&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;REFERENCE1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;REFERENCE2&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;REFERENCE3&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;REFERENCE4&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;REFERENCE5&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGIN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGADDR1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGADDR2&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGCITY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGPROV&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGPC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGPHONE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGPHONEEXT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTINATION&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTADDR1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTADDR2&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTCITY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTPROV&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTPC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTPHONE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTPHONEEXT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;PCS&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;WEIGHT&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;PALLETS&quot; type=&quot;xsd:int&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;PCUNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;WGTUNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;PLTUNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ARRIVE_START&quot; type=&quot;xsd:dateTime&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ARRIVE_END&quot; type=&quot;xsd:dateTime&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;APPOINTMENT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;NOTE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;RADARO_DRIVER_ID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;RADARO_STATUS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;RADARO_TIMESTAMP&quot; type=&quot;xsd:dateTime&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;RADARO_LAT&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;RADARO_LONG&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;RADARO_ERROR_MESSAGE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESTEMAIL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ORIGEMAIL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESCRIPTION&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ADDRESS_DESCRIPTION&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;LABELS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;TMW_STATUS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;EXTERNAL_ID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;ADDED&quot; type=&quot;xsd:dateTime&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;BAR_CODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DESCRIPTION2&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;DIM_UNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;LENGTH&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;WIDTH&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;HEIGHT&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;WEIGHT2&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                              &lt;xsd:element name=&quot;WEIGHT_UNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                           &lt;/xsd:sequence&gt;&#13;
+                        &lt;/xsd:complexType&gt;&#13;
+                     &lt;/xsd:element&gt;&#13;
+                  &lt;/xsd:sequence&gt;&#13;
+               &lt;/xsd:complexType&gt;&#13;
+            &lt;/xsd:element&gt;&#13;
+         &lt;/xsd:sequence&gt;&#13;
+         &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:long&quot; use=&quot;optional&quot;/&gt;&#13;
+      &lt;/xsd:complexType&gt;&#13;
+   &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string>http://www.fiorano.com/fesb/activity/DB1/Response</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="esbDefOutPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>SQL_CFG_1</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://www.fiorano.com/fesb/activity/DB1/Response&quot;&gt;&#13;
+   &lt;xsd:element name=&quot;SQL_CFG_1&quot;&gt;&#13;
+      &lt;xsd:complexType&gt;&#13;
+         &lt;xsd:sequence&gt;&#13;
+            &lt;xsd:element minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; name=&quot;Radaro_Select&quot;&gt;&#13;
+               &lt;xsd:complexType&gt;&#13;
+                  &lt;xsd:sequence&gt;&#13;
+                     &lt;xsd:element name=&quot;MSGID&quot; type=&quot;xsd:int&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;MSGTYPE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DRIVER_ID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;PU&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;TRAILER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;TRIP_NUMBER&quot; type=&quot;xsd:int&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;BILL_NUMBER&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DETAIL_LINE_ID&quot; type=&quot;xsd:int&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;REFERENCE1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;REFERENCE2&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;REFERENCE3&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;REFERENCE4&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;REFERENCE5&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGIN&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGADDR1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGADDR2&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGCITY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGPROV&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGPC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGPHONE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGPHONEEXT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTINATION&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTNAME&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTADDR1&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTADDR2&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTCITY&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTPROV&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTPC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTPHONE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTPHONEEXT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;PCS&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;WEIGHT&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;PALLETS&quot; type=&quot;xsd:int&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;PCUNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;WGTUNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;PLTUNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ARRIVE_START&quot; type=&quot;xsd:dateTime&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ARRIVE_END&quot; type=&quot;xsd:dateTime&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;APPOINTMENT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;NOTE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;RADARO_DRIVER_ID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;RADARO_STATUS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;RADARO_TIMESTAMP&quot; type=&quot;xsd:dateTime&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;RADARO_LAT&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;RADARO_LONG&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;RADARO_ERROR_MESSAGE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESTEMAIL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ORIGEMAIL&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DESCRIPTION&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ADDRESS_DESCRIPTION&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;LABELS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;TMW_STATUS&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;EXTERNAL_ID&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;ADDED&quot; type=&quot;xsd:dateTime&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;BAR_CODE&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DIM_DESC&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DIM_UNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;LENGTH&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;WIDTH&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;HEIGHT&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;DIM_WEIGHT&quot; type=&quot;xsd:double&quot;/&gt;&#13;
+                     &lt;xsd:element name=&quot;WEIGHT_UNIT&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                  &lt;/xsd:sequence&gt;&#13;
+               &lt;/xsd:complexType&gt;&#13;
+            &lt;/xsd:element&gt;&#13;
+         &lt;/xsd:sequence&gt;&#13;
+         &lt;xsd:attribute name=&quot;id&quot; type=&quot;xsd:long&quot; use=&quot;optional&quot;/&gt;&#13;
+      &lt;/xsd:complexType&gt;&#13;
+   &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string>http://www.fiorano.com/fesb/activity/DB1/Response</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="inputStructureName"> 
+   <string>IN_PORT</string> 
+  </void> 
+  <void property="project"> 
+   <string>project</string> 
+  </void> 
+ </object> 
+</java> 

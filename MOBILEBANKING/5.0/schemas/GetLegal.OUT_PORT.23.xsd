@@ -1,0 +1,27 @@
+<xsd:schema xmlns:tns="http://temenos.com/CPBGETEXCHANGERATE" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://temenos.com/CPBGETEXCHANGERATE" targetNamespace="http://temenos.com/CPBGETEXCHANGERATE">
+    <xsd:complexType name="CPBGETEXCHANGERATEType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="gCPBGETEXCHANGERATEDetailType">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCPBGETEXCHANGERATEDetailType">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element minOccurs="0" name="CURRENCYCODE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="CURRENCY" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="BUYRATE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="SELLRATE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="STATUSCODE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="STATUDESC" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="ATMRESPCODE" type="xsd:string"/>
+                                </xsd:sequence>
+                                <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

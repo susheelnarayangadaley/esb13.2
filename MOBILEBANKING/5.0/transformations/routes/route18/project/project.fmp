@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" suppressEmptyItems="false" suppressPattern="" version="3.0.2">
+  <mappermodel:XSLTVersion>1.0</mappermodel:XSLTVersion>
+  <mappermodel:XSLTEngine>org.apache.xalan.processor.TransformerFactoryImpl</mappermodel:XSLTEngine>
+  <mappermodel:XSLTEncoding>UTF-8</mappermodel:XSLTEncoding>
+  <mappermodel:OutputMethod>text</mappermodel:OutputMethod>
+  <mappermodel:OutputEncoding>UTF-8</mappermodel:OutputEncoding>
+  <mappermodel:indent>true</mappermodel:indent>
+  <mappermodel:setDTD>false</mappermodel:setDTD>
+  <mappermodel:omit-xml-declaration>false</mappermodel:omit-xml-declaration>
+  <mappermodel:createEmptyOutputTags>false</mappermodel:createEmptyOutputTags>
+  <mappermodel:copyUnmappedFromInput enabled="false"/>
+  <mappermodel:disableOutputEscapingForANY>false</mappermodel:disableOutputEscapingForANY>
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:excludeResultPrefixes></mappermodel:excludeResultPrefixes>
+  <mappermodel:addDefaultXSTypeAttributes>false</mappermodel:addDefaultXSTypeAttributes>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="MOBILEBANKING.xsd" mime="XSD" name="Application-Context" rootName="Root"/>
+    <mappermodel:Structure duplicates="" filePath="MB.SOAP11_FTKoicaAcc_RESPONSE.xsd" mime="XSD" name="SOAP11_GetAccountList_REQUEST" rootName="{http://schemas.xmlsoap.org/soap/envelope/}Envelope"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="GetAccList.IN_PORT.xsd" mime="XSD" name="IN_PORT" rootName="AccountListRq"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Namespaces/>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="IN_PORT:0,AccountListRq:0,CifNo:0" x="479" y="20">
+      <mappermodel:TreeGraphNode inputNode="SOAP11_GetAccountList_REQUEST:0,Envelope:0,Body:0,Request:0" x="225" y="20">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="225" y="100">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="GetAccountList" type="22" x="20" y="82">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="TransactionType" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="3" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

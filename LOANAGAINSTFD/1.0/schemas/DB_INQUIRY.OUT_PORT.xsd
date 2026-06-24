@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DB_INQUIRY/Response">
+   <xsd:element name="SQL_CFG_1">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="loanFD_status">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" name="RS1">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="ipay_reference" type="xsd:string"/>
+                              <xsd:element name="status" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+         <xsd:attribute name="id" type="xsd:long" use="optional"/>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

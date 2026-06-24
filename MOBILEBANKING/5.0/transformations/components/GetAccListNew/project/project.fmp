@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context1.XSD" mime="XSD" name="Application-Context" rootName="Root"/>
+    <mappermodel:Structure duplicates="" filePath="Input1.XSD" mime="XSD" name="Input1" rootName="AccountListRq"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="OUT_PORT.XSD" mime="XSD" name="OUT_PORT" rootName="{http://temenos.com/CPTWS/GetAccountListJoin/Input}Envelope">
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFER"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext1.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTLISTJOIN"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext2.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext3.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext4.XSD" mime="XSD" name="http://temenos.com/CPTWS"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext5.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext6.XSD" mime="XSD" name="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext7.XSD" mime="XSD" name="http://temenos.com/CPBGETSCHFULL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext8.XSD" mime="XSD" name="http://temenos.com/GETEDCFREEZEBLOCKAMT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext9.XSD" mime="XSD" name="http://temenos.com/GETACCTNUMBER"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext10.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBACRTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext11.XSD" mime="XSD" name="http://temenos.com/ACLOCKEDEVENTS"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext12.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext13.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext29.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMB"/>
+    </mappermodel:Structure>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,GetAccountListJoin:0,WebRequestCommon:0,company:0" x="860" y="28">
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="232" y="17">
+        <mappermodel:InputPins>1,2,3</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="mobilebankingcpb@#%1" type="22" x="-72" y="38">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Input1:0,AccountListRq:0,CifNo:0" x="16" y="99">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="MD5Hex:md5hashing.MD5Hash.getMD5HexencodedString(java.lang.String arg1)" type="69" x="301" y="80">
+        <mappermodel:InputPins>arg1</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="=" type="31" x="728" y="94">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Input1:0,AccountListRq:0,SignData:0" x="436" y="150">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="886" y="154">
+        <mappermodel:InputPins>bool,then,bool,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="ValidMessage" type="22" x="202" y="193">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="474" y="225">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="true" type="22" x="262" y="269">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="491" y="315">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="false" type="22" x="238" y="340">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="3" outputID="11" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="0" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="11" inputIndex="1" outputID="12" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,GetAccountListJoin:0,WebRequestCommon:0,password:0" x="468" y="20">
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="189" y="20">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="password" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,GetAccountListJoin:0,WebRequestCommon:0,userName:0" x="470" y="20">
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="191" y="20">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="username" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,GetAccountListJoin:0,CPBGETACCOUNTLISTJOINType:0,[ZERO MANY]:0,enquiryInputCollection:0,columnName:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="@ID" type="22" x="290" y="170">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,GetAccountListJoin:0,CPBGETACCOUNTLISTJOINType:0,[ZERO MANY]:0,enquiryInputCollection:0,criteriaValue:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,AccountListRq:0,CifNo:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,GetAccountListJoin:0,CPBGETACCOUNTLISTJOINType:0,[ZERO MANY]:0,enquiryInputCollection:0,operand:0" x="154" y="20">
+      <mappermodel:FunctionGraphNode label="EQ" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="java" name="MD5Hex">
+      <mappermodel:Script>md5hashing.MD5Hash</mappermodel:Script>
+      <mappermodel:Function name="public static java.lang.String md5hashing.MD5Hash.getMD5HexencodedString(java.lang.String) throws java.security.NoSuchAlgorithmException">
+        <mappermodel:Argument datatype="java.lang.String" name="arg1"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+</mappermodel:MapperProject>

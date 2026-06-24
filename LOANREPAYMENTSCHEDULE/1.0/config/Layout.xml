@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="LoanRepaymentService" x="146" y="115"/>
+    <service-instance name="OFSConverter2" x="414" y="119"/>
+    <service-instance name="JSONConverter2" x="529" y="115"/>
+    <service-instance name="T24Outbound" x="263" y="118"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="MobileBankingAPI" x="265" y="203"/>
+    <service-instance name="Check_STO_Operation" x="562" y="229"/>
+    <service-instance name="FD_Close" x="213" y="93"/>
+    <service-instance name="FD_Create" x="609" y="43"/>
+    <service-instance name="FD_Inquiry" x="623" y="142"/>
+    <service-instance name="STO_Inquiry" x="807" y="252"/>
+    <service-instance name="STO_Creation" x="527" y="454"/>
+    <service-instance name="Account_Statement" x="753" y="365"/>
+    <service-instance name="Internal_Fund_Transfer" x="530" y="497"/>
+    <service-instance name="Currency_Type" x="864" y="473"/>
+    <service-instance name="Customer_Inquiry" x="972" y="420"/>
+    <service-instance name="Balance" x="760" y="504"/>
+    <service-instance name="Inquiry" x="984" y="112"/>
+    <service-instance name="Currency_Exchange" x="1088" y="227"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/services/rest" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Responses>
+      <Response>
+        <Representations>
+          <Representation>
+            <Element>
+              <xsl:variable name="if0">
+                <xsl:choose>
+                  <xsl:when test="contains($document_OUT_PORT/root/header,'/1')">
+                    <xsl:value-of select="'Record successfully edited'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="'Error'"></xsl:value-of>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:value-of disable-output-escaping="no" select="concat('{&#xd;&#xa;&quot;status&quot;:&quot;',$if0,'&quot;&#xd;&#xa;}')"></xsl:value-of>
+            </Element>
+          </Representation>
+        </Representations>
+      </Response>
+    </ns1:Responses>
+  </xsl:template>
+</xsl:stylesheet>

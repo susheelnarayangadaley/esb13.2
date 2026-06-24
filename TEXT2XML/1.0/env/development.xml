@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="FileReader1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="Post Processing Action" type="java.lang.String">MOVE</target:property>
+      <target:property encrypt="false" name="Pre Processing Arguments" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="FileReaderConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.adapter.jca.filereader.cci.FileReaderConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.adapter.jca.filereader.cci&quot;>
+    &lt;ns1:connectedToDiffMachine>false&lt;/ns1:connectedToDiffMachine>
+    &lt;ns1:relativeDirectory>C:\Fiorano\13.1&lt;/ns1:relativeDirectory>
+    &lt;ns1:fileName>*.*&lt;/ns1:fileName>
+    &lt;ns1:sourceDirectory>C:\Users\Susheel\Documents\Sample\Exercises_Practise\FileRead&lt;/ns1:sourceDirectory>
+    &lt;ns1:useWorkingDirectory>true&lt;/ns1:useWorkingDirectory>
+    &lt;ns1:workingDirectory>C:\Users\Susheel\Documents\Sample\Exercises_Practise\FileRead\Working&lt;/ns1:workingDirectory>
+    &lt;ns1:processPendingFilesInWork>true&lt;/ns1:processPendingFilesInWork>
+    &lt;ns1:errorDirectory>C:\Users\Susheel\Documents\Sample\Exercises_Practise\FileRead\Error&lt;/ns1:errorDirectory>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="Post Processing Directory" type="java.lang.String">C:\Users\Susheel\Documents\Sample\Exercises_Practise\FileRead\ProcessingDirec</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Text2XML1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="FlatXMLConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.adapter.jca.flattoxml.FlatXMLConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.adapter.jca.flattoxml&quot;>
+    &lt;ns1:schemaContent>&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+
+&amp;lt;!DOCTYPE FileLayout
+  PUBLIC &quot;-//Fiorano Software Technologies Pvt. Ltd.//DTD FileSchema 1.0//EN&quot; &quot;fileschema_1_0.dtd&quot;&amp;gt;
+&amp;lt;FileLayout&amp;gt;
+&amp;lt;FileSections name=&quot;Schema&quot;&amp;gt;
+&amp;lt;GlobalParsingInfo ignore-lines-start-lineno=&quot;0&quot; ignore-lines-end-lineno=&quot;0&quot;&amp;gt;
+&amp;lt;RecordDelimiter&amp;gt;
+&amp;lt;Delimiter type=&quot;custom-delimiter&quot; escapeCharType=&quot;Character&quot;&amp;gt;0d0a&amp;lt;/Delimiter&amp;gt;
+&amp;lt;/RecordDelimiter&amp;gt;
+&amp;lt;DefaultFieldDelimiter&amp;gt;
+&amp;lt;Delimiter type=&quot;custom-delimiter&quot; escapeCharType=&quot;Character&quot; escapeChar=&quot;5c&quot;&amp;gt;2c&amp;lt;/Delimiter&amp;gt;
+&amp;lt;/DefaultFieldDelimiter&amp;gt;
+&amp;lt;/GlobalParsingInfo&amp;gt;
+&amp;lt;Record xmlType=&quot;Element&quot; minOccurs=&quot;-1&quot; maxOccurs=&quot;-1&quot; parsingType=&quot;DELIMITED&quot; childCount=&quot;0&quot; name=&quot;Area&quot;&amp;gt;
+&amp;lt;RecordIdentifier type=&quot;None&quot;/&amp;gt;
+&amp;lt;FieldDelimiter&amp;gt;
+&amp;lt;Delimiter type=&quot;custom-delimiter&quot; escapeCharType=&quot;Character&quot; escapeChar=&quot;5c&quot;&amp;gt;2c&amp;lt;/Delimiter&amp;gt;
+&amp;lt;/FieldDelimiter&amp;gt;
+&amp;lt;RecordContent&amp;gt;
+&amp;lt;Field xmlType=&quot;Element&quot; trimspaces=&quot;None&quot; alignment=&quot;LEFT&quot; mapIfNull=&quot;NO&quot; name=&quot;Population&quot;&amp;gt;
+&amp;lt;DataType format=&quot;&quot;&amp;gt;Integer&amp;lt;/DataType&amp;gt;
+&amp;lt;/Field&amp;gt;
+&amp;lt;Record xmlType=&quot;Element&quot; minOccurs=&quot;-1&quot; maxOccurs=&quot;-1&quot; parsingType=&quot;DELIMITED&quot; childCount=&quot;0&quot; name=&quot;Size&quot;&amp;gt;
+&amp;lt;RecordIdentifier type=&quot;None&quot;/&amp;gt;
+&amp;lt;FieldDelimiter&amp;gt;
+&amp;lt;Delimiter type=&quot;custom-delimiter&quot; escapeCharType=&quot;Character&quot; escapeChar=&quot;5c&quot;&amp;gt;2c&amp;lt;/Delimiter&amp;gt;
+&amp;lt;/FieldDelimiter&amp;gt;
+&amp;lt;RecordContent&amp;gt;
+&amp;lt;Field xmlType=&quot;Element&quot; trimspaces=&quot;None&quot; alignment=&quot;LEFT&quot; mapIfNull=&quot;NO&quot; name=&quot;Colour&quot;&amp;gt;
+&amp;lt;DataType format=&quot;&quot;&amp;gt;String&amp;lt;/DataType&amp;gt;
+&amp;lt;/Field&amp;gt;
+&amp;lt;Field xmlType=&quot;Element&quot; trimspaces=&quot;None&quot; alignment=&quot;LEFT&quot; mapIfNull=&quot;NO&quot; name=&quot;Shape&quot;&amp;gt;
+&amp;lt;DataType format=&quot;&quot;&amp;gt;String&amp;lt;/DataType&amp;gt;
+&amp;lt;/Field&amp;gt;
+&amp;lt;/RecordContent&amp;gt;
+&amp;lt;/Record&amp;gt;
+&amp;lt;/RecordContent&amp;gt;
+&amp;lt;/Record&amp;gt;
+&amp;lt;/FileSections&amp;gt;
+&amp;lt;/FileLayout&amp;gt;&lt;/ns1:schemaContent>
+&lt;/ns1:namedConfiguration>
+</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Display1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+</target:target>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="INTERNALFUNDTRANSFER.xsd" mime="XSD" name="Application-Context" rootName="AccountDetails"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="sendmessage__POST__Request.xsd" mime="XSD" name="sendmessage__POST__Request" rootName="{http://www.fiorano.com/services/rest}Request"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="sendmessage__POST__Request:0,Request:0,Representations:0,[Choice]:0,Representation:0,Element:0,ANY:0" x="468" y="47">
+      <mappermodel:FunctionGraphNode label="yyyy-MM-dd'T'HH:mm:ssX" type="22" x="-799" y="323">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="convertDateV2" type="172" x="-521" y="302">
+        <mappermodel:InputPins>Date String,Input Format,Output Format</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="yyyy-MM-dd HH:mm:ss" type="22" x="-781" y="350">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=" AC: " type="22" x="-382" y="134">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&quot;,&#xD;&#xA;    &quot;text&quot;:&quot;" type="22" x="35" y="153">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&quot;," type="22" x="78" y="197">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="DateTime" type="100" x="-699" y="293">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="&quot;parse_mode&quot; :&quot;html&quot;&#xD;&#xA;}" type="22" x="-27" y="227">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="-192" y="84">
+        <mappermodel:InputPins>1,2,3,4,5,6,7,8,9,10,11,12,13,14,15</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=" out first leg" type="22" x="-423" y="108">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="{&#xD;&#xA;    &quot;chat_id&quot;:&quot;" type="22" x="13" y="87">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=" on " type="22" x="-372" y="272">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="235" y="102">
+        <mappermodel:InputPins>1,2,3,4,5,6,7</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label=" " type="22" x="-356" y="185">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="-4278502919" type="22" x="18" y="128">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,transactionReference:0" x="-504" y="81">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,fromAccount:0" x="-461" y="159">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,transactionAmount:0" x="-489" y="241">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AccountDetails:0,currencyType:0" x="-460" y="214">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="13" inputIndex="0" outputID="11" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="2" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="4" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="5" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="3" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="2" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="10" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="2" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="4" outputID="14" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="13" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="16" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="3" outputID="17" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="8" outputID="12" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="9" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="6" outputID="14" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="5" outputID="19" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="7" outputID="18" outputIndex="0"/>
+      <mappermodel:Link inputID="13" inputIndex="1" outputID="15" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

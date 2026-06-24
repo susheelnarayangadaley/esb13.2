@@ -1,0 +1,67 @@
+<xsd:schema xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:tns="http://temenos.com/CPBAPI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://temenos.com/CPBAPI" targetNamespace="http://temenos.com/CPBAPI">
+    <xsd:complexType name="webRequestCommon">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="company" type="xsd:string"/>
+            <xsd:element name="password" type="xsd:string"/>
+            <xsd:element name="userName" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="enquiryInput">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="enquiryInputCollection" type="tns:enquiryInputCollection"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="successIndicator">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Success"/>
+            <xsd:enumeration value="TWSError"/>
+            <xsd:enumeration value="T24Error"/>
+            <xsd:enumeration value="T24Override"/>
+            <xsd:enumeration value="T24Offline"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="WSCPBAPISTMTENTBOOKResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Status" type="tns:Status"/>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="CPBAPISTMTENTBOOKType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="WSCPBAPISTMTENTBOOK">
+        <xsd:sequence>
+            <xsd:element name="WebRequestCommon" type="tns:webRequestCommon"/>
+            <xsd:element name="CPBAPISTMTENTBOOKType" type="tns:enquiryInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Status">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="transactionId" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="messageId" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="successIndicator" type="tns:successIndicator"/>
+            <xsd:element minOccurs="0" name="application" type="xsd:string"/>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="messages" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="enquiryInputCollection">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="columnName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="criteriaValue" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="operand" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="WSCPBAPISVLSTMTResponse">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Status" type="tns:Status"/>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="CPBAPISTMTENTBOOKType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="WSCPBAPISVLSTMT">
+        <xsd:sequence>
+            <xsd:element name="WebRequestCommon" type="tns:webRequestCommon"/>
+            <xsd:element name="CPBAPISTMTENTBOOKType" type="tns:enquiryInput"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="WSCPBAPISTMTENTBOOKResponse" type="tns:WSCPBAPISTMTENTBOOKResponse"/>
+    <xsd:element name="WSCPBAPISTMTENTBOOK" type="tns:WSCPBAPISTMTENTBOOK"/>
+    <xsd:element name="WSCPBAPISVLSTMTResponse" type="tns:WSCPBAPISVLSTMTResponse"/>
+    <xsd:element name="WSCPBAPISVLSTMT" type="tns:WSCPBAPISVLSTMT"/>
+</xsd:schema>

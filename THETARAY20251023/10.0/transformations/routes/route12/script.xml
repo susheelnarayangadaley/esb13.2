@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.fiorano.com/SOA/bc/cache" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:EXT="EXT" xmlns:MT2MX="http://xml.apache.org/xslt/java" xmlns:MTtoMX="http://xml.apache.org/xslt/java" xmlns:MTtoMXUtil="http://xml.apache.org/xslt/java" xmlns:MX2MT="http://xml.apache.org/xslt/java" xmlns:MXtoMT="http://xml.apache.org/xslt/java" xmlns:abc="abc" xmlns:dateConversion="dateConversion" xmlns:digitalSignature="http://xml.apache.org/xslt/java" xmlns:dsa="dsa" xmlns:egf="egf" xmlns:etx="etx" xmlns:jar="http://xml.apache.org/xslt/java" xmlns:m="m" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:strings="strings" xmlns:tets="tets" xmlns:xz="xz" extension-element-prefixes="datetime set math EXT MT2MX MTtoMX MTtoMXUtil MX2MT MXtoMT abc dateConversion digitalSignature dsa egf etx jar m myext nestedJsonParser strings tets xz">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <ns2:Cache>
+      <ns2:CacheEntry>
+        <ns2:Keys>
+          <ns2:id>
+            <xsl:value-of select="'101'"></xsl:value-of>
+          </ns2:id>
+        </ns2:Keys>
+      </ns2:CacheEntry>
+    </ns2:Cache>
+  </xsl:template>
+</xsl:stylesheet>

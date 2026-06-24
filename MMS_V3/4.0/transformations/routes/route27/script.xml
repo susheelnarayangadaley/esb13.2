@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:DTB="http://xml.apache.org/xslt/java" xmlns:EnDe="http://xml.apache.org/xslt/java" xmlns:EncrPassword="http://xml.apache.org/xslt/java" xmlns:LAUUtil="http://xml.apache.org/xslt/java" xmlns:MD5Hex="http://xml.apache.org/xslt/java" xmlns:Md5UniCode="http://xml.apache.org/xslt/java" xmlns:RemoveEmojis="RemoveEmojis" xmlns:SafaricomTokenGenerator="http://xml.apache.org/xslt/java" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedjson="nestedjson" xmlns:padding="padding" xmlns:ss="ss" xmlns:strings="strings" xmlns:test_2="test_2" xmlns:testvensys="testvensys" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math DTB EnDe EncrPassword LAUUtil MD5Hex Md5UniCode RemoveEmojis SafaricomTokenGenerator StringLength dateConversion myext nestedjson padding ss strings test_2 testvensys truncateString">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_SOAP11_khqrincoming_REQUEST" select="document('SOAP11_khqrincoming_REQUEST')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Envelope>
+      <ns1:Body>
+        <Request>
+          <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
+          <xsl:value-of select="myext:replace(string(myext:replace(string(substring-before(substring-after($_TIF_BODY_TEXT_,'&lt;Request&gt;'),'&lt;/Request&gt;')),string('&amp;lt;'),string('g'),string('&lt;'))),string('&amp;gt;'),string('g'),string('&gt;'))" disable-output-escaping="yes"></xsl:value-of>
+          <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
+        </Request>
+      </ns1:Body>
+    </ns1:Envelope>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_BODY_TEXT_"></xsl:param>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="myext" functions="replace">
+    <lxslt:script lang="javascript"><![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(".")    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return "There are only " + days + " days remaining to the start of the next millennium."; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

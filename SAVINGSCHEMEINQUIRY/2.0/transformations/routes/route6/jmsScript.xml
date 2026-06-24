@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/services/rest" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" xmlns:testJS="testJS" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings testJS">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_fdclosdetailInquiry__POST__fdclosdetailInquiry__Request" select="document('fdclosdetailInquiry__POST__fdclosdetailInquiry__Request')"></xsl:variable>
+  <xsl:template match="/">
+    <Text>
+      <xsl:value-of select="concat('ENQUIRY.SELECT,,',java:_getStringProperty($_TIF_MESSAGE_, 'user'),'/',java:_getStringProperty($_TIF_MESSAGE_, 'pass'),',','LOLC.IPAY.SAV.SCHEME.LIST',',','CUSTOMER:EQ','=',substring-before(substring-after($document_fdclosdetailInquiry__POST__fdclosdetailInquiry__Request/ns2:Request/Representations/Representation/Element,':&quot;'),'&quot;'))"></xsl:value-of>
+    </Text>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

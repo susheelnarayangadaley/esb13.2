@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="query" type="xs:string" />
+        <xs:element name="row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:unsignedInt" />
+        <xs:element name="SERVICENAME" type="xs:string" />
+        <xs:element name="AMOUNTTRAN_100" type="xs:unsignedByte" />
+        <xs:element name="TRANCURRENCY" type="xs:unsignedShort" />
+        <xs:element name="MOBILENUMBER" type="xs:unsignedLong" />
+        <xs:element name="ADRESSE" type="xs:string" />
+        <xs:element name="NATIONALITY" type="xs:string" />
+        <xs:element name="GENDER" type="xs:string" />
+        <xs:element name="PLACEOFBIRTH" type="xs:string" />
+        <xs:element name="DESTACCOUNT" type="xs:string" />
+        <xs:element name="DESTMOBILENUMBER" type="xs:unsignedLong" />
+        <xs:element name="WALLETCURRENCY" type="xs:string" />
+        <xs:element name="TRANSDATETIME" type="xs:unsignedLong" />
+        <xs:element name="RESPCODE" type="xs:unsignedByte" />
+        <xs:element name="USERID" type="xs:string" />
+        <xs:element name="FULLNAME" type="xs:string" />
+        <xs:element maxOccurs="unbounded" name="DATE_TRANS" type="xs:string" />
+        <xs:element name="DESTUSERID" />
+        <xs:element name="DESTADDRESS" />
+        <xs:element name="DESTFIRSTNAME" />
+        <xs:element name="DESTMERCHANTNAME" />
+        <xs:element name="DESTCUSTOMERNAME" />
+        <xs:element name="NATIONALITY_CODE" />
+        <xs:element name="CITY" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="resultcount" type="xs:unsignedByte" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

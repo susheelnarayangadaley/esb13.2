@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <header>
+        <xsl:value-of select="concat('AA.ARRANGEMENT.ACTIVITY,/I/PROCESS/1/0/,',java:_getStringProperty($_TIF_MESSAGE_, 'user'),'/',java:_getStringProperty($_TIF_MESSAGE_, 'pass'),'/',normalize-space(substring-after($_TIF_BODY_TEXT_,':')),',,')"></xsl:value-of>
+      </header>
+      <ARRANGEMENT>
+        <value>
+          <xsl:value-of select="'NEW'"></xsl:value-of>
+        </value>
+      </ARRANGEMENT>
+      <ACTIVITY>
+        <value>
+          <xsl:value-of select="'DEPOSITS-NEW-ARRANGEMENT'"></xsl:value-of>
+        </value>
+      </ACTIVITY>
+      <EFFECTIVE.DATE>
+        <value>
+          <xsl:value-of select="AccountDetails/FDDetails/effectiveDate"></xsl:value-of>
+        </value>
+      </EFFECTIVE.DATE>
+      <CUSTOMER>
+        <value>
+          <xsl:value-of select="AccountDetails/FDDetails/customerID"></xsl:value-of>
+          <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'ESBX__SYSTEM__USER_DEFINED_DOC_ID', AccountDetails/FDDetails/customerID)"></xsl:value-of>
+        </value>
+      </CUSTOMER>
+      <PRODUCT>
+        <value>
+          <xsl:variable name="if0">
+            <xsl:choose>
+              <xsl:when test="(translate(AccountDetails/FDDetails/product,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))=('MATURITY')">
+                <xsl:value-of select="'IND.MATURITY.INT'"></xsl:value-of>
+              </xsl:when>
+              <xsl:when test="(translate(AccountDetails/FDDetails/product,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))=('MONTHLY')">
+                <xsl:value-of select="'IND.MONTHLY.INT'"></xsl:value-of>
+              </xsl:when>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:value-of select="$if0"></xsl:value-of>
+        </value>
+      </PRODUCT>
+      <CURRENCY>
+        <value>
+          <xsl:value-of select="AccountDetails/FDDetails/currency"></xsl:value-of>
+        </value>
+      </CURRENCY>
+      <PROPERTY>
+        <xsl:attribute name="totalPositions">
+          <xsl:value-of select="'5'"></xsl:value-of>
+        </xsl:attribute>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'CUSTOMER'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'OFFICERS'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'3'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'COMMITMENT'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'4'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'RENEWAL'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'5'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'SETTLEMENT'"></xsl:value-of>
+        </value>
+      </PROPERTY>
+      <FIELD.NAME>
+        <xsl:attribute name="totalPositions">
+          <xsl:value-of select="'5'"></xsl:value-of>
+        </xsl:attribute>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'LM.ACCT.TYPE'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'LM.MODE.OPER:1:1'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'PRIMARY.OFFICER'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'3'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'AMOUNT'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'4'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'CHANGE.PERIOD'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'5'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'PAYIN.ACCOUNT:1:1'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'5'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'PAYOUT.ACCOUNT:1:1'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'5'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'3'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'PAYOUT.ACCOUNT:2:1'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'4'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'CHANGE.DATE.TYPE'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'4'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'3'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'INITIATION.TYPE'"></xsl:value-of>
+        </value>
+      </FIELD.NAME>
+      <FIELD.VALUE>
+        <xsl:attribute name="totalPositions">
+          <xsl:value-of select="'5'"></xsl:value-of>
+        </xsl:attribute>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="translate(AccountDetails/FDDetails/accountType,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="translate(AccountDetails/FDDetails/modeOfOperation,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="AccountDetails/FDDetails/introducer"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'3'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="AccountDetails/FDDetails/amount"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'4'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="AccountDetails/FDDetails/changePeriod"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'5'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'1'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="AccountDetails/FDDetails/debitAccount"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'5'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="AccountDetails/FDDetails/principalCreditAccount"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'5'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'3'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="AccountDetails/FDDetails/interestCreditAccount"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'4'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'2'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'PERIOD'"></xsl:value-of>
+        </value>
+        <value>
+          <xsl:attribute name="position">
+            <xsl:value-of select="'4'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:attribute name="subPosition">
+            <xsl:value-of select="'3'"></xsl:value-of>
+          </xsl:attribute>
+          <xsl:value-of select="'AUTO'"></xsl:value-of>
+        </value>
+      </FIELD.VALUE>
+    </root>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_BODY_TEXT_"></xsl:param>
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

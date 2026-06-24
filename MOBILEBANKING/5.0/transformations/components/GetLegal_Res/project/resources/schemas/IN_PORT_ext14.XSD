@@ -1,0 +1,50 @@
+<xsd:schema xmlns:tns="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD" targetNamespace="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD">
+    <xsd:complexType name="AAARRANGEMENTACTIVITYCPBDMDType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="Arrangement" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Activity" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="gCUSTOMER">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="Customer" type="xsd:string"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Product" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Currency" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="gPROPERTY">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="mPROPERTY">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element minOccurs="0" name="Property" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="sgFIELDNAME">
+                                        <xsd:complexType>
+                                            <xsd:sequence>
+                                                <xsd:element minOccurs="0" maxOccurs="unbounded" name="FieldName">
+                                                    <xsd:complexType>
+                                                        <xsd:sequence>
+                                                            <xsd:element minOccurs="0" name="FieldName" type="xsd:string"/>
+                                                            <xsd:element minOccurs="0" name="FieldValue" type="xsd:string"/>
+                                                        </xsd:sequence>
+                                                        <xsd:attribute name="s" type="xsd:positiveInteger" use="optional"/>
+                                                    </xsd:complexType>
+                                                </xsd:element>
+                                            </xsd:sequence>
+                                            <xsd:attribute name="sg" type="xsd:positiveInteger" use="optional"/>
+                                        </xsd:complexType>
+                                    </xsd:element>
+                                </xsd:sequence>
+                                <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+</xsd:schema>

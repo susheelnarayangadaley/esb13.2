@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" suppressEmptyItems="false" suppressPattern="" version="3.0.2">
+  <mappermodel:XSLTVersion>1.0</mappermodel:XSLTVersion>
+  <mappermodel:XSLTEngine>org.apache.xalan.processor.TransformerFactoryImpl</mappermodel:XSLTEngine>
+  <mappermodel:XSLTEncoding>UTF-8</mappermodel:XSLTEncoding>
+  <mappermodel:OutputMethod>unspecified</mappermodel:OutputMethod>
+  <mappermodel:OutputEncoding>UTF-8</mappermodel:OutputEncoding>
+  <mappermodel:indent>true</mappermodel:indent>
+  <mappermodel:setDTD>false</mappermodel:setDTD>
+  <mappermodel:omit-xml-declaration>false</mappermodel:omit-xml-declaration>
+  <mappermodel:createEmptyOutputTags>false</mappermodel:createEmptyOutputTags>
+  <mappermodel:copyUnmappedFromInput enabled="false"/>
+  <mappermodel:disableOutputEscapingForANY>false</mappermodel:disableOutputEscapingForANY>
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:excludeResultPrefixes></mappermodel:excludeResultPrefixes>
+  <mappermodel:addDefaultXSTypeAttributes>false</mappermodel:addDefaultXSTypeAttributes>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="MOBILEBANKING_V4.xsd" mime="XSD" name="Application-Context" rootName="Root"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="MOBILEBANKING2.0_MB.SOAP11_GetCustomerInfo_RESPONSE.xsd" mime="XSD" name="SOAP11_FTBakongWallet_RESPONSE" rootName="{http://schemas.xmlsoap.org/soap/envelope/}Envelope"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Namespaces>
+    <mappermodel:namespace prefix="ns1" uri="http://schemas.xmlsoap.org/soap/envelope/"/>
+  </mappermodel:Namespaces>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="SOAP11_FTBakongWallet_RESPONSE:0,Envelope:0,Body:0,Response:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="getText" type="154" x="166" y="197">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="CDATA" type="63" x="630" y="225">
+        <mappermodel:InputPins>1</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

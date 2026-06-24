@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrGatewayConfigurations>
+    <BCConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.bcdk.BCDKConfigurationInfo"> 
+  <void property="JCAAdapterConfig"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;ESBAdapterConfigurations&gt;&#13;
+    &lt;ConnectionLess&gt;false&lt;/ConnectionLess&gt;&#13;
+    &lt;isConfigurationRequired&gt;true&lt;/isConfigurationRequired&gt;&#13;
+    &lt;isLicensed&gt;true&lt;/isLicensed&gt;&#13;
+    &lt;Inbound&gt;false&lt;/Inbound&gt;&#13;
+    &lt;AdapterInstanceProperties&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ESBAdapterInstanceProperties&quot;&gt; &#13;
+  &lt;void property=&quot;GUID&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appName&quot;&gt; &#13;
+   &lt;string&gt;DT&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appVersion&quot;&gt; &#13;
+   &lt;string&gt;1_0&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;domain&quot;&gt; &#13;
+   &lt;string&gt;BCConfigPropertySheet&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;instanceName&quot;&gt; &#13;
+   &lt;string&gt;DB1&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;logCategories&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.db.spi.outbound.DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBServiceDefaultErrorHandler&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBServiceDefaultErrorHandler&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBServiceDefaultErrorHandler&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.db.DBServiceDefaultErrorHandler&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBServiceErrorHandlerImpl&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBServiceErrorHandlerImpl&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBServiceErrorHandlerImpl&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.db.DBServiceErrorHandlerImpl&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.db.cci.DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/AdapterInstanceProperties&gt;&#13;
+    &lt;ConfigurationObjects&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;fiorano.esb.adapter.jca.cci.ESBConnectionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;MCFClassName&quot;&gt; &#13;
+    &lt;string&gt;com.fiorano.adapter.jca.db.spi.outbound.DBManagedConnectionFactory&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;fiorano.esb.adapter.jca.cci.ESBConnectionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.ConnectionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.db.cci.DBInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1300&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorActionsMap&quot;&gt; &#13;
+     &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;2&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;4&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;1&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;3&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;1&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;active&quot;&gt; &#13;
+           &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;4&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;active&quot;&gt; &#13;
+           &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;noOfRetries&quot;&gt; &#13;
+           &lt;int&gt;10&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;repeatInterval&quot;&gt; &#13;
+           &lt;long&gt;300000&lt;/long&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;sendErrorAfterTries&quot;&gt; &#13;
+           &lt;int&gt;2&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;0&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;/&gt; &#13;
+      &lt;/void&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;DB&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;DT__1_0__DB1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+    &lt;string&gt;http://www.fiorano.com/fesb/activity/DB1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;The DBAdapter is a Query Engine that creates and executes a single SQL Statement or a set of queries to perform the database related operations such as insertion, updation, deletion; stored procedure execution; or table monitoring&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;dbcomponent.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.db.cci.DBInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.InteractionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.db.spi.outbound.DBManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;DBVendor&quot;&gt; &#13;
+    &lt;string&gt;HSQL&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;JNDIName&quot;&gt; &#13;
+    &lt;string&gt;DB&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1100&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;databaseUrl&quot;&gt; &#13;
+    &lt;string&gt;jdbc:hsqldb:hsql://localhost/xdb&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;dbConfigurations&quot;&gt; &#13;
+    &lt;void property=&quot;configName&quot;&gt; &#13;
+     &lt;string&gt;HSQLdb&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;password&quot;&gt; &#13;
+     &lt;string&gt;&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;username&quot;&gt; &#13;
+     &lt;string&gt;sa&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;DB&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;DT__1_0__DB1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;DB Connection&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;dbconnection.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.db.spi.outbound.DBManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.spi.ManagedConnectionFactory&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+    &lt;/ConfigurationObjects&gt;&#13;
+&lt;/ESBAdapterConfigurations&gt;&#13;
+</string> 
+  </void> 
+ </object> 
+</java> 
+]]></BCConfigurations>
+    <TransportConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.tr.TrConfigurationInfo"/> 
+</java> 
+]]></TransportConfigurations>
+    <ErrorConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.error.ErrorConfigurationInfo"> 
+  <void property="errorActionsMap"> 
+   <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorActionsMap"> 
+    <void property="errorActionsMap"> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>4</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="errorActionID"> 
+          <int>1</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>3</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>4</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="noOfRetries"> 
+          <int>10</int> 
+         </void> 
+         <void property="repeatInterval"> 
+          <long>300000</long> 
+         </void> 
+         <void property="sendErrorAfterTries"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>0</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 
+]]></ErrorConfigurations>
+    <SchedulerConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.scheduler.SchedulerConfigurationInfo"/> 
+</java> 
+]]></SchedulerConfigurations>
+</TrGatewayConfigurations>

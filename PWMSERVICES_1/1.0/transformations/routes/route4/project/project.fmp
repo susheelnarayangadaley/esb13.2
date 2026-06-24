@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema_NEW.xsd" mime="XSD" name="Application-Context" rootName="AppContext"/>
+    <mappermodel:Structure duplicates="" filePath="Account_Balance__GET__GET__Response.xsd" mime="XSD" name="Account_Balance__GET__Response" rootName="{http://www.fiorano.com/services/rest}Responses"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="AccountBalance__GET__GET__Response.xsd" mime="XSD" name="AccountBalance__GET__Response" rootName="{http://www.fiorano.com/services/rest}Responses"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Status:0,Transaction_reference:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Status:0,Transaction_Reference:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Status:0,Timestamp:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Status:0,Timestamp:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Status:0,Code:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Status:0,Code:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Status:0,Message:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Status:0,Message:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Status:0,Description:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Status:0,Description:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_branch:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_branch:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Basic_part_of_account_number:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Basic_part_of_account_number:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_suffix:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_suffix:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_short_name:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_short_name:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Arabic_short_name:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Arabic_short_name:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Customer_mnemonic:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Customer_mnemonic:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Customer_location:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Customer_location:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Customer_full_name:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Customer_full_name:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Arabic_customer_full_name:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Arabic_customer_full_name:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_Type:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_Type:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Owning_application_code:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Owning_application_code:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_structure:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_structure:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Currency_mnemonic:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Currency_mnemonic:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Currency_edit_field:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Currency_edit_field:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Internal_non_customer_account:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Internal_non_customer_account:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Deceased_or_liquidated:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Deceased_or_liquidated:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_status_Blocked:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_status_Blocked:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_status_Inactive:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_status_Inactive:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_closing:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_closing:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Overdraft_limit:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Overdraft_limit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Limit_expiry_date:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Limit_expiry_date:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Overdraft_expired:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Overdraft_expired:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Reserved_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Reserved_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Ledger_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Ledger_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Status_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Status_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Previous_cleared_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Previous_cleared_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Current_cleared_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Current_cleared_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Current_available_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Current_available_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Is_Current_available_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Is_Current_available_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Later_available_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Later_available_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Is_Later_available_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Is_Later_available_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Next_available_balance_1:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Next_available_balance_1:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Next_available_balance_2:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Next_available_balance_2:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Is_Next_available_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Is_Next_available_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Forward_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Forward_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Is_Forward_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Is_Forward_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Clearing_today:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Clearing_today:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Clearing_later_today:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Clearing_later_today:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Clearing_tomorrow:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Clearing_tomorrow:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Clearing_after_tomorrow:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Clearing_after_tomorrow:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Shadow_debits:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Shadow_debits:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Shadow_credits:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Shadow_credits:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Shadow_adjustments:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Shadow_adjustments:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,OD_against_uc_cheques:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,OD_against_uc_cheques:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Susp_OD_UC_cheques:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Susp_OD_UC_cheques:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Notice_AC_special_condition:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Notice_AC_special_condition:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Withdrawals_maturing_today:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Withdrawals_maturing_today:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Closing_withdrawal:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Closing_withdrawal:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Withdrawals_maturing_tomorrow:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Withdrawals_maturing_tomorrow:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Closing_withdrawal_1:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Closing_withdrawal_1:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Withdrawals_maturing_after_tomorrow:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Withdrawals_maturing_after_tomorrow:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Closing_withdrawal_2:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Closing_withdrawal_2:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Hold_queued_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Hold_queued_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Customer_Group:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Customer_Group:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Real_time_balance_order:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Real_time_balance_order:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Ext_Account_No:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Ext_Account_No:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Edited_Ext_Account_No:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Edited_Ext_Account_No:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,International_bank_account:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,International_bank_account:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Edited_international_bank:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Edited_international_bank:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Date_account_opened:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Date_account_opened:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Date_account_closed:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Date_account_closed:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Customer_type:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Customer_type:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,SCL_Credit_authorized_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,SCL_Credit_authorized_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,SCL_Credit_not_authorized_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,SCL_Credit_not_authorized_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,SCL_Credit_returned_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,SCL_Credit_returned_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,SCL_Debit_authorized_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,SCL_Debit_authorized_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,SCL_Debit_not_authorized_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,SCL_Debit_not_authorized_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,OCL_Unrealized_cheques_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,OCL_Unrealized_cheques_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,OCL_Clearing_today_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,OCL_Clearing_today_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,OCL_Purchased_cheques_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,OCL_Purchased_cheques_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,OCL_Returned_cheques_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,OCL_Returned_cheques_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Calculated_credit_interest:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Calculated_credit_interest:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Net_interest_amount_credit:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Net_interest_amount_credit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Net_interest_accrued_credit:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Net_interest_accrued_credit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Tax_amount_1_credit:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Tax_amount_1_credit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Calculated_debit_interest:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Calculated_debit_interest:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Net_interest_amount_debit:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Net_interest_amount_debit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Net_interest_accrued_debit:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Net_interest_accrued_debit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Tax_amount_1_debit:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Tax_amount_1_debit:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_dormant:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_dormant:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_freezed:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_freezed:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountBalanceInquiryPWM_Response:0,Account:0,Account_freezed_manually:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Account_Balance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,Account_Balance_Inquiry:0,Account:0,Account_freezed_manually:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Status:0" x="157" y="20">
+      <mappermodel:FunctionGraphNode label="200" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountBalance__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,MediaType:0" x="223" y="20">
+      <mappermodel:FunctionGraphNode label="application/xml" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

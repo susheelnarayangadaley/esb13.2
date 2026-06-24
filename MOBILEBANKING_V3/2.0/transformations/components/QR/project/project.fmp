@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context.DTD" mime="DTD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="FT.IN_PORT.xsd" mime="XSD" name="OUT_PORT" rootName="FundTransferRq"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="{CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,gLTXNNARRDR:0,[ZERO MANY]:0}1,{CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,gLTXNNARRCR:0,[ZERO MANY]:0}1" filePath="T24.CrossBorderPayment__IN_PORT.xsd" mime="XSD" name="CrossBorderPayment__IN_PORT" rootName="{http://temenos.com/DEVMB3/CrossBorderPayment/Input}Envelope">
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext38.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFER"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext39.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext40.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTINFO"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext41.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext42.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext43.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext44.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBACBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext45.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBEDCBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext46.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSRBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext47.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext48.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext49.XSD" mime="XSD" name="http://temenos.com/CPBGETCUSTOMERINFO"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext50.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext51.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTLIST"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext52.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext53.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext54.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWINGOUT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext55.XSD" mime="XSD" name="http://temenos.com/DEVMB3"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext56.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYOPENFD"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext57.XSD" mime="XSD" name="http://temenos.com/CUSTOMERCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext58.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext59.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext60.XSD" mime="XSD" name="http://temenos.com/CUSTOMER"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext61.XSD" mime="XSD" name="http://temenos.com/CPBGETEXCHANGERATE"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext62.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext63.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext64.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBTOPUP"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext65.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext66.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext67.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWATERBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext68.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext69.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTSTMT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext70.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext71.XSD" mime="XSD" name="http://temenos.com/CPBGETINTERESTRATE"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext72.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBFUNANBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext73.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext74.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITY"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext75.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMB"/>
+    </mappermodel:Structure>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,WebRequestCommon:0,password:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="86" y="218">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="password" type="22" x="258" y="110">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,WebRequestCommon:0,userName:0" x="458" y="61">
+      <mappermodel:FunctionGraphNode label="username" type="22" x="219" y="152">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="255" y="237">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,OfsFunction:0,activityName:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="" type="22" x="359" y="172">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,OfsFunction:0,assignReason:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="" type="22" x="435" y="172">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,OfsFunction:0,dueDate:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="" type="22" x="503" y="173">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,id:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="" type="22" x="413" y="149">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,CREDITAMOUNT:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="ESBX__SYSTEM__USER_DEFINED_DOC_ID" type="22" x="445" y="202">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="653" y="239">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,TransId:0" x="195" y="295">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,Amount:0" x="95" y="101">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,DEBITACCTNO:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,FromAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,CREDITACCTNO:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,ToAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,CHARGESACCTNO:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,FromAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,DEBITTHEIRREF:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="QR Payment" type="22" x="191" y="142">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,CREDITTHEIRREF:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,TransId:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,CREDITCURRENCY:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,CurrenCy:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,COMMISSIONAMT:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,TxnFee:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,gLTXNNARRDR:0,g:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="1" type="22" x="252" y="136">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,gLTXNNARRDR:0,[ZERO MANY]:0,LTXNNARRDR:0" x="563" y="106">
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="157" y="213">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="35" type="22" x="282" y="84">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,Remark:0" x="76" y="67">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="333" y="306">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="2" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,gLTXNNARRDR:0,[ZERO MANY]:1,LTXNNARRDR:0" x="660" y="141">
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="340" y="359">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,Remark:0" x="259" y="213">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="35" type="22" x="516" y="452">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="35" type="22" x="465" y="230">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="2" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,gLTXNNARRCR:0,g:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="1" type="22" x="333" y="119">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,gLTXNNARRCR:0,[ZERO MANY]:0,LTXNNARRCR:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="35" type="22" x="410" y="180">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="285" y="309">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,Remark:0" x="204" y="163">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="461" y="402">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="2" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="CrossBorderPayment__IN_PORT:0,Envelope:0,Body:0,CrossBorderPayment:0,FUNDSTRANSFERCPBTHPAYMENTType:0,gLTXNNARRCR:0,[ZERO MANY]:1,LTXNNARRCR:0" x="633" y="95">
+      <mappermodel:FunctionGraphNode label="35" type="22" x="529" y="425">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="353" y="332">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,FundTransferRq:0,Remark:0" x="272" y="186">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="35" type="22" x="478" y="203">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="2" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

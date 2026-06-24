@@ -1,0 +1,39 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB">
+   <xsd:complexType name="FUNDSTRANSFERCPBRFTFTMBType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="DebitAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitTheirRef" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditTheirRef" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorAccountNumber" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditAmount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ChargeCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCHARGETYPE">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCHARGETYPE">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="ChargeType" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="FeeCharge" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="RecieverAccountNumber" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorBankCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorBankCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="AcquirerFeeCharged" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="IssuerFeeCharged" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="NBCFeeCharged" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CPBFTREF" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

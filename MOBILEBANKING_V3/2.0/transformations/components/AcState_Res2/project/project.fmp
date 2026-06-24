@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" suppressEmptyItems="false" suppressPattern="" version="3.0.2">
+  <mappermodel:XSLTVersion>1.0</mappermodel:XSLTVersion>
+  <mappermodel:XSLTEngine>org.apache.xalan.processor.TransformerFactoryImpl</mappermodel:XSLTEngine>
+  <mappermodel:XSLTEncoding>UTF-8</mappermodel:XSLTEncoding>
+  <mappermodel:OutputMethod>unspecified</mappermodel:OutputMethod>
+  <mappermodel:OutputEncoding>UTF-8</mappermodel:OutputEncoding>
+  <mappermodel:indent>true</mappermodel:indent>
+  <mappermodel:setDTD>false</mappermodel:setDTD>
+  <mappermodel:omit-xml-declaration>false</mappermodel:omit-xml-declaration>
+  <mappermodel:createEmptyOutputTags>false</mappermodel:createEmptyOutputTags>
+  <mappermodel:copyUnmappedFromInput enabled="false"/>
+  <mappermodel:disableOutputEscapingForANY>false</mappermodel:disableOutputEscapingForANY>
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:excludeResultPrefixes></mappermodel:excludeResultPrefixes>
+  <mappermodel:addDefaultXSTypeAttributes>false</mappermodel:addDefaultXSTypeAttributes>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context1.XSD" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.XSD" mime="XSD" name="IN_PORT" rootName="{http://cpbank.com/statement/GetStatement/Output}Envelope">
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext.XSD" mime="XSD" name="http://cpbank.com/statement"/>
+    </mappermodel:Structure>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Output1.XSD" mime="XSD" name="Output1" rootName="AccountStmtRp"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Namespaces/>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetStatementResponse:0,transactions:0,[ZERO MANY]:0,transaction:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ErrorCode:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetStatementResponse:0,status:0,code:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ErrorMsg:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetStatementResponse:0,status:0,message:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0,DrCr:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetStatementResponse:0,transactions:0,[ZERO MANY]:0,transaction:0,drCr:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+  <mappermodel:UserXSL index="0" node="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0">&lt;xsl:variable name=&quot;pos&quot; select=&quot;position()&quot;/></mappermodel:UserXSL>
+  <mappermodel:UserXSL index="1" node="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0">&lt;TxnCcy>&#xD;
+              &lt;xsl:value-of select=&quot;./ns3:currency&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/TxnCcy>&#xD;
+&lt;Txntype>&#xD;
+              &lt;xsl:value-of select=&quot;./ns3:txnType&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/Txntype>&#xD;
+&lt;TxnContent>&#xD;
+&lt;xsl:variable name=&quot;if0&quot;>&#xD;
+                &lt;xsl:choose>&#xD;
+	 &lt;xsl:when test=&quot;(starts-with(./ns3:bakongDesc,'AC-'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:txnTypeDescription,' Fee ')&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	 &lt;xsl:when test=&quot;(starts-with(./ns3:bakongDesc,'SVGATE'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:txnTypeDescription,' from Mobile Banking ')&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	 &lt;xsl:when test=&quot;(starts-with(./ns3:txnTypeDescription,'PP'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:bakongDesc,'')&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+		 &lt;xsl:when test=&quot;(string-length(./ns3:bakongDesc)!=('0'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:bakongDesc,'')&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+		 &lt;xsl:otherwise>&#xD;
+              &lt;xsl:value-of select=&quot;concat(./ns3:txnTypeDescription,' ',./ns3:bakongDesc)&quot;>&lt;/xsl:value-of>&#xD;
+			  &#xD;
+                  &lt;/xsl:otherwise>&#xD;
+                &lt;/xsl:choose>&#xD;
+              &lt;/xsl:variable>&#xD;
+              &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/TxnContent>&#xD;
+			&lt;LastId>&#xD;
+&lt;xsl:value-of select = &quot;position()&quot; />&#xD;
+&lt;/LastId></mappermodel:UserXSL>
+  <mappermodel:UserXSL index="2" node="Output1:0,AccountStmtRp:0,ListTxn:0,[ZERO MANY]:0,TxnDetail:0">&lt;TxnAmount>&#xD;
+    &lt;xsl:value-of select=&quot;./ns3:amount&quot;>&lt;/xsl:value-of>&#xD;
+  &lt;/TxnAmount>&#xD;
+            &lt;TxnDate>&#xD;
+ 				&lt;xsl:value-of select=&quot;./ns3:trxDt&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/TxnDate>&#xD;
+            &lt;TxnRefNo>&#xD;
+			&lt;xsl:value-of select=&quot;./ns3:reference&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/TxnRefNo>&#xD;
+    &lt;DrAcctNo>&#xD;
+              &lt;xsl:variable name=&quot;if0&quot;>&#xD;
+                &lt;xsl:choose>&#xD;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:debitAcc,'USD')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:debitAcc,'000001966')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+			&lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,'000001578')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/xsl:when>&#xD;
+                  &lt;xsl:when test=&quot;(./ns3:debitAcc)=('000001558')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+                  &lt;xsl:otherwise>&#xD;
+                    &lt;xsl:value-of select=&quot;./ns3:debitAcc&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:otherwise>&#xD;
+                &lt;/xsl:choose>&#xD;
+              &lt;/xsl:variable>&#xD;
+              &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>&#xD;
+           &lt;/DrAcctNo>&#xD;
+ &lt;CrAcctName>&#xD;
+  &lt;xsl:variable name=&quot;if0&quot;>&#xD;
+                &lt;xsl:choose>&#xD;
+			&lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,'000001966')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/xsl:when>&#xD;
+			&lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,'000001578')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/xsl:when>&#xD;
+			&lt;xsl:when test=&quot;starts-with(./ns3:txnTypeDescription,'BKG Outward Transfer')&quot;>&#xD;
+                    &#xD;
+					  &lt;xsl:value-of select=&quot;concat(./ns3:acboCrName,'Account No:',./ns3:acboCrAcc)&quot;>&lt;/xsl:value-of>&#xD;
+					            &lt;/xsl:when>&#xD;
+			&#xD;
+     &lt;xsl:otherwise>&#xD;
+  	&lt;xsl:value-of select=&quot;./ns3:cbsCrName&quot;>&lt;/xsl:value-of>&#xD;
+    &lt;/xsl:otherwise>&#xD;
+           &lt;/xsl:choose>&#xD;
+              &lt;/xsl:variable>&#xD;
+              &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>&#xD;
+&lt;/CrAcctName>&#xD;
+&lt;DrAcctName>&#xD;
+ &lt;xsl:variable name=&quot;if0&quot;>&#xD;
+                &lt;xsl:choose>&#xD;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:debitAcc,'000001966')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+				&lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,'000001578')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+				&lt;/xsl:when>&#xD;
+	   &lt;xsl:otherwise>&#xD;
+  	&lt;xsl:value-of select=&quot;./ns3:cbsDrName&quot;>&lt;/xsl:value-of>&#xD;
+    &lt;/xsl:otherwise>&#xD;
+           &lt;/xsl:choose>&#xD;
+              &lt;/xsl:variable>&#xD;
+              &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>&#xD;
+&lt;/DrAcctName>&#xD;
+      &lt;CrAcctNo>&#xD;
+              &lt;xsl:variable name=&quot;if0&quot;>&#xD;
+                &lt;xsl:choose>&#xD;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,'USD')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+                  &lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,'000001966')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+				 &lt;xsl:when test=&quot;starts-with(./ns3:creditAcc,'000001578')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+				&lt;/xsl:when>&#xD;
+                  &lt;xsl:when test=&quot;(./ns3:creditAcc)=('000001558')&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+                  &lt;xsl:otherwise>&#xD;
+                    &lt;xsl:value-of select=&quot;./ns3:creditAcc&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:otherwise>&#xD;
+                &lt;/xsl:choose>&#xD;
+              &lt;/xsl:variable>&#xD;
+              &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/CrAcctNo>&#xD;
+&lt;TxnTittle>		&#xD;
+&lt;xsl:variable name=&quot;if0&quot;>&#xD;
+                &lt;xsl:choose>&#xD;
+                  &lt;xsl:when test=&quot;(string(./ns3:txnTypeDescription)=('Mobile Banking FT') and string-length(./ns3:drCr)=('+') and string-length(./ns3:cbsCrName)!=('0'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;concat('Received From ',./ns3:cbsDrName)&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+                  &lt;xsl:when test=&quot;(string(./ns3:txnTypeDescription)=('Mobile Banking FT') and string-length(./ns3:Credit)=('0') and string-length(./ns3:cbsCrName)!=('0'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;concat('Transfer To ',./ns3:cbsCrName)&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+                  &lt;xsl:when test=&quot;(string(./ns3:txnTypeDescription)=('Mobile Banking FT') and string-length(./ns3:Credit)=('0') and string-length(./ns3:cbsCrName)=('0')  and string(./ns3:bakongDesc)!=('CBC fee charge#'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;'Topup to e-Wallet'&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+				    &lt;xsl:when test=&quot;(string(./ns3:txnTypeDescription)=('Mobile Banking FT') and string-length(./ns3:Credit)=('0') and string-length(./ns3:cbsCrName)=('0') and string(./ns3:bakongDesc)=('CBC fee charge#'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;'CBC Fee Charge'&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	    &lt;xsl:when test=&quot;(string-length(./ns3:txnTypeDescription)=('0'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:description,' ',./ns3:bakongDesc)&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	    &lt;xsl:when test=&quot;(starts-with(./ns3:bakongDesc,'AC-'))&quot;>&#xD;
+                    &lt;xsl:value-of select=&quot;concat(./ns3:txnTypedescription,' Fee ')&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	    &lt;xsl:when test=&quot;(string(./ns3:description)=('VISA Pay Dr') and starts-with(./ns3:bakongDesc,'SVGATE'))&quot;>&#xD;
+                     &lt;xsl:value-of select=&quot;'Credit Card Payment'&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	    &lt;xsl:when test=&quot;(string(./ns3:txnTypedescription)=('BKG Outward Transfer'))&quot;>&#xD;
+                     &lt;xsl:value-of select=&quot;concat('Transfer to Bakong ',./ns3:acboCrName)&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+		&lt;xsl:when test=&quot;(string(./ns3:txnTypedescription)=('BKG Inwrd Transfer'))&quot;>&#xD;
+                     &lt;xsl:value-of select=&quot;concat('Bakong Cash Deposit from ',./ns3:acbiDrName)&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	    &lt;xsl:when test=&quot;(string(./ns3:txnTypedescription)=('Mobile Banking Bills Topup') or (string(./ns3:txnTypedescription)=('PPSolid Wast bill payment')))&quot;>&#xD;
+                     &lt;xsl:value-of select=&quot;'Bill Payment'&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	    &lt;xsl:when test=&quot;(string(./ns3:description)=('ATM FtMobile Out') and (string(./ns3:creditAcc)=('000286644') or string(./ns3:creditAcc)=('000286645')))&quot;>&#xD;
+		   &lt;xsl:value-of select=&quot;concat('Cash by Code at ',./ns3:bakongDesc)&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:when>&#xD;
+	    &lt;xsl:otherwise>&#xD;
+&lt;xsl:value-of select=&quot;concat(./ns3:txnTypedescription,' ',./ns3:bakongDesc)&quot;>&lt;/xsl:value-of>&#xD;
+                  &lt;/xsl:otherwise>&#xD;
+                &lt;/xsl:choose>&#xD;
+              &lt;/xsl:variable>&#xD;
+              &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>&#xD;
+&lt;/TxnTittle>&#xD;
+  &lt;TxnValDateTime>&#xD;
+  &lt;xsl:value-of select=&quot;./ns3:trxTime&quot;>&lt;/xsl:value-of>&#xD;
+            &lt;/TxnValDateTime></mappermodel:UserXSL>
+</mappermodel:MapperProject>

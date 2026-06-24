@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:fns="http://www.fiorano.com/fesb/activity/Token/HTTP/In" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fiorano.com/fesb/activity/Token/HTTP/In">
+   <xsd:complexType name="RootType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="URI" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Header" type="fns:HeaderType"/>
+         <xsd:element minOccurs="0" name="Entity" type="fns:EntityType"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="HTTPRequest" type="fns:RootType"/>
+   <xsd:complexType name="HeaderType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="Cookie" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Pragma" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CustomHeaders" type="fns:CustomHeaderType"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="CustomHeaderType">
+      <xsd:sequence>
+         <xsd:element name="Authorization" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="EntityType">
+      <xsd:sequence>
+         <xsd:element name="NVPairs" type="fns:NVPairType"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="NVPairType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" maxOccurs="unbounded" ref="fns:NVPair"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="NVPair">
+      <xsd:simpleContent>
+         <xsd:extension base="xsd:string">
+            <xsd:attribute name="Name" type="xsd:string" use="required"/>
+            <xsd:attribute name="Value" type="xsd:string" use="optional"/>
+         </xsd:extension>
+      </xsd:simpleContent>
+   </xsd:complexType>
+   <xsd:element name="NVPair" type="fns:NVPair"/>
+</xsd:schema>

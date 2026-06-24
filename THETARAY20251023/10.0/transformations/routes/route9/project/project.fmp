@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="THETARAY20251023_NEW.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.xsd" mime="XSD" name="IN_PORT" rootName="{http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In}COMPLEX"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="IN_PORT:0,COMPLEX:0,query:0" x="536" y="59">
+      <mappermodel:FunctionGraphNode label="myext:replace(input, pattern, flags, str)" type="69" x="234" y="99">
+        <mappermodel:InputPins>input,pattern,flags,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Constant" type="22" x="28" y="100">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getText" type="154" x="177" y="196">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="2" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="3" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="3" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="javascript" name="myext">
+      <mappermodel:Script>function repeat(n,c){
+	return Array(n).join(c);
+}
+function getGIPNarration(str){
+	var c, sender = '', desc = '', narration = '';
+
+	if(str.indexOf('P01') != -1){
+		c = Number.parseInt(str.indexOf('P01'))+3;
+		sender = str.substr((c+3),str.substr(c,3));
+	}
+	
+	if(str.indexOf('P03') != -1){
+		c = Number.parseInt(str.indexOf('P03'))+3;
+		desc = str.substr((c+3),str.substr(c,3));
+	}
+	if(sender != '') narration+=sender;
+	if(desc != '') narration+=' ' + desc;
+
+	//narration = narration.replace(/&quot;|\*|;|~|`|\||!|@|%|&amp;|\\|&lt;|>/gi,' ');
+	narration = narration.replace(/&quot;|\,|\*|;|~|`|\||!|@|%|&amp;|\\|&lt;|>/gi,' ');
+	return narration;
+}
+
+function replaceStrangeChars(str){
+	return str.replace(/&quot;|\*|;|~|`|\||!|@|%|&amp;|\\|&lt;|>/gi,' ');
+}
+
+function multiConcat(ctx, delim){
+    var ipString = &quot;&quot;;
+    if (ctx.length){
+	for (var i=0; i &lt; ctx.getLength(); i++){
+  	    ctxN  = ctx.item(i);
+	    if (ctxN.nodeType == 1){
+	        ipString +=  _wander(ctxN, delim);
+	    }
+	    if (ctxN.nodeType == 2){
+	        ipString += ctxN.nodeValue;
+   	    }
+	}
+    }else{
+	return '';
+    }
+    return ipString.length>1 ? ipString.substring(delim.length) : ipString;
+}
+function   _wander(ctx, delim){
+	var retStr = &quot;&quot;;
+	var nodelist = ctx.childNodes;
+	
+	for (var i=0; i &lt; ctx.childNodes.length; i++){
+		
+		ctxN = nodelist.item(i);//ctx.childNodes[i];
+		
+		switch(ctxN.nodeType){
+			case 1:
+				retStr +=   _wander(ctxN);
+				break;
+			case 3:
+				retStr += delim +ctxN.nodeValue;
+				break;
+			default:
+				break;
+		}
+	}
+	return retStr;
+}
+
+function FTID(str)
+{
+  var n = str.lastIndexOf(&quot;FT&quot;);
+return str.substring(n,n+12);
+
+}
+
+
+
+function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(&quot;.&quot;)    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return &quot;There are only &quot; + days + &quot; days remaining to the start of the next millennium.&quot;; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}
+
+function trimBOM(str){
+ var n = str.indexOf(&quot;?xml&quot;);
+  var x = str.substr(n-1);
+	return   x;
+}
+
+
+function zerofill(number, length) {
+    var result = number.toString();
+    var pad = length - result.length;
+
+    while(pad > 0) {
+        result = '0' + result;
+        pad--;
+    }
+
+    return result;
+}
+
+function getNthSubstrPos(str, sub, n) {
+    if (n > str.split(sub).length - 1) return -1;
+    var recursePosition = function(n) {
+        if (n === 0) return str.indexOf(sub);
+        return str.indexOf(sub, recursePosition(n - 1) + 1);
+    };
+    return recursePosition(n);
+};
+
+function XformEnquiryResults(inq){
+	var ds = getNthSubstrPos(inq,',',1);
+	var t = (inq.substr(ds+1).replace(/,[a-zA-Z0-9\.\:]+?\=/gi,'&quot;'+&quot;\t&quot;+'&quot;')+'&quot;').replace(/[a-zA-Z0-9\.\:]+?\=/gi,'&quot;');
+	return inq.substring(0,ds+1)+t;
+	
+	//return inq;
+};
+
+function getJSONValue(str,key){
+	var val = '';
+	//var kp = getNthSubstrPos(str,key,1);
+	//var sa = str.split(/&amp;#13;\n/g);
+	var sa = str.split(/&amp;#xD;\n/g);
+	return str;
+
+/*
+	for(i=0; i&lt; sa.length; i++){
+		la = sa[i].split(':');
+		if(la.length > 1){
+			if(la[0].trim() == key){
+				val = la[1].trim();
+				break;
+			}
+		}
+	}
+	return val;
+*/
+};
+
+
+function replaceControlCharacters(inputString) {
+   
+    return inputString.replace(/[\x00-\x1F\x7F]/g, '');
+}
+
+
+
+function getLastIndexOfDoubleUnderscore(str) {
+    return str.lastIndexOf(&quot;__&quot;)+3;
+}
+
+
+function appendETX(str) {
+  return str + String.fromCharCode(3);
+}
+
+
+function split35chars(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[0];
+}
+
+
+function Line1(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[0];
+
+}
+
+function Line2(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[1];
+}
+
+function Line3(s){
+ return s.split(/\/\/+/).map(x => x).filter(Boolean)[2];
+}
+
+
+
+function read35Chars(input, start, end){
+ return input.substring(start, end);
+}
+
+
+
+// Returns a Date that is 5 seconds before &quot;now&quot;
+function fiveSecondsAgo() {
+  return new Date(Date.now() - 5000).toISOString();;
+}
+
+
+
+</mappermodel:Script>
+      <mappermodel:Function name="replace" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+        <mappermodel:Argument datatype="String" name="pattern"/>
+        <mappermodel:Argument datatype="String" name="flags"/>
+        <mappermodel:Argument datatype="String" name="str"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+  <mappermodel:UserXSL index="2" node="IN_PORT:0,COMPLEX:0,query:0">-->&#xD;
+&#xD;
+&lt;xsl:value-of select=&quot;concat($var0,java:_getStringProperty($_TIF_MESSAGE_, 'SI'),$var1,java:_getStringProperty($_TIF_MESSAGE_, 'EI'),$var2)&quot;>&lt;/xsl:value-of></mappermodel:UserXSL>
+  <mappermodel:UserXSL index="1" node="IN_PORT:0,COMPLEX:0,query:0">&lt;xsl:variable name=&quot;var0&quot;>select  id,servicename,amounttran/100,mobilenumber,destaccount,nvl(DESTMOBILENUMBER,MOBILENUMBER)as DESTMOBILENUMBER,walletcurrency,TRANSDATETIME,respcode,userid,concat(firstname,lastname)as fullName ,substr(TRANSDATETIME,0,8) as date_trans,TO_CHAR(TO_DATE(transdatetime, 'YYYYMMDDHH24MISS'), 'YYYY-MM-DD') as date_trans&#xD;
+&#xD;
+from WALLET.ws_log&#xD;
+WHERE servicename &#xD;
+     in (select service_name from wallet.transactioncodes where is_financial='1')  and &#xD;
+TRANSDATETIME BETWEEN '&lt;/xsl:variable>&#xD;
+&lt;xsl:variable name=&quot;var1&quot;>' AND '&lt;/xsl:variable>&#xD;
+&lt;xsl:variable name=&quot;var2&quot;>'&lt;/xsl:variable>&#xD;
+&#xD;
+&lt;!--</mappermodel:UserXSL>
+</mappermodel:MapperProject>

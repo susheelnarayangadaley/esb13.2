@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.fiorano.com/SOA/bc/cache" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/services/rest" xmlns:a="a" xmlns:chan1="chan1" xmlns:chan2="chan2" xmlns:con="con" xmlns:currentDateFormat="currentDateFormat" xmlns:dateConversion="dateConversion" xmlns:digitalSignature="http://xml.apache.org/xslt/java" xmlns:ds="ds" xmlns:getFieldArray="getFieldArray" xmlns:javascriptCode="javascriptCode" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:test="test" xmlns:yesterdayDate="yesterdayDate" extension-element-prefixes="datetime set math a chan1 chan2 con currentDateFormat dateConversion digitalSignature ds getFieldArray javascriptCode myext nestedJsonParser test yesterdayDate">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_accessToken__POST__Response" select="document('accessToken__POST__Response')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Cache>
+      <ns1:CacheEntry>
+        <ns1:Keys>
+          <ns1:id>
+            <xsl:value-of select="'101'"></xsl:value-of>
+          </ns1:id>
+        </ns1:Keys>
+        <ns1:Data>
+          <ns1:token>
+            <xsl:value-of select="concat('Bearer ',nestedJsonParser:getFieldValue(string($document_accessToken__POST__Response/ns2:Responses/Response/Representations/Representation/Element),string('token')))"></xsl:value-of>
+          </ns1:token>
+        </ns1:Data>
+      </ns1:CacheEntry>
+    </ns1:Cache>
+  </xsl:template>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="nestedJsonParser" functions="getFieldValue">
+    <lxslt:script lang="javascript"><![CDATA[function getFieldValue(obj, fieldName) {
+    var jsonObj = obj;
+    var myObj = JSON.parse(jsonObj);
+    var fieldNames = fieldName.split('.');
+    var fieldValue = myObj;
+
+    for (var i = 0; i < fieldNames.length; i++) {
+        fieldValue = fieldValue[fieldNames[i]];
+
+        if (fieldValue === undefined || fieldValue === null) {
+            fieldValue = "";
+            break;
+        }
+    }
+
+    return fieldValue;
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

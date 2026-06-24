@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrGatewayConfigurations>
+    <BCConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.bcdk.BCDKConfigurationInfo"> 
+  <void property="JCAAdapterConfig"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;ESBAdapterConfigurations&gt;&#13;
+    &lt;ConnectionLess&gt;false&lt;/ConnectionLess&gt;&#13;
+    &lt;isConfigurationRequired&gt;true&lt;/isConfigurationRequired&gt;&#13;
+    &lt;isLicensed&gt;true&lt;/isLicensed&gt;&#13;
+    &lt;Inbound&gt;false&lt;/Inbound&gt;&#13;
+    &lt;AdapterInstanceProperties&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ESBAdapterInstanceProperties&quot;&gt; &#13;
+  &lt;void property=&quot;GUID&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appName&quot;&gt; &#13;
+   &lt;string&gt;REQTODBINSERT&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appVersion&quot;&gt; &#13;
+   &lt;string&gt;1_0&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;domain&quot;&gt; &#13;
+   &lt;string&gt;BCConfigPropertySheet&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;instanceName&quot;&gt; &#13;
+   &lt;string&gt;DB1&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;logCategories&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.db.spi.outbound.DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBServiceDefaultErrorHandler&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBServiceDefaultErrorHandler&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBServiceDefaultErrorHandler&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.db.DBServiceDefaultErrorHandler&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBServiceErrorHandlerImpl&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBServiceErrorHandlerImpl&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBServiceErrorHandlerImpl&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.db.DBServiceErrorHandlerImpl&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.db.cci.DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/AdapterInstanceProperties&gt;&#13;
+    &lt;ConfigurationObjects&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;fiorano.esb.adapter.jca.cci.ESBConnectionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;MCFClassName&quot;&gt; &#13;
+    &lt;string&gt;com.fiorano.adapter.jca.db.spi.outbound.DBManagedConnectionFactory&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;fiorano.esb.adapter.jca.cci.ESBConnectionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.ConnectionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.db.cci.DBInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;DBServicePropertyModelXml&quot;&gt; &#13;
+    &lt;string&gt;&#13;
+&amp;lt;Model&amp;gt;&#13;
+  &amp;lt;Data&amp;gt;&amp;amp;lt;?xml version=&amp;amp;quot;1.0&amp;amp;quot; encoding=&amp;amp;quot;UTF-8&amp;amp;quot;?&amp;amp;gt;&amp;#13;&#13;
+&amp;amp;lt;Tif_DBAdapterConfiguration&amp;amp;gt;&amp;#13;&#13;
+    &amp;amp;lt;Tif_DatabaseConfiguration/&amp;amp;gt;&amp;#13;&#13;
+    &amp;amp;lt;Tif_SQLConfiguration name=&amp;amp;quot;SQL_CFG_1&amp;amp;quot; type=&amp;amp;quot;PublishSubscribe&amp;amp;quot; inputType=&amp;amp;quot;Data&amp;amp;quot; runMode=&amp;amp;quot;Sequential&amp;amp;quot; sendOutputMode=&amp;amp;quot;AfterEveryQuery&amp;amp;quot; dataFormat=&amp;amp;quot;xml&amp;amp;quot; spReturnsRs=&amp;amp;quot;false&amp;amp;quot; zeroUpdateAsExcep=&amp;amp;quot;true&amp;amp;quot; HandleZeroUpdateExcp=&amp;amp;quot;false&amp;amp;quot;&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_PreProcessing/&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_QueryInfo name=&amp;amp;quot;Select&amp;amp;quot; outputNeedToBeSent=&amp;amp;quot;true&amp;amp;quot; postProcessingMode=&amp;amp;quot;AfterEverySend&amp;amp;quot; includeQueryNameInOutput=&amp;amp;quot;true&amp;amp;quot;&amp;amp;gt;&amp;#13;&#13;
+            &amp;amp;lt;Tif_Statement&amp;amp;gt;&amp;#13;&#13;
+                &amp;amp;lt;Tif_SelectQuery&amp;amp;gt;&amp;amp;lt;![CDATA[SELECT &amp;amp;quot;public&amp;amp;quot;.&amp;amp;quot;employeetable&amp;amp;quot;.&amp;amp;quot;empid&amp;amp;quot;, &amp;amp;quot;public&amp;amp;quot;.&amp;amp;quot;employeetable&amp;amp;quot;.&amp;amp;quot;empname&amp;amp;quot;, &amp;amp;quot;public&amp;amp;quot;.&amp;amp;quot;employeetable&amp;amp;quot;.&amp;amp;quot;empage&amp;amp;quot; FROM &amp;amp;quot;public&amp;amp;quot;.&amp;amp;quot;employeetable&amp;amp;quot;&amp;#13;&#13;
+WHERE &amp;amp;quot;empid&amp;amp;quot; = ?   ]]&amp;amp;gt;&amp;amp;lt;/Tif_SelectQuery&amp;amp;gt;&amp;#13;&#13;
+            &amp;amp;lt;/Tif_Statement&amp;amp;gt;&amp;#13;&#13;
+            &amp;amp;lt;Tif_QueryRequest&amp;amp;gt;&amp;#13;&#13;
+                &amp;amp;lt;Tif_InParameter bindPosition=&amp;amp;quot;1&amp;amp;quot; bindName=&amp;amp;quot;empid&amp;amp;quot; sqlTypeName=&amp;amp;quot;serial&amp;amp;quot; javaTypeName=&amp;amp;quot;INTEGER&amp;amp;quot; map=&amp;amp;quot;/Select/empid&amp;amp;quot;&amp;amp;gt;&amp;#13;&#13;
+                    &amp;amp;lt;DefaultValue&amp;amp;gt;(&amp;apos;employeetable_empid_seq&amp;apos;::regclass&amp;amp;lt;/DefaultValue&amp;amp;gt;&amp;#13;&#13;
+                &amp;amp;lt;/Tif_InParameter&amp;amp;gt;&amp;#13;&#13;
+            &amp;amp;lt;/Tif_QueryRequest&amp;amp;gt;&amp;#13;&#13;
+            &amp;amp;lt;Tif_QueryResponse&amp;amp;gt;&amp;#13;&#13;
+                &amp;amp;lt;Tif_ResultSet outputName=&amp;amp;quot;Select&amp;amp;quot; includeInOutput=&amp;amp;quot;true&amp;amp;quot;&amp;amp;gt;&amp;#13;&#13;
+                    &amp;amp;lt;Tif_Column bindPosition=&amp;amp;quot;1&amp;amp;quot; bindName=&amp;amp;quot;empid&amp;amp;quot; sqlTypeName=&amp;amp;quot;serial&amp;amp;quot; javaTypeName=&amp;amp;quot;INTEGER&amp;amp;quot; includeInOutput=&amp;amp;quot;true&amp;amp;quot; outputName=&amp;amp;quot;empid&amp;amp;quot; OutputType=&amp;amp;quot;PCDATA&amp;amp;quot;/&amp;amp;gt;&amp;#13;&#13;
+                    &amp;amp;lt;Tif_Column bindPosition=&amp;amp;quot;2&amp;amp;quot; bindName=&amp;amp;quot;empname&amp;amp;quot; sqlTypeName=&amp;amp;quot;varchar&amp;amp;quot; javaTypeName=&amp;amp;quot;VARCHAR&amp;amp;quot; includeInOutput=&amp;amp;quot;true&amp;amp;quot; outputName=&amp;amp;quot;empname&amp;amp;quot; OutputType=&amp;amp;quot;PCDATA&amp;amp;quot;/&amp;amp;gt;&amp;#13;&#13;
+                    &amp;amp;lt;Tif_Column bindPosition=&amp;amp;quot;3&amp;amp;quot; bindName=&amp;amp;quot;empage&amp;amp;quot; sqlTypeName=&amp;amp;quot;int4&amp;amp;quot; javaTypeName=&amp;amp;quot;INTEGER&amp;amp;quot; includeInOutput=&amp;amp;quot;true&amp;amp;quot; outputName=&amp;amp;quot;empage&amp;amp;quot; OutputType=&amp;amp;quot;PCDATA&amp;amp;quot;/&amp;amp;gt;&amp;#13;&#13;
+                &amp;amp;lt;/Tif_ResultSet&amp;amp;gt;&amp;#13;&#13;
+            &amp;amp;lt;/Tif_QueryResponse&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;/Tif_QueryInfo&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_PostProcessing/&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;CSVConfig EnableCSV=&amp;amp;quot;false&amp;amp;quot; FieldSeparator=&amp;amp;quot;&amp;amp;quot; LineSeparator=&amp;amp;quot;&amp;amp;quot; WrapCharacter=&amp;amp;quot;&amp;amp;quot; AppendHeaders=&amp;amp;quot;Append Headers for all Messages&amp;amp;quot;/&amp;amp;gt;&amp;#13;&#13;
+    &amp;amp;lt;/Tif_SQLConfiguration&amp;amp;gt;&amp;#13;&#13;
+    &amp;amp;lt;Tif_TypeDefinition/&amp;amp;gt;&amp;#13;&#13;
+    &amp;amp;lt;Tif_AdvancedSettings&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_QueryTimeout&amp;amp;gt;60&amp;amp;lt;/Tif_QueryTimeout&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_JdbcDriverLoggingEnabled&amp;amp;gt;false&amp;amp;lt;/Tif_JdbcDriverLoggingEnabled&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_MaxFetchSize&amp;amp;gt;200&amp;amp;lt;/Tif_MaxFetchSize&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_MaxResponseSize&amp;amp;gt;100&amp;amp;lt;/Tif_MaxResponseSize&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_MaxBatchUpdateSize&amp;amp;gt;0&amp;amp;lt;/Tif_MaxBatchUpdateSize&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_UseBatching&amp;amp;gt;false&amp;amp;lt;/Tif_UseBatching&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_Commit mode=&amp;amp;quot;AfterDocument&amp;amp;quot;/&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_DateTimeFormat&amp;amp;gt;XML_DATE_TIME_FORMAT&amp;amp;lt;/Tif_DateTimeFormat&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_EnableResponseGUID&amp;amp;gt;true&amp;amp;lt;/Tif_EnableResponseGUID&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_EnableInputSend&amp;amp;gt;false&amp;amp;lt;/Tif_EnableInputSend&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_SendNoRowSelectedOutput&amp;amp;gt;false&amp;amp;lt;/Tif_SendNoRowSelectedOutput&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_GenerateEmptyResultSet&amp;amp;gt;false&amp;amp;lt;/Tif_GenerateEmptyResultSet&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_CloseConnectionAfterEveryRequest&amp;amp;gt;true&amp;amp;lt;/Tif_CloseConnectionAfterEveryRequest&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_SPReturnsRS&amp;amp;gt;false&amp;amp;lt;/Tif_SPReturnsRS&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_ZeroUpdateAsExcep&amp;amp;gt;true&amp;amp;lt;/Tif_ZeroUpdateAsExcep&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_HandleZeroUpdateExcp&amp;amp;gt;false&amp;amp;lt;/Tif_HandleZeroUpdateExcp&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_EmptyNodeAsNull&amp;amp;gt;false&amp;amp;lt;/Tif_EmptyNodeAsNull&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_CleardbobjectsAfterRequest&amp;amp;gt;false&amp;amp;lt;/Tif_CleardbobjectsAfterRequest&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_UseExternalTransactions&amp;amp;gt;false&amp;amp;lt;/Tif_UseExternalTransactions&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_NameStartWrapChar&amp;amp;gt;&amp;amp;quot;&amp;amp;lt;/Tif_NameStartWrapChar&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_NameEndWrapChar&amp;amp;gt;&amp;amp;quot;&amp;amp;lt;/Tif_NameEndWrapChar&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_WrapDBObjectNames&amp;amp;gt;true&amp;amp;lt;/Tif_WrapDBObjectNames&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_RemoveSchemaPrefixFromColumnNames&amp;amp;gt;false&amp;amp;lt;/Tif_RemoveSchemaPrefixFromColumnNames&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_ActionOnException&amp;amp;gt;Rollback&amp;amp;lt;/Tif_ActionOnException&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_NoExecNestedQueryEmptyResultset&amp;amp;gt;false&amp;amp;lt;/Tif_NoExecNestedQueryEmptyResultset&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_Param name=&amp;amp;quot;DBConnectionPingSQL&amp;amp;quot;&amp;amp;gt;select 1&amp;amp;lt;/Tif_Param&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_Param name=&amp;amp;quot;ValidateDBConUsingDummyTable&amp;amp;quot;&amp;amp;gt;false&amp;amp;lt;/Tif_Param&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_Param name=&amp;amp;quot;ValidateInputXML&amp;amp;quot;&amp;amp;gt;false&amp;amp;lt;/Tif_Param&amp;amp;gt;&amp;#13;&#13;
+        &amp;amp;lt;Tif_Param name=&amp;amp;quot;DummyTableName&amp;amp;quot;&amp;amp;gt;TIFOSI_DUMMY&amp;amp;lt;/Tif_Param&amp;amp;gt;&amp;#13;&#13;
+    &amp;amp;lt;/Tif_AdvancedSettings&amp;amp;gt;&amp;#13;&#13;
+&amp;amp;lt;/Tif_DBAdapterConfiguration&amp;amp;gt;&amp;#13;&#13;
+&amp;lt;/Data&amp;gt;&#13;
+  &amp;lt;Data&amp;gt;#dbconfig&amp;#13;&#13;
+#Mon Jul 28 16:23:52 IST 2025&amp;#13;&#13;
+Cleanup\ database\ objects\ after\ every\ request=false&amp;#13;&#13;
+Disable\ Exception\ Handling\ for\ zero\ update\ count=true&amp;#13;&#13;
+Treat\ empty\ node\ in\ input\ XML\ as\ null=false&amp;#13;&#13;
+Enable\ Native\ Format=false&amp;#13;&#13;
+Database\ action\ on\ Exception=Rollback&amp;#13;&#13;
+Maximum\ Response\ Size=100&amp;#13;&#13;
+Treat\ zero\ update\ count\ as\ Exception=true&amp;#13;&#13;
+Use\ Batching=false&amp;#13;&#13;
+Add\ Response\ GUID=true&amp;#13;&#13;
+Batch\ Size=0&amp;#13;&#13;
+Use\ External\ Transactions=false&amp;#13;&#13;
+Do\ not\ execute\ nested\ queries\ for\ no\ resultset=false&amp;#13;&#13;
+Validate\ Connection\ using\ Dummy\ Table=false&amp;#13;&#13;
+Generate\ result\ sets\ for\ queries\ returning\ no\ records=false&amp;#13;&#13;
+SCHEDULER_ENABLED=Publish Results&amp;#13;&#13;
+Dummy\ Table\ Name=TIFOSI_DUMMY&amp;#13;&#13;
+Generate\ response\ for\ no\ selected\ records=false&amp;#13;&#13;
+Database\ Connection\ Ping\ SQL=select 1&amp;#13;&#13;
+Commit\ Mode=AfterDocument&amp;#13;&#13;
+&amp;lt;/Data&amp;gt;&#13;
+&amp;lt;/Model&amp;gt;&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1300&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;enableSchedulingOn&quot;&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorActionsMap&quot;&gt; &#13;
+     &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;2&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;4&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;1&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;3&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;1&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;active&quot;&gt; &#13;
+           &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;4&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;active&quot;&gt; &#13;
+           &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;noOfRetries&quot;&gt; &#13;
+           &lt;int&gt;10&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;repeatInterval&quot;&gt; &#13;
+           &lt;long&gt;300000&lt;/long&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;sendErrorAfterTries&quot;&gt; &#13;
+           &lt;int&gt;2&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;0&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;/&gt; &#13;
+      &lt;/void&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;DB&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;REQTODBINSERT__1_0__DB1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+    &lt;string&gt;http://www.fiorano.com/fesb/activity/DB1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;The DBAdapter is a Query Engine that creates and executes a single SQL Statement or a set of queries to perform the database related operations such as insertion, updation, deletion; stored procedure execution; or table monitoring&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;dbcomponent.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.db.cci.DBInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.InteractionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.db.spi.outbound.DBManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;JNDIName&quot;&gt; &#13;
+    &lt;string&gt;DB&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1100&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;dbConfigurations&quot;&gt; &#13;
+    &lt;void property=&quot;configName&quot;&gt; &#13;
+     &lt;string&gt;DBdetails&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;DB&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;REQTODBINSERT__1_0__DB1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;DB Connection&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;dbconnection.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.db.spi.outbound.DBManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.spi.ManagedConnectionFactory&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+    &lt;/ConfigurationObjects&gt;&#13;
+    &lt;InputRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;SQL_CFG_1&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;xsd:schema xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; elementFormDefault=&amp;quot;qualified&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/DB1/Request&amp;quot;&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;SQL_CFG_1&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element minOccurs=&amp;quot;0&amp;quot; maxOccurs=&amp;quot;unbounded&amp;quot; name=&amp;quot;Select&amp;quot;&amp;gt;&amp;#13;&#13;
+                    &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+                        &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                            &amp;lt;xsd:element minOccurs=&amp;quot;0&amp;quot; name=&amp;quot;empid&amp;quot; type=&amp;quot;xsd:int&amp;quot;/&amp;gt;&amp;#13;&#13;
+                        &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+                    &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+                &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:attribute name=&amp;quot;id&amp;quot; type=&amp;quot;xsd:long&amp;quot; use=&amp;quot;optional&amp;quot;/&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+&amp;lt;/xsd:schema&amp;gt;&amp;#13;&#13;
+&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/DB1/Request&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/InputRecordDefinition&gt;&#13;
+    &lt;OutputRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;SQL_CFG_1&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;xsd:schema xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; elementFormDefault=&amp;quot;qualified&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/DB1/Response&amp;quot;&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;SQL_CFG_1&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element minOccurs=&amp;quot;0&amp;quot; maxOccurs=&amp;quot;unbounded&amp;quot; name=&amp;quot;Select&amp;quot;&amp;gt;&amp;#13;&#13;
+                    &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+                        &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                            &amp;lt;xsd:element name=&amp;quot;empid&amp;quot; type=&amp;quot;xsd:int&amp;quot;/&amp;gt;&amp;#13;&#13;
+                            &amp;lt;xsd:element name=&amp;quot;empname&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&amp;#13;&#13;
+                            &amp;lt;xsd:element name=&amp;quot;empage&amp;quot; type=&amp;quot;xsd:int&amp;quot;/&amp;gt;&amp;#13;&#13;
+                        &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+                    &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+                &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:attribute name=&amp;quot;id&amp;quot; type=&amp;quot;xsd:long&amp;quot; use=&amp;quot;optional&amp;quot;/&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+&amp;lt;/xsd:schema&amp;gt;&amp;#13;&#13;
+&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/DB1/Response&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/OutputRecordDefinition&gt;&#13;
+    &lt;FaultRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;Error&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&#13;
+&amp;lt;xsd:schema xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/fault&amp;quot; xmlns:tns=&amp;quot;http://www.fiorano.com/fesb/activity/fault&amp;quot;&amp;gt;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Error&amp;quot;&amp;gt;&#13;
+       &amp;lt;xsd:complexType&amp;gt;&#13;
+          &amp;lt;xsd:sequence&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorCode&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorMessage&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorDetail&amp;quot; type=&amp;quot;xsd:string&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;data&amp;quot; type=&amp;quot;tns:data&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+          &amp;lt;/xsd:sequence&amp;gt;&#13;
+       &amp;lt;/xsd:complexType&amp;gt;&#13;
+    &amp;lt;/xsd:element&amp;gt;&#13;
+    &amp;lt;xsd:complexType name=&amp;quot;data&amp;quot;&amp;gt;&#13;
+	  &amp;lt;xsd:sequence&amp;gt;&#13;
+         &amp;lt;xsd:any namespace=&amp;quot;##any&amp;quot; minOccurs=&amp;quot;0&amp;quot; maxOccurs=&amp;quot;unbounded&amp;quot; processContents=&amp;quot;lax&amp;quot;/&amp;gt;&#13;
+      &amp;lt;/xsd:sequence&amp;gt;&#13;
+    &amp;lt;/xsd:complexType&amp;gt;&#13;
+&amp;lt;/xsd:schema&amp;gt;&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/fault&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/FaultRecordDefinition&gt;&#13;
+&lt;/ESBAdapterConfigurations&gt;&#13;
+</string> 
+  </void> 
+ </object> 
+</java> 
+]]></BCConfigurations>
+    <TransportConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.tr.TrConfigurationInfo"/> 
+</java> 
+]]></TransportConfigurations>
+    <ErrorConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.error.ErrorConfigurationInfo"> 
+  <void property="errorActionsMap"> 
+   <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorActionsMap"> 
+    <void property="errorActionsMap"> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>4</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="errorActionID"> 
+          <int>1</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>3</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>4</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="noOfRetries"> 
+          <int>10</int> 
+         </void> 
+         <void property="repeatInterval"> 
+          <long>300000</long> 
+         </void> 
+         <void property="sendErrorAfterTries"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>0</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 
+]]></ErrorConfigurations>
+    <SchedulerConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.scheduler.SchedulerConfigurationInfo"> 
+  <void property="startDate"> 
+   <object class="java.util.Date"> 
+    <long>1753685291000</long> 
+   </object> 
+  </void> 
+  <void property="unit"> 
+   <string>seconds</string> 
+  </void> 
+ </object> 
+</java> 
+]]></SchedulerConfigurations>
+</TrGatewayConfigurations>

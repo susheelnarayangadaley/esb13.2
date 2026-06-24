@@ -1,0 +1,26 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/GETEDCFREEZEBLOCKAMT" elementFormDefault="qualified" xmlns="http://temenos.com/GETEDCFREEZEBLOCKAMT" targetNamespace="http://temenos.com/GETEDCFREEZEBLOCKAMT">
+   <xsd:complexType name="GETEDCFREEZEBLOCKAMTType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="gGETEDCFREEZEBLOCKAMTDetailType">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mGETEDCFREEZEBLOCKAMTDetailType">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="AccountNumber" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="TXNREF" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTNUMBER" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="CURRENCY" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="DESCRIPTION" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="LOCKEDAMOUNT" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

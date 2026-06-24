@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="XML2JSONConverter">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="DBSelect">
+    <target:instance-properties>
+      <target:deployment cache="false" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property configurationType="resource" encrypt="false" name="DBConfigurations" type="NamedObject">CSA_LIVE</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Radaro">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="Base Path URL" type="java.lang.String">https://api-3.radaro.com.au/api/webhooks</target:property>
+      <target:property encrypt="true" name="HTTP Password" type="java.lang.String">v+VQQt/v066Nu58V5Cr4D+qDZQpBIFRk/zWLPYc8zB8=</target:property>
+      <target:property encrypt="false" name="Authentication Type" type="java.lang.String">BASIC</target:property>
+      <target:property encrypt="false" name="HTTP Basic Authentication" type="java.lang.Boolean">false</target:property>
+      <target:property encrypt="false" name="HTTP Username" type="java.lang.String">anagendra-test@northstardigital.solutions</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="DB1">
+    <target:instance-properties>
+      <target:deployment cache="false" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property configurationType="resource" encrypt="false" name="DBConfigurations" type="NamedObject">CSA_LIVE</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="log">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="FileWriterConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.adapter.jca.filewriter.cci.FileWriterConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.adapter.jca.filewriter.cci&quot;>
+    &lt;ns1:connectedToDiffMachine>false&lt;/ns1:connectedToDiffMachine>
+    &lt;ns1:relativeDirectory>d:\EP\Radaro\JobCreation&lt;/ns1:relativeDirectory>
+    &lt;ns1:fileName>CreateRadaroJobStatus.txt&lt;/ns1:fileName>
+    &lt;ns1:targetDirectory>d:\EP\Radaro\JobCreation&lt;/ns1:targetDirectory>
+    &lt;ns1:workingDirectory>work&lt;/ns1:workingDirectory>
+    &lt;ns1:errorDirectory>error&lt;/ns1:errorDirectory>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="Post Processing Arguments" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="File Encoding" type="java.lang.String">UTF-8</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="XMLSplitter1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="Display1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="DB2">
+    <target:instance-properties>
+      <target:deployment cache="false" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property configurationType="resource" encrypt="false" name="DBConfigurations" type="NamedObject">CSA_LIVE</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Xslt1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns2=&quot;http://www.fiorano.com/fesb/activity/DB1/Response&quot; xmlns:MX2MT=&quot;http://xml.apache.org/xslt/java&quot; xmlns:QueryGenerator=&quot;QueryGenerator&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:nestedjson=&quot;nestedjson&quot; xmlns:strings=&quot;strings&quot; extension-element-prefixes=&quot;datetime set math MX2MT QueryGenerator dateConversion myext nestedjson strings&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;ns2:SQL_CFG_1>
+      &lt;xsl:for-each select=&quot;$document_IN_PORT/ns2:SQL_CFG_1/ns2:spRadaroSelect/ns2:RS1&quot;>
+        &lt;ns2:Radaro_Select>
+          &lt;ns2:MSGID>
+            &lt;xsl:value-of select=&quot;./ns2:MSGID&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:MSGID>
+          &lt;ns2:MSGTYPE>
+            &lt;xsl:value-of select=&quot;./ns2:MSGTYPE&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:MSGTYPE>
+          &lt;ns2:DRIVER_ID>
+            &lt;xsl:value-of select=&quot;./ns2:DRIVER_ID&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DRIVER_ID>
+          &lt;ns2:PU>
+            &lt;xsl:value-of select=&quot;./ns2:PU&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:PU>
+          &lt;ns2:TRAILER>
+            &lt;xsl:value-of select=&quot;./ns2:TRAILER&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:TRAILER>
+          &lt;ns2:TRIP_NUMBER>
+            &lt;xsl:value-of select=&quot;./ns2:TRIP_NUMBER&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:TRIP_NUMBER>
+          &lt;ns2:BILL_NUMBER>
+            &lt;xsl:value-of select=&quot;./ns2:BILL_NUMBER&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:BILL_NUMBER>
+          &lt;ns2:DETAIL_LINE_ID>
+            &lt;xsl:value-of select=&quot;./ns2:DETAIL_LINE_ID&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DETAIL_LINE_ID>
+          &lt;ns2:REFERENCE1>
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE1&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:REFERENCE1>
+          &lt;ns2:REFERENCE2>
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE2&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:REFERENCE2>
+          &lt;ns2:REFERENCE3>
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE3&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:REFERENCE3>
+          &lt;ns2:REFERENCE4>
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE4&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:REFERENCE4>
+          &lt;ns2:REFERENCE5>
+            &lt;xsl:value-of select=&quot;./ns2:REFERENCE5&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:REFERENCE5>
+          &lt;ns2:ORIGIN>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGIN&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGIN>
+          &lt;ns2:ORIGNAME>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGNAME&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGNAME>
+          &lt;ns2:ORIGADDR1>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGADDR1&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGADDR1>
+          &lt;ns2:ORIGADDR2>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGADDR2&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGADDR2>
+          &lt;ns2:ORIGCITY>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGCITY&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGCITY>
+          &lt;ns2:ORIGPROV>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGPROV&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGPROV>
+          &lt;ns2:ORIGPC>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGPC&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGPC>
+          &lt;ns2:ORIGPHONE>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGPHONE&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGPHONE>
+          &lt;ns2:ORIGPHONEEXT>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGPHONEEXT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGPHONEEXT>
+          &lt;ns2:DESTINATION>
+            &lt;xsl:value-of select=&quot;./ns2:DESTINATION&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTINATION>
+          &lt;ns2:DESTNAME>
+            &lt;xsl:value-of select=&quot;./ns2:DESTNAME&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTNAME>
+          &lt;ns2:DESTADDR1>
+            &lt;xsl:value-of select=&quot;./ns2:DESTADDR1&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTADDR1>
+          &lt;ns2:DESTADDR2>
+            &lt;xsl:value-of select=&quot;./ns2:DESTADDR2&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTADDR2>
+          &lt;ns2:DESTCITY>
+            &lt;xsl:value-of select=&quot;./ns2:DESTCITY&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTCITY>
+          &lt;ns2:DESTPROV>
+            &lt;xsl:value-of select=&quot;./ns2:DESTPROV&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTPROV>
+          &lt;ns2:DESTPC>
+            &lt;xsl:value-of select=&quot;./ns2:DESTPC&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTPC>
+          &lt;ns2:DESTPHONE>
+            &lt;xsl:value-of select=&quot;./ns2:DESTPHONE&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTPHONE>
+          &lt;ns2:DESTPHONEEXT>
+            &lt;xsl:value-of select=&quot;./ns2:DESTPHONEEXT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTPHONEEXT>
+          &lt;ns2:PCS>
+            &lt;xsl:value-of select=&quot;./ns2:PCS&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:PCS>
+          &lt;ns2:WEIGHT>
+            &lt;xsl:value-of select=&quot;./ns2:WEIGHT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:WEIGHT>
+          &lt;ns2:PALLETS>
+            &lt;xsl:value-of select=&quot;./ns2:PALLETS&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:PALLETS>
+          &lt;ns2:PCUNIT>
+            &lt;xsl:value-of select=&quot;./ns2:PCUNIT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:PCUNIT>
+          &lt;ns2:WGTUNIT>
+            &lt;xsl:value-of select=&quot;./ns2:WGTUNIT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:WGTUNIT>
+          &lt;ns2:PLTUNIT>
+            &lt;xsl:value-of select=&quot;./ns2:PLTUNIT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:PLTUNIT>
+          &lt;ns2:ARRIVE_START>
+            &lt;xsl:value-of select=&quot;./ns2:ARRIVE_START&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ARRIVE_START>
+          &lt;ns2:ARRIVE_END>
+            &lt;xsl:value-of select=&quot;./ns2:ARRIVE_END&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ARRIVE_END>
+          &lt;ns2:APPOINTMENT>
+            &lt;xsl:value-of select=&quot;./ns2:APPOINTMENT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:APPOINTMENT>
+          &lt;ns2:NOTE>
+            &lt;xsl:value-of select=&quot;./ns2:NOTE&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:NOTE>
+          &lt;ns2:RADARO_DRIVER_ID>
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_DRIVER_ID&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:RADARO_DRIVER_ID>
+          &lt;ns2:RADARO_STATUS>
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_STATUS&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:RADARO_STATUS>
+          &lt;ns2:RADARO_TIMESTAMP>
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_TIMESTAMP&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:RADARO_TIMESTAMP>
+          &lt;ns2:RADARO_LAT>
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_LAT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:RADARO_LAT>
+          &lt;ns2:RADARO_LONG>
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_LONG&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:RADARO_LONG>
+          &lt;ns2:RADARO_ERROR_MESSAGE>
+            &lt;xsl:value-of select=&quot;./ns2:RADARO_ERROR_MESSAGE&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:RADARO_ERROR_MESSAGE>
+          &lt;ns2:DESTEMAIL>
+            &lt;xsl:value-of select=&quot;./ns2:DESTEMAIL&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESTEMAIL>
+          &lt;ns2:ORIGEMAIL>
+            &lt;xsl:value-of select=&quot;./ns2:ORIGEMAIL&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ORIGEMAIL>
+          &lt;ns2:DESCRIPTION>
+            &lt;xsl:value-of select=&quot;./ns2:DESCRIPTION&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DESCRIPTION>
+          &lt;ns2:ADDRESS_DESCRIPTION>
+            &lt;xsl:value-of select=&quot;./ns2:ADDRESS_DESCRIPTION&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ADDRESS_DESCRIPTION>
+          &lt;ns2:LABELS>
+            &lt;xsl:value-of select=&quot;./ns2:LABELS&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:LABELS>
+          &lt;ns2:TMW_STATUS>
+            &lt;xsl:value-of select=&quot;./ns2:TMW_STATUS&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:TMW_STATUS>
+          &lt;ns2:EXTERNAL_ID>
+            &lt;xsl:value-of select=&quot;./ns2:EXTERNAL_ID&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:EXTERNAL_ID>
+          &lt;ns2:ADDED>
+            &lt;xsl:value-of select=&quot;./ns2:ADDED&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:ADDED>
+          &lt;ns2:BAR_CODE>
+            &lt;xsl:value-of select=&quot;./ns2:BAR_CODE&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:BAR_CODE>
+          &lt;ns2:DIM_DESC>
+            &lt;xsl:value-of select=&quot;./ns2:DESCRIPTION2&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DIM_DESC>
+          &lt;ns2:DIM_UNIT>
+            &lt;xsl:value-of select=&quot;./ns2:DIM_UNIT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DIM_UNIT>
+          &lt;ns2:LENGTH>
+            &lt;xsl:value-of select=&quot;./ns2:LENGTH&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:LENGTH>
+          &lt;ns2:WIDTH>
+            &lt;xsl:value-of select=&quot;./ns2:WIDTH&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:WIDTH>
+          &lt;ns2:HEIGHT>
+            &lt;xsl:value-of select=&quot;./ns2:HEIGHT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:HEIGHT>
+          &lt;ns2:DIM_WEIGHT>
+            &lt;xsl:value-of select=&quot;./ns2:WEIGHT2&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:DIM_WEIGHT>
+          &lt;ns2:WEIGHT_UNIT>
+            &lt;xsl:value-of select=&quot;./ns2:WEIGHT_UNIT&quot;>&lt;/xsl:value-of>
+          &lt;/ns2:WEIGHT_UNIT>
+        &lt;/ns2:Radaro_Select>
+      &lt;/xsl:for-each>
+    &lt;/ns2:SQL_CFG_1>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="applicationContextXSL" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+</target:target>

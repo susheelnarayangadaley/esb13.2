@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.fiorano.com/fesb/activity/Text2XML1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/Text2XML1">
+   <xsd:element name="Schema">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="Area">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="Population" type="xsd:int"/>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" name="Size">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="Colour" type="xsd:string"/>
+                              <xsd:element name="Shape" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

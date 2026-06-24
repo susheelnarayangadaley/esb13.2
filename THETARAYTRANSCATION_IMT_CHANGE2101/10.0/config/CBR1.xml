@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_421" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.cbr.model.CBRPropertyModel"> 
+  <void property="XPaths"> 
+   <void method="add"> 
+    <string>((string-length(/ns1:Result/ns1:row/ns1:DESTFIRSTNAME) &lt; 1) and (string-length(/ns1:Result/ns1:row/ns1:DESTCUSTOMERNAME) &lt; 1))</string> 
+   </void> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1300</int> 
+  </void> 
+  <void property="elementsToDecrypt"> 
+   <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+    <void property="namespaces"> 
+     <void method="put"> 
+      <string>xsd</string> 
+      <string>http://www.w3.org/2001/XMLSchema</string> 
+     </void> 
+     <void method="put"> 
+      <string>xml</string> 
+      <string>http://www.w3.org/XML/1998/namespace</string> 
+     </void> 
+     <void method="put"> 
+      <string>ns1</string> 
+      <string>http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out</string> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="elementsToEncrypt"> 
+   <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="namespaces"> 
+   <object class="java.util.HashMap"> 
+    <void method="put"> 
+     <string>ns2</string> 
+     <string>http://www.w3.org/2001/XMLSchema</string> 
+    </void> 
+    <void method="put"> 
+     <string>ns1</string> 
+     <string>http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="outPortNames"> 
+   <void method="add"> 
+    <string>WITHOUT_FULLNAME</string> 
+   </void> 
+  </void> 
+  <void property="schemaDefinition"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>Result</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#13;
+&lt;!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) --&gt;&#13;
+&lt;xs:schema attributeFormDefault=&quot;unqualified&quot; elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+  &lt;xs:element name=&quot;Result&quot;&gt;&#13;
+    &lt;xs:complexType&gt;&#13;
+      &lt;xs:sequence&gt;&#13;
+        &lt;xs:element name=&quot;query&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;row&quot;&gt;&#13;
+          &lt;xs:complexType&gt;&#13;
+            &lt;xs:sequence&gt;&#13;
+              &lt;xs:element name=&quot;ID&quot; type=&quot;xs:unsignedInt&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;SERVICENAME&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;AMOUNTTRAN_100&quot; type=&quot;xs:unsignedByte&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;TRANCURRENCY&quot; type=&quot;xs:unsignedShort&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;MOBILENUMBER&quot; type=&quot;xs:unsignedLong&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;ADRESSE&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;NATIONALITY&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;GENDER&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;PLACEOFBIRTH&quot; type=&quot;xs:string&quot; /&gt;&#13;
+         &lt;xs:element name=&quot;DATE_OF_BIRTH&quot; type=&quot;xs:date&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;DESTACCOUNT&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;DESTMOBILENUMBER&quot; type=&quot;xs:unsignedLong&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;WALLETCURRENCY&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;TRANSDATETIME&quot; type=&quot;xs:unsignedLong&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;RESPCODE&quot; type=&quot;xs:unsignedByte&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;USERID&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;FULLNAME&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;DATE_TRANS&quot; type=&quot;xs:string&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;DESTUSERID&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;DESTADDRESS&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;DESTFIRSTNAME&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;DESTMERCHANTNAME&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;DESTCUSTOMERNAME&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;NATIONALITY_CODE&quot; /&gt;&#13;
+        &lt;xs:element name=&quot;CITY&quot; type=&quot;xs:string&quot; /&gt;&#13;
+            &lt;/xs:sequence&gt;&#13;
+            &lt;xs:attribute name=&quot;resultcount&quot; type=&quot;xs:unsignedByte&quot; use=&quot;required&quot; /&gt;&#13;
+          &lt;/xs:complexType&gt;&#13;
+        &lt;/xs:element&gt;&#13;
+      &lt;/xs:sequence&gt;&#13;
+    &lt;/xs:complexType&gt;&#13;
+  &lt;/xs:element&gt;&#13;
+&lt;/xs:schema&gt;</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string>http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 

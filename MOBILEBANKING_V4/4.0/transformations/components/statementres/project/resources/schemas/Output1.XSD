@@ -1,0 +1,46 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="LaonScheduleRsp">
+        <xsd:complexType>
+            <xsd:sequence>
+          
+                <xsd:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="CustomerName" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="LoanAccountNumber" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="CCY" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="Paymentdate" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="DueAmount" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="DuePrinciple" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="DueInterest" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="MaturityDate" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="OutstandingBal" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="InterestRate" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="LoanSize" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="StartDate" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="TotalInterest" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="TotalPaid" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="Term" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="1" name="MonhtlyPayment" type="xsd:string"/>
+			<xsd:element maxOccurs="1" minOccurs="1" name="SettlementAccount" type="xsd:string"/>
+				<xsd:element maxOccurs="1" minOccurs="1" name="LoanProduct" type="xsd:string"/>
+		<xsd:element maxOccurs="1" minOccurs="0" name="ListTxn">
+                       <xsd:complexType>
+                              <xsd:sequence>
+                              <xsd:element maxOccurs="unbounded" minOccurs="0" name="TxnDetail">
+			      <xsd:complexType>
+			      <xsd:sequence>
+                                <xsd:element maxOccurs="1" minOccurs="1" name="PaymentDate" type="xsd:string"/>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="PaymentAmount" type="xsd:string"/>
+                                <xsd:element maxOccurs="1" minOccurs="1" name="PaymentPrinciple" type="xsd:string"/>
+                                <xsd:element maxOccurs="1" minOccurs="1" name="PaymnetInterest" type="xsd:string"/>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="Oustanding" type="xsd:string"/>
+			      </xsd:sequence>
+			     </xsd:complexType>
+			</xsd:element> 
+                    </xsd:sequence>
+                       </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrGatewayConfigurations>
+    <BCConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.bcdk.BCDKConfigurationInfo"> 
+  <void property="JCAAdapterConfig"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;ESBAdapterConfigurations&gt;&#13;
+    &lt;ConnectionLess&gt;false&lt;/ConnectionLess&gt;&#13;
+    &lt;isConfigurationRequired&gt;true&lt;/isConfigurationRequired&gt;&#13;
+    &lt;isLicensed&gt;true&lt;/isLicensed&gt;&#13;
+    &lt;Inbound&gt;false&lt;/Inbound&gt;&#13;
+    &lt;AdapterInstanceProperties&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ESBAdapterInstanceProperties&quot;&gt; &#13;
+  &lt;void property=&quot;GUID&quot;&gt; &#13;
+   &lt;string&gt;DBQueryOnInput&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appName&quot;&gt; &#13;
+   &lt;string&gt;CONNECT_DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appVersion&quot;&gt; &#13;
+   &lt;string&gt;1_0&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;domain&quot;&gt; &#13;
+   &lt;string&gt;BCConfigPropertySheet&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;instanceName&quot;&gt; &#13;
+   &lt;string&gt;DBQueryOnInput1&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;logCategories&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.dbquery.spi.out.DBManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.dbquery.cci.DBInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;JDBC&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;JDBC&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;JDBC&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.dbquery.jdbc&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/AdapterInstanceProperties&gt;&#13;
+    &lt;ConfigurationObjects&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.dbquery.cci.DBQueryOnInputInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;SQLConfiguration&quot;&gt; &#13;
+    &lt;void property=&quot;SQLString&quot;&gt; &#13;
+     &lt;string&gt;select id,customer_id,mobilenumber,client_id,firstname,midname,lastname,kyc_status,cnic,homeaddress,country,city,status,customertype,&#13;
+gender,NVL(placeofbirth,nationality)as placeofbirth ,nationality,dateofbirth,createdate,activationdate from wallet.cms_customer where id = 4500&#13;
+&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1300&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorActionsMap&quot;&gt; &#13;
+     &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;2&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;4&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;1&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;3&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;1&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;active&quot;&gt; &#13;
+           &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;4&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;active&quot;&gt; &#13;
+           &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;noOfRetries&quot;&gt; &#13;
+           &lt;int&gt;10&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;repeatInterval&quot;&gt; &#13;
+           &lt;long&gt;300000&lt;/long&gt; &#13;
+          &lt;/void&gt; &#13;
+          &lt;void property=&quot;sendErrorAfterTries&quot;&gt; &#13;
+           &lt;int&gt;2&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;0&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;/&gt; &#13;
+      &lt;/void&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;DBQueryOnInput&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;CONNECT_DB__1_0__DBQueryOnInput1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;outputSchemaDefinition&quot;&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+     &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+      &lt;string&gt;Result&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;structure&quot;&gt; &#13;
+      &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) --&amp;gt;&amp;#13;&#13;
+&amp;lt;xs:schema attributeFormDefault=&amp;quot;unqualified&amp;quot; elementFormDefault=&amp;quot;qualified&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out&amp;quot; xmlns:xs=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;&amp;gt;&amp;#13;&#13;
+  &amp;lt;xs:element name=&amp;quot;Result&amp;quot;&amp;gt;&amp;#13;&#13;
+    &amp;lt;xs:complexType&amp;gt;&amp;#13;&#13;
+      &amp;lt;xs:sequence&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;query&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;row&amp;quot;&amp;gt;&amp;#13;&#13;
+          &amp;lt;xs:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xs:sequence&amp;gt;&amp;#13;&#13;
+              &amp;lt;xs:element name=&amp;quot;ID&amp;quot; type=&amp;quot;xs:unsignedInt&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;SERVICENAME&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;AMOUNTTRAN_100&amp;quot; type=&amp;quot;xs:unsignedByte&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;TRANCURRENCY&amp;quot; type=&amp;quot;xs:unsignedShort&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;MOBILENUMBER&amp;quot; type=&amp;quot;xs:unsignedLong&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;ADRESSE&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;NATIONALITY&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;GENDER&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;PLACEOFBIRTH&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTACCOUNT&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTMOBILENUMBER&amp;quot; type=&amp;quot;xs:unsignedLong&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;WALLETCURRENCY&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;TRANSDATETIME&amp;quot; type=&amp;quot;xs:unsignedLong&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;RESPCODE&amp;quot; type=&amp;quot;xs:unsignedByte&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;USERID&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;FULLNAME&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element maxOccurs=&amp;quot;unbounded&amp;quot; name=&amp;quot;DATE_TRANS&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTUSERID&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTADDRESS&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTFIRSTNAME&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTMERCHANTNAME&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTCUSTOMERNAME&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;NATIONALITY_CODE&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;CITY&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xs:sequence&amp;gt;&amp;#13;&#13;
+            &amp;lt;xs:attribute name=&amp;quot;resultcount&amp;quot; type=&amp;quot;xs:unsignedByte&amp;quot; use=&amp;quot;required&amp;quot; /&amp;gt;&amp;#13;&#13;
+          &amp;lt;/xs:complexType&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xs:element&amp;gt;&amp;#13;&#13;
+      &amp;lt;/xs:sequence&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xs:complexType&amp;gt;&amp;#13;&#13;
+  &amp;lt;/xs:element&amp;gt;&amp;#13;&#13;
+&amp;lt;/xs:schema&amp;gt;&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+      &lt;string&gt;http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;singleBatchMode&quot;&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+    &lt;string&gt;http://www.fiorano.com/fesb/activity/DBQueryOnInput1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;Executes SQL Query sent in the input&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;dbqueryoninput.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.dbquery.cci.DBQueryOnInputInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;DBQueryOnInput&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.InteractionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.dbquery.spi.out.DBManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;DBConfiguration&quot;&gt; &#13;
+    &lt;void property=&quot;DBVendor&quot;&gt; &#13;
+     &lt;string&gt;Oracle&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;databaseUrl&quot;&gt; &#13;
+     &lt;string&gt;jdbc:oracle:thin:@192.168.206.12:1522:walletdb&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;driver&quot;&gt; &#13;
+     &lt;string&gt;oracle.jdbc.driver.OracleDriver&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;password&quot;&gt; &#13;
+     &lt;string&gt;94WNjK6AuI34SxPRxpDtNA9SVWVO7bWwjlSv8UCshrg=&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;pingSQL&quot;&gt; &#13;
+     &lt;string&gt;select * from dual&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;username&quot;&gt; &#13;
+     &lt;string&gt;jkwilu&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;JNDIName&quot;&gt; &#13;
+    &lt;string&gt;DBQueryOnInput&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1100&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;DBQueryOnInput&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;CONNECT_DB__1_0__DBQueryOnInput1&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;Database Connection&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;dbconnection.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.dbquery.spi.out.DBManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;DBConnection&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.spi.ManagedConnectionFactory&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;fiorano.esb.adapter.jca.cci.ESBConnectionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;MCFClassName&quot;&gt; &#13;
+    &lt;string&gt;com.fiorano.adapter.jca.dbquery.spi.out.DBManagedConnectionFactory&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;DB&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;Database Connection&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;dbconnection.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;fiorano.esb.adapter.jca.cci.ESBConnectionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;DBConnection&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.ConnectionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+    &lt;/ConfigurationObjects&gt;&#13;
+    &lt;InputRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;COMPLEX&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;xsd:schema xmlns:tns=&amp;quot;http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In&amp;quot; xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; elementFormDefault=&amp;quot;qualified&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In&amp;quot;&amp;gt;&amp;#13;&#13;
+    &amp;lt;xsd:element name=&amp;quot;COMPLEX&amp;quot;&amp;gt;&amp;#13;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xsd:sequence&amp;gt;&amp;#13;&#13;
+                &amp;lt;xsd:element name=&amp;quot;query&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xsd:sequence&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xsd:element&amp;gt;&amp;#13;&#13;
+&amp;lt;/xsd:schema&amp;gt;&amp;#13;&#13;
+&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/InputRecordDefinition&gt;&#13;
+    &lt;OutputRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;Result&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&amp;#13;&#13;
+&amp;lt;!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) --&amp;gt;&amp;#13;&#13;
+&amp;lt;xs:schema attributeFormDefault=&amp;quot;unqualified&amp;quot; elementFormDefault=&amp;quot;qualified&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out&amp;quot; xmlns:xs=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot;&amp;gt;&amp;#13;&#13;
+  &amp;lt;xs:element name=&amp;quot;Result&amp;quot;&amp;gt;&amp;#13;&#13;
+    &amp;lt;xs:complexType&amp;gt;&amp;#13;&#13;
+      &amp;lt;xs:sequence&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;query&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;row&amp;quot;&amp;gt;&amp;#13;&#13;
+          &amp;lt;xs:complexType&amp;gt;&amp;#13;&#13;
+            &amp;lt;xs:sequence&amp;gt;&amp;#13;&#13;
+              &amp;lt;xs:element name=&amp;quot;ID&amp;quot; type=&amp;quot;xs:unsignedInt&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;SERVICENAME&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;AMOUNTTRAN_100&amp;quot; type=&amp;quot;xs:unsignedByte&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;TRANCURRENCY&amp;quot; type=&amp;quot;xs:unsignedShort&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;MOBILENUMBER&amp;quot; type=&amp;quot;xs:unsignedLong&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;ADRESSE&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;NATIONALITY&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;GENDER&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;PLACEOFBIRTH&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTACCOUNT&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTMOBILENUMBER&amp;quot; type=&amp;quot;xs:unsignedLong&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;WALLETCURRENCY&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;TRANSDATETIME&amp;quot; type=&amp;quot;xs:unsignedLong&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;RESPCODE&amp;quot; type=&amp;quot;xs:unsignedByte&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;USERID&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;FULLNAME&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element maxOccurs=&amp;quot;unbounded&amp;quot; name=&amp;quot;DATE_TRANS&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTUSERID&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTADDRESS&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTFIRSTNAME&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTMERCHANTNAME&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;DESTCUSTOMERNAME&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;NATIONALITY_CODE&amp;quot; /&amp;gt;&amp;#13;&#13;
+        &amp;lt;xs:element name=&amp;quot;CITY&amp;quot; type=&amp;quot;xs:string&amp;quot; /&amp;gt;&amp;#13;&#13;
+            &amp;lt;/xs:sequence&amp;gt;&amp;#13;&#13;
+            &amp;lt;xs:attribute name=&amp;quot;resultcount&amp;quot; type=&amp;quot;xs:unsignedByte&amp;quot; use=&amp;quot;required&amp;quot; /&amp;gt;&amp;#13;&#13;
+          &amp;lt;/xs:complexType&amp;gt;&amp;#13;&#13;
+        &amp;lt;/xs:element&amp;gt;&amp;#13;&#13;
+      &amp;lt;/xs:sequence&amp;gt;&amp;#13;&#13;
+    &amp;lt;/xs:complexType&amp;gt;&amp;#13;&#13;
+  &amp;lt;/xs:element&amp;gt;&amp;#13;&#13;
+&amp;lt;/xs:schema&amp;gt;&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/OutputRecordDefinition&gt;&#13;
+    &lt;FaultRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;Error&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&#13;
+&amp;lt;xsd:schema xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/fault&amp;quot; xmlns:tns=&amp;quot;http://www.fiorano.com/fesb/activity/fault&amp;quot;&amp;gt;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Error&amp;quot;&amp;gt;&#13;
+       &amp;lt;xsd:complexType&amp;gt;&#13;
+          &amp;lt;xsd:sequence&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorCode&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorMessage&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorDetail&amp;quot; type=&amp;quot;xsd:string&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;data&amp;quot; type=&amp;quot;tns:data&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+          &amp;lt;/xsd:sequence&amp;gt;&#13;
+       &amp;lt;/xsd:complexType&amp;gt;&#13;
+    &amp;lt;/xsd:element&amp;gt;&#13;
+    &amp;lt;xsd:complexType name=&amp;quot;data&amp;quot;&amp;gt;&#13;
+	  &amp;lt;xsd:sequence&amp;gt;&#13;
+         &amp;lt;xsd:any namespace=&amp;quot;##any&amp;quot; minOccurs=&amp;quot;0&amp;quot; maxOccurs=&amp;quot;unbounded&amp;quot; processContents=&amp;quot;lax&amp;quot;/&amp;gt;&#13;
+      &amp;lt;/xsd:sequence&amp;gt;&#13;
+    &amp;lt;/xsd:complexType&amp;gt;&#13;
+&amp;lt;/xsd:schema&amp;gt;&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/fault&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/FaultRecordDefinition&gt;&#13;
+&lt;/ESBAdapterConfigurations&gt;&#13;
+</string> 
+  </void> 
+ </object> 
+</java> 
+]]></BCConfigurations>
+    <TransportConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.tr.TrConfigurationInfo"/> 
+</java> 
+]]></TransportConfigurations>
+    <ErrorConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.error.ErrorConfigurationInfo"> 
+  <void property="errorActionsMap"> 
+   <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorActionsMap"> 
+    <void property="errorActionsMap"> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>4</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="errorActionID"> 
+          <int>1</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>3</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>4</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="noOfRetries"> 
+          <int>10</int> 
+         </void> 
+         <void property="repeatInterval"> 
+          <long>300000</long> 
+         </void> 
+         <void property="sendErrorAfterTries"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>0</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 
+]]></ErrorConfigurations>
+    <SchedulerConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.scheduler.SchedulerConfigurationInfo"> 
+  <void property="startDate"> 
+   <object class="java.util.Date"> 
+    <long>1753179059000</long> 
+   </object> 
+  </void> 
+  <void property="unit"> 
+   <string>seconds</string> 
+  </void> 
+ </object> 
+</java> 
+]]></SchedulerConfigurations>
+</TrGatewayConfigurations>

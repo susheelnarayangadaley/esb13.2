@@ -1,0 +1,21 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Root">
+    <xs:complexType>
+      <xs:sequence>
+                <xs:element type="xs:string" name="response_code"/>
+                <xs:element type="xs:string" name="response_msg"/>
+                <xs:element type="xs:string" name="Start_Date"/>
+                <xs:element type="xs:string" name="Amount"/>
+                <xs:element type="xs:string" name="Term"/>
+                <xs:element type="xs:string" name="Term_Remain"/>
+                <xs:element type="xs:string" name="Due_Date"/>
+                <xs:element type="xs:string" name="Monthly_Payment"/>
+                <xs:element type="xs:string" name="Remain_Balance"/>
+                <xs:element type="xs:string" name="Due_Installment"/>
+                <xs:element type="xs:string" name="Penalty_charge"/>
+                <xs:element type="xs:string" name="Customer_name"/>
+                <xs:element type="xs:string" name="Currency"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

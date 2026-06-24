@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="SETCARDSTATUS_INHOUSE.xsd" mime="XSD" name="Application-Context" rootName="{http://www.fiorano.com/fesb/activity/ISOMessage}Context"/>
+    <mappermodel:Structure duplicates="" filePath="set__POST__Response.xsd" mime="XSD" name="update__PUT__Response" rootName="{http://www.fiorano.com/fesb/activity/ISOMessage}Context"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="set__POST__Response0.xsd" mime="XSD" name="set__POST__Response" rootName="{http://www.fiorano.com/services/rest}Responses"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="set__POST__Response:0,Responses:0,[Choice]:0,Response:0,Status:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="200" type="22" x="91" y="121">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="set__POST__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,MediaType:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="application/json" type="22" x="83" y="162">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="set__POST__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,ANY:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="getText" type="154" x="165" y="115">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

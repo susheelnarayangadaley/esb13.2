@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="OAUTH" x="397" y="109"/>
+    <service-instance name="3CXintegration1" x="205" y="73"/>
+    <service-instance name="callcontroldnnumber1" x="589" y="85"/>
+    <service-instance name="FileReader1" x="397" y="205"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

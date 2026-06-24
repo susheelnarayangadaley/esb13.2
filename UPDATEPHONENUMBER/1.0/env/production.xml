@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="PhoneNumber">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="IPAY1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="Base Path URL" type="java.lang.String">https://10.80.3.8:443/ipayBankingModuleCambodia/external-payments</target:property>
+      <target:property encrypt="true" name="HTTP Password" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="HTTP Basic Authentication" type="java.lang.Boolean">false</target:property>
+      <target:property encrypt="false" name="Authentication Type" type="java.lang.String">BASIC</target:property>
+      <target:property encrypt="false" name="HTTP Username" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+</target:target>

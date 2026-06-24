@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.fiorano.com/SeylanESB" xmlns:ns5="http://www.seylan.lk/AccountBalanceInquiryPWM" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/services/rest" xmlns:ns3="http://www.seylan.lk/AccountTransactionHistoryPWM" xmlns:CEFT_JPAY="CEFT_JPAY" xmlns:CardWS="CardWS" xmlns:CenturyDateConverter="CenturyDateConverter" xmlns:Currency="Currency" xmlns:DateConversion="DateConversion" xmlns:DateTime="DateTime" xmlns:Decimals="Decimals" xmlns:ENIQR="ENIQR" xmlns:ESB="ESB" xmlns:RSA="http://xml.apache.org/xslt/java" xmlns:RateConverter="RateConverter" xmlns:SHA256="http://xml.apache.org/xslt/java" xmlns:Text="Text" xmlns:TimeConversion="TimeConversion" xmlns:Utility="Utility" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:str="str" xmlns:strings="strings" extension-element-prefixes="datetime set math CEFT_JPAY CardWS CenturyDateConverter Currency DateConversion DateTime Decimals ENIQR ESB RSA RateConverter SHA256 Text TimeConversion Utility dateConversion myext str strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OutputPort" select="document('OutputPort')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Responses>
+      <Response>
+        <xsl:attribute name="Status">
+          <xsl:value-of select="'200'"></xsl:value-of>
+        </xsl:attribute>
+        <Representations>
+          <Representation>
+            <xsl:attribute name="MediaType">
+              <xsl:value-of select="'application/xml'"></xsl:value-of>
+            </xsl:attribute>
+            <Element>
+              <ns3:AccountTransactionHistoryPWM_Response>
+                <ns3:Status>
+                  <ns3:Transaction_reference>
+                    <xsl:value-of select="AppContext/Transaction_ref"></xsl:value-of>
+                  </ns3:Transaction_reference>
+                  <ns3:Timestamp>
+                    <xsl:value-of select="DateTime:getISOTimestamp()"></xsl:value-of>
+                  </ns3:Timestamp>
+                  <ns3:Code>
+                    <xsl:value-of select="'9040'"></xsl:value-of>
+                  </ns3:Code>
+                  <ns3:Message>
+                    <xsl:value-of select="ESB:getErrorDescriptionMapped(string('9040'),string(concat('9040|',AppContext/Account_number)))"></xsl:value-of>
+                  </ns3:Message>
+                  <ns3:Description></ns3:Description>
+                </ns3:Status>
+                <ns3:AccountSummary>
+                  <ns3:Account_branch></ns3:Account_branch>
+                  <ns3:Account_basic_number></ns3:Account_basic_number>
+                  <ns3:Account_suffix></ns3:Account_suffix>
+                  <ns3:Account_short_name></ns3:Account_short_name>
+                  <ns3:Customer_mnemonic></ns3:Customer_mnemonic>
+                  <ns3:Customer_location></ns3:Customer_location>
+                  <ns3:Account_type></ns3:Account_type>
+                  <ns3:Owning_application_code></ns3:Owning_application_code>
+                  <ns3:Account_structure></ns3:Account_structure>
+                  <ns3:Currency_mnemonic></ns3:Currency_mnemonic>
+                  <ns3:Currency_decimals></ns3:Currency_decimals>
+                  <ns3:Internal_non_customer_account></ns3:Internal_non_customer_account>
+                  <ns3:Deceased_or_liquidated></ns3:Deceased_or_liquidated>
+                  <ns3:Account_blocked></ns3:Account_blocked>
+                  <ns3:Account_inactive></ns3:Account_inactive>
+                  <ns3:Account_closed></ns3:Account_closed>
+                  <ns3:Contingent_account></ns3:Contingent_account>
+                  <ns3:Date_from></ns3:Date_from>
+                  <ns3:Date_to></ns3:Date_to>
+                  <ns3:Starting_balance></ns3:Starting_balance>
+                  <ns3:Number_of_recent_transactions></ns3:Number_of_recent_transactions>
+                  <ns3:Statement_number></ns3:Statement_number>
+                  <ns3:Available_balance></ns3:Available_balance>
+                </ns3:AccountSummary>
+                <ns3:Transaction>
+                  <ns3:Posting_date></ns3:Posting_date>
+                  <ns3:Value_date></ns3:Value_date>
+                  <ns3:Posting_currency></ns3:Posting_currency>
+                  <ns3:Posting_currency_decimals></ns3:Posting_currency_decimals>
+                  <ns3:Transaction_code></ns3:Transaction_code>
+                  <ns3:Transaction_code_mnemonic></ns3:Transaction_code_mnemonic>
+                  <ns3:Transaction_Code_Name></ns3:Transaction_Code_Name>
+                  <ns3:Input_branch_mnemonic></ns3:Input_branch_mnemonic>
+                  <ns3:Account_branch_mnemonic></ns3:Account_branch_mnemonic>
+                  <ns3:Posting_group></ns3:Posting_group>
+                  <ns3:Posting_amount></ns3:Posting_amount>
+                  <ns3:Print_transaction_code_name_as_narrative></ns3:Print_transaction_code_name_as_narrative>
+                  <ns3:Transaction_Status></ns3:Transaction_Status>
+                  <ns3:Users_own_reference></ns3:Users_own_reference>
+                  <ns3:Sundry_reference_code></ns3:Sundry_reference_code>
+                  <ns3:User_code_1></ns3:User_code_1>
+                  <ns3:User_code_2></ns3:User_code_2>
+                  <ns3:Number_of_items_within_this_posting></ns3:Number_of_items_within_this_posting>
+                  <ns3:Statement_number></ns3:Statement_number>
+                  <ns3:Narrative_record_exists></ns3:Narrative_record_exists>
+                  <ns3:Narrative_1></ns3:Narrative_1>
+                  <ns3:Narrative_2></ns3:Narrative_2>
+                  <ns3:Narrative_3></ns3:Narrative_3>
+                  <ns3:Narrative_4></ns3:Narrative_4>
+                  <ns3:Additional_line_1></ns3:Additional_line_1>
+                  <ns3:Additional_line_2></ns3:Additional_line_2>
+                  <ns3:Additional_line_3></ns3:Additional_line_3>
+                  <ns3:Additional_line_4></ns3:Additional_line_4>
+                  <ns3:Additional_line_5></ns3:Additional_line_5>
+                  <ns3:Additional_line_6></ns3:Additional_line_6>
+                  <ns3:Original_currency></ns3:Original_currency>
+                  <ns3:Original_currency_decimals></ns3:Original_currency_decimals>
+                  <ns3:Original_amount></ns3:Original_amount>
+                  <ns3:Posting_sequence_number></ns3:Posting_sequence_number>
+                  <ns3:Running_balance></ns3:Running_balance>
+                  <ns3:Event_key></ns3:Event_key>
+                  <ns3:Available_Date></ns3:Available_Date>
+                  <ns3:Timestamp></ns3:Timestamp>
+                  <ns3:Unique_key></ns3:Unique_key>
+                </ns3:Transaction>
+              </ns3:AccountTransactionHistoryPWM_Response>
+            </Element>
+          </Representation>
+        </Representations>
+      </Response>
+    </ns1:Responses>
+  </xsl:template>
+<!--The list of Extensions defined by user-->
+</xsl:stylesheet>

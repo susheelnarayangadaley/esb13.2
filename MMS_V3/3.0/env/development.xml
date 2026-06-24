@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="MMS_WSStub">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="true" name="HTTP Password" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="FESConnectionConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.esb.common.connections.configuration.FESConnectionConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.esb.common.connections.configuration&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:isUseConnectionDetailsFromFPS>false&lt;/ns1:isUseConnectionDetailsFromFPS>
+    &lt;ns1:url>tsp_tcp://localhost:1947&lt;/ns1:url>
+    &lt;ns1:backupUrl>tsp_tcp://localhost:1948&lt;/ns1:backupUrl>
+    &lt;ns1:username>admin&lt;/ns1:username>
+    &lt;ns1:password>DMSLzKckc/JLgIUhIpdeyw==&lt;/ns1:password>
+    &lt;ns1:fspCallTimeout>180000&lt;/ns1:fspCallTimeout>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="HTTP Basic Authentication" type="java.lang.Boolean">false</target:property>
+      <target:property encrypt="false" name="Authentication Type" type="java.lang.String">BASIC</target:property>
+      <target:property encrypt="false" name="HTTP Username" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="GetAccInfo">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns12=&quot;http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2&quot; xmlns:ns33=&quot;http://temenos.com/CUSTOMER&quot; xmlns:ns24=&quot;http://temenos.com/CPBGETACCOUNTINFO&quot; xmlns:ns20=&quot;http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT&quot; xmlns:ns7=&quot;http://temenos.com/CPBGETINTERESTRATE&quot; xmlns:ns2=&quot;http://jaxb.dev.java.net/array&quot; xmlns:ns14=&quot;http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT&quot; xmlns:ns26=&quot;http://temenos.com/CPBGETACCOUNTSTMT&quot; xmlns:ns30=&quot;http://temenos.com/AAARRANGEMENTACTIVITY&quot; xmlns:ns27=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILL&quot; xmlns:ns25=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; xmlns:ns38=&quot;http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns36=&quot;http://temenos.com/AAARRANGEMENTACTIVITYOPENFD&quot; xmlns:ns39=&quot;http://temenos.com/DEVMB3&quot; xmlns:ns31=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB&quot; xmlns:ns18=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTFTMB&quot; xmlns:ns23=&quot;http://temenos.com/CPBGETCUSTOMERINFO&quot; xmlns:ns16=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; xmlns:ns15=&quot;http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT&quot; xmlns:ns21=&quot;http://temenos.com/CPBGETACCOUNTLIST&quot; xmlns:ns28=&quot;http://temenos.com/FUNDSTRANSFERCPBWATERBILL&quot; xmlns:ns34=&quot;http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT&quot; xmlns:ns6=&quot;http://temenos.com/CPBGETEXCHANGERATE&quot; xmlns:ns9=&quot;http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT&quot; xmlns:ns1=&quot;http://temenos.com/DEVMB3/ToGetAccountInfo/Input&quot; xmlns:ns8=&quot;http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD&quot; xmlns:ns32=&quot;http://temenos.com/FUNDSTRANSFERCPBPPWSABILL&quot; xmlns:ns17=&quot;http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL&quot; xmlns:ns35=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns19=&quot;http://temenos.com/FUNDSTRANSFERCPBACBILL&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBMBTOPUP&quot; xmlns:ns4=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND&quot; xmlns:ns13=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGOUT&quot; xmlns:ns11=&quot;http://temenos.com/FUNDSTRANSFERCPBEDCBILL&quot; xmlns:ns10=&quot;http://temenos.com/FUNDSTRANSFERCPBSRBILL&quot; xmlns:ns37=&quot;http://temenos.com/CUSTOMERCPBDMD&quot; xmlns:ns29=&quot;http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE&quot; xmlns:ns22=&quot;http://temenos.com/FUNDSTRANSFERCPBFUNANBILL&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText StringLength dateConversion myext replace sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_Input1&quot; select=&quot;document('Input1')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;ns1:Envelope>
+      &lt;ns1:Body>
+        &lt;ns39:ToGetAccountInfo>
+          &lt;WebRequestCommon>
+            &lt;password>
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, 'password')&quot;>&lt;/xsl:value-of>
+            &lt;/password>
+            &lt;userName>
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, 'username')&quot;>&lt;/xsl:value-of>
+            &lt;/userName>
+          &lt;/WebRequestCommon>
+          &lt;CPBGETACCOUNTINFOType>
+            &lt;enquiryInputCollection>
+              &lt;columnName>
+                &lt;xsl:value-of select=&quot;'@ID'&quot;>&lt;/xsl:value-of>
+              &lt;/columnName>
+              &lt;criteriaValue>
+                &lt;xsl:value-of select=&quot;$document_Input1/checkAccount/AccountNo&quot;>&lt;/xsl:value-of>
+              &lt;/criteriaValue>
+              &lt;operand>
+                &lt;xsl:value-of select=&quot;'EQ'&quot;>&lt;/xsl:value-of>
+              &lt;/operand>
+            &lt;/enquiryInputCollection>
+          &lt;/CPBGETACCOUNTINFOType>
+        &lt;/ns39:ToGetAccountInfo>
+      &lt;/ns1:Body>
+    &lt;/ns1:Envelope>
+  &lt;/xsl:template>
+&lt;!--The list of parameters defined by user-->
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;>&lt;/xsl:param>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="AccInfo_Res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns12=&quot;http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2&quot; xmlns:ns33=&quot;http://temenos.com/CUSTOMER&quot; xmlns:ns24=&quot;http://temenos.com/CPBGETACCOUNTINFO&quot; xmlns:ns20=&quot;http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT&quot; xmlns:ns2=&quot;http://temenos.com/DEVMB3/ToGetAccountInfo/Output&quot; xmlns:ns7=&quot;http://temenos.com/CPBGETINTERESTRATE&quot; xmlns:ns1=&quot;http://jaxb.dev.java.net/array&quot; xmlns:ns14=&quot;http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT&quot; xmlns:ns26=&quot;http://temenos.com/CPBGETACCOUNTSTMT&quot; xmlns:ns30=&quot;http://temenos.com/AAARRANGEMENTACTIVITY&quot; xmlns:ns27=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILL&quot; xmlns:ns25=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; xmlns:ns38=&quot;http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT&quot; xmlns:ns40=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns36=&quot;http://temenos.com/AAARRANGEMENTACTIVITYOPENFD&quot; xmlns:ns39=&quot;http://temenos.com/DEVMB3&quot; xmlns:ns31=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB&quot; xmlns:ns18=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTFTMB&quot; xmlns:ns23=&quot;http://temenos.com/CPBGETCUSTOMERINFO&quot; xmlns:ns16=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; xmlns:ns15=&quot;http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT&quot; xmlns:ns21=&quot;http://temenos.com/CPBGETACCOUNTLIST&quot; xmlns:ns28=&quot;http://temenos.com/FUNDSTRANSFERCPBWATERBILL&quot; xmlns:ns34=&quot;http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT&quot; xmlns:ns6=&quot;http://temenos.com/CPBGETEXCHANGERATE&quot; xmlns:ns9=&quot;http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT&quot; xmlns:ns8=&quot;http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD&quot; xmlns:ns32=&quot;http://temenos.com/FUNDSTRANSFERCPBPPWSABILL&quot; xmlns:ns17=&quot;http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL&quot; xmlns:ns35=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns19=&quot;http://temenos.com/FUNDSTRANSFERCPBACBILL&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBMBTOPUP&quot; xmlns:ns4=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND&quot; xmlns:ns13=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGOUT&quot; xmlns:ns11=&quot;http://temenos.com/FUNDSTRANSFERCPBEDCBILL&quot; xmlns:ns10=&quot;http://temenos.com/FUNDSTRANSFERCPBSRBILL&quot; xmlns:ns37=&quot;http://temenos.com/CUSTOMERCPBDMD&quot; xmlns:ns29=&quot;http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE&quot; xmlns:ns22=&quot;http://temenos.com/FUNDSTRANSFERCPBFUNANBILL&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText StringLength dateConversion myext replace sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;checkAccountRp>
+      &lt;ErrorCode>
+        &lt;xsl:variable name=&quot;if0&quot;>
+          &lt;xsl:choose>
+            &lt;xsl:when test=&quot;(count($document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType))&amp;lt;=('0')&quot;>
+              &lt;xsl:value-of select=&quot;'124'&quot;>&lt;/xsl:value-of>
+            &lt;/xsl:when>
+            &lt;xsl:otherwise>
+              &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:STATUSCODE&quot;>&lt;/xsl:value-of>
+            &lt;/xsl:otherwise>
+          &lt;/xsl:choose>
+        &lt;/xsl:variable>
+        &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:STATUDESC&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;AccountCcy>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:ACCOUNTCCY&quot;>&lt;/xsl:value-of>
+      &lt;/AccountCcy>
+      &lt;AccountBalance>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:ACCOUNTBAL&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBalance>
+      &lt;AccountBalanceAvaliable>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:ACCTAVLBAL&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBalanceAvaliable>
+      &lt;AccountBranchOpen>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:ACCTBRANCH&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBranchOpen>
+      &lt;AccountName>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:SHORTTITLE&quot;>&lt;/xsl:value-of>
+      &lt;/AccountName>
+      &lt;CustomerID>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:CUSTOMER&quot;>&lt;/xsl:value-of>
+      &lt;/CustomerID>
+      &lt;Phonenumber>
+        &lt;xsl:value-of select=&quot;myext:replace(string($document_IN_PORT/ns2:Envelope/ns2:Body/ns39:ToGetAccountInfoResponse/CPBGETACCOUNTINFOType/ns24:gCPBGETACCOUNTINFODetailType/ns24:mCPBGETACCOUNTINFODetailType/ns24:PHNO),string(' '),string('g'),string(''))&quot;>&lt;/xsl:value-of>
+      &lt;/Phonenumber>
+    &lt;/checkAccountRp>
+  &lt;/xsl:template>
+&lt;!--The list of Extensions defined by user-->
+  &lt;lxslt:component prefix=&quot;myext&quot; functions=&quot;compute replace&quot;>
+    &lt;lxslt:script lang=&quot;javascript&quot;>&lt;![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(&quot;.&quot;)    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return &quot;There are only &quot; + days + &quot; days remaining to the start of the next millennium.&quot;; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}]]&gt;&lt;/lxslt:script>
+  &lt;/lxslt:component>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="GetAccInfoRes">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns2=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:strings=&quot;strings&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText dateConversion myext replace strings&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;checkAccountRp>
+      &lt;ErrorCode>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/ErrorCode&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/ErrorMsg&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;AccountCcy>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountCcy&quot;>&lt;/xsl:value-of>
+      &lt;/AccountCcy>
+      &lt;AccountBalance>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountBalance&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBalance>
+      &lt;AccountBalanceAvaliable>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountBalanceAvaliable&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBalanceAvaliable>
+      &lt;AccountBranchOpen>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountBranchOpen&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBranchOpen>
+      &lt;AccountName>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/AccountName&quot;>&lt;/xsl:value-of>
+      &lt;/AccountName>
+      &lt;CustomerID>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/CustomerID&quot;>&lt;/xsl:value-of>
+      &lt;/CustomerID>
+      &lt;Phonenumber>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/checkAccountRp/Phonenumber&quot;>&lt;/xsl:value-of>
+      &lt;/Phonenumber>
+    &lt;/checkAccountRp>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="T24">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="WSDL URL" type="java.lang.String">http://192.168.127.91:7003/CPB.MB.TWS/services?wsdl</target:property>
+      <target:property encrypt="false" name="HTTPAuthConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.services.common.security.HTTPAuthConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.services.common.security&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:useHTTPAuth>false&lt;/ns1:useHTTPAuth>
+    &lt;ns1:type>BASIC&lt;/ns1:type>
+    &lt;ns1:port>80&lt;/ns1:port>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="WSDL File" type="java.io.File"></target:property>
+      <target:property encrypt="false" name="Load WSDL From" type="java.lang.String">URL</target:property>
+      <target:property encrypt="false" name="End Point Address" type="java.lang.String">http://192.168.127.91:7003/CPB.MB.TWS/services</target:property>
+      <target:property encrypt="false" name="Port Name" type="java.lang.String">T24WebServicesImplPort</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="reversal_req">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns12=&quot;http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2&quot; xmlns:ns33=&quot;http://temenos.com/CUSTOMER&quot; xmlns:ns24=&quot;http://temenos.com/CPBGETACCOUNTINFO&quot; xmlns:ns20=&quot;http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT&quot; xmlns:ns7=&quot;http://temenos.com/CPBGETINTERESTRATE&quot; xmlns:ns2=&quot;http://jaxb.dev.java.net/array&quot; xmlns:ns14=&quot;http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT&quot; xmlns:ns26=&quot;http://temenos.com/CPBGETACCOUNTSTMT&quot; xmlns:ns30=&quot;http://temenos.com/AAARRANGEMENTACTIVITY&quot; xmlns:ns27=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILL&quot; xmlns:ns25=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; xmlns:ns38=&quot;http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns36=&quot;http://temenos.com/AAARRANGEMENTACTIVITYOPENFD&quot; xmlns:ns39=&quot;http://temenos.com/DEVMB3&quot; xmlns:ns31=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB&quot; xmlns:ns18=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTFTMB&quot; xmlns:ns23=&quot;http://temenos.com/CPBGETCUSTOMERINFO&quot; xmlns:ns16=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; xmlns:ns15=&quot;http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT&quot; xmlns:ns21=&quot;http://temenos.com/CPBGETACCOUNTLIST&quot; xmlns:ns28=&quot;http://temenos.com/FUNDSTRANSFERCPBWATERBILL&quot; xmlns:ns34=&quot;http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT&quot; xmlns:ns6=&quot;http://temenos.com/CPBGETEXCHANGERATE&quot; xmlns:ns9=&quot;http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT&quot; xmlns:ns8=&quot;http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD&quot; xmlns:ns32=&quot;http://temenos.com/FUNDSTRANSFERCPBPPWSABILL&quot; xmlns:ns17=&quot;http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL&quot; xmlns:ns35=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns19=&quot;http://temenos.com/FUNDSTRANSFERCPBACBILL&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBMBTOPUP&quot; xmlns:ns4=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND&quot; xmlns:ns13=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGOUT&quot; xmlns:ns1=&quot;http://temenos.com/DEVMB3/MobileBillRefund/Input&quot; xmlns:ns11=&quot;http://temenos.com/FUNDSTRANSFERCPBEDCBILL&quot; xmlns:ns10=&quot;http://temenos.com/FUNDSTRANSFERCPBSRBILL&quot; xmlns:ns37=&quot;http://temenos.com/CUSTOMERCPBDMD&quot; xmlns:ns29=&quot;http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE&quot; xmlns:ns22=&quot;http://temenos.com/FUNDSTRANSFERCPBFUNANBILL&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText StringLength dateConversion myext replace sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_Input1&quot; select=&quot;document('Input1')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;ns1:Envelope>
+      &lt;ns1:Body>
+        &lt;ns39:MobileBillRefund>
+          &lt;WebRequestCommon>
+            &lt;password>
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, 'password')&quot;>&lt;/xsl:value-of>
+            &lt;/password>
+            &lt;userName>
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, 'username')&quot;>&lt;/xsl:value-of>
+            &lt;/userName>
+          &lt;/WebRequestCommon>
+          &lt;OfsFunction>
+            &lt;activityName>
+              &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>
+            &lt;/activityName>
+          &lt;/OfsFunction>
+          &lt;FUNDSTRANSFERCPBMBBILLTOPUPREFUNDType>
+            &lt;transactionId>
+              &lt;xsl:value-of select=&quot;$document_Input1/reversal/transRefNo&quot;>&lt;/xsl:value-of>
+            &lt;/transactionId>
+          &lt;/FUNDSTRANSFERCPBMBBILLTOPUPREFUNDType>
+        &lt;/ns39:MobileBillRefund>
+      &lt;/ns1:Body>
+    &lt;/ns1:Envelope>
+  &lt;/xsl:template>
+&lt;!--The list of parameters defined by user-->
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;>&lt;/xsl:param>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="reversalResponse">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns2=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:multifields=&quot;multifields&quot; xmlns:multifieldsstring=&quot;multifieldsstring&quot; xmlns:myext=&quot;myext&quot; xmlns:mytext=&quot;mytext&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero MD5Hex StringLength dateConversion multifields multifieldsstring myext mytext rounding sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;TxnCommitRp>
+      &lt;ErrorCode>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/ErrorCode&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/ErrorMsg&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;TransRefNo>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/TransRefNo&quot;>&lt;/xsl:value-of>
+      &lt;/TransRefNo>
+      &lt;TxnCommitTime>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/TxnCommitTime&quot;>&lt;/xsl:value-of>
+      &lt;/TxnCommitTime>
+      &lt;AccountBalance>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/AccountBalance&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBalance>
+    &lt;/TxnCommitRp>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Epay_res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="Res_epay">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns2=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:multifields=&quot;multifields&quot; xmlns:multifieldsstring=&quot;multifieldsstring&quot; xmlns:myext=&quot;myext&quot; xmlns:mytext=&quot;mytext&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero MD5Hex StringLength dateConversion multifields multifieldsstring myext mytext rounding sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;TxnCommitRp>
+      &lt;ErrorCode>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/ErrorCode&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/ErrorMsg&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;TransRefNo>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/TransRefNo&quot;>&lt;/xsl:value-of>
+      &lt;/TransRefNo>
+      &lt;TxnCommitTime>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/TxnCommitTime&quot;>&lt;/xsl:value-of>
+      &lt;/TxnCommitTime>
+      &lt;AccountBalance>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/AccountBalance&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBalance>
+    &lt;/TxnCommitRp>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Epay">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns1=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText StringLength dateConversion myext replace sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_Input1&quot; select=&quot;document('Input1')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;fundtransfer>
+      &lt;Amount>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/Amount&quot;>&lt;/xsl:value-of>
+      &lt;/Amount>
+      &lt;TxnFee>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/TxnFee&quot;>&lt;/xsl:value-of>
+      &lt;/TxnFee>
+      &lt;FromAccount>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/FromAccount&quot;>&lt;/xsl:value-of>
+      &lt;/FromAccount>
+      &lt;ToAccount>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/ToAccount&quot;>&lt;/xsl:value-of>
+      &lt;/ToAccount>
+      &lt;Remark>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/Remark&quot;>&lt;/xsl:value-of>
+      &lt;/Remark>
+      &lt;TransId>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/TransId&quot;>&lt;/xsl:value-of>
+      &lt;/TransId>
+      &lt;CurrenCy>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/CurrenCy&quot;>&lt;/xsl:value-of>
+      &lt;/CurrenCy>
+      &lt;TxnType>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/TxnType&quot;>&lt;/xsl:value-of>
+      &lt;/TxnType>
+      &lt;debitcurrency>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/debitcurrency&quot;>&lt;/xsl:value-of>
+      &lt;/debitcurrency>
+      &lt;merchantID>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/merchantID&quot;>&lt;/xsl:value-of>
+        &lt;xsl:variable name=&quot;if0&quot;>
+          &lt;xsl:choose>
+            &lt;xsl:when test=&quot;($document_Input1/fundtransfer/merchantID)=('900010000010005')&quot;>
+              &lt;xsl:value-of select=&quot;java:_setStringProperty($_TIF_MESSAGE_, 'ValidateMerchantID', '00000GDT')&quot;>&lt;/xsl:value-of>
+            &lt;/xsl:when>
+            &lt;xsl:otherwise>
+              &lt;xsl:value-of select=&quot;java:_setStringProperty($_TIF_MESSAGE_, 'ValidateMerchantID', '00000MMS')&quot;>&lt;/xsl:value-of>
+            &lt;/xsl:otherwise>
+          &lt;/xsl:choose>
+        &lt;/xsl:variable>
+        &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>
+      &lt;/merchantID>
+      &lt;merchantName>
+        &lt;xsl:value-of select=&quot;$document_Input1/fundtransfer/merchantName&quot;>&lt;/xsl:value-of>
+      &lt;/merchantName>
+    &lt;/fundtransfer>
+  &lt;/xsl:template>
+&lt;!--The list of parameters defined by user-->
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;>&lt;/xsl:param>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Epay_req">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="Reversal_res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns12=&quot;http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2&quot; xmlns:ns33=&quot;http://temenos.com/CUSTOMER&quot; xmlns:ns24=&quot;http://temenos.com/CPBGETACCOUNTINFO&quot; xmlns:ns20=&quot;http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT&quot; xmlns:ns7=&quot;http://temenos.com/CPBGETINTERESTRATE&quot; xmlns:ns1=&quot;http://jaxb.dev.java.net/array&quot; xmlns:ns14=&quot;http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT&quot; xmlns:ns26=&quot;http://temenos.com/CPBGETACCOUNTSTMT&quot; xmlns:ns30=&quot;http://temenos.com/AAARRANGEMENTACTIVITY&quot; xmlns:ns27=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILL&quot; xmlns:ns25=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; xmlns:ns38=&quot;http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT&quot; xmlns:ns40=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns36=&quot;http://temenos.com/AAARRANGEMENTACTIVITYOPENFD&quot; xmlns:ns39=&quot;http://temenos.com/DEVMB3&quot; xmlns:ns31=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB&quot; xmlns:ns18=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTFTMB&quot; xmlns:ns23=&quot;http://temenos.com/CPBGETCUSTOMERINFO&quot; xmlns:ns16=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; xmlns:ns15=&quot;http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT&quot; xmlns:ns21=&quot;http://temenos.com/CPBGETACCOUNTLIST&quot; xmlns:ns28=&quot;http://temenos.com/FUNDSTRANSFERCPBWATERBILL&quot; xmlns:ns34=&quot;http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT&quot; xmlns:ns6=&quot;http://temenos.com/CPBGETEXCHANGERATE&quot; xmlns:ns9=&quot;http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT&quot; xmlns:ns8=&quot;http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD&quot; xmlns:ns32=&quot;http://temenos.com/FUNDSTRANSFERCPBPPWSABILL&quot; xmlns:ns17=&quot;http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL&quot; xmlns:ns35=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns19=&quot;http://temenos.com/FUNDSTRANSFERCPBACBILL&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBMBTOPUP&quot; xmlns:ns4=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND&quot; xmlns:ns13=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGOUT&quot; xmlns:ns11=&quot;http://temenos.com/FUNDSTRANSFERCPBEDCBILL&quot; xmlns:ns10=&quot;http://temenos.com/FUNDSTRANSFERCPBSRBILL&quot; xmlns:ns2=&quot;http://temenos.com/DEVMB3/MobileBillRefund/Output&quot; xmlns:ns37=&quot;http://temenos.com/CUSTOMERCPBDMD&quot; xmlns:ns29=&quot;http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE&quot; xmlns:ns22=&quot;http://temenos.com/FUNDSTRANSFERCPBFUNANBILL&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText StringLength dateConversion myext replace sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;TxnCommitRp>
+      &lt;ErrorCode>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:MobileBillRefundResponse/FUNDSTRANSFERType/ns35:STATUSCODE&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:MobileBillRefundResponse/FUNDSTRANSFERType/ns35:STATUDESC&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;TxnCommitTime>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:MobileBillRefundResponse/FUNDSTRANSFERType/ns35:gDATETIME/ns35:DATETIME&quot;>&lt;/xsl:value-of>
+      &lt;/TxnCommitTime>
+    &lt;/TxnCommitRp>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="T241">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="khqr_res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns12=&quot;http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2&quot; xmlns:ns33=&quot;http://temenos.com/CUSTOMER&quot; xmlns:ns24=&quot;http://temenos.com/CPBGETACCOUNTINFO&quot; xmlns:ns20=&quot;http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT&quot; xmlns:ns7=&quot;http://temenos.com/CPBGETINTERESTRATE&quot; xmlns:ns1=&quot;http://jaxb.dev.java.net/array&quot; xmlns:ns14=&quot;http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT&quot; xmlns:ns26=&quot;http://temenos.com/CPBGETACCOUNTSTMT&quot; xmlns:ns30=&quot;http://temenos.com/AAARRANGEMENTACTIVITY&quot; xmlns:ns27=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILL&quot; xmlns:ns25=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; xmlns:ns38=&quot;http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT&quot; xmlns:ns40=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns36=&quot;http://temenos.com/AAARRANGEMENTACTIVITYOPENFD&quot; xmlns:ns39=&quot;http://temenos.com/DEVMB3&quot; xmlns:ns31=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB&quot; xmlns:ns18=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTFTMB&quot; xmlns:ns23=&quot;http://temenos.com/CPBGETCUSTOMERINFO&quot; xmlns:ns16=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; xmlns:ns15=&quot;http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT&quot; xmlns:ns21=&quot;http://temenos.com/CPBGETACCOUNTLIST&quot; xmlns:ns28=&quot;http://temenos.com/FUNDSTRANSFERCPBWATERBILL&quot; xmlns:ns34=&quot;http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT&quot; xmlns:ns6=&quot;http://temenos.com/CPBGETEXCHANGERATE&quot; xmlns:ns9=&quot;http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT&quot; xmlns:ns8=&quot;http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD&quot; xmlns:ns32=&quot;http://temenos.com/FUNDSTRANSFERCPBPPWSABILL&quot; xmlns:ns17=&quot;http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL&quot; xmlns:ns35=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns19=&quot;http://temenos.com/FUNDSTRANSFERCPBACBILL&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBMBTOPUP&quot; xmlns:ns4=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND&quot; xmlns:ns13=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGOUT&quot; xmlns:ns11=&quot;http://temenos.com/FUNDSTRANSFERCPBEDCBILL&quot; xmlns:ns10=&quot;http://temenos.com/FUNDSTRANSFERCPBSRBILL&quot; xmlns:ns2=&quot;http://temenos.com/DEVMB3/MobileBillRefund/Output&quot; xmlns:ns37=&quot;http://temenos.com/CUSTOMERCPBDMD&quot; xmlns:ns29=&quot;http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE&quot; xmlns:ns22=&quot;http://temenos.com/FUNDSTRANSFERCPBFUNANBILL&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText StringLength dateConversion myext replace sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;TxnCommitRp>
+      &lt;ErrorCode>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:MobileBillRefundResponse/FUNDSTRANSFERType/ns35:STATUSCODE&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:MobileBillRefundResponse/FUNDSTRANSFERType/ns35:STATUDESC&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;TxnCommitTime>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns39:MobileBillRefundResponse/FUNDSTRANSFERType/ns35:gDATETIME/ns35:DATETIME&quot;>&lt;/xsl:value-of>
+      &lt;/TxnCommitTime>
+    &lt;/TxnCommitRp>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="khqrResp">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns2=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:multifields=&quot;multifields&quot; xmlns:multifieldsstring=&quot;multifieldsstring&quot; xmlns:myext=&quot;myext&quot; xmlns:mytext=&quot;mytext&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero MD5Hex StringLength dateConversion multifields multifieldsstring myext mytext rounding sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;TxnCommitRp>
+      &lt;ErrorCode>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/ErrorCode&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/ErrorMsg&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;TransRefNo>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/TransRefNo&quot;>&lt;/xsl:value-of>
+      &lt;/TransRefNo>
+      &lt;TxnCommitTime>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/TxnCommitTime&quot;>&lt;/xsl:value-of>
+      &lt;/TxnCommitTime>
+      &lt;AccountBalance>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/TxnCommitRp/AccountBalance&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBalance>
+    &lt;/TxnCommitRp>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="CollectRq">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns1=&quot;http://temenos.com/CPTWS/WSCPBTWSCPBWINGAPI/Input&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot; xmlns:ns7=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns8=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot; xmlns:ns9=&quot;http://temenos.com/CPTWS&quot; xmlns:ns4=&quot;http://temenos.com/CPBTWSCUSTOMERDETSSCV&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns6=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot; xmlns:ns2=&quot;http://jaxb.dev.java.net/array&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:EnDe=&quot;http://xml.apache.org/xslt/java&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Md5UniCode=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Remove=&quot;Remove&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:replaceStr=&quot;http://xml.apache.org/xslt/java&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:stringtext=&quot;stringtext&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero EnDe MD5Hex Md5UniCode Remove ReplaceText StringLength dateConversion myext replace replaceStr rounding sringindex strings stringtext truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_Input1&quot; select=&quot;document('Input1')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;ns1:Envelope>
+      &lt;ns1:Body>
+        &lt;ns9:WSCPBTWSCPBWINGAPI>
+          &lt;WebRequestCommon>
+            &lt;password>
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, 'password')&quot;>&lt;/xsl:value-of>
+            &lt;/password>
+            &lt;userName>
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, 'username')&quot;>&lt;/xsl:value-of>
+            &lt;/userName>
+          &lt;/WebRequestCommon>
+          &lt;OfsFunction>
+            &lt;assignReason>
+              &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>
+            &lt;/assignReason>
+          &lt;/OfsFunction>
+          &lt;FUNDSTRANSFERCPBWINGAPIType>
+            &lt;ns8:DEBITACCTNO>
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/FromAccount&quot;>&lt;/xsl:value-of>
+            &lt;/ns8:DEBITACCTNO>
+            &lt;ns8:DEBITTHEIRREF>
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/Remark&quot;>&lt;/xsl:value-of>
+            &lt;/ns8:DEBITTHEIRREF>
+            &lt;ns8:CREDITTHEIRREF>
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/Remark&quot;>&lt;/xsl:value-of>
+            &lt;/ns8:CREDITTHEIRREF>
+            &lt;ns8:CREDITACCTNO>
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/ToAccount&quot;>&lt;/xsl:value-of>
+            &lt;/ns8:CREDITACCTNO>
+            &lt;ns8:CREDITCURRENCY>
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/Currency&quot;>&lt;/xsl:value-of>
+            &lt;/ns8:CREDITCURRENCY>
+            &lt;ns8:CREDITAMOUNT>
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/Amount&quot;>&lt;/xsl:value-of>
+            &lt;/ns8:CREDITAMOUNT>
+            &lt;ns8:gPAYMENTDETAILS>
+              &lt;xsl:attribute name=&quot;g&quot;>
+                &lt;xsl:value-of select=&quot;'1'&quot;>&lt;/xsl:value-of>
+              &lt;/xsl:attribute>
+              &lt;ns8:PAYMENTDETAILS>
+                &lt;xsl:value-of select=&quot;'COLLECTION'&quot;>&lt;/xsl:value-of>
+              &lt;/ns8:PAYMENTDETAILS>
+            &lt;/ns8:gPAYMENTDETAILS>
+            &lt;ns8:gCOMMISSIONTYPE>
+              &lt;xsl:attribute name=&quot;g&quot;>
+                &lt;xsl:value-of select=&quot;'1'&quot;>&lt;/xsl:value-of>
+              &lt;/xsl:attribute>
+              &lt;ns8:mCOMMISSIONTYPE>
+                &lt;xsl:attribute name=&quot;m&quot;>
+                  &lt;xsl:value-of select=&quot;'1'&quot;>&lt;/xsl:value-of>
+                &lt;/xsl:attribute>&lt;/ns8:mCOMMISSIONTYPE>
+            &lt;/ns8:gCOMMISSIONTYPE>
+            &lt;ns8:INITBANK>
+              &lt;xsl:value-of select=&quot;$document_Input1/FTCollectRq/TransId&quot;>&lt;/xsl:value-of>
+            &lt;/ns8:INITBANK>
+          &lt;/FUNDSTRANSFERCPBWINGAPIType>
+        &lt;/ns9:WSCPBTWSCPBWINGAPI>
+      &lt;/ns1:Body>
+    &lt;/ns1:Envelope>
+  &lt;/xsl:template>
+&lt;!--The list of parameters defined by user-->
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;>&lt;/xsl:param>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="T24_W">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="Collect_res">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns1=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:EnDe=&quot;http://xml.apache.org/xslt/java&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Md5UniCode=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Remove=&quot;Remove&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:replaceStr=&quot;http://xml.apache.org/xslt/java&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:stringtext=&quot;stringtext&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero EnDe MD5Hex Md5UniCode Remove ReplaceText StringLength dateConversion myext replace replaceStr rounding sringindex strings stringtext truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;FTCollectRp>
+      &lt;ErrorCode>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/FTCollectRp/ErrorCode&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/FTCollectRp/ErrorMsg&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;TransRefNo>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/FTCollectRp/TransRefNo&quot;>&lt;/xsl:value-of>
+      &lt;/TransRefNo>
+      &lt;TxnCommitTime>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/FTCollectRp/TxnCommitTime&quot;>&lt;/xsl:value-of>
+      &lt;/TxnCommitTime>
+      &lt;AccountBalance>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/FTCollectRp/AccountBalance&quot;>&lt;/xsl:value-of>
+      &lt;/AccountBalance>
+    &lt;/FTCollectRp>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Collectres">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB&quot; xmlns:ns7=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns8=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGAPI&quot; xmlns:ns9=&quot;http://temenos.com/CPTWS&quot; xmlns:ns4=&quot;http://temenos.com/CPBTWSCUSTOMERDETSSCV&quot; xmlns:ns10=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns6=&quot;http://temenos.com/FUNDSTRANSFERCPBACRTMB&quot; xmlns:ns1=&quot;http://jaxb.dev.java.net/array&quot; xmlns:ns2=&quot;http://temenos.com/CPTWS/WSCPBTWSCPBWINGAPI/Output&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:EnDe=&quot;http://xml.apache.org/xslt/java&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Md5UniCode=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Remove=&quot;Remove&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:replaceStr=&quot;http://xml.apache.org/xslt/java&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:stringtext=&quot;stringtext&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero EnDe MD5Hex Md5UniCode Remove ReplaceText StringLength dateConversion myext replace replaceStr rounding sringindex strings stringtext truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;FTCollectRp>
+      &lt;ErrorCode>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns9:WSCPBTWSCPBWINGAPIResponse/FUNDSTRANSFERType/ns7:STATUSCODE&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorCode>
+      &lt;ErrorMsg>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns9:WSCPBTWSCPBWINGAPIResponse/FUNDSTRANSFERType/ns7:STATUDESC&quot;>&lt;/xsl:value-of>
+      &lt;/ErrorMsg>
+      &lt;TransRefNo>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns9:WSCPBTWSCPBWINGAPIResponse/Status/transactionId&quot;>&lt;/xsl:value-of>
+      &lt;/TransRefNo>
+      &lt;TxnCommitTime>
+        &lt;xsl:value-of select=&quot;$document_IN_PORT/ns2:Envelope/ns2:Body/ns9:WSCPBTWSCPBWINGAPIResponse/FUNDSTRANSFERType/ns7:gDATETIME/ns7:DATETIME&quot;>&lt;/xsl:value-of>
+      &lt;/TxnCommitTime>
+    &lt;/FTCollectRp>
+  &lt;/xsl:template>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="khqr_in">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns12=&quot;http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2&quot; xmlns:ns33=&quot;http://temenos.com/CUSTOMER&quot; xmlns:ns24=&quot;http://temenos.com/CPBGETACCOUNTINFO&quot; xmlns:ns20=&quot;http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT&quot; xmlns:ns7=&quot;http://temenos.com/CPBGETINTERESTRATE&quot; xmlns:ns2=&quot;http://jaxb.dev.java.net/array&quot; xmlns:ns14=&quot;http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT&quot; xmlns:ns26=&quot;http://temenos.com/CPBGETACCOUNTSTMT&quot; xmlns:ns30=&quot;http://temenos.com/AAARRANGEMENTACTIVITY&quot; xmlns:ns27=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILL&quot; xmlns:ns25=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB&quot; xmlns:ns38=&quot;http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns36=&quot;http://temenos.com/AAARRANGEMENTACTIVITYOPENFD&quot; xmlns:ns39=&quot;http://temenos.com/DEVMB3&quot; xmlns:ns31=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB&quot; xmlns:ns18=&quot;http://temenos.com/FUNDSTRANSFERCPBRFTFTMB&quot; xmlns:ns23=&quot;http://temenos.com/CPBGETCUSTOMERINFO&quot; xmlns:ns16=&quot;http://temenos.com/FUNDSTRANSFERCPBBKGMB&quot; xmlns:ns15=&quot;http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT&quot; xmlns:ns21=&quot;http://temenos.com/CPBGETACCOUNTLIST&quot; xmlns:ns28=&quot;http://temenos.com/FUNDSTRANSFERCPBWATERBILL&quot; xmlns:ns34=&quot;http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT&quot; xmlns:ns6=&quot;http://temenos.com/CPBGETEXCHANGERATE&quot; xmlns:ns9=&quot;http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT&quot; xmlns:ns8=&quot;http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD&quot; xmlns:ns32=&quot;http://temenos.com/FUNDSTRANSFERCPBPPWSABILL&quot; xmlns:ns17=&quot;http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL&quot; xmlns:ns35=&quot;http://temenos.com/FUNDSTRANSFER&quot; xmlns:ns19=&quot;http://temenos.com/FUNDSTRANSFERCPBACBILL&quot; xmlns:ns5=&quot;http://temenos.com/FUNDSTRANSFERCPBMBTOPUP&quot; xmlns:ns4=&quot;http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND&quot; xmlns:ns13=&quot;http://temenos.com/FUNDSTRANSFERCPBWINGOUT&quot; xmlns:ns1=&quot;http://temenos.com/DEVMB3/MobileBillRefund/Input&quot; xmlns:ns11=&quot;http://temenos.com/FUNDSTRANSFERCPBEDCBILL&quot; xmlns:ns10=&quot;http://temenos.com/FUNDSTRANSFERCPBSRBILL&quot; xmlns:ns37=&quot;http://temenos.com/CUSTOMERCPBDMD&quot; xmlns:ns29=&quot;http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE&quot; xmlns:ns22=&quot;http://temenos.com/FUNDSTRANSFERCPBFUNANBILL&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math MD5Hex ReplaceText StringLength dateConversion myext replace sringindex strings truncateString&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_Input1&quot; select=&quot;document('Input1')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;ns1:Envelope>
+      &lt;ns1:Body>
+        &lt;ns39:MobileBillRefund>
+          &lt;WebRequestCommon>
+            &lt;password>
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, 'password')&quot;>&lt;/xsl:value-of>
+            &lt;/password>
+            &lt;userName>
+              &lt;xsl:value-of select=&quot;java:_getStringProperty($_TIF_MESSAGE_, 'username')&quot;>&lt;/xsl:value-of>
+            &lt;/userName>
+          &lt;/WebRequestCommon>
+          &lt;OfsFunction>
+            &lt;activityName>
+              &lt;xsl:value-of select=&quot;''&quot;>&lt;/xsl:value-of>
+            &lt;/activityName>
+          &lt;/OfsFunction>
+          &lt;FUNDSTRANSFERCPBMBBILLTOPUPREFUNDType>
+            &lt;transactionId>
+              &lt;xsl:value-of select=&quot;$document_Input1/reversal/transRefNo&quot;>&lt;/xsl:value-of>
+            &lt;/transactionId>
+          &lt;/FUNDSTRANSFERCPBMBBILLTOPUPREFUNDType>
+        &lt;/ns39:MobileBillRefund>
+      &lt;/ns1:Body>
+    &lt;/ns1:Envelope>
+  &lt;/xsl:template>
+&lt;!--The list of parameters defined by user-->
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;>&lt;/xsl:param>
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+</target:target>

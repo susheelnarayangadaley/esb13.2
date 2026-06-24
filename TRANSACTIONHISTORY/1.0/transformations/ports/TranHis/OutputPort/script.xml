@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.fiorano.com/SeylanESB" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:CEFT_JPAY="CEFT_JPAY" xmlns:CardWS="CardWS" xmlns:CenturyDateConv="CenturyDateConv" xmlns:CenturyDateConverter="CenturyDateConverter" xmlns:Currency="Currency" xmlns:DateConversion="DateConversion" xmlns:DateTime="DateTime" xmlns:Decimals="Decimals" xmlns:ESB="ESB" xmlns:FormatQuery="FormatQuery" xmlns:RateConverter="RateConverter" xmlns:Text="Text" xmlns:TimeConversion="TimeConversion" xmlns:UtilityBIll="UtilityBIll" xmlns:Validation="Validation" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:paddzero="paddzero" xmlns:str="str" xmlns:strings="strings" extension-element-prefixes="datetime set math CEFT_JPAY CardWS CenturyDateConv CenturyDateConverter Currency DateConversion DateTime Decimals ESB FormatQuery RateConverter Text TimeConversion UtilityBIll Validation dateConversion myext paddzero str strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OutputPort" select="document('OutputPort')"></xsl:variable>
+  <xsl:template match="/">
+    <TH_Header>
+      <TransRef>
+        <xsl:value-of select="TH_Header/TransRef"></xsl:value-of>
+      </TransRef>
+      <Account_Category>
+        <xsl:value-of select="TH_Header/Account_Category"></xsl:value-of>
+      </Account_Category>
+      <Account_Number>
+        <xsl:value-of select="TH_Header/Account_Number"></xsl:value-of>
+      </Account_Number>
+      <Date_from>
+        <xsl:value-of select="$document_OutputPort/ns2:Output/ns2:SDATE"></xsl:value-of>
+      </Date_from>
+      <Date_to>
+        <xsl:value-of select="$document_OutputPort/ns2:Output/ns2:EDATE"></xsl:value-of>
+      </Date_to>
+      <Number_of_recent_transactions>
+        <xsl:value-of select="TH_Header/Number_of_recent_transactions"></xsl:value-of>
+      </Number_of_recent_transactions>
+      <Status>
+        <xsl:value-of select="$document_OutputPort/ns2:Output/ns2:RREC"></xsl:value-of>
+      </Status>
+      <Message>
+        <xsl:value-of select="$document_OutputPort/ns2:Output/ns2:RMSG"></xsl:value-of>
+      </Message>
+    </TH_Header>
+  </xsl:template>
+</xsl:stylesheet>

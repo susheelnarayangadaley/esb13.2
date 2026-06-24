@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns5="http://www.seylan.lk/AccountBalanceInquiryPWM" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/Seylan/TransactionHistoryInquiry" xmlns:ns4="http://www.fiorano.com/services/rest" xmlns:ns3="http://www.seylan.lk/AccountTransactionHistoryPWM" xmlns:CEFT_JPAY="CEFT_JPAY" xmlns:CardWS="CardWS" xmlns:CenturyDateConverter="CenturyDateConverter" xmlns:Currency="Currency" xmlns:DateConversion="DateConversion" xmlns:DateTime="DateTime" xmlns:Decimals="Decimals" xmlns:ENIQR="ENIQR" xmlns:ESB="ESB" xmlns:RSA="http://xml.apache.org/xslt/java" xmlns:RateConverter="RateConverter" xmlns:SHA256="http://xml.apache.org/xslt/java" xmlns:Text="Text" xmlns:TimeConversion="TimeConversion" xmlns:Utility="Utility" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:str="str" xmlns:strings="strings" extension-element-prefixes="datetime set math CEFT_JPAY CardWS CenturyDateConverter Currency DateConversion DateTime Decimals ENIQR ESB RSA RateConverter SHA256 Text TimeConversion Utility dateConversion myext str strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_TransHistory__GET__Response" select="document('TransHistory__GET__Response')"></xsl:variable>
+  <xsl:template match="/">
+    <ns4:Responses>
+      <Response>
+        <xsl:attribute name="Status">
+          <xsl:value-of select="'200'"></xsl:value-of>
+        </xsl:attribute>
+        <Representations>
+          <Representation>
+            <xsl:attribute name="MediaType">
+              <xsl:value-of select="'application/xml'"></xsl:value-of>
+            </xsl:attribute>
+            <Element>
+              <ns3:AccountTransactionHistoryPWM_Response>
+                <ns3:Status>
+                  <ns3:Transaction_reference>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:Status/ns1:Transaction_Reference"></xsl:value-of>
+                  </ns3:Transaction_reference>
+                  <ns3:Timestamp>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:Status/ns1:Timestamp"></xsl:value-of>
+                  </ns3:Timestamp>
+                  <ns3:Code>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:Status/ns1:Code"></xsl:value-of>
+                  </ns3:Code>
+                  <ns3:Message>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:Status/ns1:Message"></xsl:value-of>
+                  </ns3:Message>
+                  <ns3:Description>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:Status/ns1:Description"></xsl:value-of>
+                  </ns3:Description>
+                </ns3:Status>
+                <ns3:AccountSummary>
+                  <ns3:Account_branch>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_branch"></xsl:value-of>
+                  </ns3:Account_branch>
+                  <ns3:Account_basic_number>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_basic_number"></xsl:value-of>
+                  </ns3:Account_basic_number>
+                  <ns3:Account_suffix>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_suffix"></xsl:value-of>
+                  </ns3:Account_suffix>
+                  <ns3:Account_short_name>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_short_name"></xsl:value-of>
+                  </ns3:Account_short_name>
+                  <ns3:Customer_mnemonic>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Customer_mnemonic"></xsl:value-of>
+                  </ns3:Customer_mnemonic>
+                  <ns3:Customer_location>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Customer_location"></xsl:value-of>
+                  </ns3:Customer_location>
+                  <ns3:Account_type>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_type"></xsl:value-of>
+                  </ns3:Account_type>
+                  <ns3:Owning_application_code>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Owning_application_code"></xsl:value-of>
+                  </ns3:Owning_application_code>
+                  <ns3:Account_structure>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_structure"></xsl:value-of>
+                  </ns3:Account_structure>
+                  <ns3:Currency_mnemonic>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Currency_mnemonic"></xsl:value-of>
+                  </ns3:Currency_mnemonic>
+                  <ns3:Currency_decimals>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Currency_decimals"></xsl:value-of>
+                  </ns3:Currency_decimals>
+                  <ns3:Internal_non_customer_account>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Internal_non_customer_account"></xsl:value-of>
+                  </ns3:Internal_non_customer_account>
+                  <ns3:Deceased_or_liquidated>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Deceased_or_liquidated"></xsl:value-of>
+                  </ns3:Deceased_or_liquidated>
+                  <ns3:Account_blocked>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_blocked"></xsl:value-of>
+                  </ns3:Account_blocked>
+                  <ns3:Account_inactive>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_inactive"></xsl:value-of>
+                  </ns3:Account_inactive>
+                  <ns3:Account_closed>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Account_closed"></xsl:value-of>
+                  </ns3:Account_closed>
+                  <ns3:Contingent_account>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Contingent_account"></xsl:value-of>
+                  </ns3:Contingent_account>
+                  <ns3:Date_from>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Date_from"></xsl:value-of>
+                  </ns3:Date_from>
+                  <ns3:Date_to>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Date_to"></xsl:value-of>
+                  </ns3:Date_to>
+                  <ns3:Starting_balance>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Starting_balance"></xsl:value-of>
+                  </ns3:Starting_balance>
+                  <ns3:Number_of_recent_transactions>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Number_of_recent_transactions"></xsl:value-of>
+                  </ns3:Number_of_recent_transactions>
+                  <ns3:Statement_number>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Statement_number"></xsl:value-of>
+                  </ns3:Statement_number>
+                  <ns3:Available_balance>
+                    <xsl:value-of select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:AccountSummary/ns1:Available_balance"></xsl:value-of>
+                  </ns3:Available_balance>
+                </ns3:AccountSummary><Transaction class="array">
+                <xsl:for-each select="$document_TransHistory__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:TransactionHistoryInquiryResponse/ns1:Transaction">
+                  <ns3:Transaction>
+                    <ns3:Posting_date>
+                      <xsl:value-of select="./ns1:Posting_date"></xsl:value-of>
+                    </ns3:Posting_date>
+                    <ns3:Value_date>
+                      <xsl:value-of select="./ns1:Value_date"></xsl:value-of>
+                    </ns3:Value_date>
+                    <ns3:Posting_currency>
+                      <xsl:value-of select="./ns1:Posting_currency"></xsl:value-of>
+                    </ns3:Posting_currency>
+                    <ns3:Posting_currency_decimals>
+                      <xsl:value-of select="./ns1:Posting_currency_decimals"></xsl:value-of>
+                    </ns3:Posting_currency_decimals>
+                    <ns3:Transaction_code>
+                      <xsl:value-of select="./ns1:Transaction_code"></xsl:value-of>
+                    </ns3:Transaction_code>
+                    <ns3:Transaction_code_mnemonic>
+                      <xsl:value-of select="./ns1:Transaction_code_mnemonic"></xsl:value-of>
+                    </ns3:Transaction_code_mnemonic>
+                    <ns3:Transaction_Code_Name>
+                      <xsl:value-of select="./ns1:Transaction_Code_Name"></xsl:value-of>
+                    </ns3:Transaction_Code_Name>
+                    <ns3:Input_branch_mnemonic>
+                      <xsl:value-of select="./ns1:Input_branch_mnemonic"></xsl:value-of>
+                    </ns3:Input_branch_mnemonic>
+                    <ns3:Account_branch_mnemonic>
+                      <xsl:value-of select="./ns1:Account_branch_mnemonic"></xsl:value-of>
+                    </ns3:Account_branch_mnemonic>
+                    <ns3:Posting_group>
+                      <xsl:value-of select="./ns1:Posting_group"></xsl:value-of>
+                    </ns3:Posting_group>
+                    <ns3:Posting_amount>
+                      <xsl:value-of select="./ns1:Posting_amount"></xsl:value-of>
+                    </ns3:Posting_amount>
+                    <ns3:Print_transaction_code_name_as_narrative>
+                      <xsl:value-of select="./ns1:Print_transaction_code_name_as_narrative"></xsl:value-of>
+                    </ns3:Print_transaction_code_name_as_narrative>
+                    <ns3:Transaction_Status>
+                      <xsl:value-of select="./ns1:Transaction_Status"></xsl:value-of>
+                    </ns3:Transaction_Status>
+                    <ns3:Users_own_reference>
+                      <xsl:value-of select="./ns1:Users_own_reference"></xsl:value-of>
+                    </ns3:Users_own_reference>
+                    <ns3:Sundry_reference_code>
+                      <xsl:value-of select="./ns1:Sundry_reference_code"></xsl:value-of>
+                    </ns3:Sundry_reference_code>
+                    <ns3:User_code_1>
+                      <xsl:value-of select="./ns1:User_code_1"></xsl:value-of>
+                    </ns3:User_code_1>
+                    <ns3:User_code_2>
+                      <xsl:value-of select="./ns1:User_code_2"></xsl:value-of>
+                    </ns3:User_code_2>
+                    <ns3:Number_of_items_within_this_posting>
+                      <xsl:value-of select="./ns1:Number_of_items_within_this_posting"></xsl:value-of>
+                    </ns3:Number_of_items_within_this_posting>
+                    <ns3:Statement_number>
+                      <xsl:value-of select="./ns1:Statement_number"></xsl:value-of>
+                    </ns3:Statement_number>
+                    <ns3:Narrative_record_exists>
+                      <xsl:value-of select="./ns1:Narrative_record_exists"></xsl:value-of>
+                    </ns3:Narrative_record_exists>
+                    <ns3:Narrative_1>
+                      <xsl:value-of select="./ns1:Narrative_1"></xsl:value-of>
+                    </ns3:Narrative_1>
+                    <ns3:Narrative_2>
+                      <xsl:value-of select="./ns1:Narrative_2"></xsl:value-of>
+                    </ns3:Narrative_2>
+                    <ns3:Narrative_3>
+                      <xsl:value-of select="./ns1:Narrative_3"></xsl:value-of>
+                    </ns3:Narrative_3>
+                    <ns3:Narrative_4>
+                      <xsl:value-of select="./ns1:Narrative_4"></xsl:value-of>
+                    </ns3:Narrative_4>
+                    <ns3:Additional_line_1>
+                      <xsl:value-of select="./ns1:Additional_line_1"></xsl:value-of>
+                    </ns3:Additional_line_1>
+                    <ns3:Additional_line_2>
+                      <xsl:value-of select="./ns1:Additional_line_2"></xsl:value-of>
+                    </ns3:Additional_line_2>
+                    <ns3:Additional_line_3>
+                      <xsl:value-of select="./ns1:Additional_line_3"></xsl:value-of>
+                    </ns3:Additional_line_3>
+                    <ns3:Additional_line_4>
+                      <xsl:value-of select="./ns1:Additional_line_4"></xsl:value-of>
+                    </ns3:Additional_line_4>
+                    <ns3:Additional_line_5>
+                      <xsl:value-of select="./ns1:Additional_line_5"></xsl:value-of>
+                    </ns3:Additional_line_5>
+                    <ns3:Additional_line_6>
+                      <xsl:value-of select="./ns1:Additional_line_6"></xsl:value-of>
+                    </ns3:Additional_line_6>
+                    <ns3:Original_currency>
+                      <xsl:value-of select="./ns1:Original_currency"></xsl:value-of>
+                    </ns3:Original_currency>
+                    <ns3:Original_currency_decimals>
+                      <xsl:value-of select="./ns1:Original_currency_decimals"></xsl:value-of>
+                    </ns3:Original_currency_decimals>
+                    <ns3:Original_amount>
+                      <xsl:value-of select="./ns1:Original_amount"></xsl:value-of>
+                    </ns3:Original_amount>
+                    <ns3:Posting_sequence_number>
+                      <xsl:value-of select="./ns1:Posting_sequence_number"></xsl:value-of>
+                    </ns3:Posting_sequence_number>
+                    <ns3:Running_balance>
+                      <xsl:value-of select="./ns1:Running_balance"></xsl:value-of>
+                    </ns3:Running_balance>
+                    <ns3:Event_key>
+                      <xsl:value-of select="./ns1:Event_key"></xsl:value-of>
+                    </ns3:Event_key>
+                    <ns3:Available_Date>
+                      <xsl:value-of select="./ns1:Available_Date"></xsl:value-of>
+                    </ns3:Available_Date>
+                    <ns3:Timestamp>
+                      <xsl:value-of select="./ns1:Timestamp"></xsl:value-of>
+                    </ns3:Timestamp>
+                    <ns3:Unique_key>
+                      <xsl:value-of select="./ns1:Unique_key"></xsl:value-of>
+                    </ns3:Unique_key>
+                  </ns3:Transaction>
+                </xsl:for-each></Transaction></ns3:AccountTransactionHistoryPWM_Response>
+            </Element>
+          </Representation>
+        </Representations>
+      </Response>
+    </ns4:Responses>
+  </xsl:template>
+</xsl:stylesheet>

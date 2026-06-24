@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="CSA_RADARO_CREATE_JOB_BY_EXTERNAL_ID.xsd" mime="XSD" name="Application-Context" rootName="{http://www.fiorano.com/fesb/activity/DB1/Response}AppCtx"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="jobs__POST__orderid__Request.xsd" mime="XSD" name="jobs__POST__orderid__Request" rootName="{http://www.fiorano.com/services/rest}Request"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="jobs__POST__orderid__Request:0,Request:0,Representations:0,[Choice]:0,Representation:0,Element:0,ANY:0" x="1292" y="20">
+      <mappermodel:FunctionGraphNode label="getText" type="154" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="{&quot;order&quot;:" type="22" x="20" y="84">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-After" type="24" x="198" y="20">
+        <mappermodel:InputPins>str,after</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="750" y="42">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="}" type="22" x="205" y="156">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="myext:lastIndex(input, str)" type="69" x="473" y="77">
+        <mappermodel:InputPins>input,str</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="947" y="20">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="1" type="22" x="478" y="183">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="+" type="1" x="754" y="136">
+        <mappermodel:InputPins>num1,num2</mappermodel:InputPins>
+        <mappermodel:OutputPins>num</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="9" inputIndex="1" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="2" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="7" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="jobs__POST__orderid__Request:0,Request:0,RequestParameters:0,Content-Type:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="application/json" type="22" x="128" y="96">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="jobs__POST__orderid__Request:0,Request:0,ResourceURL:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="https://api-3.radaro.com.au/api/webhooks/jobs" type="22" x="109" y="183">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="jobs__POST__orderid__Request:0,Request:0,Representations:0,[Choice]:0,Representation:0,MediaType:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="application/json" type="22" x="65" y="130">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="jobs__POST__orderid__Request:0,Request:0,Parameters:0,[ZERO MANY]:0,Parameter:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="Fiorano" type="22" x="159" y="92">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="jobs__POST__orderid__Request:0,Request:0,Parameters:0,[ZERO MANY]:0,Parameter:0,name:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="User-Agent" type="22" x="84" y="97">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="jobs__POST__orderid__Request:0,Request:0,Parameters:0,[ZERO MANY]:0,Parameter:0,style:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="header" type="22" x="78" y="65">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="jobs__POST__orderid__Request:0,Request:0,RequestParameters:0,key:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AppCtx:0,[ZERO MANY]:0,Infoplus_Select:0,Api-Key:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="javascript" name="myext">
+      <mappermodel:Script>function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(&quot;.&quot;)    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return &quot;There are only &quot; + days + &quot; days remaining to the start of the next millennium.&quot;; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}
+function lastIndex(input, str){
+return input.lastIndexOf(str);
+}</mappermodel:Script>
+      <mappermodel:Function name="lastIndex" return="String">
+        <mappermodel:Argument datatype="String" name="input"/>
+        <mappermodel:Argument datatype="String" name="str"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+</mappermodel:MapperProject>

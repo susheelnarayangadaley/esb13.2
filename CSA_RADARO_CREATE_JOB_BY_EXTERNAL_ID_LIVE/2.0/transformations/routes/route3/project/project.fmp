@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="CSA_RADARO_CREATE_JOB_BY_EXTERNAL_ID.xsd" mime="XSD" name="Application-Context" rootName="{http://www.fiorano.com/fesb/activity/DB1/Response}AppCtx"/>
+    <mappermodel:Structure duplicates="" filePath="ON_EXCEPTION.xsd" mime="XSD" name="ON_EXCEPTION" rootName="{http://www.fiorano.com/fesb/activity/fault}Error"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.xsd" mime="XSD" name="IN_PORT" rootName="{http://www.fiorano.com/fesb/activity/DB1/Request}SQL_CFG_1"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,SQL_CFG_1:0,[ZERO MANY]:0,Update_Status2:0,IRADARO_STATUS:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="ERROR" type="22" x="99" y="79">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,SQL_CFG_1:0,[ZERO MANY]:0,Update_Status2:0,IMSGID:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AppCtx:0,[ZERO MANY]:0,Infoplus_Select:0,id:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="IN_PORT:0,SQL_CFG_1:0,[ZERO MANY]:0,Update_Status2:0,IRADARO_ERROR_MSG:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="ON_EXCEPTION:0,Error:0,errorMessage:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

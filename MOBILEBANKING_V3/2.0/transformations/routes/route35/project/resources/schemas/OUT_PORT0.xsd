@@ -1,0 +1,31 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB">
+   <xsd:complexType name="FUNDSTRANSFERCPBRFTPHONEFTMBType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="DebitorAccountNumber" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITCURRENCY" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitAmount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitTheirRef" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditTheirRef" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditAmount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ChargeCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ChargeAmt" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ReceiverPhoneNumber" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="SenderBankCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ReceiverBankCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ReceiverName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCPBFTREMARK">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="DebitorPhoneNumber" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="PassCode" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

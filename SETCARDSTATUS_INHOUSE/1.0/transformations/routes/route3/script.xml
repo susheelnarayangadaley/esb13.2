@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.fiorano.com/fesb/activity/Token/HTTP/In" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/fesb/activity/ISOMessage" xmlns:AliPay="http://xml.apache.org/xslt/java" xmlns:Alipay="http://xml.apache.org/xslt/java" xmlns:FIMIAuth="http://xml.apache.org/xslt/java" xmlns:Isnumericandzero="Isnumericandzero" xmlns:KashaJwtToken="http://xml.apache.org/xslt/java" xmlns:RNDP2B="http://xml.apache.org/xslt/java" xmlns:RNDPS="http://xml.apache.org/xslt/java" xmlns:RURAENCRYPTION="http://xml.apache.org/xslt/java" xmlns:RURAEncryption="http://xml.apache.org/xslt/java" xmlns:ReplaceG="http://xml.apache.org/xslt/java" xmlns:SH256="http://xml.apache.org/xslt/java" xmlns:alipayV2="http://xml.apache.org/xslt/java" xmlns:cancelTransfers="http://xml.apache.org/xslt/java" xmlns:changeFormatNumberDecimal="changeFormatNumberDecimal" xmlns:compareDates="compareDates" xmlns:convert="convert" xmlns:convertDateToISO8601="convertDateToISO8601" xmlns:convertExponentialToNumber="convertExponentialToNumber" xmlns:convertNumber="convertNumber" xmlns:convertToExp="convertToExp" xmlns:createAuthPayload="createAuthPayload" xmlns:dateConversion="dateConversion" xmlns:expoFunc="expoFunc" xmlns:isAlphanumeric="isAlphanumeric" xmlns:jwtExpirationTime="jwtExpirationTime" xmlns:myext="myext" xmlns:number="http://xml.apache.org/xslt/java" xmlns:participantBalance="http://xml.apache.org/xslt/java" xmlns:removeSpecialChar="removeSpecialChar" xmlns:removeSpecialChar2="removeSpecialChar2" xmlns:strings="strings" xmlns:transferResultInquiry="http://xml.apache.org/xslt/java" extension-element-prefixes="datetime set math AliPay Alipay FIMIAuth Isnumericandzero KashaJwtToken RNDP2B RNDPS RURAENCRYPTION RURAEncryption ReplaceG SH256 alipayV2 cancelTransfers changeFormatNumberDecimal compareDates convert convertDateToISO8601 convertExponentialToNumber convertNumber convertToExp createAuthPayload dateConversion expoFunc isAlphanumeric jwtExpirationTime myext number participantBalance removeSpecialChar removeSpecialChar2 strings transferResultInquiry">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <ns3:HTTPRequest>
+      <URI>
+        <xsl:value-of select="'/eclipse-conductor/rest/v1/tenants/1/cards/'"></xsl:value-of>
+        <xsl:value-of select="ns1:Context/ns1:cardUID"></xsl:value-of>
+      </URI>
+      <Header>
+        <CustomHeaders>
+          <Authorization>
+            <xsl:value-of select="ns1:Context/ns1:token"></xsl:value-of>
+          </Authorization>
+        </CustomHeaders>
+      </Header>
+    </ns3:HTTPRequest>
+  </xsl:template>
+</xsl:stylesheet>

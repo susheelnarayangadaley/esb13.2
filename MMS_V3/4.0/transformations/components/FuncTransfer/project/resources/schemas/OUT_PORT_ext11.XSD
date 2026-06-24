@@ -1,0 +1,34 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBMOBFAST" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBMOBFAST" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBMOBFAST">
+   <xsd:complexType name="FUNDSTRANSFERCPBMOBFASTType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="DebitAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitNarrative" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditAmount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gPAYMENTDETAILS">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="PaymentDetails" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="ChargesAcctNo" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="BeneficiaryAccountNumber" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Debitorcustomername" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorStreet" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorBuildingNo" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorPostalcode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Debitortownname" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorCountry" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="RecievingBankBIC" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="OtherBankCreditAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Creditorcustomername" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Creditorstreet" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorBuildingNo" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorTownname" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CountryCode" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="RESTConsumer1.accessToken__POST__Response.xsd" mime="XSD" name="accessToken__POST__Response" rootName="{http://www.fiorano.com/services/rest}Responses"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="Application-Context:0,Context:0,CURRENT_VALID_TOKEN:0" x="615" y="46">
+      <mappermodel:FunctionGraphNode label="nestedJsonParser:getFieldValue(obj, fieldName)" type="69" x="55" y="94">
+        <mappermodel:InputPins>obj,fieldName</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="accessToken__POST__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,ANY:0" x="113" y="46">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="token" type="22" x="140" y="172">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Bearer " type="22" x="400" y="30">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions>
+    <mappermodel:Extension language="javascript" name="nestedJsonParser">
+      <mappermodel:Script>function getFieldValue(obj, fieldName) {
+    var jsonObj = obj;
+    var myObj = JSON.parse(jsonObj);
+    var fieldNames = fieldName.split('.');
+    var fieldValue = myObj;
+
+    for (var i = 0; i &lt; fieldNames.length; i++) {
+        fieldValue = fieldValue[fieldNames[i]];
+
+        if (fieldValue === undefined || fieldValue === null) {
+            fieldValue = &quot;&quot;;
+            break;
+        }
+    }
+
+    return fieldValue;
+}</mappermodel:Script>
+      <mappermodel:Function name="getFieldValue" return="String">
+        <mappermodel:Argument datatype="String" name="obj"/>
+        <mappermodel:Argument datatype="String" name="fieldName"/>
+      </mappermodel:Function>
+    </mappermodel:Extension>
+  </mappermodel:Extensions>
+</mappermodel:MapperProject>

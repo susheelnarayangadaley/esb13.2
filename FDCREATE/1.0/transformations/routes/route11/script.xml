@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT_1" select="document('OUT_PORT_1')"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <header>
+        <xsl:value-of select="concat('AA.ARRANGEMENT.ACTIVITY,/I/PROCESS/1/0/,',java:_getStringProperty($_TIF_MESSAGE_, 'user'),'/',java:_getStringProperty($_TIF_MESSAGE_, 'pass'),'/',$document_OUT_PORT_1/FDCreate/branchid,',,')"></xsl:value-of>
+      </header>
+      <ARRANGEMENT>
+        <xsl:if test="string-length('NEW')">
+          <value>
+            <xsl:value-of select="'NEW'"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </ARRANGEMENT>
+      <ACTIVITY>
+        <xsl:if test="string-length('DEPOSITS-NEW-ARRANGEMENT')">
+          <value>
+            <xsl:value-of select="'DEPOSITS-NEW-ARRANGEMENT'"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </ACTIVITY>
+      <EFFECTIVE.DATE>
+        <xsl:if test="string-length(AccountDetails/FDDetails/effectiveDate)">
+          <value>
+            <xsl:value-of select="AccountDetails/FDDetails/effectiveDate"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </EFFECTIVE.DATE>
+      <CUSTOMER>
+        <xsl:if test="string-length(AccountDetails/FDDetails/customerID)">
+          <value>
+            <xsl:value-of select="AccountDetails/FDDetails/customerID"></xsl:value-of>
+            <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'ESBX__SYSTEM__USER_DEFINED_DOC_ID', AccountDetails/FDDetails/customerID)"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </CUSTOMER>
+      <PRODUCT>
+        <xsl:variable name="if0">
+          <xsl:choose>
+            <xsl:when test="(translate(AccountDetails/FDDetails/product,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))=('MATURITY')">
+              <xsl:value-of select="'IND.MATURITY.INT'"></xsl:value-of>
+            </xsl:when>
+            <xsl:when test="(translate(AccountDetails/FDDetails/product,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))=('MONTHLY')">
+              <xsl:value-of select="'IND.MONTHLY.INT'"></xsl:value-of>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:if test="string-length($if0)">
+          <value>
+            <xsl:variable name="if1">
+              <xsl:choose>
+                <xsl:when test="(translate(AccountDetails/FDDetails/product,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))=('MATURITY')">
+                  <xsl:value-of select="'IND.MATURITY.INT'"></xsl:value-of>
+                </xsl:when>
+                <xsl:when test="(translate(AccountDetails/FDDetails/product,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))=('MONTHLY')">
+                  <xsl:value-of select="'IND.MONTHLY.INT'"></xsl:value-of>
+                </xsl:when>
+              </xsl:choose>
+            </xsl:variable>
+            <xsl:value-of select="$if1"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </PRODUCT>
+      <CURRENCY>
+        <xsl:if test="string-length(AccountDetails/FDDetails/currency)">
+          <value>
+            <xsl:value-of select="AccountDetails/FDDetails/currency"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </CURRENCY>
+      <PROPERTY>
+        <xsl:if test="string-length('6')">
+          <xsl:attribute name="totalPositions">
+            <xsl:value-of select="'6'"></xsl:value-of>
+          </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="string-length('CUSTOMER')">
+          <value>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'CUSTOMER'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('OFFICERS')">
+          <value>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'OFFICERS'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('COMMITMENT')">
+          <value>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'COMMITMENT'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('RENEWAL')">
+          <value>
+            <xsl:if test="string-length('4')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'4'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'RENEWAL'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('SCHEDULE')">
+          <value>
+            <xsl:if test="string-length('5')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'5'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'SCHEDULE'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('SETTLEMENT')">
+          <value>
+            <xsl:if test="string-length('6')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'6'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'SETTLEMENT'"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </PROPERTY>
+      <FIELD.NAME>
+        <xsl:if test="string-length('6')">
+          <xsl:attribute name="totalPositions">
+            <xsl:value-of select="'6'"></xsl:value-of>
+          </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="string-length('LM.ACCT.TYPE')">
+          <value>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'LM.ACCT.TYPE'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('LM.MODE.OPER:1:1')">
+          <value>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'LM.MODE.OPER:1:1'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('PRIMARY.OFFICER')">
+          <value>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'PRIMARY.OFFICER'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('AMOUNT')">
+          <value>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'AMOUNT'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('CHANGE.PERIOD')">
+          <value>
+            <xsl:if test="string-length('4')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'4'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'CHANGE.PERIOD'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('CHANGE.DATE.TYPE')">
+          <value>
+            <xsl:if test="string-length('4')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'4'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'CHANGE.DATE.TYPE'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('INITIATION.TYPE')">
+          <value>
+            <xsl:if test="string-length('4')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'4'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'INITIATION.TYPE'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('PAYMENT.METHOD')">
+          <value>
+            <xsl:if test="string-length('5')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'5'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'PAYMENT.METHOD'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('PAYIN.ACCOUNT:1:1')">
+          <value>
+            <xsl:if test="string-length('6')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'6'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'PAYIN.ACCOUNT:1:1'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('PAYOUT.ACCOUNT:1:1')">
+          <value>
+            <xsl:if test="string-length('6')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'6'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'PAYOUT.ACCOUNT:1:1'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('PAYOUT.ACCOUNT:2:1')">
+          <value>
+            <xsl:if test="string-length('6')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'6'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'PAYOUT.ACCOUNT:2:1'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('LOAN.REFERRAL:1:1')">
+          <value>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'LOAN.REFERRAL:1:1'"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </FIELD.NAME>
+      <FIELD.VALUE>
+        <xsl:if test="string-length('5')">
+          <xsl:attribute name="totalPositions">
+            <xsl:value-of select="'5'"></xsl:value-of>
+          </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="string-length(translate(AccountDetails/FDDetails/accountType,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))">
+          <value>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="translate(AccountDetails/FDDetails/accountType,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length(translate(AccountDetails/FDDetails/modeOfOperation,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))">
+          <value>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="translate(AccountDetails/FDDetails/modeOfOperation,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length(AccountDetails/FDDetails/introducer)">
+          <value>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="AccountDetails/FDDetails/introducer"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length(AccountDetails/FDDetails/amount)">
+          <value>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="AccountDetails/FDDetails/amount"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('CAPITALISE')">
+          <value>
+            <xsl:if test="string-length('5')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'5'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'CAPITALISE'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length(AccountDetails/FDDetails/debitAccount)">
+          <value>
+            <xsl:if test="string-length('6')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'6'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="AccountDetails/FDDetails/debitAccount"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length(AccountDetails/FDDetails/principalCreditAccount)">
+          <value>
+            <xsl:if test="string-length('6')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'6'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="AccountDetails/FDDetails/principalCreditAccount"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length(AccountDetails/FDDetails/interestCreditAccount)">
+          <value>
+            <xsl:if test="string-length('6')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'6'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="AccountDetails/FDDetails/interestCreditAccount"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length(AccountDetails/FDDetails/changePeriod)">
+          <value>
+            <xsl:if test="string-length('4')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'4'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="AccountDetails/FDDetails/changePeriod"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('PERIOD')">
+          <value>
+            <xsl:if test="string-length('4')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'4'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('2')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'2'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'PERIOD'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length('AUTO')">
+          <value>
+            <xsl:if test="string-length('4')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'4'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="'AUTO'"></xsl:value-of>
+          </value>
+        </xsl:if>
+        <xsl:if test="string-length(AccountDetails/FDDetails/channel)">
+          <value>
+            <xsl:if test="string-length('1')">
+              <xsl:attribute name="position">
+                <xsl:value-of select="'1'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="string-length('3')">
+              <xsl:attribute name="subPosition">
+                <xsl:value-of select="'3'"></xsl:value-of>
+              </xsl:attribute>
+            </xsl:if>
+            <xsl:value-of select="AccountDetails/FDDetails/channel"></xsl:value-of>
+          </value>
+        </xsl:if>
+      </FIELD.VALUE>
+    </root>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

@@ -1,0 +1,17 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="session_id"/>
+        <xs:element type="xs:string" name="response_code"/>
+	<xs:element type="xs:string" name="response_msg"/>
+        <xs:element type="xs:string" name="loan_number"/>
+        <xs:element type="xs:string" name="customer_name"/>
+        <xs:element type="xs:string" name="loan_currency"/>
+        <xs:element type="xs:string" name="first_bill"/>
+        <xs:element type="xs:string" name="amount"/>
+        <xs:element type="xs:string" name="next_pay"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

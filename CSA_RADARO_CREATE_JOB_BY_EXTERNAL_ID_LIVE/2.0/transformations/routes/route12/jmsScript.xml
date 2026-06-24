@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://www.fiorano.com/fesb/activity/DB1/Response" xmlns:MX2MT="http://xml.apache.org/xslt/java" xmlns:QueryGenerator="QueryGenerator" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedjson="nestedjson" xmlns:strings="strings" extension-element-prefixes="datetime set math MX2MT QueryGenerator dateConversion myext nestedjson strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <Text>
+      <xsl:value-of select="myext:replace(string(java:_getText($_TIF_MESSAGE_)),string('[\x00-\x08\x0B\x0C\x0E-\x1F]'),string('g'),string(''))"></xsl:value-of>
+    </Text>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="myext" functions="compute replace replaceLFWithCRLF">
+    <lxslt:script lang="javascript"><![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(".")    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return "There are only " + days + " days remaining to the start of the next millennium."; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}
+
+
+function replaceLFWithCRLF(input) {
+  return input.replace(/\r?\n/g, '\r\n');
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

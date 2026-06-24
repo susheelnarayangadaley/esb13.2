@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Message">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Response">
+					<xs:complexType>
+						<xs:sequence>			
+							<xs:element name="XMLRoot">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ACINFO">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="AB" type="xs:string" />
+													<xs:element name="AN" type="xs:string" />
+													<xs:element name="AS" type="xs:string" />
+													<xs:element name="SHN" type="xs:string" />
+													<xs:element name="CUS" type="xs:string" />
+													<xs:element name="CLC" type="xs:string" />
+													<xs:element name="CUN" type="xs:string"/>
+													<xs:element name="ACT" type="xs:string" />
+													<xs:element name="APP" type="xs:string"/>
+													<xs:element name="ACS" type="xs:string" />
+													<xs:element name="CCY" type="xs:string" />
+													<xs:element name="CED" type="xs:string" />
+													<xs:element name="AI47" type="xs:string" />
+													<xs:element name="AI14" type="xs:string" />
+													<xs:element name="AI17" type="xs:string" />
+													<xs:element name="AI20" type="xs:string" />
+													<xs:element name="AI30" type="xs:string" />
+													<xs:element name="AI46" type="xs:string" />
+													<xs:element name="AI31" type="xs:string" />
+													<xs:element name="AYLSD" type="xs:string"/>
+													<xs:element name="DTEF" type="xs:string" />
+													<xs:element name="DTET" type="xs:string" />
+													<xs:element name="SBAL" type="xs:string" />
+													<xs:element name="TBCK" type="xs:string" />
+													<xs:element name="SSTN" type="xs:string" />
+													<xs:element name="ABAL" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element maxOccurs="unbounded" name="TRINFO">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="CCYP" type="xs:string" />
+													<xs:element name="CEDP" type="xs:string" />
+													<xs:element name="TCD" type="xs:string" />
+													<xs:element name="TCM" type="xs:string" />
+													<xs:element name="PTN" type="xs:string" />
+													<xs:element name="NEGP" type="xs:string" />
+													<xs:element name="AMAP" type="xs:string" />
+													<xs:element name="POD" type="xs:string" />
+													<xs:element name="BRNM" type="xs:string" />
+													<xs:element name="PBR" type="xs:string" />
+													<xs:element name="PSQ" type="xs:string" />
+													<xs:element name="VFR" type="xs:string" />
+													<xs:element name="BRND" type="xs:string" />
+													<xs:element name="DRF" type="xs:string" />
+													<xs:element name="SRC" type="xs:string"/>
+													<xs:element name="UC1" type="xs:string"/>
+													<xs:element name="UC2" type="xs:string"/>
+													<xs:element name="NPE" type="xs:string" />
+													<xs:element name="STN" type="xs:string" />
+													<xs:element name="YNAR" type="xs:string" />
+													<xs:element name="NR1" type="xs:string" />
+													<xs:element name="NR2" type="xs:string" />
+													<xs:element name="NR3" type="xs:string" />
+													<xs:element name="NR4" type="xs:string" />
+													<xs:element name="RBAL" type="xs:string" />
+													<xs:element name="OCCY" type="xs:string"/>
+													<xs:element name="OCED" type="xs:string" />
+													<xs:element name="OAMA" type="xs:string" />
+													<xs:element name="A001" type="xs:string"/>
+													<xs:element name="A002" type="xs:string"/>
+													<xs:element name="A003" type="xs:string"/>
+													<xs:element name="A004" type="xs:string"/>
+													<xs:element name="A005" type="xs:string"/>
+													<xs:element name="A006" type="xs:string"/>
+													<xs:element name="EVNK" type="xs:string" />
+													<xs:element name="PSQ7" type="xs:string" />
+													<xs:element name="AVD" type="xs:string" />
+													<xs:element name="TCDD" type="xs:string" />
+													<xs:element name="TSTP" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:tns="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In">
+    <xsd:element name="COMPLEX">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="query" type="xsd:string"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

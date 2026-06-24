@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/fault" xmlns:ns1="http://www.fiorano.com/services/rest" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:decodeKHQR="http://xml.apache.org/xslt/java" xmlns:getValue="http://xml.apache.org/xslt/java" xmlns:getValueDouble="http://xml.apache.org/xslt/java" xmlns:getValueStr="http://xml.apache.org/xslt/java" xmlns:jsonToOfs="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:obOfsConvert="http://xml.apache.org/xslt/java" xmlns:obOfsResponse="http://xml.apache.org/xslt/java" xmlns:obOfsResponseObjs="http://xml.apache.org/xslt/java" xmlns:ofsConverterRequest="http://xml.apache.org/xslt/java" xmlns:ofsConverterResponse="http://xml.apache.org/xslt/java" xmlns:ofsConverterResponseCode="http://xml.apache.org/xslt/java" xmlns:ofsToJson="http://xml.apache.org/xslt/java" xmlns:strings="strings" xmlns:toDecimal="http://xml.apache.org/xslt/java" extension-element-prefixes="datetime set math Trim dateConversion decodeKHQR getValue getValueDouble getValueStr jsonToOfs myext obOfsConvert obOfsResponse obOfsResponseObjs ofsConverterRequest ofsConverterResponse ofsConverterResponseCode ofsToJson strings toDecimal">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_ON_EXCEPTION" select="document('ON_EXCEPTION')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Responses>
+      <Response>
+        <Representations>
+          <Representation>
+            <Element><xsl:value-of select="'{&#xd;&#xa;  &quot;msg1&quot;: &quot;'"></xsl:value-of>
+<xsl:variable name="if0">
+	<xsl:choose>
+		<xsl:when test="contains($document_ON_EXCEPTION/ns2:Error/errorMessage,'java.util.concurrent.TimeoutException')">
+			<xsl:value-of select="'Error timeout exception in core module'"></xsl:value-of>
+		</xsl:when>
+		<xsl:when test="contains($document_ON_EXCEPTION/ns2:Error/errorMessage,'[EB-OPERATION.INVOCATION.ERROR]')">
+			<xsl:value-of select="'Connection close : java.io.IOException: Stream Closed'"></xsl:value-of>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="'Core module runtime exception'"></xsl:value-of>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:variable>
+<xsl:value-of select="$if0"></xsl:value-of>
+<xsl:value-of select="'&quot;}'"></xsl:value-of>
+<!--
+              <xsl:value-of disable-output-escaping="no" select="$document_ON_EXCEPTION/ns2:Error/errorMessage"></xsl:value-of>--></Element>
+          </Representation>
+        </Representations>
+      </Response>
+    </ns1:Responses>
+  </xsl:template>
+</xsl:stylesheet>

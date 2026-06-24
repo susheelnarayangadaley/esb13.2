@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns5="http://www.seylan.lk/AccountBalanceInquiryPWM" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:ns4="http://www.fiorano.com/services/rest" xmlns:ns3="http://www.seylan.lk/AccountTransactionHistoryPWM" xmlns:ns1="http://www.fiorano.com/Seylan/Account_Balance_Inquiry" xmlns:CEFT_JPAY="CEFT_JPAY" xmlns:CardWS="CardWS" xmlns:CenturyDateConverter="CenturyDateConverter" xmlns:Currency="Currency" xmlns:DateConversion="DateConversion" xmlns:DateTime="DateTime" xmlns:Decimals="Decimals" xmlns:ENIQR="ENIQR" xmlns:ESB="ESB" xmlns:RSA="http://xml.apache.org/xslt/java" xmlns:RateConverter="RateConverter" xmlns:SHA256="http://xml.apache.org/xslt/java" xmlns:Text="Text" xmlns:TimeConversion="TimeConversion" xmlns:Utility="Utility" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:str="str" xmlns:strings="strings" extension-element-prefixes="datetime set math CEFT_JPAY CardWS CenturyDateConverter Currency DateConversion DateTime Decimals ENIQR ESB RSA RateConverter SHA256 Text TimeConversion Utility dateConversion myext str strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_Account_Balance__GET__Response" select="document('Account_Balance__GET__Response')"></xsl:variable>
+  <xsl:template match="/">
+    <ns4:Responses>
+      <Response>
+        <xsl:attribute name="Status">
+          <xsl:value-of select="'200'"></xsl:value-of>
+        </xsl:attribute>
+        <Representations>
+          <Representation>
+            <xsl:attribute name="MediaType">
+              <xsl:value-of select="'application/xml'"></xsl:value-of>
+            </xsl:attribute>
+            <Element>
+              <ns5:AccountBalanceInquiryPWM_Response>
+                <ns5:Status>
+                  <ns5:Transaction_reference>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Status/ns1:Transaction_Reference"></xsl:value-of>
+                  </ns5:Transaction_reference>
+                  <ns5:Timestamp>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Status/ns1:Timestamp"></xsl:value-of>
+                  </ns5:Timestamp>
+                  <ns5:Code>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Status/ns1:Code"></xsl:value-of>
+                  </ns5:Code>
+                  <ns5:Message>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Status/ns1:Message"></xsl:value-of>
+                  </ns5:Message>
+                  <ns5:Description>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Status/ns1:Description"></xsl:value-of>
+                  </ns5:Description>
+                </ns5:Status>
+                <ns5:Account>
+                  <ns5:Account_branch>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_branch"></xsl:value-of>
+                  </ns5:Account_branch>
+                  <ns5:Basic_part_of_account_number>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Basic_part_of_account_number"></xsl:value-of>
+                  </ns5:Basic_part_of_account_number>
+                  <ns5:Account_suffix>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_suffix"></xsl:value-of>
+                  </ns5:Account_suffix>
+                  <ns5:Account_short_name>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_short_name"></xsl:value-of>
+                  </ns5:Account_short_name>
+                  <ns5:Arabic_short_name>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Arabic_short_name"></xsl:value-of>
+                  </ns5:Arabic_short_name>
+                  <ns5:Customer_mnemonic>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Customer_mnemonic"></xsl:value-of>
+                  </ns5:Customer_mnemonic>
+                  <ns5:Customer_location>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Customer_location"></xsl:value-of>
+                  </ns5:Customer_location>
+                  <ns5:Customer_full_name>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Customer_full_name"></xsl:value-of>
+                  </ns5:Customer_full_name>
+                  <ns5:Arabic_customer_full_name>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Arabic_customer_full_name"></xsl:value-of>
+                  </ns5:Arabic_customer_full_name>
+                  <ns5:Account_Type>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_Type"></xsl:value-of>
+                  </ns5:Account_Type>
+                  <ns5:Owning_application_code>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Owning_application_code"></xsl:value-of>
+                  </ns5:Owning_application_code>
+                  <ns5:Account_structure>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_structure"></xsl:value-of>
+                  </ns5:Account_structure>
+                  <ns5:Currency_mnemonic>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Currency_mnemonic"></xsl:value-of>
+                  </ns5:Currency_mnemonic>
+                  <ns5:Currency_edit_field>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Currency_edit_field"></xsl:value-of>
+                  </ns5:Currency_edit_field>
+                  <ns5:Internal_non_customer_account>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Internal_non_customer_account"></xsl:value-of>
+                  </ns5:Internal_non_customer_account>
+                  <ns5:Deceased_or_liquidated>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Deceased_or_liquidated"></xsl:value-of>
+                  </ns5:Deceased_or_liquidated>
+                  <ns5:Account_status_Blocked>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_status_Blocked"></xsl:value-of>
+                  </ns5:Account_status_Blocked>
+                  <ns5:Account_status_Inactive>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_status_Inactive"></xsl:value-of>
+                  </ns5:Account_status_Inactive>
+                  <ns5:Account_closing>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_closing"></xsl:value-of>
+                  </ns5:Account_closing>
+                  <ns5:Overdraft_limit>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Overdraft_limit"></xsl:value-of>
+                  </ns5:Overdraft_limit>
+                  <ns5:Limit_expiry_date>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Limit_expiry_date"></xsl:value-of>
+                  </ns5:Limit_expiry_date>
+                  <ns5:Overdraft_expired>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Overdraft_expired"></xsl:value-of>
+                  </ns5:Overdraft_expired>
+                  <ns5:Reserved_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Reserved_balance"></xsl:value-of>
+                  </ns5:Reserved_balance>
+                  <ns5:Ledger_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Ledger_balance"></xsl:value-of>
+                  </ns5:Ledger_balance>
+                  <ns5:Status_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Status_balance"></xsl:value-of>
+                  </ns5:Status_balance>
+                  <ns5:Previous_cleared_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Previous_cleared_balance"></xsl:value-of>
+                  </ns5:Previous_cleared_balance>
+                  <ns5:Current_cleared_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Current_cleared_balance"></xsl:value-of>
+                  </ns5:Current_cleared_balance>
+                  <ns5:Current_available_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Current_available_balance"></xsl:value-of>
+                  </ns5:Current_available_balance>
+                  <ns5:Is_Current_available_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Is_Current_available_balance"></xsl:value-of>
+                  </ns5:Is_Current_available_balance>
+                  <ns5:Later_available_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Later_available_balance"></xsl:value-of>
+                  </ns5:Later_available_balance>
+                  <ns5:Is_Later_available_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Is_Later_available_balance"></xsl:value-of>
+                  </ns5:Is_Later_available_balance>
+                  <ns5:Next_available_balance_1>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Next_available_balance_1"></xsl:value-of>
+                  </ns5:Next_available_balance_1>
+                  <ns5:Next_available_balance_2>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Next_available_balance_2"></xsl:value-of>
+                  </ns5:Next_available_balance_2>
+                  <ns5:Is_Next_available_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Is_Next_available_balance"></xsl:value-of>
+                  </ns5:Is_Next_available_balance>
+                  <ns5:Forward_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Forward_balance"></xsl:value-of>
+                  </ns5:Forward_balance>
+                  <ns5:Is_Forward_balance>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Is_Forward_balance"></xsl:value-of>
+                  </ns5:Is_Forward_balance>
+                  <ns5:Clearing_today>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Clearing_today"></xsl:value-of>
+                  </ns5:Clearing_today>
+                  <ns5:Clearing_later_today>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Clearing_later_today"></xsl:value-of>
+                  </ns5:Clearing_later_today>
+                  <ns5:Clearing_tomorrow>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Clearing_tomorrow"></xsl:value-of>
+                  </ns5:Clearing_tomorrow>
+                  <ns5:Clearing_after_tomorrow>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Clearing_after_tomorrow"></xsl:value-of>
+                  </ns5:Clearing_after_tomorrow>
+                  <ns5:Shadow_debits>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Shadow_debits"></xsl:value-of>
+                  </ns5:Shadow_debits>
+                  <ns5:Shadow_credits>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Shadow_credits"></xsl:value-of>
+                  </ns5:Shadow_credits>
+                  <ns5:Shadow_adjustments>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Shadow_adjustments"></xsl:value-of>
+                  </ns5:Shadow_adjustments>
+                  <ns5:OD_against_uc_cheques>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:OD_against_uc_cheques"></xsl:value-of>
+                  </ns5:OD_against_uc_cheques>
+                  <ns5:Susp_OD_UC_cheques>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Susp_OD_UC_cheques"></xsl:value-of>
+                  </ns5:Susp_OD_UC_cheques>
+                  <ns5:Notice_AC_special_condition>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Notice_AC_special_condition"></xsl:value-of>
+                  </ns5:Notice_AC_special_condition>
+                  <ns5:Withdrawals_maturing_today>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Withdrawals_maturing_today"></xsl:value-of>
+                  </ns5:Withdrawals_maturing_today>
+                  <ns5:Closing_withdrawal>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Closing_withdrawal"></xsl:value-of>
+                  </ns5:Closing_withdrawal>
+                  <ns5:Withdrawals_maturing_tomorrow>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Withdrawals_maturing_tomorrow"></xsl:value-of>
+                  </ns5:Withdrawals_maturing_tomorrow>
+                  <ns5:Closing_withdrawal_1>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Closing_withdrawal_1"></xsl:value-of>
+                  </ns5:Closing_withdrawal_1>
+                  <ns5:Withdrawals_maturing_after_tomorrow>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Withdrawals_maturing_after_tomorrow"></xsl:value-of>
+                  </ns5:Withdrawals_maturing_after_tomorrow>
+                  <ns5:Closing_withdrawal_2>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Closing_withdrawal_2"></xsl:value-of>
+                  </ns5:Closing_withdrawal_2>
+                  <ns5:Hold_queued_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Hold_queued_amount"></xsl:value-of>
+                  </ns5:Hold_queued_amount>
+                  <ns5:Customer_Group>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Customer_Group"></xsl:value-of>
+                  </ns5:Customer_Group>
+                  <ns5:Real_time_balance_order>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Real_time_balance_order"></xsl:value-of>
+                  </ns5:Real_time_balance_order>
+                  <ns5:Ext_Account_No>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Ext_Account_No"></xsl:value-of>
+                  </ns5:Ext_Account_No>
+                  <ns5:Edited_Ext_Account_No>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Edited_Ext_Account_No"></xsl:value-of>
+                  </ns5:Edited_Ext_Account_No>
+                  <ns5:International_bank_account>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:International_bank_account"></xsl:value-of>
+                  </ns5:International_bank_account>
+                  <ns5:Edited_international_bank>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Edited_international_bank"></xsl:value-of>
+                  </ns5:Edited_international_bank>
+                  <ns5:Date_account_opened>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Date_account_opened"></xsl:value-of>
+                  </ns5:Date_account_opened>
+                  <ns5:Date_account_closed>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Date_account_closed"></xsl:value-of>
+                  </ns5:Date_account_closed>
+                  <ns5:Customer_type>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Customer_type"></xsl:value-of>
+                  </ns5:Customer_type>
+                  <ns5:SCL_Credit_authorized_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:SCL_Credit_authorized_amount"></xsl:value-of>
+                  </ns5:SCL_Credit_authorized_amount>
+                  <ns5:SCL_Credit_not_authorized_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:SCL_Credit_not_authorized_amount"></xsl:value-of>
+                  </ns5:SCL_Credit_not_authorized_amount>
+                  <ns5:SCL_Credit_returned_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:SCL_Credit_returned_amount"></xsl:value-of>
+                  </ns5:SCL_Credit_returned_amount>
+                  <ns5:SCL_Debit_authorized_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:SCL_Debit_authorized_amount"></xsl:value-of>
+                  </ns5:SCL_Debit_authorized_amount>
+                  <ns5:SCL_Debit_not_authorized_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:SCL_Debit_not_authorized_amount"></xsl:value-of>
+                  </ns5:SCL_Debit_not_authorized_amount>
+                  <ns5:OCL_Unrealized_cheques_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:OCL_Unrealized_cheques_amount"></xsl:value-of>
+                  </ns5:OCL_Unrealized_cheques_amount>
+                  <ns5:OCL_Clearing_today_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:OCL_Clearing_today_amount"></xsl:value-of>
+                  </ns5:OCL_Clearing_today_amount>
+                  <ns5:OCL_Purchased_cheques_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:OCL_Purchased_cheques_amount"></xsl:value-of>
+                  </ns5:OCL_Purchased_cheques_amount>
+                  <ns5:OCL_Returned_cheques_amount>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:OCL_Returned_cheques_amount"></xsl:value-of>
+                  </ns5:OCL_Returned_cheques_amount>
+                  <ns5:Calculated_credit_interest>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Calculated_credit_interest"></xsl:value-of>
+                  </ns5:Calculated_credit_interest>
+                  <ns5:Net_interest_amount_credit>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Net_interest_amount_credit"></xsl:value-of>
+                  </ns5:Net_interest_amount_credit>
+                  <ns5:Net_interest_accrued_credit>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Net_interest_accrued_credit"></xsl:value-of>
+                  </ns5:Net_interest_accrued_credit>
+                  <ns5:Tax_amount_1_credit>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Tax_amount_1_credit"></xsl:value-of>
+                  </ns5:Tax_amount_1_credit>
+                  <ns5:Calculated_debit_interest>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Calculated_debit_interest"></xsl:value-of>
+                  </ns5:Calculated_debit_interest>
+                  <ns5:Net_interest_amount_debit>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Net_interest_amount_debit"></xsl:value-of>
+                  </ns5:Net_interest_amount_debit>
+                  <ns5:Net_interest_accrued_debit>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Net_interest_accrued_debit"></xsl:value-of>
+                  </ns5:Net_interest_accrued_debit>
+                  <ns5:Tax_amount_1_debit>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Tax_amount_1_debit"></xsl:value-of>
+                  </ns5:Tax_amount_1_debit>
+                  <ns5:Account_dormant>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_dormant"></xsl:value-of>
+                  </ns5:Account_dormant>
+                  <ns5:Account_freezed>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_freezed"></xsl:value-of>
+                  </ns5:Account_freezed>
+                  <ns5:Account_freezed_manually>
+                    <xsl:value-of select="$document_Account_Balance__GET__Response/ns4:Responses/Response/Representations/Representation/Element/ns1:Account_Balance_Inquiry/ns1:Account/ns1:Account_freezed_manually"></xsl:value-of>
+                  </ns5:Account_freezed_manually>
+                </ns5:Account>
+              </ns5:AccountBalanceInquiryPWM_Response>
+            </Element>
+          </Representation>
+        </Representations>
+      </Response>
+    </ns4:Responses>
+  </xsl:template>
+</xsl:stylesheet>

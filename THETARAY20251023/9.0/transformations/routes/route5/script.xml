@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.fiorano.com/SOA/bc/cache" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/services/rest" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext nestedJsonParser strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Request>
+      <ResourceURL>
+        <xsl:value-of select="'https://apps-pre-screening.illicocash.thetaray.cloud/screening/transaction/generic/check'"></xsl:value-of>
+      </ResourceURL>
+      <RequestParameters>
+        <Authorization>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Cache/ns2:CacheEntry/ns2:Data/ns2:token"></xsl:value-of>
+        </Authorization>
+      </RequestParameters>
+      <Representations>
+        <Representation>
+          <Element>
+            <xsl:value-of disable-output-escaping="no" select="java:_getStringProperty($_TIF_MESSAGE_, 'genericCheck')"></xsl:value-of>
+          </Element>
+        </Representation>
+      </Representations>
+    </ns1:Request>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

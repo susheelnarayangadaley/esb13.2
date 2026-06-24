@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="requestId" type="xs:string"/>
+
+                <xs:element name="requestData">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:string"/>
+                            <xs:element name="type" type="xs:string"/>
+                            <xs:element name="fullName" type="xs:string"/>
+                            <xs:element name="sex" type="xs:string"/>
+                            
+                            <xs:element name="nationalities">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nationality" type="xs:string" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="dateOfBirth" type="xs:date"/>
+                            <xs:element name="placesOfBirth" type="xs:string"/>
+                            
+                            <xs:element name="identityDocuments">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="identityDocument" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="number" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="addresses">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="address" type="xs:string" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="profile" type="xs:string"/>
+                <xs:element name="SaveForRescreening" type="xs:boolean"/>
+                <xs:element name="rescreeningProfiles" type="xs:string" minOccurs="0" nillable="true"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

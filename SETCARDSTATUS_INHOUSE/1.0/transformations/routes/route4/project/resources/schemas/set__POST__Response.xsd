@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:fns="http://www.fiorano.com/fesb/activity/ISOMessage" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/ISOMessage">
+   <xsd:element name="Context">
+      <xsd:complexType>
+         <xsd:sequence>
+           <xsd:element type="xsd:string" name="cardUID"/>
+                  <xsd:element type="xsd:string" name="status"/>
+             <xsd:element type="xsd:string" name="isUpdated"/>
+                     <xsd:element type="xsd:string" name="sessionId"/>
+           <xsd:element type="xsd:string" name="nextChallenge"/>
+               <xsd:element type="xsd:string" name="password"/>
+               <xsd:element type="xsd:string" name="encryPassword"/>
+                               <xsd:element type="xsd:string" name="token"/>
+                   <xsd:element type="xsd:string" name="isNICard"/>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

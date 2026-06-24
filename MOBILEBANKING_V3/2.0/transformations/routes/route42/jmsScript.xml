@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:AppendZero="AppendZero" xmlns:EnDe="http://xml.apache.org/xslt/java" xmlns:MD5Hex="http://xml.apache.org/xslt/java" xmlns:Md5UniCode="http://xml.apache.org/xslt/java" xmlns:Remove="Remove" xmlns:ReplaceText="ReplaceText" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:replace="replace" xmlns:replaceStr="http://xml.apache.org/xslt/java" xmlns:rounding="rounding" xmlns:sringindex="sringindex" xmlns:strings="strings" xmlns:stringtext="stringtext" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math AppendZero EnDe MD5Hex Md5UniCode Remove ReplaceText StringLength dateConversion myext replace replaceStr rounding sringindex strings stringtext truncateString">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <Text>
+      <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'mgsid', myext:replace(string(java:_getStringProperty($_TIF_MESSAGE_, 'mgsidbody')),string('      &lt;ValueDate/&gt;&#xd;&#xa;      &lt;MoneyOut/&gt;&#xd;&#xa;      &lt;MoneyIn/&gt;&#xd;&#xa;      &lt;Balance/&gt;&#xd;&#xa;    &lt;/TxnDetail&gt;&#xd;&#xa;    &lt;TxnDetail&gt;&#xd;&#xa;      &lt;TxnDate/&gt;&#xd;&#xa;      &lt;TxnRef/&gt;&#xd;&#xa;      &lt;TxnContent/&gt;'),string('g'),string(null)))"></xsl:value-of>
+    </Text>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="myext" functions="replace">
+    <lxslt:script lang="javascript"><![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(".")    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return "There are only " + days + " days remaining to the start of the next millennium."; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

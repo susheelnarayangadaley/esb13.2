@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.webserviceconsumer.model.WSInvokerPM"> 
+  <void property="WSDLURL"> 
+   <string>https://utap.cambodiapostbank.com.kh:7002/CPB.MB.TWS/services?wsdl</string> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1200</int> 
+  </void> 
+  <void property="connectionConfiguration"> 
+   <void property="password" isEncrypted="true"> 
+    <string>zcC6SXzF+bh4BGN4YJKKfw==</string> 
+   </void> 
+  </void> 
+  <void property="endpointAddress"> 
+   <string>https://utap.cambodiapostbank.com.kh:7002/CPB.MB.TWS/services</string> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>4</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>2</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+         <void property="retryCount"> 
+          <int>10</int> 
+         </void> 
+         <void property="retryInterval"> 
+          <long>300000</long> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>3</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>7</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>7</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="jndiConfiguration"> 
+   <void property="password" isEncrypted="true"> 
+    <string>CVuEpOIpQJAIVeUQIs7kBQ==</string> 
+   </void> 
+  </void> 
+  <void property="operationInputParam"> 
+   <string>input</string> 
+  </void> 
+  <void property="operationOutputParam"> 
+   <string>output</string> 
+  </void> 
+  <void property="operationProps"> 
+   <void method="put"> 
+    <string>TogetCustomerInformation</string> 
+    <object class="com.fiorano.services.webserviceconsumer.model.WSDLOperationConfig"> 
+     <void property="operationInputParam"> 
+      <string>input</string> 
+     </void> 
+     <void property="operationName"> 
+      <string>TogetCustomerInformation</string> 
+     </void> 
+     <void property="operationOutputParam"> 
+      <string>output</string> 
+     </void> 
+     <void property="portPrefixName"> 
+      <string>TogetCustomerInformation</string> 
+     </void> 
+     <void property="soapAction"> 
+      <string></string> 
+     </void> 
+     <void property="soapBodyNS"> 
+      <string>http://schemas.xmlsoap.org/wsdl/soap/</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>ToGetExchangeRate</string> 
+    <object class="com.fiorano.services.webserviceconsumer.model.WSDLOperationConfig"> 
+     <void property="operationInputParam"> 
+      <string>input</string> 
+     </void> 
+     <void property="operationName"> 
+      <string>ToGetExchangeRate</string> 
+     </void> 
+     <void property="operationOutputParam"> 
+      <string>output</string> 
+     </void> 
+     <void property="portPrefixName"> 
+      <string>ToGetExchangeRate</string> 
+     </void> 
+     <void property="soapAction"> 
+      <string></string> 
+     </void> 
+     <void property="soapBodyNS"> 
+      <string>http://schemas.xmlsoap.org/wsdl/soap/</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>ToGetAccountList</string> 
+    <object class="com.fiorano.services.webserviceconsumer.model.WSDLOperationConfig"> 
+     <void property="operationInputParam"> 
+      <string>input</string> 
+     </void> 
+     <void property="operationName"> 
+      <string>ToGetAccountList</string> 
+     </void> 
+     <void property="operationOutputParam"> 
+      <string>output</string> 
+     </void> 
+     <void property="portPrefixName"> 
+      <string>ToGetAccountList</string> 
+     </void> 
+     <void property="soapAction"> 
+      <string></string> 
+     </void> 
+     <void property="soapBodyNS"> 
+      <string>http://schemas.xmlsoap.org/wsdl/soap/</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>ToGetAccountInfo</string> 
+    <object class="com.fiorano.services.webserviceconsumer.model.WSDLOperationConfig"> 
+     <void property="operationInputParam"> 
+      <string>input</string> 
+     </void> 
+     <void property="operationName"> 
+      <string>ToGetAccountInfo</string> 
+     </void> 
+     <void property="operationOutputParam"> 
+      <string>output</string> 
+     </void> 
+     <void property="portPrefixName"> 
+      <string>ToGetAccountInfo</string> 
+     </void> 
+     <void property="soapAction"> 
+      <string></string> 
+     </void> 
+     <void property="soapBodyNS"> 
+      <string>http://schemas.xmlsoap.org/wsdl/soap/</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="portName"> 
+   <string>T24WebServicesImplPort</string> 
+  </void> 
+  <void property="service"> 
+   <string>{http://temenos.com/DEVMB3}T24WebServicesImplService</string> 
+  </void> 
+  <void property="soapBodyNS"> 
+   <string>http://schemas.xmlsoap.org/wsdl/soap/</string> 
+  </void> 
+  <void property="sslConfiguration"> 
+   <void property="acceptServerCertificate"> 
+    <boolean>true</boolean> 
+   </void> 
+   <void property="ignoreHostnameMismatch"> 
+    <boolean>true</boolean> 
+   </void> 
+   <void property="keyClientPassword" isEncrypted="true"> 
+    <string></string> 
+   </void> 
+   <void property="keyStoreLocation"> 
+    <string></string> 
+   </void> 
+   <void property="keyStorePassword" isEncrypted="true"> 
+    <string></string> 
+   </void> 
+   <void property="trustStoreLocation"> 
+    <string></string> 
+   </void> 
+   <void property="trustStorePassword" isEncrypted="true"> 
+    <string></string> 
+   </void> 
+   <void property="useSSL"> 
+    <boolean>true</boolean> 
+   </void> 
+  </void> 
+  <void property="wsdlFile"> 
+   <object class="java.io.File"> 
+    <string></string> 
+   </object> 
+  </void> 
+  <void property="wsdlServiceConfiguration"> 
+   <void property="configName"> 
+    <string>MBUAT</string> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

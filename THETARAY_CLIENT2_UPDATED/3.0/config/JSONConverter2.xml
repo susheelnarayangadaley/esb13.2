@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.edbc.jsonconverter.model.JSONConverterPM"> 
+  <void property="JSON2XML"> 
+   <boolean>false</boolean> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1300</int> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="inputSchemaDefinition"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>request</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&#13;
+           elementFormDefault=&quot;qualified&quot;&#13;
+           attributeFormDefault=&quot;unqualified&quot;&gt;&#13;
+&lt;!-- Root element --&gt;&#13;
+&lt;xs:element name=&quot;request&quot;&gt;&#13;
+&lt;xs:complexType&gt;&#13;
+&lt;xs:sequence&gt;&#13;
+&lt;xs:element name=&quot;requestId&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;!-- requestData block --&gt;&#13;
+&lt;xs:element name=&quot;requestData&quot;&gt;&#13;
+&lt;xs:complexType&gt;&#13;
+&lt;xs:sequence&gt;&#13;
+&lt;xs:element name=&quot;id&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;xs:element name=&quot;type&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;xs:element name=&quot;fullName&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;xs:element name=&quot;sex&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;!-- nationalities with class=&quot;array&quot; --&gt;&#13;
+&lt;xs:element name=&quot;nationalities&quot;&gt;&#13;
+&lt;xs:complexType&gt;&#13;
+&lt;xs:sequence&gt;&#13;
+&lt;xs:element name=&quot;item&quot; type=&quot;xs:string&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot;/&gt;&#13;
+&lt;/xs:sequence&gt;&#13;
+&lt;xs:attribute name=&quot;class&quot; type=&quot;xs:string&quot; fixed=&quot;array&quot;/&gt;&#13;
+&lt;/xs:complexType&gt;&#13;
+&lt;/xs:element&gt;&#13;
+&lt;xs:element name=&quot;dateOfBirth&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;xs:element name=&quot;placesOfBirth&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;!-- identityDocuments with class=&quot;array&quot; --&gt;&#13;
+&lt;xs:element name=&quot;identityDocuments&quot;&gt;&#13;
+&lt;xs:complexType&gt;&#13;
+&lt;xs:sequence&gt;&#13;
+&lt;xs:element name=&quot;item&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot;&gt;&#13;
+&lt;xs:complexType&gt;&#13;
+&lt;xs:sequence&gt;&#13;
+&lt;xs:element name=&quot;number&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;/xs:sequence&gt;&#13;
+&lt;/xs:complexType&gt;&#13;
+&lt;/xs:element&gt;&#13;
+&lt;/xs:sequence&gt;&#13;
+&lt;xs:attribute name=&quot;class&quot; type=&quot;xs:string&quot; fixed=&quot;array&quot;/&gt;&#13;
+&lt;/xs:complexType&gt;&#13;
+&lt;/xs:element&gt;&#13;
+&lt;!-- addresses with class=&quot;array&quot; --&gt;&#13;
+&lt;xs:element name=&quot;addresses&quot;&gt;&#13;
+&lt;xs:complexType&gt;&#13;
+&lt;xs:sequence&gt;&#13;
+&lt;xs:element name=&quot;item&quot; type=&quot;xs:string&quot; minOccurs=&quot;1&quot; maxOccurs=&quot;unbounded&quot;/&gt;&#13;
+&lt;/xs:sequence&gt;&#13;
+&lt;xs:attribute name=&quot;class&quot; type=&quot;xs:string&quot; fixed=&quot;array&quot;/&gt;&#13;
+&lt;/xs:complexType&gt;&#13;
+&lt;/xs:element&gt;&#13;
+&lt;/xs:sequence&gt;&#13;
+&lt;/xs:complexType&gt;&#13;
+&lt;/xs:element&gt;&#13;
+&lt;xs:element name=&quot;profile&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;xs:element name=&quot;SaveForRescreening&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;xs:element name=&quot;rescreeningProfiles&quot; nillable=&quot;true&quot; minOccurs=&quot;0&quot; type=&quot;xs:string&quot;/&gt;&#13;
+&lt;/xs:sequence&gt;&#13;
+&lt;/xs:complexType&gt;&#13;
+&lt;/xs:element&gt;&#13;
+&lt;/xs:schema&gt;</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string></string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="skipRootElement"> 
+   <boolean>true</boolean> 
+  </void> 
+ </object> 
+</java> 

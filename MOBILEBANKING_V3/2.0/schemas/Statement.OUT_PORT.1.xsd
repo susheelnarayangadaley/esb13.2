@@ -1,0 +1,44 @@
+<xsd:schema xmlns:tns="http://temenos.com/CPBAPISTMTENTBOOK" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://temenos.com/CPBAPISTMTENTBOOK" targetNamespace="http://temenos.com/CPBAPISTMTENTBOOK">
+    <xsd:complexType name="CPBAPISTMTENTBOOKType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="HDRLINE11" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="HDRLINE21" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="HDRLINE22" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="HDRLINE3" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DACC" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CUS" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SPACE" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="PRTNM" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CHKCCY" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="BFWD" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="OPENINGBALANCE" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DBAL" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ClosingBalance" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ZERORECORDS" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="gCPBAPISTMTENTBOOKDetailType">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCPBAPISTMTENTBOOKDetailType">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element minOccurs="0" name="Account" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="BookingDate" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="BookDate" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="Reference" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="Description" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="Narrative" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="ValueDate" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="Debit" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="Credit" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="ClosingBalance" type="xsd:string"/>
+                                </xsd:sequence>
+                                <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

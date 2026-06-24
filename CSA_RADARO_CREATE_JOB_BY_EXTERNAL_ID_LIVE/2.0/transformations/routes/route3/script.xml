@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns5="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/DB1/Request" xmlns:ns3="http://www.fiorano.com/fesb/activity/fault" xmlns:ns1="http://www.fiorano.com/fesb/activity/DB1/Response" xmlns:api="api" xmlns:apipicker="apipicker" xmlns:dateConversion="dateConversion" xmlns:md5="md5" xmlns:myext="myext" xmlns:pt="pt" xmlns:strings="strings" xmlns:util="util" extension-element-prefixes="datetime set math api apipicker dateConversion md5 myext pt strings util">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_ON_EXCEPTION" select="document('ON_EXCEPTION')"></xsl:variable>
+  <xsl:template match="/">
+    <ns2:SQL_CFG_1>
+      <ns2:Update_Status2>
+        <ns2:IMSGID>
+          <xsl:value-of select="ns1:AppCtx/ns1:Infoplus_Select/ns1:id"></xsl:value-of>
+        </ns2:IMSGID>
+        <ns2:IRADARO_STATUS>
+          <xsl:value-of select="'ERROR'"></xsl:value-of>
+        </ns2:IRADARO_STATUS>
+        <ns2:IRADARO_ERROR_MSG>
+          <xsl:value-of select="$document_ON_EXCEPTION/ns3:Error/errorMessage"></xsl:value-of>
+        </ns2:IRADARO_ERROR_MSG>
+      </ns2:Update_Status2>
+    </ns2:SQL_CFG_1>
+  </xsl:template>
+</xsl:stylesheet>

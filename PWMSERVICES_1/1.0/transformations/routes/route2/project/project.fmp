@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="AppContext"/>
+    <mappermodel:Structure duplicates="" filePath="OutputPort.xsd" mime="XSD" name="OutputPort" rootName="{http://www.fiorano.com/SeylanESB}Output"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Account_Balance__GET__GET__Request0.xsd" mime="XSD" name="Account_Balance__GET__Request" rootName="{http://www.fiorano.com/services/rest}Request"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Account_Balance__GET__Request:0,Request:0,RequestParameters:0,URN:0" x="256" y="20">
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AppContext:0,Transaction_ref:0" x="20" y="20">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Account_Balance__GET__Request:0,Request:0,RequestParameters:0,PostingBatch:0" x="251" y="20">
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AppContext:0,Posting_batch:0" x="20" y="20">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Account_Balance__GET__Request:0,Request:0,RequestParameters:0,AccountCategory:0" x="272" y="20">
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AppContext:0,Account_category:0" x="20" y="20">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Account_Balance__GET__Request:0,Request:0,RequestParameters:0,AccountNumber:0" x="268" y="20">
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,AppContext:0,Account_number:0" x="20" y="20">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

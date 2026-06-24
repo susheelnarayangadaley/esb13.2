@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="Radaro" x="526" y="111"/>
+    <service-instance name="XML2JSONConverter" x="363" y="116"/>
+    <service-instance name="DBSelect" x="123" y="117"/>
+    <service-instance name="DB1" x="792" y="113"/>
+    <service-instance name="log" x="244" y="31"/>
+    <service-instance name="XMLSplitter1" x="242" y="216"/>
+    <service-instance name="Display1" x="705" y="306"/>
+    <service-instance name="DB2" x="61" y="226"/>
+    <service-instance name="Xslt1" x="159" y="263"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

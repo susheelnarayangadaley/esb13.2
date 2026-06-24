@@ -1,0 +1,22 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="checkAccountRp">
+        <xsd:complexType>
+            <xsd:sequence>
+          
+                <xsd:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xsd:string"/>
+                 <xsd:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xsd:string"/>
+         
+			      
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="AccountCcy" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="AccountBalance" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="AccountBalanceAvaliable" type="xsd:string"/>
+                                        <xsd:element maxOccurs="1" minOccurs="1" name="AccountBranchOpen" type="xsd:string"/>
+                                    
+                       <xsd:element maxOccurs="1" minOccurs="1" name="AccountName" type="xsd:string"/>
+                       <xsd:element maxOccurs="1" minOccurs="1" name="CustomerID" type="xsd:string"/>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="Phonenumber" type="xsd:string"/>
+
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

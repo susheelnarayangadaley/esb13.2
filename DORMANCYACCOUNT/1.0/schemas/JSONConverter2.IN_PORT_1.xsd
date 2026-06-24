@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DB1/Response">
+   <xsd:element name="root">
+      <xsd:complexType>
+         <xsd:sequence>
+          
+                  <xsd:sequence>
+                     <xsd:element name="responseCode" type="xsd:string"/>
+                     <xsd:element name="responseMsg" type="xsd:string"/>
+                  </xsd:sequence>
+            
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

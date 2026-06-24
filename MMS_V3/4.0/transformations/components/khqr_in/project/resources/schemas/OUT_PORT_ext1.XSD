@@ -1,0 +1,37 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBRFTREV" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBRFTREV" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBRFTREV">
+   <xsd:complexType name="FUNDSTRANSFERCPBRFTREVType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="DebitAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitAmount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorAccountNumber" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ChargeCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCHARGETYPE">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChargeType" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="gOVERRIDE">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="OVERRIDE" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="RecieverAccountNumber" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorBankCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitorName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorBankCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="AcquirerFeeCharged" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="IssuerFeeCharged" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="NBCFeeCharged" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

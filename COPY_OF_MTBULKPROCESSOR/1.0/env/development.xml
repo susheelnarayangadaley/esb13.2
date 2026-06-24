@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="Feeder1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="Display1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+  </target:instance>
+  <target:instance name="Text2XML1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="FlatXMLConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.adapter.jca.flattoxml.FlatXMLConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.adapter.jca.flattoxml&quot;>
+    &lt;ns1:schemaContent>&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+ 
+&amp;lt;!DOCTYPE FileLayout
+  PUBLIC &quot;-//Fiorano Software Technologies Pvt. Ltd.//DTD FileSchema 1.0//EN&quot; &quot;fileschema_1_0.dtd&quot;&amp;gt;
+&amp;lt;FileLayout&amp;gt;
+   &amp;lt;FileSections name=&quot;MTRecords&quot;&amp;gt;
+      &amp;lt;GlobalParsingInfo ignore-lines-start-lineno=&quot;0&quot; ignore-lines-end-lineno=&quot;0&quot;&amp;gt;
+         &amp;lt;RecordDelimiter&amp;gt;
+            &amp;lt;Delimiter type=&quot;custom-delimiter&quot; escapeCharType=&quot;Character&quot;&amp;gt;03&amp;lt;/Delimiter&amp;gt;
+         &amp;lt;/RecordDelimiter&amp;gt;
+         &amp;lt;DefaultFieldDelimiter&amp;gt;
+            &amp;lt;Delimiter type=&quot;custom-delimiter&quot; escapeCharType=&quot;Character&quot; escapeChar=&quot;5c&quot;&amp;gt;5f4e4f4e455f&amp;lt;/Delimiter&amp;gt;
+         &amp;lt;/DefaultFieldDelimiter&amp;gt;
+      &amp;lt;/GlobalParsingInfo&amp;gt;
+      &amp;lt;Record xmlType=&quot;Element&quot; minOccurs=&quot;-1&quot; maxOccurs=&quot;-1&quot; parsingType=&quot;DELIMITED&quot; childCount=&quot;0&quot; name=&quot;MTRecord&quot;&amp;gt;
+         &amp;lt;RecordIdentifier type=&quot;None&quot;/&amp;gt;
+         &amp;lt;FieldDelimiter&amp;gt;
+            &amp;lt;Delimiter type=&quot;custom-delimiter&quot; escapeCharType=&quot;Character&quot; escapeChar=&quot;5c&quot;&amp;gt;5f4e4f4e455f&amp;lt;/Delimiter&amp;gt;
+         &amp;lt;/FieldDelimiter&amp;gt;
+         &amp;lt;RecordContent&amp;gt;
+            &amp;lt;Field xmlType=&quot;Element&quot; startPosition=&quot;1&quot; endPosition=&quot;1&quot; trimspaces=&quot;Leading&quot; alignment=&quot;LEFT&quot; mapIfNull=&quot;NO&quot; name=&quot;MT&quot;&amp;gt;
+               &amp;lt;DataType format=&quot;&quot;&amp;gt;String&amp;lt;/DataType&amp;gt;
+            &amp;lt;/Field&amp;gt;
+         &amp;lt;/RecordContent&amp;gt;
+      &amp;lt;/Record&amp;gt;
+   &amp;lt;/FileSections&amp;gt;
+&amp;lt;/FileLayout&amp;gt;&lt;/ns1:schemaContent>
+&lt;/ns1:namedConfiguration>
+</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="XMLSplitter1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+  <target:instance name="MT2XML1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="MessageSchema Directory Configuration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;namedConfiguration CLASS_NAME=&quot;com.fiorano.services.common.configuration.MessageSchemaDirectoryConfiguration&quot;>
+    &lt;messageDirectory>C:\Fiorano\13.1\xml-catalog\fiorano\swift\mtxml\2020&lt;/messageDirectory>
+&lt;/namedConfiguration>
+</target:property>
+    </target:configuration-properties>
+  </target:instance>
+</target:target>

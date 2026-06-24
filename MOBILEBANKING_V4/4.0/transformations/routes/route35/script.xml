@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns9="http://temenos.com/CPBGETSCHFULL" xmlns:ns8="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB" xmlns:ns13="http://temenos.com/FUNDSTRANSFER" xmlns:ns11="http://temenos.com/FUNDSTRANSFERCPBWINGAPI" xmlns:ns16="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns15="http://temenos.com/CPTWS" xmlns:ns5="http://temenos.com/CPBGETACCOUNTLISTJOIN" xmlns:ns4="http://temenos.com/FUNDSTRANSFERCPBBKGMB" xmlns:ns2="http://temenos.com/CPTWS/WSCPBTWSCPBACRTMB/Input" xmlns:ns7="http://temenos.com/GETEDCFREEZEBLOCKAMT" xmlns:ns14="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB" xmlns:ns17="http://www.w3.org/2001/XMLSchema" xmlns:ns10="http://temenos.com/FUNDSTRANSFERCPBACRTMB" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:ns12="http://temenos.com/ACLOCKEDEVENTS" xmlns:ns6="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC" xmlns:AppendZero="AppendZero" xmlns:EnDe="http://xml.apache.org/xslt/java" xmlns:MD5Hex="http://xml.apache.org/xslt/java" xmlns:Md5UniCode="http://xml.apache.org/xslt/java" xmlns:Remove="Remove" xmlns:ReplaceText="ReplaceText" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:replace="replace" xmlns:replaceStr="http://xml.apache.org/xslt/java" xmlns:rounding="rounding" xmlns:sringindex="sringindex" xmlns:strings="strings" xmlns:stringtext="stringtext" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math AppendZero EnDe MD5Hex Md5UniCode Remove ReplaceText StringLength dateConversion myext replace replaceStr rounding sringindex strings stringtext truncateString">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <ns16:Envelope>
+      <ns16:Body>
+        <ns16:Fault>
+          <faultcode>
+            <xsl:value-of select="'05'"></xsl:value-of>
+          </faultcode>
+          <faultstring>
+            <xsl:value-of select="'Invalid Sign'"></xsl:value-of>
+          </faultstring>
+        </ns16:Fault>
+      </ns16:Body>
+    </ns16:Envelope>
+  </xsl:template>
+</xsl:stylesheet>

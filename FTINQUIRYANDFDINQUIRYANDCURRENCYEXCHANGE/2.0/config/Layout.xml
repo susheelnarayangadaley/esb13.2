@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="JSONConverter3" x="413" y="325"/>
+    <service-instance name="OFSConverter2" x="669" y="229"/>
+    <service-instance name="JSONConverter6" x="733" y="133"/>
+    <service-instance name="OFSConverter6" x="573" y="133"/>
+    <service-instance name="JSONConverter10" x="349" y="229"/>
+    <service-instance name="JSONConverter5" x="733" y="325"/>
+    <service-instance name="T24Outbound" x="413" y="133"/>
+    <service-instance name="T24Outbound1" x="573" y="325"/>
+    <service-instance name="T24Outbound2" x="477" y="229"/>
+    <service-instance name="Xslt1" x="157" y="133"/>
+    <service-instance name="Xslt2" x="893" y="69"/>
+    <service-instance name="Xslt3" x="157" y="229"/>
+    <service-instance name="Xslt4" x="957" y="165"/>
+    <service-instance name="Xslt5" x="157" y="325"/>
+    <service-instance name="Xslt6" x="925" y="261"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

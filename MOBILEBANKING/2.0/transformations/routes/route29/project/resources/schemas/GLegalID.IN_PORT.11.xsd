@@ -1,0 +1,39 @@
+<xsd:schema xmlns:tns="http://temenos.com/CPBGETCUSTOMERINFO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://temenos.com/CPBGETCUSTOMERINFO" targetNamespace="http://temenos.com/CPBGETCUSTOMERINFO">
+    <xsd:complexType name="CPBGETCUSTOMERINFOType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="gCPBGETCUSTOMERINFODetailType">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCPBGETCUSTOMERINFODetailType">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element minOccurs="0" name="CustomerCIF" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="LicenseidPassport" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="CIFNO" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="FULLNAME" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="IDNUMBER" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="BRANCHCODE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="RESIDENCE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="CUSTOMERTYPE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="SEX" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="BIRTHDAY" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="EMAIL" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="STREET" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="TOWNCOUNTRY" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="COUNTRY" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="POSTCODE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="CONTACTMOBILE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="STATUSCODE" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="STATUDESC" type="xsd:string"/>
+                                    <xsd:element minOccurs="0" name="ATMRESPCODE" type="xsd:string"/>
+                                </xsd:sequence>
+                                <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

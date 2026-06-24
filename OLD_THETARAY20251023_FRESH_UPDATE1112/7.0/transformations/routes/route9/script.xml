@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/In" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:string="string" xmlns:strings="strings" xmlns:thetaray="thetaray" xmlns:thetaray_minus1="thetaray_minus1" extension-element-prefixes="datetime set math dateConversion myext nestedJsonParser string strings thetaray thetaray_minus1">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <ns2:COMPLEX>
+      <ns2:query><xsl:variable name="var0">select  id,servicename,amounttran/100,trancurrency,mobilenumber,(select homeaddress from wallet.cms_customer where user_id = userid)as adresse,(select nationality from wallet.cms_customer where user_id = userid)as nationality,(select gender from wallet.cms_customer where user_id = userid)as gender,(select nvl(placeofbirth,nationality) as placeofb from  wallet.cms_customer where user_id = userid) as placeofbirth, destaccount,nvl(DESTMOBILENUMBER,MOBILENUMBER)as DESTMOBILENUMBER,walletcurrency,TRANSDATETIME,respcode,userid,concat(firstname,lastname)as fullName ,substr(TRANSDATETIME,0,8) as date_trans,TO_CHAR(TO_DATE(transdatetime, 'YYYYMMDDHH24MISS'), 'YYYY-MM-DD') as date_trans,destuserid,destaddress,destfirstname,destmerchantname,destcustomername
+,(select p.abbreviation as nationality from  wallet.fine_contact_country p where nationality = p.name)as nationality_code ,(select city from wallet.cms_customer where user_id = userid)as city
+from WALLET.ws_log
+WHERE servicename 
+     in (select service_name from wallet.transactioncodes where is_financial='1')  and 
+TRANSDATETIME BETWEEN '</xsl:variable>
+        <xsl:value-of select="$var0"></xsl:value-of>
+        <xsl:value-of select="thetaray_minus1:convertToYYYYMMDDHH24MISS_yesterday(string(datetime:dateTime()))"></xsl:value-of>
+        <xsl:variable name="var1">' AND '</xsl:variable>
+        <xsl:value-of select="$var1"></xsl:value-of>
+        <xsl:value-of select="thetaray:convertToYYYYMMDDHH24MISS(string(datetime:dateTime()))"></xsl:value-of>
+        <xsl:variable name="var2">'</xsl:variable>
+        <xsl:value-of select="$var2"></xsl:value-of>
+        <xsl:variable name="var3">and servicename not in ('InitSendMoneyInternational','SendMoneyInternational')</xsl:variable>
+        <xsl:value-of select="$var3"></xsl:value-of>
+
+<!--
+        <xsl:value-of select="thetaray_minus1:convertToYYYYMMDDHH24MISS_yesterday(string(datetime:dateTime()))"></xsl:value-of>
+        <xsl:value-of select="thetaray:convertToYYYYMMDDHH24MISS(string(datetime:dateTime()))"></xsl:value-of>--></ns2:query>
+    </ns2:COMPLEX>
+  </xsl:template>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="thetaray_minus1" functions="convertToYYYYMMDDHH24MISS_yesterday pad">
+    <lxslt:script lang="javascript"><![CDATA[/**
+ * Rhino-safe: Convert input "YYYY-MM-DDTHH:MI:SS±HH:MM00000" -> "YYYYMMDDHH24MISS"
+ * where the output datetime is exactly input_datetime - 1 day (in the same timezone).
+ *
+ * Example:
+ *   "2025-12-01T16:31:25+05:1800000" -> "20251130163125"
+ */
+function convertToYYYYMMDDHH24MISS_yesterday(input) {
+  if (!input || typeof input !== "string") {
+    throw "Invalid input: expected string in format YYYY-MM-DDTHH:MI:SS±HH:MM00000";
+  }
+
+  // strict regex: capture components and require trailing 00000
+  var re = /^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2}):(\d{2})([+\-]\d{2}:\d{2})00000$/;
+  var m = input.match(re);
+  if (!m) {
+    throw "Invalid input format. Expected: YYYY-MM-DDTHH:MI:SS±HH:MM00000";
+  }
+
+  var Y = parseInt(m[1], 10);
+  var Mo = parseInt(m[2], 10); // 1..12
+  var D = parseInt(m[3], 10);
+  var hh = parseInt(m[4], 10);
+  var mm = parseInt(m[5], 10);
+  var ss = parseInt(m[6], 10);
+  var tz = m[7]; // like "+05:30" or "-04:00"
+
+  // compute offset minutes from tz string
+  // tz is +HH:MM or -HH:MM
+  var sign = (tz.charAt(0) === "-") ? -1 : 1;
+  var tzParts = tz.substring(1).split(":");
+  var tzH = parseInt(tzParts[0], 10);
+  var tzM = parseInt(tzParts[1], 10);
+  if (isNaN(tzH) || isNaN(tzM)) {
+    throw "Invalid timezone part in input.";
+  }
+  var offsetMinutes = sign * (tzH * 60 + tzM);
+
+  // Build UTC ms representing the instant of the input:
+  // inputLocal = local time in that timezone.
+  // instantUtcMs = Date.UTC(Y, Mo-1, D, hh, mm, ss) - offsetMinutes*60000
+  var instantUtcMs = Date.UTC(Y, Mo - 1, D, hh, mm, ss) - (offsetMinutes * 60000);
+
+  // subtract one day (24 * 60 * 60 * 1000)
+  var ONE_DAY_MS = 24 * 60 * 60 * 1000;
+  var newUtcMs = instantUtcMs - ONE_DAY_MS;
+
+  // convert back to the same timezone local fields:
+  // localMs = newUtcMs + offsetMinutes*60000
+  var localMs = newUtcMs + (offsetMinutes * 60000);
+  var outDate = new Date(localMs);
+
+  // helper pad
+  function pad(n) {
+    n = String(n);
+    return (n.length < 2 ? "0" + n : n);
+  }
+
+  var outY = outDate.getUTCFullYear(); // careful: Date here is in ms; using UTC funcs on Date object but since we already adjusted ms to local, using UTC* gives local-like fields
+  var outMo = outDate.getUTCMonth() + 1;
+  var outD = outDate.getUTCDate();
+  var outH = outDate.getUTCHours();
+  var outMin = outDate.getUTCMinutes();
+  var outS = outDate.getUTCSeconds();
+
+  return String(outY) + pad(outMo) + pad(outD) + pad(outH) + pad(outMin) + pad(outS);
+}]]></lxslt:script>
+  </lxslt:component>
+  <lxslt:component prefix="thetaray" functions="convertToYYYYMMDDHH24MISS">
+    <lxslt:script lang="javascript"><![CDATA[function convertToYYYYMMDDHH24MISS(input) {
+
+  // Extract timezone part without the 00000
+  var timezoneMatch = input.match(/([+\-]\d{2}:\d{2})/);
+  if (!timezoneMatch) {
+    throw "Invalid input: timezone not found in +/-HH:MM00000 format.";
+  }
+
+  var tz = timezoneMatch[1];  // e.g. "+05:30"
+
+  // Remove trailing "00000"
+  var cleanInput = input.replace(/00000$/, "");
+
+  // ISO string is already correct once trimmed
+  var isoString = cleanInput;
+
+  // Create Date object
+  var date = new Date(isoString);
+
+  // Helper to pad numbers
+  function pad(num) {
+    num = String(num);
+    return (num.length < 2 ? "0" + num : num);
+  }
+
+  var YYYY = date.getFullYear();
+  var MM = pad(date.getMonth() + 1);
+  var DD = pad(date.getDate());
+  var HH = pad(date.getHours());
+  var MI = pad(date.getMinutes());
+  var SS = pad(date.getSeconds());
+
+  return "" + YYYY + MM + DD + HH + MI + SS;
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

@@ -1,0 +1,45 @@
+<xsd:schema xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB">
+    <xsd:complexType name="FUNDSTRANSFERCPBBKGMWTMBType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="DebitAccount" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DebitNarrative" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CreditNarrative" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CreditAccount" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CreditCurrency" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CreditAmount" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="ChargesAcctNO" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SenderName" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="SenderBankBIC" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="RecievingBankBIC" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="OtherBankCreditAccount" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="Creditorcustomername" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="gLTXNNARRDR">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="LTXNNARRDR" type="xsd:string"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="gLTXNNARRCR">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="LTXNNARRCR" type="xsd:string"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TRXHASH" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="REVBANKNAME" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="gKHQR">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="KHQR" type="xsd:string"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+</xsd:schema>

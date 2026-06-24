@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/DB1/Response" xmlns:api="api" xmlns:apipicker="apipicker" xmlns:csa="csa" xmlns:dateConversion="dateConversion" xmlns:md5="md5" xmlns:myext="myext" xmlns:pt="pt" xmlns:strings="strings" xmlns:util="util" extension-element-prefixes="datetime set math api apipicker csa dateConversion md5 myext pt strings util">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <ns2:AppCtx>
+      <ns2:Infoplus_Select>
+        <ns2:Api-Key>
+          <xsl:value-of select="csa:getAPIKey(string(java:_getStringProperty($_TIF_MESSAGE_, 'ESBX__SYSTEM__EVENT_PROCESS_ENVIRONMENT')))"></xsl:value-of>
+        </ns2:Api-Key>
+      </ns2:Infoplus_Select>
+    </ns2:AppCtx>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+<!--The list of Extensions defined by user-->
+  <lxslt:component prefix="csa" functions="getAPIKey">
+    <lxslt:script lang="javascript"><![CDATA[function getAPIKey(type) {
+	if (type.toLowerCase() === 'production') {
+		return '9be5c7c2-0b41-418f-b1d7-1b0e4601aaf5';
+	} else if (type.toLowerCase() === 'testing') {
+		return '9be5c7c2-0b41-418f-b1d7-1b0e4601aaf5';
+	} else if (type.toLowerCase() === 'staging') {
+		return '9be5c7c2-0b41-418f-b1d7-1b0e4601aaf5';
+	} else if (type.toLowerCase() === 'development') {
+		return '9be5c7c2-0b41-418f-b1d7-1b0e4601aaf5';        
+	} else{
+		return null;
+	}
+}]]></lxslt:script>
+  </lxslt:component>
+</xsl:stylesheet>

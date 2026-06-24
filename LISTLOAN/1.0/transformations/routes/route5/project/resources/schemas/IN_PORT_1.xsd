@@ -1,0 +1,29 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ListLoan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="response_code"/>
+	<xs:element type="xs:string" name="response_msg"/>
+        <xs:element name="Loan">
+      <xs:complexType>
+      <xs:sequence>    
+      <xs:element name="Element" maxOccurs="unbounded" minOccurs="0">
+      <xs:complexType>
+      <xs:sequence>   
+                <xs:element type="xs:string" name="Loan_ID"/>
+                <xs:element type="xs:string" name="Amount"/>
+                <xs:element type="xs:string" name="Installment_Due_Date"/>
+                <xs:element type="xs:string" name="Loan_Balance"/>
+                <xs:element type="xs:string" name="AA"/>
+                <xs:element type="xs:string" name="Loan_Currency"/>
+            </xs:sequence>
+          </xs:complexType>
+  </xs:element>
+</xs:sequence>
+<xs:attribute type="xs:string" name="class"/>
+          </xs:complexType>
+  </xs:element>
+</xs:sequence>
+          </xs:complexType>
+  </xs:element>
+</xs:schema>

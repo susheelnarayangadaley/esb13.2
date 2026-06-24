@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="AccountValidateService" x="162" y="118"/>
+    <service-instance name="JSON1" x="679" y="54"/>
+    <service-instance name="JSONConverter1" x="309" y="123"/>
+    <service-instance name="RESTConsumer1" x="627" y="179"/>
+    <service-instance name="JSONConverter2" x="502" y="179"/>
+    <service-instance name="JSONConverter3" x="755" y="180"/>
+    <service-instance name="T24Outbound" x="495" y="59"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

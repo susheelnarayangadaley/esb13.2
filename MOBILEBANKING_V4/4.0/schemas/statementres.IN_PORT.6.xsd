@@ -1,0 +1,9 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC" elementFormDefault="qualified" xmlns="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC" targetNamespace="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC">
+   <xsd:complexType name="ACLOCKEDEVENTSBLOCKEDCType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="AccountNumber" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="LockedAmount" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

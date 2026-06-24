@@ -1,0 +1,38 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="AccountStmtRp">
+        <xsd:complexType>
+            <xsd:sequence>
+          
+                <xsd:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xsd:string"/>
+                 <xsd:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xsd:string"/>
+				   <xsd:element maxOccurs="1" minOccurs="1" name="AccountName" type="xsd:string"/>
+				   <xsd:element maxOccurs="1" minOccurs="1" name="AccountNumber" type="xsd:string"/>
+				   <xsd:element maxOccurs="1" minOccurs="1" name="CustomerNumber" type="xsd:string"/>
+				   <xsd:element maxOccurs="1" minOccurs="1" name="CCY" type="xsd:string"/>
+				   <xsd:element maxOccurs="1" minOccurs="1" name="StartBalance" type="xsd:string"/>
+				   <xsd:element maxOccurs="1" minOccurs="1" name="EndingBalance" type="xsd:string"/>
+			      <xsd:element maxOccurs="1" minOccurs="0" name="ListTxn">
+                       <xsd:complexType>
+                              <xsd:sequence>
+                              <xsd:element maxOccurs="unbounded" minOccurs="0" name="TxnDetail">
+									<xsd:complexType>
+									<xsd:sequence>
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="TxnDate" type="xsd:string"/>
+                                  
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="TxnRef" type="xsd:string"/>
+                                     
+                                      <xsd:element maxOccurs="1" minOccurs="1" name="TxnContent" type="xsd:string"/>
+                                       <xsd:element maxOccurs="1" minOccurs="1" name="ValueDate" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="MoneyOut" type="xsd:string"/>
+									 <xsd:element maxOccurs="1" minOccurs="1" name="MoneyIn" type="xsd:string"/>
+									 <xsd:element maxOccurs="1" minOccurs="1" name="Balance" type="xsd:string"/>
+                                    </xsd:sequence>
+									</xsd:complexType>
+									</xsd:element> 
+                    </xsd:sequence>
+                       </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

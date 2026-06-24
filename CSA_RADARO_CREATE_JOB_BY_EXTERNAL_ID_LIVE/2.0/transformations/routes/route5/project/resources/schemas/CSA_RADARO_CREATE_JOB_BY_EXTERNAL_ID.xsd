@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DB1/Response">
+   <xsd:element name="AppCtx">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="Infoplus_Select">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="id" type="xsd:string"/>
+                      <xsd:element name="Api-Key" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>
+

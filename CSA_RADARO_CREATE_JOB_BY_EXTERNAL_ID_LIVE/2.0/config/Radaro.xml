@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_121" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.restconsumer.configuration.RESTConsumerConfiguration"> 
+  <void property="clientConfiguration"> 
+   <void property="proxyConfiguration"> 
+    <void property="password" isEncrypted="true"> 
+     <string></string> 
+    </void> 
+    <void property="proxyHost"> 
+     <string></string> 
+    </void> 
+    <void property="username"> 
+     <string></string> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1200</int> 
+  </void> 
+  <void property="encryptDecryptElementsMap"> 
+   <void method="put"> 
+    <string>invoiceWorksheetLineDetailId__GET__invoiceWorksheetLineDetail__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>jobs__POST__orderid__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>shipments__POST__shipments__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>Shipments__GET__shipments__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>resource__GET__invoiceWorksheetLineDetail/{invoiceWorksheetLineDetailId}__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>invoiceWorksheetId__GET__invoiceWorksheetId__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>resource__GET__invoiceWorksheetLineDetail/2__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>resource__GET__invoiceWorksheetLineDetail__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>Shipments__GET__invoiceWorksheetId__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>Shipments__POST__shipments__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>resource__GET__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>Shipments__POST__shipments__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>shipments__POST__shipments__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>jobs__POST__orderid__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>orderid__POST__orderid__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>resource__GET__invoiceWorksheetLineDetail/{invoiceWorksheetLineDetailId}__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>invoiceWorksheetLineDetailId__GET__invoiceWorksheetLineDetail__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>resource__GET__invoiceWorksheetLineDetail__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>Shipments__GET__shipments__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>orderid__POST__orderid__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>resource__GET__invoiceWorksheetLineDetail/2__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>invoiceWorksheetId__GET__invoiceWorksheetId__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>Shipments__GET__invoiceWorksheetId__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>resource__GET__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>4</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>2</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+         <void property="retryCount"> 
+          <int>10</int> 
+         </void> 
+         <void property="retryInterval"> 
+          <long>300000</long> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>3</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>7</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>7</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="transportSecurityConfiguration"> 
+   <void property="httpAuthConfiguration"> 
+    <void property="domain"> 
+     <string></string> 
+    </void> 
+    <void property="hostname"> 
+     <string></string> 
+    </void> 
+    <void property="password" isEncrypted="true"> 
+     <string>nio89K1zC/KWKTqiZl2dHw==</string> 
+    </void> 
+    <void property="realm"> 
+     <string></string> 
+    </void> 
+    <void property="username"> 
+     <string>anagendra-test@northstardigital.solutions</string> 
+    </void> 
+   </void> 
+   <void property="sslConfiguration"> 
+    <void property="acceptServerCertificate"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="ignoreHostnameMismatch"> 
+     <boolean>true</boolean> 
+    </void> 
+    <void property="keyClientPassword" isEncrypted="true"> 
+     <string></string> 
+    </void> 
+    <void property="keyStoreLocation"> 
+     <string></string> 
+    </void> 
+    <void property="keyStorePassword" isEncrypted="true"> 
+     <string></string> 
+    </void> 
+    <void property="trustStoreLocation"> 
+     <string></string> 
+    </void> 
+    <void property="trustStorePassword" isEncrypted="true"> 
+     <string></string> 
+    </void> 
+    <void property="useSSL"> 
+     <boolean>true</boolean> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="wadlConfiguration"> 
+   <void property="basePath"> 
+    <string>https://api-3.radaro.com.au/api/webhooks</string> 
+   </void> 
+   <void property="wadl"> 
+    <string>&lt;ns:application xmlns:ns=&quot;http://wadl.dev.java.net/2009/02&quot;&gt;&#13;
+    &lt;ns:grammars/&gt;&#13;
+    &lt;ns:resources base=&quot;https://api-3.radaro.com.au/api/webhooks&quot;&gt;&#13;
+        &lt;ns:resource id=&quot;jobs&quot; path=&quot;jobs&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+            &lt;ns:method name=&quot;POST&quot; id=&quot;orderid&quot;&gt;&#13;
+                &lt;ns:request&gt;&#13;
+                    &lt;ns:param name=&quot;key&quot; id=&quot;key&quot; default=&quot;5a0282db-a9ca-437a-a733-f5d07b697ffc&quot; repeating=&quot;false&quot; required=&quot;false&quot; type=&quot;xs:string&quot; style=&quot;query&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;/&gt;&#13;
+                    &lt;ns:param name=&quot;Content-Type&quot; id=&quot;Content-Type&quot; default=&quot;application/json&quot; repeating=&quot;false&quot; required=&quot;false&quot; type=&quot;xs:string&quot; style=&quot;header&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;/&gt;&#13;
+                    &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                &lt;/ns:request&gt;&#13;
+                &lt;ns:response status=&quot;200 201 202 400&quot;&gt;&#13;
+                    &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                &lt;/ns:response&gt;&#13;
+            &lt;/ns:method&gt;&#13;
+        &lt;/ns:resource&gt;&#13;
+    &lt;/ns:resources&gt;&#13;
+&lt;/ns:application&gt;</string> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

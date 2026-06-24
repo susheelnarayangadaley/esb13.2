@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="MOBILEBANKING_V4_NEW.xsd" mime="XSD" name="Application-Context" rootName="Root"/>
+    <mappermodel:Structure duplicates="" filePath="OUT_PORT10.xsd" mime="XSD" name="OUT_PORT" rootName="{http://temenos.com/DEVMB3/CPBRFTCREATEPASSCODE/Input}Envelope">
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext1.XSD" mime="XSD" name="http://temenos.com/CUSTOMER"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext2.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTINFO"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext3.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext4.XSD" mime="XSD" name="http://temenos.com/CPBGETINTERESTRATE"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext5.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext6.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext7.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTSTMT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext8.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITY"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext9.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext10.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext11.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext12.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYOPENFD"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext13.XSD" mime="XSD" name="http://temenos.com/DEVMB3"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext14.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext15.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext16.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext17.XSD" mime="XSD" name="http://temenos.com/CPBGETCUSTOMERINFO"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext18.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext19.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTLIST"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext20.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWATERBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext21.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext22.XSD" mime="XSD" name="http://temenos.com/CPBGETEXCHANGERATE"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext23.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext24.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext25.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext26.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext27.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBACBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext28.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFER"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext29.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBTOPUP"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext30.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext31.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWINGOUT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext32.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBEDCBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext33.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSRBILL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext34.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext35.XSD" mime="XSD" name="http://temenos.com/CUSTOMERCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext36.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext37.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBFUNANBILL"/>
+    </mappermodel:Structure>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="MOBILEBANKING2.0_MB.SOAP11_GetCustomerInfo_FAILURE.xsd" mime="XSD" name="SOAP11_FTKoicaPhone_FAILURE" rootName="{http://schemas.xmlsoap.org/soap/envelope/}Envelope"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="SOAP11_FTKoicaPhone_FAILURE:0,Envelope:0,Body:0,Fault:0,faultcode:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="05" type="22" x="232" y="114">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="SOAP11_FTKoicaPhone_FAILURE:0,Envelope:0,Body:0,Fault:0,faultstring:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="Invalid Sign" type="22" x="237" y="124">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

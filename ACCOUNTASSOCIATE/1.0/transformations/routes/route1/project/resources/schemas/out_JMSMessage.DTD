@@ -1,0 +1,10 @@
+<!ELEMENT Message (Properties?,CorrelationID?,Text?,RemoveProperties?)>
+<!ELEMENT Properties ((Property)*)>
+<!ELEMENT Property (#PCDATA)>
+<!ATTLIST Property name CDATA #IMPLIED>
+<!ATTLIST Property type CDATA #IMPLIED>
+<!ELEMENT RemoveProperties ((RemoveProperty)*)>
+<!ELEMENT RemoveProperty (#CDATA)>
+<!ATTLIST RemoveProperty name CDATA #IMPLIED>
+<!ELEMENT CorrelationID (#PCDATA)>
+<!ELEMENT Text (#PCDATA)>

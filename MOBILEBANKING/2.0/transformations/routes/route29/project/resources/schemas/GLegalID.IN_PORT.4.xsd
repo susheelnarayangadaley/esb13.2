@@ -1,0 +1,35 @@
+<xsd:schema xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBBKGKHQRTXNIN" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBBKGKHQRTXNIN" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBBKGKHQRTXNIN">
+    <xsd:complexType name="FUNDSTRANSFERCPBBKGKHQRTXNINType">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="DEBITACCTNO" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DEBITCURRENCY" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DEBITAMOUNT" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="DEBITVALUEDATE" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CREDITACCTNO" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="gORDERINGBANK">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="ORDERINGBANK" type="xsd:string"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CPBFTRCVPN" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CDRTNAME" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="LNSSCHRGSS" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="gCPBFTREMARK">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="CPBFTREMARK" type="xsd:string"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CPBFTSWMSGTP" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="CPBFTSWSDCBNK" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="LOB" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="PRODUCT" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:string" use="optional"/>
+    </xsd:complexType>
+</xsd:schema>

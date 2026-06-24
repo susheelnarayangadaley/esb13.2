@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<target:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:target="http://fiorano.com/environment/1.0" xsi:schemaLocation="http://fiorano.com/environment/1.0 env.xsd">
+  <target:instance name="TranHis">
+    <target:instance-properties>
+      <target:deployment cache="false" nodes="fps_2"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property configurationType="component" encrypt="false" name="SeylanESBConnectionConfiguration" type="NamedObject">Equation</target:property>
+      <target:property encrypt="false" name="Request TimeOut" type="java.lang.Integer">120000</target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="RestStub-TranHistory">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps_2"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="true" name="HTTP Password" type="java.lang.String"></target:property>
+      <target:property encrypt="false" name="Authentication Type" type="java.lang.String">BASIC</target:property>
+      <target:property encrypt="false" name="HTTP Basic Authentication" type="java.lang.Boolean">false</target:property>
+      <target:property encrypt="false" name="FESConnectionConfiguration" type="NamedObject">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?>
+&lt;ns1:namedConfiguration ns1:CLASS_NAME=&quot;com.fiorano.esb.common.connections.configuration.FESConnectionConfiguration&quot; xmlns:ns1=&quot;uri:com.fiorano.esb.common.connections.configuration&quot;>
+    &lt;ns1:passwordFromVault>false&lt;/ns1:passwordFromVault>
+    &lt;ns1:customPasswordEncryption>false&lt;/ns1:customPasswordEncryption>
+    &lt;ns1:isUseConnectionDetailsFromFPS>true&lt;/ns1:isUseConnectionDetailsFromFPS>
+    &lt;ns1:url>tsp_tcp://localhost:1947&lt;/ns1:url>
+    &lt;ns1:backupUrl>tsp_tcp://localhost:1948&lt;/ns1:backupUrl>
+    &lt;ns1:username>admin&lt;/ns1:username>
+    &lt;ns1:password>DMSLzKckc/JLgIUhIpdeyw==&lt;/ns1:password>
+    &lt;ns1:fspCallTimeout>180000&lt;/ns1:fspCallTimeout>
+&lt;/ns1:namedConfiguration>
+</target:property>
+      <target:property encrypt="false" name="HTTP Username" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="Xslt1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps_2"/>
+    </target:instance-properties>
+    <target:configuration-properties>
+      <target:property encrypt="false" name="XSL" type="java.lang.String">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns2=&quot;http://www.fiorano.com/Seylan/TransactionHistoryInquiry&quot; xmlns:ns1=&quot;http://www.fiorano.com/services/rest&quot; xmlns:CEFT_JPAY=&quot;CEFT_JPAY&quot; xmlns:CardWS=&quot;CardWS&quot; xmlns:CenturyDateConv=&quot;CenturyDateConv&quot; xmlns:CenturyDateConverter=&quot;CenturyDateConverter&quot; xmlns:Currency=&quot;Currency&quot; xmlns:DateConversion=&quot;DateConversion&quot; xmlns:DateTime=&quot;DateTime&quot; xmlns:Decimals=&quot;Decimals&quot; xmlns:ENIQR=&quot;ENIQR&quot; xmlns:ESB=&quot;ESB&quot; xmlns:FormatQuery=&quot;FormatQuery&quot; xmlns:JustpayTransfer_BuildDS=&quot;JustpayTransfer_BuildDS&quot; xmlns:LPOPP=&quot;LPOPP&quot; xmlns:QR=&quot;QR&quot; xmlns:RateConverter=&quot;RateConverter&quot; xmlns:Text=&quot;Text&quot; xmlns:TimeConversion=&quot;TimeConversion&quot; xmlns:UtilityBIll=&quot;UtilityBIll&quot; xmlns:Validation=&quot;Validation&quot; xmlns:VisaMasterQR=&quot;VisaMasterQR&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:paddzero=&quot;paddzero&quot; xmlns:str=&quot;str&quot; xmlns:strings=&quot;strings&quot; extension-element-prefixes=&quot;datetime set math CEFT_JPAY CardWS CenturyDateConv CenturyDateConverter Currency DateConversion DateTime Decimals ENIQR ESB FormatQuery JustpayTransfer_BuildDS LPOPP QR RateConverter Text TimeConversion UtilityBIll Validation VisaMasterQR dateConversion myext paddzero str strings&quot;>
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;>&lt;/xsl:import>
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;>&lt;/xsl:output>
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;>&lt;/xsl:variable>
+  &lt;xsl:variable name=&quot;document_IN_PORT&quot; select=&quot;document('IN_PORT')&quot;>&lt;/xsl:variable>
+  &lt;xsl:template match=&quot;/&quot;>
+    &lt;ns1:Responses>
+      &lt;Response>
+        &lt;xsl:attribute name=&quot;Status&quot;>
+          &lt;xsl:variable name=&quot;if0&quot;>
+            &lt;xsl:choose>
+              &lt;xsl:when test=&quot;(TH_Header/Status)=('R')&quot;>
+                &lt;xsl:value-of select=&quot;'200'&quot;>&lt;/xsl:value-of>
+              &lt;/xsl:when>
+              &lt;xsl:otherwise>
+                &lt;xsl:value-of select=&quot;'400'&quot;>&lt;/xsl:value-of>
+              &lt;/xsl:otherwise>
+            &lt;/xsl:choose>
+          &lt;/xsl:variable>
+          &lt;xsl:value-of select=&quot;$if0&quot;>&lt;/xsl:value-of>
+        &lt;/xsl:attribute>
+        &lt;Representations>
+          &lt;Representation>
+            &lt;xsl:attribute name=&quot;MediaType&quot;>
+              &lt;xsl:value-of select=&quot;'application/xml'&quot;>&lt;/xsl:value-of>
+            &lt;/xsl:attribute>
+            &lt;Element>
+              &lt;ns2:TransactionHistoryInquiryResponse>
+                &lt;ns2:Status>
+                  &lt;ns2:Transaction_Reference>
+                    &lt;xsl:value-of select=&quot;TH_Header/TransRef&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Transaction_Reference>
+                  &lt;ns2:Timestamp>
+                    &lt;xsl:value-of select=&quot;DateTime:getISOTimestamp()&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Timestamp>
+                  &lt;ns2:Code>
+                    &lt;xsl:variable name=&quot;if1&quot;>
+                      &lt;xsl:choose>
+                        &lt;xsl:when test=&quot;(TH_Header/Status)=('R')&quot;>
+                          &lt;xsl:value-of select=&quot;'0000'&quot;>&lt;/xsl:value-of>
+                        &lt;/xsl:when>
+                        &lt;xsl:otherwise>
+                          &lt;xsl:value-of select=&quot;ESB:MapEquationError(string(TH_Header/Message),string('2020'))&quot;>&lt;/xsl:value-of>
+                        &lt;/xsl:otherwise>
+                      &lt;/xsl:choose>
+                    &lt;/xsl:variable>
+                    &lt;xsl:value-of select=&quot;$if1&quot;>&lt;/xsl:value-of>
+                    &lt;xsl:variable name=&quot;if2&quot;>
+                      &lt;xsl:choose>
+                        &lt;xsl:when test=&quot;(TH_Header/Status)=('R')&quot;>
+                          &lt;xsl:value-of select=&quot;'0000'&quot;>&lt;/xsl:value-of>
+                        &lt;/xsl:when>
+                        &lt;xsl:otherwise>
+                          &lt;xsl:value-of select=&quot;ESB:MapEquationError(string(TH_Header/Message),string('2020'))&quot;>&lt;/xsl:value-of>
+                        &lt;/xsl:otherwise>
+                      &lt;/xsl:choose>
+                    &lt;/xsl:variable>
+                    &lt;xsl:value-of select=&quot;java:_setStringProperty($_TIF_MESSAGE_, 'erc', $if2)&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Code>
+                  &lt;ns2:Message>
+                    &lt;xsl:value-of select=&quot;ESB:getErrorDescriptionMapped(string(java:_getStringProperty($_TIF_MESSAGE_, 'erc')),string('2100|Account'))&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Message>
+                  &lt;ns2:Description>
+                    &lt;xsl:value-of select=&quot;ESB:CleanMessage(string(TH_Header/Message))&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Description>
+                &lt;/ns2:Status>
+                &lt;ns2:AccountSummary>
+                  &lt;ns2:Account_branch>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AB&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_branch>
+                  &lt;ns2:Account_basic_number>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AN&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_basic_number>
+                  &lt;ns2:Account_suffix>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AS&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_suffix>
+                  &lt;ns2:Account_short_name>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/SHN&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_short_name>
+                  &lt;ns2:Customer_mnemonic>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/CUS&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Customer_mnemonic>
+                  &lt;ns2:Customer_location>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/CLC&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Customer_location>
+                  &lt;ns2:Account_type>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/ACT&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_type>
+                  &lt;ns2:Owning_application_code>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/APP&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Owning_application_code>
+                  &lt;ns2:Account_structure>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/ACS&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_structure>
+                  &lt;ns2:Currency_mnemonic>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/CCY&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Currency_mnemonic>
+                  &lt;ns2:Currency_decimals>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/CED&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Currency_decimals>
+                  &lt;ns2:Internal_non_customer_account>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AI47&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Internal_non_customer_account>
+                  &lt;ns2:Deceased_or_liquidated>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AI14&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Deceased_or_liquidated>
+                  &lt;ns2:Account_blocked>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AI17&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_blocked>
+                  &lt;ns2:Account_inactive>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AI20&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_inactive>
+                  &lt;ns2:Account_closed>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AI30&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Account_closed>
+                  &lt;ns2:Contingent_account>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/AI46&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Contingent_account>
+                  &lt;ns2:Date_from>
+                    &lt;xsl:value-of select=&quot;CenturyDateConverter:CenturyDateConversion(string($document_IN_PORT/Message/Response/XMLRoot/ACINFO/DTEF),string('N'))&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Date_from>
+                  &lt;ns2:Date_to>
+                    &lt;xsl:variable name=&quot;if3&quot;>
+                      &lt;xsl:choose>
+                        &lt;xsl:when test=&quot;(java:_getStringProperty($_TIF_MESSAGE_, 'erc'))=('0910')&quot;>
+                          &lt;xsl:value-of select=&quot;TH_Header/Date_to&quot;>&lt;/xsl:value-of>
+                        &lt;/xsl:when>
+                        &lt;xsl:otherwise>
+                          &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/DTET&quot;>&lt;/xsl:value-of>
+                        &lt;/xsl:otherwise>
+                      &lt;/xsl:choose>
+                    &lt;/xsl:variable>
+                    &lt;xsl:value-of select=&quot;CenturyDateConverter:CenturyDateConversion(string($if3),string('N'))&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Date_to>
+                  &lt;ns2:Starting_balance>
+                    &lt;xsl:value-of select=&quot;Decimals:getDecimalFormattedAmount(string($document_IN_PORT/Message/Response/XMLRoot/ACINFO/SBAL),string($document_IN_PORT/Message/Response/XMLRoot/ACINFO/CED))&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Starting_balance>
+                  &lt;ns2:Number_of_recent_transactions>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/TBCK&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Number_of_recent_transactions>
+                  &lt;ns2:Statement_number>
+                    &lt;xsl:value-of select=&quot;$document_IN_PORT/Message/Response/XMLRoot/ACINFO/SSTN&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Statement_number>
+                  &lt;ns2:Available_balance>
+                    &lt;xsl:value-of select=&quot;Decimals:getDecimalFormattedAmount(string($document_IN_PORT/Message/Response/XMLRoot/ACINFO/ABAL),string($document_IN_PORT/Message/Response/XMLRoot/ACINFO/CED))&quot;>&lt;/xsl:value-of>
+                  &lt;/ns2:Available_balance>
+                &lt;/ns2:AccountSummary>&lt;Transaction class=&quot;array&quot;>
+                &lt;xsl:for-each select=&quot;$document_IN_PORT/Message/Response/XMLRoot/TRINFO&quot;>
+                  &lt;ns2:Transaction>
+                    &lt;ns2:Posting_date>
+                      &lt;xsl:value-of select=&quot;CenturyDateConverter:CenturyDateConversion(string(./POD),string('N'))&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Posting_date>
+                    &lt;ns2:Value_date>
+                      &lt;xsl:value-of select=&quot;CenturyDateConverter:CenturyDateConversion(string(./VFR),string('N'))&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Value_date>
+                    &lt;ns2:Posting_currency>
+                      &lt;xsl:value-of select=&quot;./CCYP&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Posting_currency>
+                    &lt;ns2:Posting_currency_decimals>
+                      &lt;xsl:value-of select=&quot;./CEDP&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Posting_currency_decimals>
+                    &lt;ns2:Transaction_code>
+                      &lt;xsl:value-of select=&quot;./TCD&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Transaction_code>
+                    &lt;ns2:Transaction_code_mnemonic>
+                      &lt;xsl:value-of select=&quot;./TCM&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Transaction_code_mnemonic>
+                    &lt;ns2:Transaction_Code_Name>
+                      &lt;xsl:value-of select=&quot;./TCDD&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Transaction_Code_Name>
+                    &lt;ns2:Input_branch_mnemonic>
+                      &lt;xsl:value-of select=&quot;./BRNM&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Input_branch_mnemonic>
+                    &lt;ns2:Account_branch_mnemonic>
+                      &lt;xsl:value-of select=&quot;./BRND&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Account_branch_mnemonic>
+                    &lt;ns2:Posting_group>
+                      &lt;xsl:value-of select=&quot;./PBR&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Posting_group>
+                    &lt;ns2:Posting_amount>
+                      &lt;xsl:value-of select=&quot;Decimals:getDecimalFormattedAmount(string(./AMAP),string(./CEDP))&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Posting_amount>
+                    &lt;ns2:Print_transaction_code_name_as_narrative>
+                      &lt;xsl:value-of select=&quot;./PTN&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Print_transaction_code_name_as_narrative>
+                    &lt;ns2:Transaction_Status>
+                      &lt;xsl:value-of select=&quot;./NEGP&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Transaction_Status>
+                    &lt;ns2:Users_own_reference>
+                      &lt;xsl:value-of select=&quot;./DRF&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Users_own_reference>
+                    &lt;ns2:Sundry_reference_code>
+                      &lt;xsl:value-of select=&quot;./SRC&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Sundry_reference_code>
+                    &lt;ns2:User_code_1>
+                      &lt;xsl:value-of select=&quot;./UC1&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:User_code_1>
+                    &lt;ns2:User_code_2>
+                      &lt;xsl:value-of select=&quot;./UC2&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:User_code_2>
+                    &lt;ns2:Number_of_items_within_this_posting>
+                      &lt;xsl:value-of select=&quot;./NPE&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Number_of_items_within_this_posting>
+                    &lt;ns2:Statement_number>
+                      &lt;xsl:value-of select=&quot;./STN&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Statement_number>
+                    &lt;ns2:Narrative_record_exists>
+                      &lt;xsl:value-of select=&quot;./YNAR&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Narrative_record_exists>
+                    &lt;ns2:Narrative_1>
+                      &lt;xsl:value-of select=&quot;./NR1&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Narrative_1>
+                    &lt;ns2:Narrative_2>
+                      &lt;xsl:value-of select=&quot;./NR2&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Narrative_2>
+                    &lt;ns2:Narrative_3>
+                      &lt;xsl:value-of select=&quot;./NR3&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Narrative_3>
+                    &lt;ns2:Narrative_4>
+                      &lt;xsl:value-of select=&quot;./NR4&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Narrative_4>
+                    &lt;ns2:Additional_line_1>
+                      &lt;xsl:value-of select=&quot;./A001&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Additional_line_1>
+                    &lt;ns2:Additional_line_2>
+                      &lt;xsl:value-of select=&quot;./A002&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Additional_line_2>
+                    &lt;ns2:Additional_line_3>
+                      &lt;xsl:value-of select=&quot;./A003&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Additional_line_3>
+                    &lt;ns2:Additional_line_4>
+                      &lt;xsl:value-of select=&quot;./A004&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Additional_line_4>
+                    &lt;ns2:Additional_line_5>
+                      &lt;xsl:value-of select=&quot;./A005&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Additional_line_5>
+                    &lt;ns2:Additional_line_6>
+                      &lt;xsl:value-of select=&quot;./A006&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Additional_line_6>
+                    &lt;ns2:Original_currency>
+                      &lt;xsl:value-of select=&quot;./OCCY&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Original_currency>
+                    &lt;ns2:Original_currency_decimals>
+                      &lt;xsl:value-of select=&quot;./OCED&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Original_currency_decimals>
+                    &lt;ns2:Original_amount>
+                      &lt;xsl:value-of select=&quot;Decimals:getDecimalFormattedAmount(string(./OAMA),string(./OCED))&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Original_amount>
+                    &lt;ns2:Posting_sequence_number>
+                      &lt;xsl:value-of select=&quot;./PSQ7&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Posting_sequence_number>
+                    &lt;ns2:Running_balance>
+                      &lt;xsl:value-of select=&quot;Decimals:getDecimalFormattedAmount(string(./RBAL),string(./CEDP))&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Running_balance>
+                    &lt;ns2:Event_key>
+                      &lt;xsl:value-of select=&quot;./EVNK&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Event_key>
+                    &lt;ns2:Available_Date>
+                      &lt;xsl:value-of select=&quot;CenturyDateConverter:CenturyDateConversion(string(./AVD),string('N'))&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Available_Date>
+                    &lt;ns2:Timestamp>
+                      &lt;xsl:value-of select=&quot;./TSTP&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Timestamp>
+                    &lt;ns2:Unique_key>
+                      &lt;xsl:value-of select=&quot;concat(Text:padright(string(./BRNM),string(' '),string('3')),normalize-space(Text:padright(string(./PBR),string(' '),string('4'))),substring(./POD,'2','6'),Text:padleft(string(./PSQ7),string('0'),string('7')))&quot;>&lt;/xsl:value-of>
+                    &lt;/ns2:Unique_key>
+                  &lt;/ns2:Transaction>
+                &lt;/xsl:for-each>&lt;/Transaction>&lt;/ns2:TransactionHistoryInquiryResponse>
+            &lt;/Element>
+          &lt;/Representation>
+        &lt;/Representations>
+      &lt;/Response>
+    &lt;/ns1:Responses>
+  &lt;/xsl:template>
+&lt;!--The list of parameters defined by user-->
+  &lt;xsl:param name=&quot;_TIF_MESSAGE_&quot;>&lt;/xsl:param>
+&lt;!--The list of Extensions defined by user-->
+&lt;/xsl:stylesheet></target:property>
+      <target:property encrypt="false" name="XSLT Engine" type="java.lang.String">Xalan</target:property>
+      <target:property encrypt="false" name="Transformation Class Name" type="java.lang.String"></target:property>
+    </target:configuration-properties>
+  </target:instance>
+  <target:instance name="JavaScript1">
+    <target:instance-properties>
+      <target:deployment cache="true" nodes="fps_2"/>
+    </target:instance-properties>
+    <target:configuration-properties/>
+  </target:instance>
+</target:target>

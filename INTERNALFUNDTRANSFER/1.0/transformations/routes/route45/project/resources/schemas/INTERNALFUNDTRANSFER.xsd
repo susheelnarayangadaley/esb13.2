@@ -1,0 +1,41 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="AccountDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="currencyType"/>
+				<xs:element type="xs:string" name="transactionAmount"/>
+				<xs:element type="xs:string" name="payerName"/>
+				<xs:element type="xs:string" name="fromAccount"/>
+				<xs:element type="xs:string" name="fromCurrencyType"/>
+				<xs:element type="xs:string" name="payeeName"/>
+				<xs:element type="xs:string" name="toAccount"/>
+				<xs:element type="xs:string" name="toCurrencyType"/>
+				<xs:element type="xs:string" name="transactionReference"/>
+				<xs:element type="xs:string" name="transactionDescription"/>
+				<xs:element type="xs:string" name="Status"/>	 	
+				<xs:element type="xs:string" name="channel"/>
+				<xs:element name="FDDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="fdType"/>
+							<xs:element type="xs:string" name="customerID"/>
+							<xs:element type="xs:string" name="effectiveDate"/>
+							<xs:element type="xs:string" name="currency"/>
+							<xs:element type="xs:string" name="introducer"/>
+							<xs:element type="xs:string" name="accountType"/>
+							<xs:element type="xs:string" name="modeOfOperation"/>
+							<xs:element type="xs:string" name="term"/>
+							<xs:element type="xs:string" name="amount"/>
+							<xs:element type="xs:string" name="debitAccount"/>
+							<xs:element type="xs:string" name="principalCreditAccount"/>
+							<xs:element type="xs:string" name="interestCreditAccount"/>
+							<xs:element type="xs:string" name="maturityDate"/>
+							<xs:element type="xs:string" name="changePeriod"/>
+							<xs:element type="xs:string" name="product"/>			
+						</xs:sequence>
+					</xs:complexType>		
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>		
+</xs:element>
+</xs:schema>

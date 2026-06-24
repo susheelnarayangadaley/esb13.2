@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_431" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.feeder.model.FeederPM"> 
+  <void property="attachment"> 
+   <object class="java.util.LinkedHashMap"/> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1300</int> 
+  </void> 
+  <void property="defaultMessage"> 
+   <string>&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:web=&quot;http://www.oorsprong.org/websamples.countryinfo&quot;&gt;&#13;
+   &lt;soapenv:Header/&gt;&#13;
+   &lt;soapenv:Body&gt;&#13;
+      &lt;web:CapitalCity&gt;&#13;
+         &lt;web:sCountryISOCode&gt;IND&lt;/web:sCountryISOCode&gt;&#13;
+      &lt;/web:CapitalCity&gt;&#13;
+   &lt;/soapenv:Body&gt;&#13;
+&lt;/soapenv:Envelope&gt;</string> 
+  </void> 
+  <void property="elementsToEncrypt"> 
+   <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+    <void property="namespaces"> 
+     <void method="put"> 
+      <string>xsd</string> 
+      <string>http://www.w3.org/2001/XMLSchema</string> 
+     </void> 
+     <void method="put"> 
+      <string>xml</string> 
+      <string>http://www.w3.org/XML/1998/namespace</string> 
+     </void> 
+     <void method="put"> 
+      <string>ns2</string> 
+      <string>http://www.oorsprong.org/websamples.countryinfo</string> 
+     </void> 
+     <void method="put"> 
+      <string>ns1</string> 
+      <string>http://www.oorsprong.org/websamples.countryinfo/CapitalCity/Input</string> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="header"> 
+   <object class="java.util.LinkedHashMap"/> 
+  </void> 
+  <void property="schema"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="importedStructures"> 
+     <object class="java.util.Hashtable"> 
+      <void method="put"> 
+       <string>http://www.oorsprong.org/websamples.countryinfo</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xs:schema elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://www.oorsprong.org/websamples.countryinfo&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:soap12=&quot;http://schemas.xmlsoap.org/wsdl/soap12/&quot; xmlns:tns=&quot;http://www.oorsprong.org/websamples.countryinfo&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+      &lt;xs:complexType name=&quot;tContinent&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name=&quot;sCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sName&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;tCurrency&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name=&quot;sISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sName&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;tCountryCodeAndName&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name=&quot;sISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sName&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;tCountryCodeAndNameGroupedByContinent&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name=&quot;Continent&quot; type=&quot;tns:tContinent&quot;/&gt;
+          &lt;xs:element name=&quot;CountryCodeAndNames&quot; type=&quot;tns:ArrayOftCountryCodeAndName&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;tCountryInfo&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name=&quot;sISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sName&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sCapitalCity&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sPhoneCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sContinentCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sCurrencyISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sCountryFlag&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;Languages&quot; type=&quot;tns:ArrayOftLanguage&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;tLanguage&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name=&quot;sISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;sName&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;ArrayOftCountryCodeAndName&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;tCountryCodeAndName&quot; nillable=&quot;true&quot; type=&quot;tns:tCountryCodeAndName&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;ArrayOftLanguage&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;tLanguage&quot; nillable=&quot;true&quot; type=&quot;tns:tLanguage&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;ArrayOftContinent&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;tContinent&quot; nillable=&quot;true&quot; type=&quot;tns:tContinent&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;ArrayOftCurrency&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;tCurrency&quot; nillable=&quot;true&quot; type=&quot;tns:tCurrency&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;ArrayOftCountryCodeAndNameGroupedByContinent&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;tCountryCodeAndNameGroupedByContinent&quot; nillable=&quot;true&quot; type=&quot;tns:tCountryCodeAndNameGroupedByContinent&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:complexType name=&quot;ArrayOftCountryInfo&quot;&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;tCountryInfo&quot; nillable=&quot;true&quot; type=&quot;tns:tCountryInfo&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:element name=&quot;ListOfContinentsByName&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfContinentsByNameResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfContinentsByNameResult&quot; type=&quot;tns:ArrayOftContinent&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfContinentsByCode&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfContinentsByCodeResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfContinentsByCodeResult&quot; type=&quot;tns:ArrayOftContinent&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCurrenciesByName&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCurrenciesByNameResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfCurrenciesByNameResult&quot; type=&quot;tns:ArrayOftCurrency&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCurrenciesByCode&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCurrenciesByCodeResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfCurrenciesByCodeResult&quot; type=&quot;tns:ArrayOftCurrency&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CurrencyName&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sCurrencyISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CurrencyNameResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;CurrencyNameResult&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCountryNamesByCode&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCountryNamesByCodeResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfCountryNamesByCodeResult&quot; type=&quot;tns:ArrayOftCountryCodeAndName&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCountryNamesByName&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCountryNamesByNameResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfCountryNamesByNameResult&quot; type=&quot;tns:ArrayOftCountryCodeAndName&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCountryNamesGroupedByContinent&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfCountryNamesGroupedByContinentResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfCountryNamesGroupedByContinentResult&quot; type=&quot;tns:ArrayOftCountryCodeAndNameGroupedByContinent&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryName&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sCountryISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryNameResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;CountryNameResult&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryISOCode&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sCountryName&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryISOCodeResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;CountryISOCodeResult&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CapitalCity&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sCountryISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CapitalCityResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;CapitalCityResult&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryCurrency&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sCountryISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryCurrencyResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;CountryCurrencyResult&quot; type=&quot;tns:tCurrency&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryFlag&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sCountryISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryFlagResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;CountryFlagResult&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryIntPhoneCode&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sCountryISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountryIntPhoneCodeResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;CountryIntPhoneCodeResult&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;FullCountryInfo&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sCountryISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;FullCountryInfoResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;FullCountryInfoResult&quot; type=&quot;tns:tCountryInfo&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;FullCountryInfoAllCountries&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;FullCountryInfoAllCountriesResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;FullCountryInfoAllCountriesResult&quot; type=&quot;tns:ArrayOftCountryInfo&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountriesUsingCurrency&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sISOCurrencyCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;CountriesUsingCurrencyResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;CountriesUsingCurrencyResult&quot; type=&quot;tns:ArrayOftCountryCodeAndName&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfLanguagesByName&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfLanguagesByNameResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfLanguagesByNameResult&quot; type=&quot;tns:ArrayOftLanguage&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfLanguagesByCode&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;ListOfLanguagesByCodeResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;ListOfLanguagesByCodeResult&quot; type=&quot;tns:ArrayOftLanguage&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;LanguageName&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sISOCode&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;LanguageNameResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;LanguageNameResult&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;LanguageISOCode&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;sLanguageName&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name=&quot;LanguageISOCodeResponse&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;LanguageISOCodeResult&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:schema&gt;</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="rootElementName"> 
+     <string>Envelope</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xs:schema xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:tns=&quot;http://www.oorsprong.org/websamples.countryinfo&quot; xmlns:soap12=&quot;http://schemas.xmlsoap.org/wsdl/soap12/&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:ftns=&quot;http://www.oorsprong.org/websamples.countryinfo/CapitalCity/Input&quot; targetNamespace=&quot;http://www.oorsprong.org/websamples.countryinfo/CapitalCity/Input&quot;&gt;&#13;
+    &lt;xs:import namespace=&quot;http://www.oorsprong.org/websamples.countryinfo&quot;/&gt;&#13;
+    &lt;xs:element name=&quot;Envelope&quot;&gt;&#13;
+        &lt;xs:complexType&gt;&#13;
+            &lt;xs:sequence&gt;&#13;
+                &lt;xs:element ref=&quot;ftns:Header&quot;/&gt;&#13;
+                &lt;xs:element ref=&quot;ftns:Body&quot;/&gt;&#13;
+            &lt;/xs:sequence&gt;&#13;
+        &lt;/xs:complexType&gt;&#13;
+    &lt;/xs:element&gt;&#13;
+    &lt;xs:element name=&quot;Header&quot;&gt;&#13;
+        &lt;xs:complexType&gt;&#13;
+            &lt;xs:sequence/&gt;&#13;
+        &lt;/xs:complexType&gt;&#13;
+    &lt;/xs:element&gt;&#13;
+    &lt;xs:element name=&quot;Body&quot;&gt;&#13;
+        &lt;xs:complexType&gt;&#13;
+            &lt;xs:sequence&gt;&#13;
+                &lt;xs:element ref=&quot;tns:CapitalCity&quot;/&gt;&#13;
+            &lt;/xs:sequence&gt;&#13;
+        &lt;/xs:complexType&gt;&#13;
+    &lt;/xs:element&gt;&#13;
+&lt;/xs:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string>http://www.oorsprong.org/websamples.countryinfo/CapitalCity/Input</string> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 

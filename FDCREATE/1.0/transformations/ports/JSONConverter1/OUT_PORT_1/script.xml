@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT_1" select="document('OUT_PORT_1')"></xsl:variable>
+  <xsl:template match="/">
+    <AccountDetails>
+      <FDDetails>
+        <fdType>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/fdType"></xsl:value-of>
+        </fdType>
+        <customerID>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/customerID"></xsl:value-of>
+        </customerID>
+        <effectiveDate>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/effectiveDate"></xsl:value-of>
+        </effectiveDate>
+        <currency>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/currency"></xsl:value-of>
+        </currency>
+        <introducer>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/introducer"></xsl:value-of>
+        </introducer>
+        <accountType>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/accountType"></xsl:value-of>
+        </accountType>
+        <modeOfOperation>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/modeOfOperation"></xsl:value-of>
+        </modeOfOperation>
+        <term>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/term"></xsl:value-of>
+        </term>
+        <amount>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/amount"></xsl:value-of>
+        </amount>
+        <debitAccount>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/debitAccount"></xsl:value-of>
+        </debitAccount>
+        <principalCreditAccount>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/principalCreditAccount"></xsl:value-of>
+        </principalCreditAccount>
+        <interestCreditAccount>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/interestCreditAccount"></xsl:value-of>
+        </interestCreditAccount>
+        <maturityDate>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/maturityDate"></xsl:value-of>
+        </maturityDate>
+        <changePeriod>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/changePeriod"></xsl:value-of>
+        </changePeriod>
+        <product>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/product"></xsl:value-of>
+        </product>
+        <branchid>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/branchid"></xsl:value-of>
+        </branchid>
+        <channel>
+          <xsl:value-of select="$document_OUT_PORT_1/FDCreate/channel"></xsl:value-of>
+        </channel>
+        <operator>
+          <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'calculate', contains($document_OUT_PORT_1/FDCreate/operator,'calculate'))"></xsl:value-of>
+        </operator>
+      </FDDetails>
+    </AccountDetails>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

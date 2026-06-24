@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="MMS_WSStub" x="152" y="208"/>
+    <service-instance name="T24" x="710" y="362"/>
+    <service-instance name="GetAccInfo" x="425" y="302"/>
+    <service-instance name="AccInfo_Res" x="1047" y="318"/>
+    <service-instance name="GetAccInfoRes" x="1285" y="311"/>
+    <service-instance name="reversal_req" x="404" y="414"/>
+    <service-instance name="reversalResponse" x="1185" y="435"/>
+    <service-instance name="Epay_res" x="929" y="194"/>
+    <service-instance name="Res_epay" x="1227" y="202"/>
+    <service-instance name="Epay" x="358" y="273"/>
+    <service-instance name="Epay_req" x="558" y="245"/>
+    <service-instance name="Reversal_res" x="869" y="428"/>
+    <service-instance name="T241" x="690" y="207"/>
+    <service-instance name="khqr_res" x="999" y="120"/>
+    <service-instance name="khqrResp" x="1264" y="120"/>
+    <service-instance name="CollectRq" x="327" y="64"/>
+    <service-instance name="T24_W" x="484" y="79"/>
+    <service-instance name="Collectres" x="655" y="79"/>
+    <service-instance name="Collect_res" x="848" y="59"/>
+    <service-instance name="khqr_in" x="465" y="206"/>
+    <service-instance name="Xslt1" x="287" y="201"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

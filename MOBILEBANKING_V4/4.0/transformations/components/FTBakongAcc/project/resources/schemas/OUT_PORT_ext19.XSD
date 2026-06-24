@@ -1,0 +1,70 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBACRTMB" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBACRTMB" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBACRTMB">
+   <xsd:complexType name="FUNDSTRANSFERCPBACRTMBType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="TransactionType" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitAmount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitValueDate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitNarrative" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditNarrative" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditValueDate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="TreasuryRate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ChargesAcctNo" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CommissionCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCOMMISSIONTYPE">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCOMMISSIONTYPE">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="CommissionType" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="CommissionAmount" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="CustomerRate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="BankBranchSender" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="BankBranchReceiver" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="AcctOtherBank" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="SenderName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="SenderCardID" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="SenderPhone" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCPBFTSDRQS">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="Question" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="ReceiverName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ReceiverCardID" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ReceiverPhone" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCPBFTRCVANS">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="Answer" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="gCPBFTREMARK">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="Purpose" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

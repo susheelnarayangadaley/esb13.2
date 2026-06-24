@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="">
+    <xsd:element name="root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" name="Record">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Y.ACC.NUM" type="xsd:string"/>
+                            <xsd:element name="Y.CCY" type="xsd:string"/>
+                            <xsd:element name="Y.PRODUCT" type="xsd:string"/>
+                            <xsd:element name="Y.CURR.BAL" type="xsd:string"/>
+                            <xsd:element name="Y.ACC.TYPE" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

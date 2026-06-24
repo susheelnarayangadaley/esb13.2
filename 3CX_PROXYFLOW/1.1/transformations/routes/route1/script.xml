@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/services/rest" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:jsonToOfs="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:ofsConverterRequest="http://xml.apache.org/xslt/java" xmlns:ofsConverterResponse="http://xml.apache.org/xslt/java" xmlns:ofsConverterResponseCode="http://xml.apache.org/xslt/java" xmlns:ofsToJson="http://xml.apache.org/xslt/java" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion jsonToOfs myext ofsConverterRequest ofsConverterResponse ofsConverterResponseCode ofsToJson strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_callcontrol__GET__Request" select="document('callcontrol__GET__Request')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Request>
+      <ResourceURL>
+        <xsl:value-of select="concat('https://demopbxeze.3cx.asia/callcontrol/',java:_getStringProperty($_TIF_MESSAGE_, 'dn'),'/')"></xsl:value-of>
+      </ResourceURL>
+      <RequestParameters>
+        <Authorization>
+          <xsl:value-of select="concat('Bearer ',substring-before(substring-after($document_callcontrol__GET__Request/ns1:Responses/Response/Representations/Representation/Element,'&quot;access_token&quot;:&quot;'),'&quot;'))"></xsl:value-of>
+        </Authorization>
+      </RequestParameters>
+    </ns1:Request>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="FTBakongWalletcRes" x="1184" y="160"/>
+    <service-instance name="FTBakongAccRes" x="1175" y="272"/>
+    <service-instance name="FTKoicaAccRes" x="1137" y="560"/>
+    <service-instance name="FTKoicaPhoneRes" x="1145" y="623"/>
+    <service-instance name="KoicaPhon" x="219" y="645"/>
+    <service-instance name="FTBakongAcc" x="295" y="388"/>
+    <service-instance name="FTKoicaAcc" x="310" y="540"/>
+    <service-instance name="BakongAccRes" x="769" y="277"/>
+    <service-instance name="FTKoicaPhone" x="860" y="633"/>
+    <service-instance name="BakongWalletRes" x="808" y="161"/>
+    <service-instance name="KoicaAccRes" x="912" y="497"/>
+    <service-instance name="CBS" x="714" y="587"/>
+    <service-instance name="FTBankWallet" x="302" y="268"/>
+    <service-instance name="FTNCS" x="218" y="86"/>
+    <service-instance name="CBS1" x="631" y="-53"/>
+    <service-instance name="FTNCSRes" x="928" y="-115"/>
+    <service-instance name="NCSRes" x="1166" y="-18"/>
+    <service-instance name="FTSWIFT" x="299" y="146"/>
+    <service-instance name="FTSWIFTRes" x="940" y="94"/>
+    <service-instance name="SWIFTRes" x="1193" y="76"/>
+    <service-instance name="SchReq" x="293" y="-112"/>
+    <service-instance name="statementres" x="1266" y="-116"/>
+    <remote-service-instance name="MOBILEBANKING_2_0.MB1" x="-15" y="-137"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

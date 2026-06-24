@@ -1,0 +1,45 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/CPBGETSCHFULL" elementFormDefault="qualified" xmlns="http://temenos.com/CPBGETSCHFULL" targetNamespace="http://temenos.com/CPBGETSCHFULL">
+   <xsd:complexType name="CPBGETSCHFULLType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="DCUSTOMER" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CusName" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ARRANGEMENT" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CURRENCY" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Paymentdate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DueAmt" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DuePrin" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DueInt" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="MaturityDate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="OutstandingBal" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="MonthlyPayment" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="InterestRate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="LoanSize" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="StartDate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="TotalInterest" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="TotalPaid" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Term" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="JointHolder" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ZERORECORDS" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCPBGETSCHFULLDetailType">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCPBGETSCHFULLDetailType">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="Arrangement" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="PmtDate" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="PayAmt" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="PmtPrn" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="PmtInt" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="Outstanding" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/DB1/Request" xmlns:EnDe="http://xml.apache.org/xslt/java" xmlns:Md5UniCode="http://xml.apache.org/xslt/java" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:string="string" xmlns:strings="strings" xmlns:thetaray="thetaray" xmlns:thetaray_minus1="thetaray_minus1" xmlns:thetaray_trans="thetaray_trans" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math EnDe Md5UniCode StringLength dateConversion myext string strings thetaray thetaray_minus1 thetaray_trans truncateString">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <ns2:SQL_CFG_1>
+      <ns2:logT>
+        <ns2:place>
+          <xsl:value-of select="Context"></xsl:value-of>
+        </ns2:place>
+      </ns2:logT>
+    </ns2:SQL_CFG_1>
+  </xsl:template>
+</xsl:stylesheet>

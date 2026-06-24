@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:strings="strings" xmlns:test="test" xmlns:thetaray="thetaray" xmlns:thetaray_minus1="thetaray_minus1" xmlns:thetaray_trans="thetaray_trans" extension-element-prefixes="datetime set math dateConversion myext nestedJsonParser strings test thetaray thetaray_minus1 thetaray_trans">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Result>
+      <ns1:row>
+        <xsl:attribute name="resultcount">
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/@resultcount"></xsl:value-of>
+        </xsl:attribute>
+        <ns1:ID>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:ID"></xsl:value-of>
+        </ns1:ID>
+        <ns1:SERVICENAME>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:SERVICENAME"></xsl:value-of>
+        </ns1:SERVICENAME>
+        <ns1:AMOUNTTRAN_100>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:AMOUNTTRAN_100"></xsl:value-of>
+        </ns1:AMOUNTTRAN_100>
+        <ns1:TRANCURRENCY>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:TRANCURRENCY"></xsl:value-of>
+        </ns1:TRANCURRENCY>
+        <ns1:MOBILENUMBER>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:MOBILENUMBER"></xsl:value-of>
+        </ns1:MOBILENUMBER>
+        <ns1:ADRESSE>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:ADRESSE"></xsl:value-of>
+        </ns1:ADRESSE>
+        <ns1:NATIONALITY>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:NATIONALITY"></xsl:value-of>
+        </ns1:NATIONALITY>
+        <ns1:GENDER>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:GENDER"></xsl:value-of>
+        </ns1:GENDER>
+        <ns1:PLACEOFBIRTH>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:PLACEOFBIRTH"></xsl:value-of>
+        </ns1:PLACEOFBIRTH>
+        <ns1:DATE_OF_BIRTH>
+          <xsl:value-of select="substring($document_OUT_PORT/ns1:Result/ns1:row/ns1:DATE_OF_BIRTH,'1','10')"></xsl:value-of>
+        </ns1:DATE_OF_BIRTH>
+        <ns1:DESTACCOUNT>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:DESTACCOUNT"></xsl:value-of>
+        </ns1:DESTACCOUNT>
+        <ns1:DESTMOBILENUMBER>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:DESTMOBILENUMBER"></xsl:value-of>
+        </ns1:DESTMOBILENUMBER>
+        <ns1:WALLETCURRENCY>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:WALLETCURRENCY"></xsl:value-of>
+        </ns1:WALLETCURRENCY>
+        <ns1:TRANSDATETIME>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:TRANSDATETIME"></xsl:value-of>
+        </ns1:TRANSDATETIME>
+        <ns1:RESPCODE>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:RESPCODE"></xsl:value-of>
+        </ns1:RESPCODE>
+        <ns1:USERID>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:USERID"></xsl:value-of>
+        </ns1:USERID>
+        <ns1:FULLNAME>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:FULLNAME"></xsl:value-of>
+        </ns1:FULLNAME>
+        <ns1:DATE_TRANS>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:DATE_TRANS"></xsl:value-of>
+        </ns1:DATE_TRANS>
+        <ns1:DESTUSERID>
+          <xsl:value-of disable-output-escaping="no" select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:DESTUSERID"></xsl:value-of>
+        </ns1:DESTUSERID>
+        <ns1:DESTADDRESS>
+          <xsl:value-of disable-output-escaping="no" select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:DESTADDRESS"></xsl:value-of>
+        </ns1:DESTADDRESS>
+        <ns1:DESTFIRSTNAME>
+          <xsl:value-of disable-output-escaping="no" select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:DESTFIRSTNAME"></xsl:value-of>
+        </ns1:DESTFIRSTNAME>
+        <ns1:DESTMERCHANTNAME>
+          <xsl:value-of disable-output-escaping="no" select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:DESTMERCHANTNAME"></xsl:value-of>
+        </ns1:DESTMERCHANTNAME>
+        <ns1:DESTCUSTOMERNAME>
+          <xsl:value-of disable-output-escaping="no" select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:DESTCUSTOMERNAME"></xsl:value-of>
+        </ns1:DESTCUSTOMERNAME>
+        <ns1:NATIONALITY_CODE>
+          <xsl:value-of disable-output-escaping="no" select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:NATIONALITY_CODE"></xsl:value-of>
+        </ns1:NATIONALITY_CODE>
+        <ns1:CITY>
+          <xsl:value-of select="$document_OUT_PORT/ns1:Result/ns1:row/ns1:CITY"></xsl:value-of>
+        </ns1:CITY>
+      </ns1:row>
+    </ns1:Result>
+  </xsl:template>
+</xsl:stylesheet>

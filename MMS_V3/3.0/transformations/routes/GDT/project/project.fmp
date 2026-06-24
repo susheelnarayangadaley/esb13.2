@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="MMS_V3.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="FTReq.IN_PORT.xsd" mime="XSD" name="OUT_PORT" rootName="fundtransfer"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="{ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,gLTXNNARRDR:0,[ZERO MANY]:0}1" filePath="T24.ETAXPAYMENT__IN_PORT.xsd" mime="XSD" name="ETAXPAYMENT__IN_PORT" rootName="{http://temenos.com/DEVMB3/ETAXPAYMENT/Input}Envelope">
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFER"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext1.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext2.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTINFO"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext3.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext4.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext5.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext6.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBACBILL"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext7.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBEDCBILL"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext8.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSRBILL"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext9.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext10.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext11.XSD" mime="XSD" name="http://temenos.com/CPBGETCUSTOMERINFO"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext12.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILL"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext13.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext14.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTLIST"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext15.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext16.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWINGOUT"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext17.XSD" mime="XSD" name="http://temenos.com/DEVMB3"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext18.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYOPENFD"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext19.XSD" mime="XSD" name="http://temenos.com/CUSTOMERCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext20.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext21.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext22.XSD" mime="XSD" name="http://temenos.com/CUSTOMER"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext23.XSD" mime="XSD" name="http://temenos.com/CPBGETEXCHANGERATE"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext24.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext25.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext26.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBTOPUP"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext27.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext28.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext29.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWATERBILL"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext30.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext31.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTSTMT"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext32.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext33.XSD" mime="XSD" name="http://temenos.com/CPBGETINTERESTRATE"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext34.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBFUNANBILL"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext35.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext36.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITY"/>
+      <mappermodel:ExternalStructure filePath="ETAXPAYMENT__IN_PORT_ext37.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMB"/>
+    </mappermodel:Structure>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,CREDITAMOUNT:0" x="817" y="70">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,Amount:0" x="52" y="9">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="520" y="16">
+        <mappermodel:InputPins>bool,then,bool,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="=" type="31" x="242" y="57">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="79" y="51">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="100" type="22" x="278" y="131">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="ESBX__SYSTEM__USER_DEFINED_DOC_ID" type="22" x="126" y="172">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="setStringProperty" type="136" x="572" y="150">
+        <mappermodel:InputPins>name,value</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,TransId:0" x="359" y="227">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="3" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="7" inputIndex="1" outputID="8" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,COMMISSIONAMT:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,TxnFee:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,CHARGESACCTNO:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,FromAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,CREDITTHEIRREF:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="17" type="22" x="255" y="264">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="2" type="22" x="199" y="196">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="394" y="168">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,TransId:0" x="111" y="93">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="2" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="3" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,DEBITACCTNO:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,FromAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,WebRequestCommon:0,password:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="password" type="22" x="190" y="141">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="338" y="252">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,WebRequestCommon:0,userName:0" x="794" y="87">
+      <mappermodel:FunctionGraphNode label="username" type="22" x="305" y="147">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="411" y="256">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,OfsFunction:0,activityName:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="" type="22" x="343" y="182">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,id:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="" type="22" x="229" y="88">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,DEBITTHEIRREF:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="ETAX PAYMENT" type="22" x="185" y="113">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,CREDITACCTNO:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,ToAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,CREDITCURRENCY:0" x="560" y="63">
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,CurrenCy:0" x="197" y="141">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,gLTXNNARRDR:0,g:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="1" type="22" x="392" y="183">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,gLTXNNARRDR:0,[ZERO MANY]:0,LTXNNARRDR:0" x="788" y="20">
+      <mappermodel:FunctionGraphNode label=" Merchant Name: " type="22" x="20" y="144">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="64" type="22" x="302" y="227">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="485" y="20">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="ETAX Payment to MerchantID: " type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="0" type="22" x="302" y="165">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="302" y="20">
+        <mappermodel:InputPins>1,2,3,4,5,6,7</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,merchantID:0" x="20" y="82">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,merchantName:0" x="20" y="206">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label=" Invoice No " type="22" x="20" y="268">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,Remark:0" x="20" y="330">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="6" inputIndex="0" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="2" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="2" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="1" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="3" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="4" outputID="9" outputIndex="0"/>
+      <mappermodel:Link inputID="6" inputIndex="5" outputID="10" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="ETAXPAYMENT__IN_PORT:0,Envelope:0,Body:0,ETAXPAYMENT:0,FUNDSTRANSFERCPBETAXPAYMENTType:0,gLTXNNARRDR:0,[ZERO MANY]:1,LTXNNARRDR:0" x="788" y="20">
+      <mappermodel:FunctionGraphNode label=" Merchant Name: " type="22" x="36" y="76">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="ETAX Payment to MerchantID: " type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="302" y="20">
+        <mappermodel:InputPins>1,2,3,4,5,6,7</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="65" type="22" x="367" y="153">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="SubString-Offset-Length" type="26" x="550" y="45">
+        <mappermodel:InputPins>str,offset,length</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,merchantID:0" x="23" y="52">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,merchantName:0" x="19" y="118">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:FunctionGraphNode label=" Invoice No " type="22" x="90" y="165">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="OUT_PORT:0,fundtransfer:0,Remark:0" x="260" y="203">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="5" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="2" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="5" inputIndex="2" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="1" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="3" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="4" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="3" inputIndex="5" outputID="9" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

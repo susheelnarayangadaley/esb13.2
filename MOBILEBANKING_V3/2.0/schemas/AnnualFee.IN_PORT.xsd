@@ -1,0 +1,18 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="AnnualFeeRq">
+        
+                       <xsd:complexType>
+                              <xsd:sequence>
+                         
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="FromAccount" type="xsd:string"/>
+									 <xsd:element maxOccurs="1" minOccurs="1" name="ToAccount" type="xsd:string"/>
+									 <xsd:element maxOccurs="1" minOccurs="1" name="AnuualFee" type="xsd:string"/>
+									 <xsd:element maxOccurs="1" minOccurs="1" name="CurrenCy" type="xsd:string"/>
+									 <xsd:element maxOccurs="1" minOccurs="1" name="Remark" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="SignData" type="xsd:string"/>
+                                       
+                    </xsd:sequence>
+                      
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

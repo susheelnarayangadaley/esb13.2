@@ -1,0 +1,22 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/GETACCTNUMBER" elementFormDefault="qualified" xmlns="http://temenos.com/GETACCTNUMBER" targetNamespace="http://temenos.com/GETACCTNUMBER">
+   <xsd:complexType name="GETACCTNUMBERType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="gGETACCTNUMBERDetailType">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mGETACCTNUMBERDetailType">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="AA" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="AccountNumber" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

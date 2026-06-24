@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context.XSD" mime="XSD" name="Application-Context" rootName="Root"/>
+    <mappermodel:Structure duplicates="" filePath="Input1.XSD" mime="XSD" name="Input1" rootName="FTNCSRq"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="OUT_PORT.XSD" mime="XSD" name="OUT_PORT" rootName="{http://temenos.com/CPTWS/WSCPBTWSCPBACRTMB/Input}Envelope">
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFER"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext1.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTLISTJOIN"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext2.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext3.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext4.XSD" mime="XSD" name="http://temenos.com/CPTWS"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext5.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext6.XSD" mime="XSD" name="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext16.XSD" mime="XSD" name="http://temenos.com/CPBGETSCHFULL"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext17.XSD" mime="XSD" name="http://temenos.com/GETEDCFREEZEBLOCKAMT"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext19.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBACRTMB"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext24.XSD" mime="XSD" name="http://temenos.com/ACLOCKEDEVENTS"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext25.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext26.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"/>
+      <mappermodel:ExternalStructure filePath="OUT_PORT_ext27.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMB"/>
+    </mappermodel:Structure>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,WebRequestCommon:0,password:0" x="546" y="75">
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="287" y="152">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="password" type="22" x="133" y="70">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,WebRequestCommon:0,userName:0" x="555" y="68">
+      <mappermodel:FunctionGraphNode label="getStringProperty" type="144" x="229" y="135">
+        <mappermodel:InputPins>name</mappermodel:InputPins>
+        <mappermodel:OutputPins>string</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="username" type="22" x="185" y="41">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,TransactionType:0" x="518" y="55">
+      <mappermodel:FunctionGraphNode label="ACRT" type="22" x="192" y="103">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,DebitNarrative:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,Remark:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,DebitAccount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,FromAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,CreditAccount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,ToAccount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,CreditNarrative:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,TransId:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,ChargesAcctNo:0" x="579" y="74">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,FromAccount:0" x="210" y="68">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,CreditCurrency:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,Currency:0" x="90" y="122">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,gCOMMISSIONTYPE:0,[ZERO MANY]:0,mCOMMISSIONTYPE:0,m:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="1" type="22" x="159" y="113">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,gCOMMISSIONTYPE:0,[ZERO MANY]:0,mCOMMISSIONTYPE:0,CommissionType:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="Constant" type="22" x="156" y="63">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,CommissionCode:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="D" type="22" x="179" y="138">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,gCOMMISSIONTYPE:0,[ZERO MANY]:0,mCOMMISSIONTYPE:0,CommissionAmount:0" x="520" y="69">
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="253" y="90">
+        <mappermodel:InputPins>1,2,3</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,TxnFee:0" x="83" y="151">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,Currency:0" x="76" y="63">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="3" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,BankBranchSender:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,BeneficiaryBank:0" x="80" y="146">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,BankBranchReceiver:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,SenderBankName:0" x="131" y="110">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,AcctOtherBank:0" x="434" y="65">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,BeneficiaryAccount:0" x="136" y="147">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,SenderName:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,SenderName:0" x="108" y="113">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,SenderCardID:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,SenderBankCode:0" x="103" y="111">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,ReceiverName:0" x="499" y="67">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,BeneficiaryAccountName:0" x="138" y="125">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,ReceiverCardID:0" x="486" y="74">
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,BeneficiaryBankCode:0" x="165" y="183">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,gCPBFTREMARK:0,g:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="1" type="22" x="203" y="111">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="OUT_PORT:0,Envelope:0,Body:0,WSCPBTWSCPBACRTMB:0,FUNDSTRANSFERCPBACRTMBType:0,gCPBFTREMARK:0,[ZERO MANY]:0,Purpose:0" x="586" y="75">
+      <mappermodel:FunctionGraphNode label="Concat" type="20" x="385" y="93">
+        <mappermodel:InputPins>1,2,3</mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="TT To " type="22" x="73" y="56">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Input1:0,FTNCSRq:0,BeneficiaryBank:0" x="82" y="141">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="3" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

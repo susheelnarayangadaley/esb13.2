@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="RESTConsumer1" x="546" y="84"/>
+    <service-instance name="RESTConsumer3" x="769" y="82"/>
+    <service-instance name="Cache1" x="691" y="190"/>
+    <service-instance name="JSONConverter1" x="900" y="83"/>
+    <service-instance name="DB1" x="1015" y="89"/>
+    <service-instance name="JSONConverter2" x="456" y="239"/>
+    <service-instance name="DBQueryOnInput1" x="304" y="149"/>
+    <service-instance name="FileReader1" x="190" y="282"/>
+    <service-instance name="FileWriter1" x="968" y="342"/>
+    <service-instance name="Aggregator1" x="688" y="312"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

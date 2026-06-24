@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context1.XSD" mime="XSD" name="Application-Context" rootName="Root"/>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.XSD" mime="XSD" name="IN_PORT" rootName="{http://temenos.com/DEVMB3/ToGetExchangeRate/Output}Envelope">
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFER"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext1.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext2.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTINFO"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext3.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMMSPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext4.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMOBOUTFASTV2"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext5.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBQRPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext6.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBACBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext7.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBEDCBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext8.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSRBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext9.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBACCTOACCT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext10.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTFTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext11.XSD" mime="XSD" name="http://temenos.com/CPBGETCUSTOMERINFO"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext12.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext13.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTLIST"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext14.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext15.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext16.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWINGOUT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext17.XSD" mime="XSD" name="http://temenos.com/DEVMB3"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext18.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITYOPENFD"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext19.XSD" mime="XSD" name="http://temenos.com/CUSTOMERCPBDMD"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext20.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext21.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBRFTPHONEFTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext22.XSD" mime="XSD" name="http://temenos.com/CUSTOMER"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext23.XSD" mime="XSD" name="http://temenos.com/CPBGETEXCHANGERATE"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext24.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBBILLTOPUPREFUND"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext25.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext26.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBTOPUP"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext27.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext28.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSVLPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext29.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWATERBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext30.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext31.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTSTMT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext32.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext33.XSD" mime="XSD" name="http://temenos.com/CPBGETINTERESTRATE"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext34.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBFUNANBILL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext73.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBMBANUALFEE"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext74.XSD" mime="XSD" name="http://temenos.com/AAARRANGEMENTACTIVITY"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext75.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMB"/>
+    </mappermodel:Structure>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Output1.XSD" mime="XSD" name="Output1" rootName="ExchangeRateRp"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,CurrenCy:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,ToGetExchangeRateResponse:0,[ZERO MANY]:0,CPBGETEXCHANGERATEType:0,gCPBGETEXCHANGERATEDetailType:0,[ZERO MANY]:0,mCPBGETEXCHANGERATEDetailType:0,CURRENCY:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,ToGetExchangeRateResponse:0,[ZERO MANY]:0,CPBGETEXCHANGERATEType:0,gCPBGETEXCHANGERATEDetailType:0,[ZERO MANY]:0,mCPBGETEXCHANGERATEDetailType:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,Purchase:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,ToGetExchangeRateResponse:0,[ZERO MANY]:0,CPBGETEXCHANGERATEType:0,gCPBGETEXCHANGERATEDetailType:0,[ZERO MANY]:0,mCPBGETEXCHANGERATEDetailType:0,BUYRATE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0,Sell:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,ToGetExchangeRateResponse:0,[ZERO MANY]:0,CPBGETEXCHANGERATEType:0,gCPBGETEXCHANGERATEDetailType:0,[ZERO MANY]:0,mCPBGETEXCHANGERATEDetailType:0,SELLRATE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ErrorCode:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,ToGetExchangeRateResponse:0,[ZERO MANY]:0,CPBGETEXCHANGERATEType:0,gCPBGETEXCHANGERATEDetailType:0,[ZERO MANY]:0,mCPBGETEXCHANGERATEDetailType:0,STATUSCODE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,ErrorMsg:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,ToGetExchangeRateResponse:0,[ZERO MANY]:0,CPBGETEXCHANGERATEType:0,gCPBGETEXCHANGERATEDetailType:0,[ZERO MANY]:0,mCPBGETEXCHANGERATEDetailType:0,STATUDESC:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,ExchangeRateRp:0,UpdateDay:0" x="513" y="72">
+      <mappermodel:FunctionGraphNode label="convertDateV2" type="172" x="240" y="188">
+        <mappermodel:InputPins>Date String,Input Format,Output Format</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="yyyy-MM-dd'T'HH:mm:ss" type="22" x="-20" y="170">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="DateTime" type="100" x="275" y="114">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="dd-MM-yyyy" type="22" x="241" y="274">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="2" outputID="4" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+  <mappermodel:UserXSL index="0" node="Output1:0,ExchangeRateRp:0,ListExchangeRate:0,[ZERO MANY]:0,ExchangeRateDetail:0">&lt;xsl:variable name=&quot;pos&quot; select=&quot;position()&quot;/></mappermodel:UserXSL>
+</mappermodel:MapperProject>

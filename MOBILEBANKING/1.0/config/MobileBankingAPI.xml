@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.reststub.configuration.RESTStubConfiguration"> 
+  <void property="configuredVersion"> 
+   <int>1300</int> 
+  </void> 
+  <void property="encryptDecryptElementsMap"> 
+   <void method="put"> 
+    <string>bank_accounts__ministatement__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__fdcreate__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__currency_exchange__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank-accounts__balance__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__currency-type__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__customerinquiry__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__currency-type__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__fdclose__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__fdclose__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__STOOperations__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__currency-exchange__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__STOInquiry__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__internal-fund-transfer__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__fdinquiry__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__currency_exchange__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__balance__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"> 
+     <void property="namespaces"> 
+      <void method="put"> 
+       <string>xsd</string> 
+       <string>http://www.w3.org/2001/XMLSchema</string> 
+      </void> 
+      <void method="put"> 
+       <string>xml</string> 
+       <string>http://www.w3.org/XML/1998/namespace</string> 
+      </void> 
+      <void method="put"> 
+       <string>ns1</string> 
+       <string>http://www.fiorano.com/services/rest</string> 
+      </void> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="put"> 
+    <string>payments__internal-fund-transfer__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__STOOperations__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__inquiry__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__currency-exchange__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__external_fund_transfer__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__inquiry__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__internal_fund_transfer_tab__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__customerinquiry__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__internal_fund_transfer_tab__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__accountstatement__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__fdinquiry__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__currency_type__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__ministatement__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__balance__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__external_fund_transfer__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__currency_type__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__internal_fund_transfer__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__checkSTOOperation__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__accountstatement__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__STO__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__checkSTOOperation__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__STOInquiry__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__fdcreate__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank_accounts__STO__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>payments__internal_fund_transfer__POST__Request</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+   <void method="put"> 
+    <string>bank-accounts__balance__POST__Response</string> 
+    <object class="com.fiorano.services.common.configuration.EncryptDecryptElements"/> 
+   </void> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"/> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="executionConfiguration"> 
+   <void property="timeToLive"> 
+    <long>60000</long> 
+   </void> 
+  </void> 
+  <void property="fesConnectionConfiguration"> 
+   <void property="isUseConnectionDetailsFromFPS"> 
+    <boolean>true</boolean> 
+   </void> 
+   <void property="password" isEncrypted="true"> 
+    <string>DMSLzKckc/JLgIUhIpdeyw==</string> 
+   </void> 
+  </void> 
+  <void property="serviceName"> 
+   <string>CoreBankingServices</string> 
+  </void> 
+  <void property="transportSecurityConfiguration"> 
+   <void property="JWTAuthConfiguration"> 
+    <void property="authPath"> 
+     <string>bank_accounts</string> 
+    </void> 
+   </void> 
+   <void property="httpAuthConfiguration"> 
+    <void property="domain"> 
+     <string></string> 
+    </void> 
+    <void property="hostname"> 
+     <string></string> 
+    </void> 
+    <void property="password" isEncrypted="true"> 
+     <string></string> 
+    </void> 
+    <void property="realm"> 
+     <string></string> 
+    </void> 
+    <void property="username"> 
+     <string></string> 
+    </void> 
+   </void> 
+   <void property="sslConfiguration"> 
+    <void property="keyClientPassword" isEncrypted="true"> 
+     <string></string> 
+    </void> 
+    <void property="keyStoreLocation"> 
+     <string></string> 
+    </void> 
+    <void property="keyStorePassword" isEncrypted="true"> 
+     <string></string> 
+    </void> 
+    <void property="trustStoreLocation"> 
+     <string></string> 
+    </void> 
+    <void property="trustStorePassword" isEncrypted="true"> 
+     <string></string> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="wadlConfiguration"> 
+   <void property="basePath"> 
+    <string>Auto Generated</string> 
+   </void> 
+   <void property="wadl"> 
+    <string>&lt;ns:application xmlns:ns=&quot;http://wadl.dev.java.net/2009/02&quot;&gt;&#13;
+    &lt;ns:grammars/&gt;&#13;
+    &lt;ns:resources base=&quot;Auto Generated&quot;&gt;&#13;
+        &lt;ns:resource id=&quot;bank_accounts&quot; path=&quot;bank_accounts&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+            &lt;ns:resource id=&quot;balance&quot; path=&quot;balance&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;currency_type&quot; path=&quot;currency_type&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;customerinquiry&quot; path=&quot;customerinquiry&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;STO&quot; path=&quot;STO&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;accountstatement&quot; path=&quot;accountstatement&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;STOInquiry&quot; path=&quot;STOInquiry&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;checkSTOOperation&quot; path=&quot;checkSTOOperation&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+        &lt;/ns:resource&gt;&#13;
+        &lt;ns:resource id=&quot;payments&quot; path=&quot;payments&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+            &lt;ns:resource id=&quot;internal_fund_transfer&quot; path=&quot;internal_fund_transfer&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;currency_exchange&quot; path=&quot;currency_exchange&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;inquiry&quot; path=&quot;inquiry&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;fdinquiry&quot; path=&quot;fdinquiry&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;external_fund_transfer&quot; path=&quot;external_fund_transfer&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;fdcreate&quot; path=&quot;fdcreate&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;internal_fund_transfer_tab&quot; path=&quot;internal_fund_transfer_tab&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+            &lt;ns:resource id=&quot;fdclose&quot; path=&quot;fdclose&quot; queryType=&quot;application/x-www-form-urlencoded&quot;&gt;&#13;
+                &lt;ns:method name=&quot;POST&quot; id=&quot;&quot;&gt;&#13;
+                    &lt;ns:request&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:request&gt;&#13;
+                    &lt;ns:response status=&quot;200 201 202&quot;&gt;&#13;
+                        &lt;ns:representation mediaType=&quot;application/json&quot;/&gt;&#13;
+                    &lt;/ns:response&gt;&#13;
+                &lt;/ns:method&gt;&#13;
+            &lt;/ns:resource&gt;&#13;
+        &lt;/ns:resource&gt;&#13;
+    &lt;/ns:resources&gt;&#13;
+&lt;/ns:application&gt;</string> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="SETCARDSTATUS_INHOUSE_NEW.xsd" mime="XSD" name="Application-Context" rootName="{http://www.fiorano.com/fesb/activity/ISOMessage}Context"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="update__PUT__Request.xsd" mime="XSD" name="update__PUT__Request" rootName="{http://www.fiorano.com/fesb/activity/Token/HTTP/In}HTTPRequest"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2,3" outputNode="update__PUT__Request:0,HTTPRequest:0,URI:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="/eclipse-conductor/rest/v1/tenants/1/cards/" type="22" x="31" y="100">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,Context:0,cardUID:0" x="199" y="209">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="1" outputID="2" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="update__PUT__Request:0,HTTPRequest:0,Header:0,CustomHeaders:0,Authorization:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="Application-Context:0,Context:0,token:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

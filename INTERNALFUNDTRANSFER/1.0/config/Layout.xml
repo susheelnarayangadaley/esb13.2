@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="JSONConverter1" x="235" y="128"/>
+    <service-instance name="FTOFS" x="495" y="52"/>
+    <service-instance name="FTOFS1" x="509" y="174"/>
+    <service-instance name="OFSConverter7" x="972" y="30"/>
+    <service-instance name="XMLTOJSON" x="990" y="118"/>
+    <service-instance name="Telegram3" x="1161" y="157"/>
+    <service-instance name="SMS1" x="1166" y="268"/>
+    <service-instance name="Monitoring" x="492" y="117"/>
+    <service-instance name="FTLOG" x="366" y="225"/>
+    <service-instance name="T24Outbound" x="804" y="180"/>
+    <service-instance name="T24Outbound1" x="971" y="217"/>
+    <service-instance name="T24Txn" x="745" y="118"/>
+    <service-instance name="Xslt1" x="46" y="122"/>
+    <service-instance name="Xslt2" x="749" y="400"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

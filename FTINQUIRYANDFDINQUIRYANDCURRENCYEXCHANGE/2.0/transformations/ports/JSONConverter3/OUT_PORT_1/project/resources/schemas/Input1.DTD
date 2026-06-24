@@ -1,0 +1,4 @@
+<!ELEMENT REQUEST ( amount, fromCurrency, toCurrency ) >
+<!ELEMENT amount ( #PCDATA ) >
+<!ELEMENT fromCurrency ( #PCDATA ) >
+<!ELEMENT toCurrency ( #PCDATA ) >

@@ -1,0 +1,24 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="khqrin">
+        
+                       <xsd:complexType>
+                              <xsd:sequence>
+                                     
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="Amount" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="TxnFee" type="xsd:string"/>
+                                     
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="FromAccount" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="ToAccount" type="xsd:string"/>
+                                     
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Remark" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="TransId" type="xsd:string"/>
+                                      <xsd:element maxOccurs="1" minOccurs="0" name="CurrenCy" type="xsd:string"/>
+                                      <xsd:element maxOccurs="1" minOccurs="0" name="bakongid" type="xsd:string"/>
+                                      <xsd:element maxOccurs="1" minOccurs="0" name="frombank" type="xsd:string"/>
+                                      <xsd:element maxOccurs="1" minOccurs="0" name="CreditName" type="xsd:string"/>
+                                                                 
+                    </xsd:sequence>
+                      
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

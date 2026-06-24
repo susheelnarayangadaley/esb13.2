@@ -1,0 +1,41 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TH_Header">
+    <xs:complexType>
+      <xs:sequence>
+      <xs:element type="xs:string" name="TransRef"/>
+        <xs:element type="xs:string" name="Account_Category"/>      
+        <xs:element type="xs:string" name="Account_Branch"/>
+        <xs:element type="xs:string" name="Account_Basic_Number"/>
+        <xs:element type="xs:string" name="Account_Suffix"/>
+        <xs:element type="xs:string" name="Account_Number"/>
+        <xs:element type="xs:string" name="Account_short_name"/>
+        <xs:element type="xs:string" name="Arabic_short_name"/>
+        <xs:element type="xs:string" name="Customer_mnemonic"/>
+        <xs:element type="xs:string" name="Customer_location"/>
+        <xs:element type="xs:string" name="Customer_full_name"/>
+        <xs:element type="xs:string" name="Arabic_customer_full_name"/>
+        <xs:element type="xs:string" name="Account_type"/>
+        <xs:element type="xs:string" name="Owning_application_code"/>
+        <xs:element type="xs:string" name="Account_structure"/>
+        <xs:element type="xs:string" name="Currency_mnemonic"/>
+        <xs:element type="xs:string" name="Currency_edit_field"/>
+        <xs:element type="xs:string" name="Internal_non_customer_account"/>
+        <xs:element type="xs:string" name="Deceased_or_liquidated"/>
+        <xs:element type="xs:string" name="Account_status_blocked"/>
+        <xs:element type="xs:string" name="Account_status_inactive"/>
+        <xs:element type="xs:string" name="Account_closing"/>
+        <xs:element type="xs:string" name="Contingent_account"/>
+        <xs:element type="xs:string" name="Balance_Greaterthan_Zero"/>
+        <xs:element type="xs:string" name="Start_from_last_statement_date"/>
+        <xs:element type="xs:string" name="Date_from"/>
+        <xs:element type="xs:string" name="Date_to"/>
+        <xs:element type="xs:string" name="Starting_balance"/>
+        <xs:element type="xs:string" name="Number_of_recent_transactions"/>
+        <xs:element type="xs:string" name="Statement_number"/>
+        <xs:element type="xs:string" name="Available_balance"/>
+        <xs:element type="xs:string" name="Status"/>
+        <xs:element type="xs:string" name="Message"/>                
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

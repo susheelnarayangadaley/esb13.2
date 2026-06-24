@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.w3.org/2001/XMLSchema" xmlns:ABC="http://xml.apache.org/xslt/java" xmlns:DecimaltoHex="DecimaltoHex" xmlns:EncryptDataWithPublicKey="http://xml.apache.org/xslt/java" xmlns:HMAC2="http://xml.apache.org/xslt/java" xmlns:Headerval="http://xml.apache.org/xslt/java" xmlns:Java="http://xml.apache.org/xslt/java" xmlns:JsonParser2="JsonParser2" xmlns:LAUUtil="http://xml.apache.org/xslt/java" xmlns:MT2MX="http://xml.apache.org/xslt/java" xmlns:MTtoMX="http://xml.apache.org/xslt/java" xmlns:MTtoMXUtil="http://xml.apache.org/xslt/java" xmlns:MX2MT="http://xml.apache.org/xslt/java" xmlns:MXToMT="http://xml.apache.org/xslt/java" xmlns:MXtoMT="http://xml.apache.org/xslt/java" xmlns:QueryGenerator="QueryGenerator" xmlns:RSA="http://xml.apache.org/xslt/java" xmlns:SHA256="http://xml.apache.org/xslt/java" xmlns:Util="http://xml.apache.org/xslt/java" xmlns:dateConversion="dateConversion" xmlns:decrypt="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:removeFixedLengthV3="removeFixedLengthV3" xmlns:strings="strings" xmlns:test="test" xmlns:util="util" extension-element-prefixes="datetime set math ABC DecimaltoHex EncryptDataWithPublicKey HMAC2 Headerval Java JsonParser2 LAUUtil MT2MX MTtoMX MTtoMXUtil MX2MT MXToMT MXtoMT QueryGenerator RSA SHA256 Util dateConversion decrypt myext nestedJsonParser removeFixedLengthV3 strings test util">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:template match="/">
+    <Context>
+      <xsl:value-of select="substring(datetime:dateTime(),'1','19')"></xsl:value-of>
+      <xsl:variable name="if0">
+        <xsl:choose>
+          <xsl:when test="(java:_getText($_TIF_MESSAGE_))=('')">
+            <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'firsttime', 'true')"></xsl:value-of>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:value-of select="$if0"></xsl:value-of>
+    </Context>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

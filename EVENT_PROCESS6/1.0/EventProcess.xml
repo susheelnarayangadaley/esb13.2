@@ -1,0 +1,250 @@
+<application guid="EVENT_PROCESS6" version="1.0"><display name="Event Process6" categories="CPB" /><Metadata productVersion="13" buildNo="13200" createdBy="admin" /><creation date="19-01-2026 12:13:20" lastModifiedDate="19-01-2026 15:58:06" authors="eStudio" schema-version="2.0" /><deployment label="Development" /><deleteDestinationAfterStop value="Fetch_From_FES" /><storeSourceContext value="false" /><durableRoute value="Fetch_From_FES" /><service-instances><inst name="Feeder1"><service guid="Feeder" version="4.0" /><short-description>The Feeder service is used to feed in data.</short-description><long-description>The Feeder service is used to feed data to any service to which its output port is linked. The service defines no input or output format for the messages. It can take any data as input and just sends it forward. The user can input data in the window which pops up on launching the service.</long-description><config-file name="Feeder1.xml" /><deployment nodes="fps" /><execution><debug enabled="false" port="5000" suspend="false" /><launchOrder-Sequence sequence="-1" /><stopOrder-Sequence sequence="-1" /></execution><inputport-instances /><outputport-instances><outputport-instance name="OUT_PORT"><description>Gives data or messages as output</description><schema root="{http://schemas.xmlsoap.org/soap/envelope/}Envelope"><file>Feeder1.OUT_PORT.xsd</file></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="0" datatype="2" enablecallout="false" /></outputport-instance><outputport-instance name="ON_EXCEPTION"><description>Used as an Exception Port</description><schema root="{http://www.fiorano.com/fesb/activity/fault}Error"><file>Feeder1.ON_EXCEPTION.xsd</file></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="1" datatype="2" enablecallout="false" /></outputport-instance></outputport-instances><logmanager logger="java.util.logging.FileHandler"><Param name="java.util.logging.FileHandler.limit">1000000</Param><Param name="java.util.logging.FileHandler.dir">logs</Param><Param name="fiorano.jms.log2.def.DefaultFormatter.dateformat">MM/dd/yyyy HH:mm:ss</Param><Param name="java.util.logging.FileHandler.count">4</Param><Param name="fiorano.jms.log2.def.DefaultFormatter.includetimestamp">true</Param></logmanager><logmodules><logmodule name="com.fiorano.services.feeder.FeederService" level="WARNING" uniqueNameRequired="true" /><logmodule name="com.fiorano.services.feeder.transport.jms" level="WARNING" uniqueNameRequired="true" /><logmodule name="com.fiorano.services.feeder.engine" level="WARNING" uniqueNameRequired="true" /><logmodule name="ERR_HANDLER" uniqueNameRequired="true" /><logmodule name="OUT_HANDLER" level="INFO" uniqueNameRequired="true" /></logmodules><runtime-arguments><runtime-argument name="JVM_PARAMS" mandatory="false" inmemory="false"><value> -client -DLOG_TO_STREAM=true -Xrs -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m</value></runtime-argument><runtime-argument name="JAVA_HOME" mandatory="false" inmemory="false" /></runtime-arguments><servicerefs /></inst><inst name="FTBankWallet1"><service guid="Xslt" version="4.0" /><short-description>Transforms input XML based on Mappings defined and generates an output XML</short-description><long-description>Transforms input XML based on Mappings defined and generates an output XML</long-description><config-file name="FTBankWallet1.xml" /><resource-properties><resource-property name="XSL">&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns9="http://temenos.com/CPBGETSCHFULL" xmlns:ns8="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB" xmlns:ns13="http://temenos.com/FUNDSTRANSFER" xmlns:ns11="http://temenos.com/FUNDSTRANSFERCPBWINGAPI" xmlns:ns15="http://temenos.com/CPTWS" xmlns:ns5="http://temenos.com/CPBGETACCOUNTLISTJOIN" xmlns:ns4="http://temenos.com/FUNDSTRANSFERCPBBKGMB" xmlns:ns7="http://temenos.com/GETEDCFREEZEBLOCKAMT" xmlns:ns14="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns10="http://temenos.com/FUNDSTRANSFERCPBACRTMB" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:ns2="http://temenos.com/CPTWS/BakongWalletTransfer/Input" xmlns:ns12="http://temenos.com/ACLOCKEDEVENTS" xmlns:ns6="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC" xmlns:EnDe="http://xml.apache.org/xslt/java" xmlns:Md5UniCode="http://xml.apache.org/xslt/java" xmlns:StringLength="StringLength" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:string="string" xmlns:strings="strings" xmlns:thetaray="thetaray" xmlns:thetaray_minus1="thetaray_minus1" xmlns:thetaray_trans="thetaray_trans" xmlns:truncateString="truncateString" extension-element-prefixes="datetime set math EnDe Md5UniCode StringLength dateConversion myext string strings thetaray thetaray_minus1 thetaray_trans truncateString">
+  &lt;xsl:import href="GLOBAL_FUNCLET_PATH">&lt;/xsl:import>
+  &lt;xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no">&lt;/xsl:output>
+  &lt;xsl:variable name="document" select="/">&lt;/xsl:variable>
+  &lt;xsl:variable name="document_Input1" select="document('Input1')">&lt;/xsl:variable>
+  &lt;xsl:template match="/">
+    &lt;ns2:Envelope>
+      &lt;ns2:Body>
+        &lt;ns15:BakongWalletTransfer>
+          &lt;WebRequestCommon>
+            &lt;company>
+              &lt;xsl:variable name="if0">
+                &lt;xsl:choose>
+                  &lt;xsl:when test="(Md5UniCode:md5hashing.Md5hashing.getMD5HexencodedString(string(EnDe:aesencryptiondecryption.AESEncryptionDecryption.encrypt(string(concat('mobilebankingcpb@#%1',$document_Input1/FTBakongWalletRq/TransId,$document_Input1/FTBakongWalletRq/CifNo,$document_Input1/FTBakongWalletRq/FromAccount,$document_Input1/FTBakongWalletRq/ToAccount,$document_Input1/FTBakongWalletRq/WalletNumber,myext:replace(string($document_Input1/FTBakongWalletRq/WalletName),string('&amp;amp;amp;'),string('g'),string('&amp;amp;')),$document_Input1/FTBakongWalletRq/Amount,$document_Input1/FTBakongWalletRq/Currency)),string('secrete')))))=($document_Input1/FTBakongWalletRq/SignData)">
+                    &lt;xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'ValidMessage', 'true')">&lt;/xsl:value-of>
+                  &lt;/xsl:when>
+                  &lt;xsl:otherwise>
+                    &lt;xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'ValidMessage', 'true')">&lt;/xsl:value-of>
+                  &lt;/xsl:otherwise>
+                &lt;/xsl:choose>
+              &lt;/xsl:variable>
+              &lt;xsl:value-of select="$if0">&lt;/xsl:value-of>
+            &lt;/company>
+            &lt;password>
+              &lt;xsl:value-of select="java:_getStringProperty($_TIF_MESSAGE_, 'password')">&lt;/xsl:value-of>
+            &lt;/password>
+            &lt;userName>
+              &lt;xsl:value-of select="java:_getStringProperty($_TIF_MESSAGE_, 'username')">&lt;/xsl:value-of>
+            &lt;/userName>
+          &lt;/WebRequestCommon>
+          &lt;OfsFunction>
+            &lt;activityName>
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/activityName>
+            &lt;assignReason>
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/assignReason>
+            &lt;dueDate>
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/dueDate>
+            &lt;extProcess>
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/extProcess>
+            &lt;extProcessID>
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/extProcessID>
+            &lt;gtsControl>
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/gtsControl>
+            &lt;messageId>
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/messageId>
+            &lt;noOfAuth>
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/noOfAuth>
+          &lt;/OfsFunction>
+          &lt;FUNDSTRANSFERCPBBKGMWTMBType>
+            &lt;xsl:attribute name="id">
+              &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+            &lt;/xsl:attribute>
+            &lt;ns14:DebitAccount>&lt;xsl:value-of select="&#xd;
+    myext:replace(&#xd;
+      string($document_Input1/FTBakongWalletRq/FromAccount),&#xd;
+      '&amp;amp;(?!amp;|lt;|gt;|quot;|apos;)',&#xd;
+      'g',&#xd;
+      '&amp;amp;amp;'&#xd;
+    )&#xd;
+  "/>&#xd;
+&lt;!--
+              &lt;xsl:value-of select="myext:replace(string($document_Input1/FTBakongWalletRq/FromAccount),string('&amp;amp;'),string('g'),string('&amp;amp;amp;'))">&lt;/xsl:value-of>-->&lt;/ns14:DebitAccount>
+            &lt;ns14:DebitNarrative>
+              &lt;xsl:variable name="if1">
+                &lt;xsl:choose>
+                  &lt;xsl:when test="(string-length($document_Input1/FTBakongWalletRq/QRData))&amp;gt;=('3')">
+                    &lt;xsl:value-of select="'QR Payment'">&lt;/xsl:value-of>
+                  &lt;/xsl:when>
+                  &lt;xsl:otherwise>
+                    &lt;xsl:value-of select="'Topup Bakong'">&lt;/xsl:value-of>
+                  &lt;/xsl:otherwise>
+                &lt;/xsl:choose>
+              &lt;/xsl:variable>
+              &lt;xsl:value-of select="$if1">&lt;/xsl:value-of>
+            &lt;/ns14:DebitNarrative>
+            &lt;ns14:CreditNarrative>
+              &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/TransId">&lt;/xsl:value-of>
+              &lt;xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'ESBX__SYSTEM__USER_DEFINED_DOC_ID', $document_Input1/FTBakongWalletRq/TransId)">&lt;/xsl:value-of>
+            &lt;/ns14:CreditNarrative>
+            &lt;ns14:CreditAccount>
+              &lt;xsl:variable name="if2">
+                &lt;xsl:choose>
+                  &lt;xsl:when test="(substring-after($document_Input1/FTBakongWalletRq/WalletNumber,'@'))=('cpbp')">
+                    &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/ToAccount">&lt;/xsl:value-of>
+                  &lt;/xsl:when>
+                  &lt;xsl:otherwise>
+                    &lt;xsl:value-of select="myext:replace(string($document_Input1/FTBakongWalletRq/ToAccount),string('1701700010001'),string('g'),string('1700700020001'))">&lt;/xsl:value-of>
+                  &lt;/xsl:otherwise>
+                &lt;/xsl:choose>
+              &lt;/xsl:variable>
+              &lt;xsl:value-of select="$if2">&lt;/xsl:value-of>
+            &lt;/ns14:CreditAccount>
+            &lt;ns14:CreditCurrency>
+              &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/Currency">&lt;/xsl:value-of>
+            &lt;/ns14:CreditCurrency>
+            &lt;ns14:CreditAmount>
+              &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/Amount">&lt;/xsl:value-of>
+            &lt;/ns14:CreditAmount>
+            &lt;ns14:ChargesAcctNO>
+              &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/FromAccount">&lt;/xsl:value-of>
+            &lt;/ns14:ChargesAcctNO>
+            &lt;ns14:gLTXNNARRDR>
+              &lt;xsl:attribute name="g">
+                &lt;xsl:value-of select="'1'">&lt;/xsl:value-of>
+              &lt;/xsl:attribute>
+              &lt;ns14:LTXNNARRDR>
+                &lt;xsl:variable name="if3">
+                  &lt;xsl:choose>
+                    &lt;xsl:when test="(string-length(concat($document_Input1/FTBakongWalletRq/Remark,'(',$document_Input1/FTBakongWalletRq/WalletNumber,')')))&amp;gt;=('1')">
+                      &lt;xsl:value-of select="truncateString:truncate(string(concat($document_Input1/FTBakongWalletRq/Remark,'(',$document_Input1/FTBakongWalletRq/WalletNumber,')')),string('50'))">&lt;/xsl:value-of>
+                    &lt;/xsl:when>
+                    &lt;xsl:otherwise>
+                      &lt;xsl:value-of select="'Topup Bakong'">&lt;/xsl:value-of>
+                    &lt;/xsl:otherwise>
+                  &lt;/xsl:choose>
+                &lt;/xsl:variable>
+                &lt;xsl:value-of select="$if3">&lt;/xsl:value-of>
+              &lt;/ns14:LTXNNARRDR>
+              &lt;ns14:LTXNNARRDR>
+                &lt;xsl:variable name="if4">
+                  &lt;xsl:choose>
+                    &lt;xsl:when test="(string-length(concat($document_Input1/FTBakongWalletRq/Remark,'(',$document_Input1/FTBakongWalletRq/WalletNumber,')')))&amp;gt;=('1')">
+                      &lt;xsl:value-of select="StringLength:truncate50(string(concat($document_Input1/FTBakongWalletRq/Remark,'(',$document_Input1/FTBakongWalletRq/WalletNumber,')')),string('50'))">&lt;/xsl:value-of>
+                    &lt;/xsl:when>
+                    &lt;xsl:otherwise>
+                      &lt;xsl:value-of select="'Topup Bakong'">&lt;/xsl:value-of>
+                    &lt;/xsl:otherwise>
+                  &lt;/xsl:choose>
+                &lt;/xsl:variable>
+                &lt;xsl:value-of select="$if4">&lt;/xsl:value-of>
+              &lt;/ns14:LTXNNARRDR>
+            &lt;/ns14:gLTXNNARRDR>
+            &lt;ns14:gLTXNNARRCR>
+              &lt;xsl:attribute name="g">
+                &lt;xsl:value-of select="'1'">&lt;/xsl:value-of>
+              &lt;/xsl:attribute>
+              &lt;ns14:LTXNNARRCR>
+                &lt;xsl:value-of select="'Topup bakong wallet'">&lt;/xsl:value-of>
+              &lt;/ns14:LTXNNARRCR>
+            &lt;/ns14:gLTXNNARRCR>
+            &lt;ns14:SenderName>
+              &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/SenderName">&lt;/xsl:value-of>
+            &lt;/ns14:SenderName>
+            &lt;ns14:SenderBankBIC>
+              &lt;xsl:value-of select="'CPBPKHPPXXX'">&lt;/xsl:value-of>
+            &lt;/ns14:SenderBankBIC>
+            &lt;ns14:RecievingBankBIC>
+              &lt;xsl:variable name="if5">
+                &lt;xsl:choose>
+                  &lt;xsl:when test="(translate(substring-after($document_Input1/FTBakongWalletRq/WalletNumber,'@'),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))=('VBL')">
+                    &lt;xsl:value-of select="'CKHPPXXX'">&lt;/xsl:value-of>
+                  &lt;/xsl:when>
+                  &lt;xsl:otherwise>
+                    &lt;xsl:value-of select="'KHPPXXX'">&lt;/xsl:value-of>
+                  &lt;/xsl:otherwise>
+                &lt;/xsl:choose>
+              &lt;/xsl:variable>
+              &lt;xsl:value-of select="concat(translate(substring-after($document_Input1/FTBakongWalletRq/WalletNumber,'@'),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),$if5)">&lt;/xsl:value-of>
+            &lt;/ns14:RecievingBankBIC>
+            &lt;ns14:OtherBankCreditAccount>
+              &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/WalletNumber">&lt;/xsl:value-of>
+            &lt;/ns14:OtherBankCreditAccount>
+            &lt;ns14:Creditorcustomername>
+              &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/WalletName">&lt;/xsl:value-of>
+            &lt;/ns14:Creditorcustomername>
+            &lt;ns14:gKHQR>
+              &lt;xsl:attribute name="g">
+                &lt;xsl:value-of select="'1'">&lt;/xsl:value-of>
+              &lt;/xsl:attribute>
+              &lt;ns14:KHQR>
+                &lt;xsl:variable name="if6">
+                  &lt;xsl:choose>
+                    &lt;xsl:when test="(string-length($document_Input1/FTBakongWalletRq/QRData))=('0')">
+                      &lt;xsl:value-of select="''">&lt;/xsl:value-of>
+                    &lt;/xsl:when>
+                    &lt;xsl:otherwise>
+                      &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/QRData">&lt;/xsl:value-of>
+                    &lt;/xsl:otherwise>
+                  &lt;/xsl:choose>
+                &lt;/xsl:variable>
+                &lt;xsl:value-of select="$if6">&lt;/xsl:value-of>
+              &lt;/ns14:KHQR>
+            &lt;/ns14:gKHQR>
+            &lt;ns14:REVBANKNAME>
+              &lt;xsl:value-of select="$document_Input1/FTBakongWalletRq/BeneficiaryBankName">&lt;/xsl:value-of>
+            &lt;/ns14:REVBANKNAME>
+          &lt;/FUNDSTRANSFERCPBBKGMWTMBType>
+        &lt;/ns15:BakongWalletTransfer>
+      &lt;/ns2:Body>
+    &lt;/ns2:Envelope>
+  &lt;/xsl:template>
+&lt;!--The list of parameters defined by user-->
+  &lt;xsl:param name="_TIF_MESSAGE_">&lt;/xsl:param>
+&lt;!--The list of Extensions defined by user-->
+  &lt;lxslt:component prefix="myext" functions="compute replace">
+    &lt;lxslt:script lang="javascript">&lt;![CDATA[function compute(expr){
+	return eval(expr);
+}
+
+function nextMillenium(){
+	d = new Date()    //today's date
+	mill=new Date(3000, 00, 01, 00, 00, 00)    //Next millennium start date
+	diff = mill-d    //difference in milliseconds
+	mtg = new String(diff/86400000)    //calculate days and convert to string
+	point=mtg.indexOf(".")    //find the decimal point
+	days=mtg.substring(0,point)    //get just the whole days
+	return "There are only " + days + " days remaining to the start of the next millennium."; 
+}
+
+function replace(input, pattern, flags, str){
+	return input.replace(new RegExp(pattern, flags), str);
+}]]&gt;&lt;/lxslt:script>
+  &lt;/lxslt:component>
+  &lt;lxslt:component prefix="truncateString" functions="truncate">
+    &lt;lxslt:script lang="javascript">&lt;![CDATA[function truncate(str, len)
+ {
+   if (str.length > len) {
+   
+         return str.slice(0, len);
+      }
+      
+   
+   else {
+      return str;
+   };
+};]]&gt;&lt;/lxslt:script>
+  &lt;/lxslt:component>
+  &lt;lxslt:component prefix="StringLength" functions="truncate50">
+    &lt;lxslt:script lang="javascript">&lt;![CDATA[function truncate50(str, len)
+ { 
+if (str.length > len) {
+     
+         return str.slice(len, len+50);
+      
+   }
+   else {
+         return str.slice(0, 0);
+   };
+};]]&gt;&lt;/lxslt:script>
+  &lt;/lxslt:component>
+&lt;/xsl:stylesheet></resource-property><resource-property name="Transformation Class Name"></resource-property><resource-property name="XSLT Engine">Xalan</resource-property></resource-properties><deployment nodes="fps" /><execution><debug enabled="false" port="5000" suspend="false" /><launchOrder-Sequence sequence="-1" /><stopOrder-Sequence sequence="-1" /></execution><inputport-instances><inputport-instance name="IN_PORT"><description>Transforms input XML based on Mappings defined and generates an output XML.</description><schema root="FTBakongWalletRq"><file>FTBankWallet1.IN_PORT.xsd</file></schema><selectors /><sbwmask /><jms><destination /><subscriber><transaction enabled="false" /><subscription durable="false" /></subscriber></jms><workflow type="0" datatype="2" enablecallout="false" /></inputport-instance></inputport-instances><outputport-instances><outputport-instance name="OUT_PORT"><description>Transforms input XML based on Mappings defined and generates an output XML.</description><schema root="{http://temenos.com/CPTWS/BakongWalletTransfer/Input}Envelope"><file>FTBankWallet1.OUT_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>FTBankWallet1.OUT_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>FTBankWallet1.OUT_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>FTBankWallet1.OUT_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>FTBankWallet1.OUT_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>FTBankWallet1.OUT_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>FTBankWallet1.OUT_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>FTBankWallet1.OUT_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>FTBankWallet1.OUT_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>FTBankWallet1.OUT_PORT.10.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>FTBankWallet1.OUT_PORT.11.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>FTBankWallet1.OUT_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>FTBankWallet1.OUT_PORT.13.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>FTBankWallet1.OUT_PORT.14.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="0" datatype="2" enablecallout="false" /></outputport-instance><outputport-instance name="ON_EXCEPTION"><description>Used as an Exception Port</description><schema root="{http://www.fiorano.com/fesb/activity/fault}Error"><file>FTBankWallet1.ON_EXCEPTION.xsd</file></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="1" datatype="2" enablecallout="false" /></outputport-instance></outputport-instances><logmanager logger="java.util.logging.FileHandler"><Param name="java.util.logging.FileHandler.limit">1000000</Param><Param name="java.util.logging.FileHandler.dir">logs</Param><Param name="fiorano.jms.log2.def.DefaultFormatter.dateformat">MM/dd/yyyy HH:mm:ss</Param><Param name="java.util.logging.FileHandler.count">4</Param><Param name="fiorano.jms.log2.def.DefaultFormatter.includetimestamp">true</Param></logmanager><logmodules><logmodule name="ERR_HANDLER" level="WARNING" uniqueNameRequired="true" /><logmodule name="OUT_HANDLER" level="INFO" uniqueNameRequired="true" /><logmodule name="com.fiorano.services.xslt.xslt" uniqueNameRequired="true" /></logmodules><runtime-arguments><runtime-argument name="JVM_PARAMS" mandatory="false"><value> -client -DLOG_TO_STREAM=true -Xrs -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m</value></runtime-argument><runtime-argument name="JAVA_HOME" mandatory="false" inmemory="false" /></runtime-arguments><servicerefs /></inst><inst name="CBS1"><service guid="WebServiceConsumer" version="5.0" /><short-description>Axis2 client which invokes a web service (usually externally hosted on a third-party system) based on the configured WSDL.</short-description><long-description>Axis2 client which invokes a web service (usually externally hosted on a third-party system) based on the configured WSDL.</long-description><config-file name="CBS1.xml" /><resource-properties><resource-property name="HTTP Password"></resource-property><resource-property name="End Point Address">https://utap.cambodiapostbank.com.kh:7002/CPTWS/services</resource-property><resource-property name="HTTP Basic Authentication">false</resource-property><resource-property name="HTTP Username"></resource-property><resource-property name="Operation Name"></resource-property></resource-properties><named-configurations><named-configuration name="MB1_R21" configurationType="resource" /></named-configurations><deployment nodes="fps" /><execution><debug enabled="false" port="5000" suspend="false" /><launchOrder-Sequence sequence="-1" /><stopOrder-Sequence sequence="-1" /></execution><inputport-instances><inputport-instance name="BakongFullFundsTransfer__IN_PORT"><description>Takes input xml required by WS</description><schema root="{http://temenos.com/CPTWS/BakongFullFundsTransfer/Input}Envelope"><file>CBS1.BakongFullFundsTransfer__IN_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><subscriber><transaction enabled="false" /><subscription durable="false" /></subscriber></jms><workflow type="0" datatype="2" enablecallout="false" /></inputport-instance><inputport-instance name="BakongWalletTransfer__IN_PORT"><description>Takes input xml required by WS</description><schema root="{http://temenos.com/CPTWS/BakongWalletTransfer/Input}Envelope"><file>CBS1.BakongWalletTransfer__IN_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><subscriber><transaction enabled="false" /><subscription durable="false" /></subscriber></jms><workflow type="0" datatype="2" enablecallout="false" /></inputport-instance><inputport-instance name="WSCPBTWSCPBSWIFTOUTMB__IN_PORT"><description>Takes input xml required by WS</description><schema root="{http://temenos.com/CPTWS/WSCPBTWSCPBSWIFTOUTMB/Input}Envelope"><file>CBS1.WSCPBTWSCPBSWIFTOUTMB__IN_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><subscriber><transaction enabled="false" /><subscription durable="false" /></subscriber></jms><workflow type="0" datatype="2" enablecallout="false" /></inputport-instance><inputport-instance name="PaymentLoanSchedule__IN_PORT"><description>Takes input xml required by WS</description><schema root="{http://temenos.com/CPTWS/PaymentLoanSchedule/Input}Envelope"><file>CBS1.PaymentLoanSchedule__IN_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><subscriber><transaction enabled="false" /><subscription durable="false" /></subscriber></jms><workflow type="0" datatype="2" enablecallout="false" /></inputport-instance><inputport-instance name="WSCPBTWSCPBACRTMB__IN_PORT"><description>Takes input xml required by WS</description><schema root="{http://temenos.com/CPTWS/WSCPBTWSCPBACRTMB/Input}Envelope"><file>CBS1.WSCPBTWSCPBACRTMB__IN_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><subscriber><transaction enabled="false" /><subscription durable="false" /></subscriber></jms><workflow type="0" datatype="2" enablecallout="false" /></inputport-instance></inputport-instances><outputport-instances><outputport-instance name="BakongFullFundsTransfer__OUT_PORT"><description>Gives the output of WS in XML format</description><schema root="{http://temenos.com/CPTWS/BakongFullFundsTransfer/Output}Envelope"><file>CBS1.BakongFullFundsTransfer__OUT_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="0" datatype="2" enablecallout="false" /></outputport-instance><outputport-instance name="BakongWalletTransfer__OUT_PORT"><description>Gives the output of WS in XML format</description><schema root="{http://temenos.com/CPTWS/BakongWalletTransfer/Output}Envelope"><file>CBS1.BakongWalletTransfer__OUT_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="0" datatype="2" enablecallout="false" /></outputport-instance><outputport-instance name="WSCPBTWSCPBSWIFTOUTMB__OUT_PORT"><description>Gives the output of WS in XML format</description><schema root="{http://temenos.com/CPTWS/WSCPBTWSCPBSWIFTOUTMB/Output}Envelope"><file>CBS1.WSCPBTWSCPBSWIFTOUTMB__OUT_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="0" datatype="2" enablecallout="false" /></outputport-instance><outputport-instance name="PaymentLoanSchedule__OUT_PORT"><description>Gives the output of WS in XML format</description><schema root="{http://temenos.com/CPTWS/PaymentLoanSchedule/Output}Envelope"><file>CBS1.PaymentLoanSchedule__OUT_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="0" datatype="2" enablecallout="false" /></outputport-instance><outputport-instance name="WSCPBTWSCPBACRTMB__OUT_PORT"><description>Gives the output of WS in XML format</description><schema root="{http://temenos.com/CPTWS/WSCPBTWSCPBACRTMB/Output}Envelope"><file>CBS1.WSCPBTWSCPBACRTMB__OUT_PORT.xsd</file><schemarefs><schemaref uri="http://temenos.com/CPBGETACCOUNTLISTJOIN"><file>CBS1.BakongFullFundsTransfer__IN_PORT.1.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFER"><file>CBS1.BakongFullFundsTransfer__IN_PORT.2.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.3.xsd</file></schemaref><schemaref uri="http://temenos.com/CPTWS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.4.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.5.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"><file>CBS1.BakongFullFundsTransfer__IN_PORT.6.xsd</file></schemaref><schemaref uri="http://temenos.com/CPBGETSCHFULL"><file>CBS1.BakongFullFundsTransfer__IN_PORT.7.xsd</file></schemaref><schemaref uri="http://temenos.com/GETEDCFREEZEBLOCKAMT"><file>CBS1.BakongFullFundsTransfer__IN_PORT.8.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBACRTMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.9.xsd</file></schemaref><schemaref uri="http://temenos.com/ACLOCKEDEVENTS"><file>CBS1.BakongFullFundsTransfer__IN_PORT.10.xsd</file></schemaref><schemaref uri="http://jaxb.dev.java.net/array"><file>CBS1.BakongFullFundsTransfer__IN_PORT.11.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"><file>CBS1.BakongFullFundsTransfer__IN_PORT.12.xsd</file></schemaref><schemaref uri="http://temenos.com/FUNDSTRANSFERCPBBKGMB"><file>CBS1.BakongFullFundsTransfer__IN_PORT.13.xsd</file></schemaref></schemarefs></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="0" datatype="2" enablecallout="false" /></outputport-instance><outputport-instance name="ON_EXCEPTION"><description>Used as an Exception Port</description><schema root="{http://www.fiorano.com/fesb/activity/fault}Error"><file>CBS1.ON_EXCEPTION.xsd</file></schema><selectors /><sbwmask /><jms><destination /><publisher><messages persistent="true" /></publisher></jms><workflow type="1" datatype="2" enablecallout="false" /></outputport-instance></outputport-instances><logmanager logger="java.util.logging.FileHandler"><Param name="java.util.logging.FileHandler.limit">1000000</Param><Param name="java.util.logging.FileHandler.dir">logs</Param><Param name="fiorano.jms.log2.def.DefaultFormatter.dateformat">MM/dd/yyyy HH:mm:ss</Param><Param name="java.util.logging.FileHandler.count">4</Param><Param name="fiorano.jms.log2.def.DefaultFormatter.includetimestamp">true</Param></logmanager><logmodules><logmodule name="com.fiorano.services.customencryption" level="OFF" uniqueNameRequired="true" /><logmodule name="ERR_HANDLER" level="WARNING" uniqueNameRequired="true" /><logmodule name="OUT_HANDLER" level="INFO" uniqueNameRequired="true" /><logmodule name="com.fiorano.services.webserviceconsumer.wSInvoker" level="WARNING" uniqueNameRequired="true" /></logmodules><runtime-arguments><runtime-argument name="JVM_PARAMS" mandatory="false"><value> -client -DLOG_TO_STREAM=true -Xrs -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m</value></runtime-argument><runtime-argument name="JAVA_HOME" mandatory="false" inmemory="false" /></runtime-arguments><servicerefs /></inst></service-instances><routes><route name="route13"><source inst="Feeder1" port="OUT_PORT" /><target inst="FTBankWallet1" port="IN_PORT" /><messages durabilitySource="Application" /><message-transformation><script-file name="script.xml" /><project-file name="project" /></message-transformation><logmodules /></route><route name="route27"><source inst="FTBankWallet1" port="OUT_PORT" /><target inst="CBS1" port="BakongWalletTransfer__IN_PORT" /><messages durabilitySource="Application" /><selectors><selector type="jms">ValidMessage='true'</selector></selectors><logmodules /></route></routes></application>

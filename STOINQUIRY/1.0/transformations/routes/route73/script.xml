@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <STODetails>
+      <STO>
+        <xsl:attribute name="class">
+          <xsl:value-of select="'array'"></xsl:value-of>
+        </xsl:attribute>
+        <xsl:for-each select="$document_OUT_PORT/root/Record">
+          <Element>
+            <stoIDWithSeq>
+              <xsl:value-of select="./_ID"></xsl:value-of>
+            </stoIDWithSeq>
+            <stoType>
+              <xsl:value-of select="./K.TYPE"></xsl:value-of>
+            </stoType>
+            <stoCurrency>
+              <xsl:value-of select="./CURRENCY"></xsl:value-of>
+            </stoCurrency>
+            <stoAmount>
+              <xsl:value-of select="./CURRENT.AMOUNT.BAL"></xsl:value-of>
+            </stoAmount>
+            <stoFrequency>
+              <xsl:value-of select="./FREQ"></xsl:value-of>
+            </stoFrequency>
+            <stoAccount>
+              <xsl:value-of select="./CPTY.ACCT.NO"></xsl:value-of>
+            </stoAccount>
+            <startDate>
+              <xsl:value-of select="./FREQ.DATE"></xsl:value-of>
+            </startDate>
+            <endDate>
+              <xsl:value-of select="./CURRENT.END.DATE"></xsl:value-of>
+            </endDate>
+          </Element>
+        </xsl:for-each>
+      </STO>
+    </STODetails>
+  </xsl:template>
+</xsl:stylesheet>

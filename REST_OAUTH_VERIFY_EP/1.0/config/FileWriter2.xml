@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrGatewayConfigurations>
+    <BCConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.bcdk.BCDKConfigurationInfo"> 
+  <void property="JCAAdapterConfig"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;ESBAdapterConfigurations&gt;&#13;
+    &lt;ConnectionLess&gt;true&lt;/ConnectionLess&gt;&#13;
+    &lt;isConfigurationRequired&gt;true&lt;/isConfigurationRequired&gt;&#13;
+    &lt;isLicensed&gt;true&lt;/isLicensed&gt;&#13;
+    &lt;Inbound&gt;false&lt;/Inbound&gt;&#13;
+    &lt;AdapterInstanceProperties&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ESBAdapterInstanceProperties&quot;&gt; &#13;
+  &lt;void property=&quot;GUID&quot;&gt; &#13;
+   &lt;string&gt;FileWriter&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appName&quot;&gt; &#13;
+   &lt;string&gt;REST_OAUTH_VERIFY_EP&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;appVersion&quot;&gt; &#13;
+   &lt;string&gt;1_0&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;domain&quot;&gt; &#13;
+   &lt;string&gt;BCConfigPropertySheet&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;instanceName&quot;&gt; &#13;
+   &lt;string&gt;FileWriter2&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;logCategories&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;FileWriterInteraction&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;FileWriterInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;FileWriterInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.filewriter.cci.FileWriterInteraction&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;FileWriterManagedConnectionFactory&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;FileWriterManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;FileWriterManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;com.fiorano.adapter.jca.filewriter.spi.outbound.FileWriterManagedConnectionFactory&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;LOGGER_DISPLAY_NAME&lt;/string&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.cfg.LogCategory&quot;&gt; &#13;
+     &lt;void property=&quot;loggerDescription&quot;&gt; &#13;
+      &lt;string&gt;LOGGER_DESCRIPTION&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerDisplayName&quot;&gt; &#13;
+      &lt;string&gt;LOGGER_DISPLAY_NAME&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerLevel&quot;&gt; &#13;
+      &lt;string&gt;SEVERE&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+     &lt;void property=&quot;loggerName&quot;&gt; &#13;
+      &lt;string&gt;LOGGER_NAME&lt;/string&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/AdapterInstanceProperties&gt;&#13;
+    &lt;ConfigurationObjects&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.filewriter.spi.outbound.FileWriterManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1100&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;FileWriter&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;cf.gif&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.filewriter.spi.outbound.FileWriterManagedConnectionFactory&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;FileWriter&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.spi.ManagedConnectionFactory&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+        &lt;ConfigurationObject&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.adapter.cfg.ConfigurationObject&quot;&gt; &#13;
+  &lt;void property=&quot;beanClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.filewriter.cci.FileWriterInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;beanObject&quot;&gt; &#13;
+   &lt;void property=&quot;configuredVersion&quot;&gt; &#13;
+    &lt;int&gt;1300&lt;/int&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+    &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorActionsMap&quot;&gt; &#13;
+     &lt;void property=&quot;errorActionsMap&quot;&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;2&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.RetryErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;1&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+        &lt;void method=&quot;add&quot;&gt; &#13;
+         &lt;object class=&quot;fiorano.esb.adapter.jca.error.ErrorAction&quot;&gt; &#13;
+          &lt;void property=&quot;errorActionID&quot;&gt; &#13;
+           &lt;int&gt;3&lt;/int&gt; &#13;
+          &lt;/void&gt; &#13;
+         &lt;/object&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+      &lt;/void&gt; &#13;
+      &lt;void method=&quot;put&quot;&gt; &#13;
+       &lt;object class=&quot;fiorano.esb.adapter.jca.error.Error&quot;&gt; &#13;
+        &lt;void property=&quot;errorID&quot;&gt; &#13;
+         &lt;int&gt;0&lt;/int&gt; &#13;
+        &lt;/void&gt; &#13;
+       &lt;/object&gt; &#13;
+       &lt;object class=&quot;java.util.ArrayList&quot;/&gt; &#13;
+      &lt;/void&gt; &#13;
+     &lt;/void&gt; &#13;
+    &lt;/object&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;errorDirectoryName&quot;&gt; &#13;
+    &lt;string&gt;E:\temp\err&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;fileName&quot;&gt; &#13;
+    &lt;string&gt;test.txt&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;fileWriterConfig&quot;&gt; &#13;
+    &lt;void property=&quot;relativeDirectory&quot;&gt; &#13;
+     &lt;string&gt;C:\Fiorano\13.1_FIA&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;targetDirectory&quot;&gt; &#13;
+     &lt;string&gt;E:\temp&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+    &lt;void property=&quot;workingDirectory&quot;&gt; &#13;
+     &lt;string&gt;E:\temp\wrk&lt;/string&gt; &#13;
+    &lt;/void&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;guid&quot;&gt; &#13;
+    &lt;string&gt;FileWriter&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;id&quot;&gt; &#13;
+    &lt;string&gt;REST_OAUTH_VERIFY_EP__1_0__FileWriter2&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;isConfiguredNew&quot;&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;outputMode&quot;&gt; &#13;
+    &lt;string&gt;Append if exists&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;processMessageBasedOnProperty&quot;&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;propertyName&quot;&gt; &#13;
+    &lt;string&gt;status&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;propertyValue&quot;&gt; &#13;
+    &lt;string&gt;IsNot200&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+    &lt;string&gt;http://www.fiorano.com/fesb/activity/FileWriter2&lt;/string&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;category&quot;&gt; &#13;
+   &lt;string&gt;File&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;configParams&quot;&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsReconnection&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;enableScheduling&lt;/string&gt; &#13;
+    &lt;boolean&gt;false&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+   &lt;void method=&quot;put&quot;&gt; &#13;
+    &lt;string&gt;supportsStudio&lt;/string&gt; &#13;
+    &lt;boolean&gt;true&lt;/boolean&gt; &#13;
+   &lt;/void&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;description&quot;&gt; &#13;
+   &lt;string&gt;Writes data into file&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;icon&quot;&gt; &#13;
+   &lt;string&gt;filewritercomponent.png&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;implClassName&quot;&gt; &#13;
+   &lt;class&gt;com.fiorano.adapter.jca.filewriter.cci.FileWriterInteractionSpec&lt;/class&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;name&quot;&gt; &#13;
+   &lt;string&gt;FileWriter&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;type&quot;&gt; &#13;
+   &lt;string&gt;javax.resource.cci.InteractionSpec&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/ConfigurationObject&gt;&#13;
+    &lt;/ConfigurationObjects&gt;&#13;
+    &lt;OutputRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;Result&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&#13;
+&amp;lt;xsd:schema targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/FileWriter2&amp;quot; xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; xmlns=&amp;quot;http://www.fiorano.com/fesb/activity/FileWriter2&amp;quot;&amp;gt;&#13;
+    &amp;lt;xsd:complexType name=&amp;quot;Result&amp;quot;&amp;gt;&#13;
+        &amp;lt;xsd:sequence&amp;gt;&#13;
+            &amp;lt;xsd:element ref=&amp;quot;FileInfo&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+        &amp;lt;/xsd:sequence&amp;gt;&#13;
+    &amp;lt;/xsd:complexType&amp;gt;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Result&amp;quot; type=&amp;quot;Result&amp;quot;/&amp;gt;&#13;
+    &amp;lt;xsd:element name=&amp;quot;FileInfo&amp;quot;&amp;gt;&#13;
+        &amp;lt;xsd:complexType&amp;gt;&#13;
+            &amp;lt;xsd:sequence&amp;gt;&#13;
+	          &amp;lt;xsd:element name=&amp;quot;FullName&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+		    &amp;lt;xsd:element name=&amp;quot;FileName&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+		    &amp;lt;xsd:element name=&amp;quot;FilePath&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+		    &amp;lt;xsd:element name=&amp;quot;Type&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+		    &amp;lt;xsd:element name=&amp;quot;ReadAccess&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+		    &amp;lt;xsd:element name=&amp;quot;WriteAccess&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+		    &amp;lt;xsd:element name=&amp;quot;Size&amp;quot; type=&amp;quot;xsd:integer&amp;quot;/&amp;gt;&#13;
+            &amp;lt;/xsd:sequence&amp;gt;&#13;
+        &amp;lt;/xsd:complexType&amp;gt;&#13;
+    &amp;lt;/xsd:element&amp;gt;&#13;
+&amp;lt;/xsd:schema&amp;gt;&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/FileWriter2&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/OutputRecordDefinition&gt;&#13;
+    &lt;FaultRecordDefinition&gt;&lt;![CDATA[&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &#13;
+&lt;java version=&quot;1.8.0_202&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &#13;
+ &lt;object class=&quot;fiorano.esb.record.ESBRecordDefinition&quot;&gt; &#13;
+  &lt;void property=&quot;rootElementName&quot;&gt; &#13;
+   &lt;string&gt;Error&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;structure&quot;&gt; &#13;
+   &lt;string&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; ?&amp;gt;&#13;
+&amp;lt;xsd:schema xmlns:xsd=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; targetNamespace=&amp;quot;http://www.fiorano.com/fesb/activity/fault&amp;quot; xmlns:tns=&amp;quot;http://www.fiorano.com/fesb/activity/fault&amp;quot;&amp;gt;&#13;
+    &amp;lt;xsd:element name=&amp;quot;Error&amp;quot;&amp;gt;&#13;
+       &amp;lt;xsd:complexType&amp;gt;&#13;
+          &amp;lt;xsd:sequence&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorCode&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorMessage&amp;quot; type=&amp;quot;xsd:string&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;errorDetail&amp;quot; type=&amp;quot;xsd:string&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+            &amp;lt;xsd:element name=&amp;quot;data&amp;quot; type=&amp;quot;tns:data&amp;quot; minOccurs=&amp;quot;0&amp;quot;/&amp;gt;&#13;
+          &amp;lt;/xsd:sequence&amp;gt;&#13;
+       &amp;lt;/xsd:complexType&amp;gt;&#13;
+    &amp;lt;/xsd:element&amp;gt;&#13;
+    &amp;lt;xsd:complexType name=&amp;quot;data&amp;quot;&amp;gt;&#13;
+	  &amp;lt;xsd:sequence&amp;gt;&#13;
+         &amp;lt;xsd:any namespace=&amp;quot;##any&amp;quot; minOccurs=&amp;quot;0&amp;quot; maxOccurs=&amp;quot;unbounded&amp;quot; processContents=&amp;quot;lax&amp;quot;/&amp;gt;&#13;
+      &amp;lt;/xsd:sequence&amp;gt;&#13;
+    &amp;lt;/xsd:complexType&amp;gt;&#13;
+&amp;lt;/xsd:schema&amp;gt;&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+  &lt;void property=&quot;targetNamespace&quot;&gt; &#13;
+   &lt;string&gt;http://www.fiorano.com/fesb/activity/fault&lt;/string&gt; &#13;
+  &lt;/void&gt; &#13;
+ &lt;/object&gt; &#13;
+&lt;/java&gt; &#13;
+]]&gt;&lt;/FaultRecordDefinition&gt;&#13;
+&lt;/ESBAdapterConfigurations&gt;&#13;
+</string> 
+  </void> 
+ </object> 
+</java> 
+]]></BCConfigurations>
+    <TransportConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.tr.TrConfigurationInfo"/> 
+</java> 
+]]></TransportConfigurations>
+    <ErrorConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.error.ErrorConfigurationInfo"> 
+  <void property="errorActionsMap"> 
+   <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorActionsMap"> 
+    <void property="errorActionsMap"> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.RetryErrorAction"> 
+         <void property="errorActionID"> 
+          <int>1</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="fiorano.esb.adapter.jca.error.ErrorAction"> 
+         <void property="errorActionID"> 
+          <int>3</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="errorActionID"> 
+          <int>12</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="put"> 
+      <object class="fiorano.esb.adapter.jca.error.Error"> 
+       <void property="errorID"> 
+        <int>0</int> 
+       </void> 
+      </object> 
+      <object class="java.util.ArrayList"> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>11</int> 
+         </void> 
+        </object> 
+       </void> 
+       <void method="add"> 
+        <object class="com.fiorano.bc.trgateway.model.dmi.error.XErrorAction"> 
+         <void property="active"> 
+          <boolean>true</boolean> 
+         </void> 
+         <void property="errorActionID"> 
+          <int>2</int> 
+         </void> 
+        </object> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </object> 
+  </void> 
+ </object> 
+</java> 
+]]></ErrorConfigurations>
+    <SchedulerConfigurations><![CDATA[<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_202" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.bc.trgateway.model.dmi.scheduler.SchedulerConfigurationInfo"> 
+  <void property="startDate"> 
+   <object class="java.util.Date"> 
+    <long>1764304048000</long> 
+   </object> 
+  </void> 
+  <void property="unit"> 
+   <string>seconds</string> 
+  </void> 
+ </object> 
+</java> 
+]]></SchedulerConfigurations>
+</TrGatewayConfigurations>

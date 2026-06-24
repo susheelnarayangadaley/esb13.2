@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:strings="strings" xmlns:test="test" xmlns:thetaray="thetaray" xmlns:thetaray_minus1="thetaray_minus1" xmlns:thetaray_trans="thetaray_trans" extension-element-prefixes="datetime set math dateConversion myext nestedJsonParser strings test thetaray thetaray_minus1 thetaray_trans">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <requestId>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:ID"></xsl:value-of>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:MOBILENUMBER"></xsl:value-of>
+      </requestId>
+      <transactionCurrency>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:WALLETCURRENCY"></xsl:value-of>
+      </transactionCurrency>
+      <transactionAmount>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:AMOUNTTRAN_100"></xsl:value-of>
+      </transactionAmount>
+      <parties>
+        <partyId>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:ID"></xsl:value-of>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:MOBILENUMBER"></xsl:value-of>
+        </partyId>
+        <partyType>
+          <xsl:value-of select="'Debtor'"></xsl:value-of>
+        </partyType>
+        <screeningEntityType>
+          <xsl:value-of select="'individual'"></xsl:value-of>
+        </screeningEntityType>
+        <fullName>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:FULLNAME"></xsl:value-of>
+        </fullName><!--
+        <nationalities>-->
+<nationalities class ="array">
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:NATIONALITY_CODE"></xsl:value-of>
+        </nationalities>
+        <identification>
+          <identificationType>
+            <xsl:value-of select="'individual'"></xsl:value-of>
+          </identificationType><!--
+          <datesOfBirth>-->
+<datesOfBirth class ="array">
+            <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:DATE_OF_BIRTH"></xsl:value-of>
+          </datesOfBirth>
+          <gender>
+            <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:GENDER"></xsl:value-of>
+          </gender>
+        </identification>
+        <address>
+          <streetName>
+            <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:ADRESSE"></xsl:value-of>
+          </streetName>
+          <city>
+            <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:CITY"></xsl:value-of>
+          </city>
+          <country>
+            <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:NATIONALITY_CODE"></xsl:value-of>
+          </country>
+        </address>
+      </parties>
+      <parties>
+        <partyId>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:ID"></xsl:value-of>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:MOBILENUMBER"></xsl:value-of>
+        </partyId>
+        <partyType>
+          <xsl:value-of select="'Creditor'"></xsl:value-of>
+        </partyType>
+        <screeningEntityType>
+          <xsl:value-of select="'individual'"></xsl:value-of>
+        </screeningEntityType>
+        <fullName>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:DESTFIRSTNAME"></xsl:value-of>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:DESTCUSTOMERNAME"></xsl:value-of>
+        </fullName><!--
+        <nationalities>-->
+<nationalities class="array"></nationalities>
+        <identification>
+          <identificationType>
+            <xsl:value-of select="'individual'"></xsl:value-of>
+          </identificationType><!--
+          <datesOfBirth>-->
+<datesOfBirth class="array">
+            <xsl:value-of select="'1950-05-06'"></xsl:value-of>
+          </datesOfBirth>
+          <gender>
+            <xsl:value-of select="'M'"></xsl:value-of>
+          </gender>
+        </identification><!--
+        <address>
+          <streetName>
+            <xsl:value-of select="'kinshasa'"></xsl:value-of>
+          </streetName>
+          <city>
+            <xsl:value-of select="'Kinshasa'"></xsl:value-of>
+          </city>
+          <country>
+            <xsl:value-of select="'CD'"></xsl:value-of>
+          </country>
+        </address>--></parties>
+      <narratives>
+        <remittanceInfo>
+          <xsl:value-of select="'International Payment'"></xsl:value-of>
+        </remittanceInfo>
+      </narratives>
+    </root>
+  </xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,31 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="FTSWIFTRq">
+        
+                       <xsd:complexType>
+                              <xsd:sequence>
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="CifNo" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Amount" type="xsd:string"/>
+				     <xsd:element maxOccurs="1" minOccurs="0" name="TxnFee" type="xsd:string"/>
+				     				     <xsd:element maxOccurs="1" minOccurs="0" name="ShareFee" type="xsd:string"/>
+				     <xsd:element maxOccurs="1" minOccurs="0" name="OutFee" type="xsd:string"/>
+			             <xsd:element maxOccurs="1" minOccurs="0" name="chargecode" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryBank" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryAccount" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryAccountName" type="xsd:string"/>
+				     <xsd:element maxOccurs="1" minOccurs="0" name="Beneficiaryaddress" type="xsd:string"/>
+				     <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryCountry" type="xsd:string"/>
+				     <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiarySwiftCode" type="xsd:string"/>
+				     <xsd:element maxOccurs="1" minOccurs="0" name="BeneficiaryBankaddress" type="xsd:string"/>
+				     <xsd:element maxOccurs="1" minOccurs="0" name="FromAccount" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="ToAccount" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="senderAddress" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="senderName" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Remark" type="xsd:string"/>
+                                      <xsd:element maxOccurs="1" minOccurs="0" name="TransId" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Currency" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="SignData" type="xsd:string"/>
+                    </xsd:sequence>
+                      
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

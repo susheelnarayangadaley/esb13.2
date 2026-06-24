@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DB1/Response">
+   <xsd:element name="SQL_CFG_1">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="spRadaroSelect">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" name="RS1">
+                        <xsd:complexType>
+                           <xsd:sequence>
+                              <xsd:element name="MSGID" type="xsd:int"/>
+                              <xsd:element name="MSGTYPE" type="xsd:string"/>
+                              <xsd:element name="DRIVER_ID" type="xsd:string"/>
+                              <xsd:element name="PU" type="xsd:string"/>
+                              <xsd:element name="TRAILER" type="xsd:string"/>
+                              <xsd:element name="TRIP_NUMBER" type="xsd:int"/>
+                              <xsd:element name="BILL_NUMBER" type="xsd:string"/>
+                              <xsd:element name="DETAIL_LINE_ID" type="xsd:int"/>
+                              <xsd:element name="REFERENCE1" type="xsd:string"/>
+                              <xsd:element name="REFERENCE2" type="xsd:string"/>
+                              <xsd:element name="REFERENCE3" type="xsd:string"/>
+                              <xsd:element name="REFERENCE4" type="xsd:string"/>
+                              <xsd:element name="REFERENCE5" type="xsd:string"/>
+                              <xsd:element name="ORIGIN" type="xsd:string"/>
+                              <xsd:element name="ORIGNAME" type="xsd:string"/>
+                              <xsd:element name="ORIGADDR1" type="xsd:string"/>
+                              <xsd:element name="ORIGADDR2" type="xsd:string"/>
+                              <xsd:element name="ORIGCITY" type="xsd:string"/>
+                              <xsd:element name="ORIGPROV" type="xsd:string"/>
+                              <xsd:element name="ORIGPC" type="xsd:string"/>
+                              <xsd:element name="ORIGPHONE" type="xsd:string"/>
+                              <xsd:element name="ORIGPHONEEXT" type="xsd:string"/>
+                              <xsd:element name="DESTINATION" type="xsd:string"/>
+                              <xsd:element name="DESTNAME" type="xsd:string"/>
+                              <xsd:element name="DESTADDR1" type="xsd:string"/>
+                              <xsd:element name="DESTADDR2" type="xsd:string"/>
+                              <xsd:element name="DESTCITY" type="xsd:string"/>
+                              <xsd:element name="DESTPROV" type="xsd:string"/>
+                              <xsd:element name="DESTPC" type="xsd:string"/>
+                              <xsd:element name="DESTPHONE" type="xsd:string"/>
+                              <xsd:element name="DESTPHONEEXT" type="xsd:string"/>
+                              <xsd:element name="PCS" type="xsd:double"/>
+                              <xsd:element name="WEIGHT" type="xsd:double"/>
+                              <xsd:element name="PALLETS" type="xsd:int"/>
+                              <xsd:element name="PCUNIT" type="xsd:string"/>
+                              <xsd:element name="WGTUNIT" type="xsd:string"/>
+                              <xsd:element name="PLTUNIT" type="xsd:string"/>
+                              <xsd:element name="ARRIVE_START" type="xsd:dateTime"/>
+                              <xsd:element name="ARRIVE_END" type="xsd:dateTime"/>
+                              <xsd:element name="APPOINTMENT" type="xsd:string"/>
+                              <xsd:element name="NOTE" type="xsd:string"/>
+                              <xsd:element name="RADARO_DRIVER_ID" type="xsd:string"/>
+                              <xsd:element name="RADARO_STATUS" type="xsd:string"/>
+                              <xsd:element name="RADARO_TIMESTAMP" type="xsd:dateTime"/>
+                              <xsd:element name="RADARO_LAT" type="xsd:double"/>
+                              <xsd:element name="RADARO_LONG" type="xsd:double"/>
+                              <xsd:element name="RADARO_ERROR_MESSAGE" type="xsd:string"/>
+                              <xsd:element name="DESTEMAIL" type="xsd:string"/>
+                              <xsd:element name="ORIGEMAIL" type="xsd:string"/>
+                              <xsd:element name="DESCRIPTION" type="xsd:string"/>
+                              <xsd:element name="ADDRESS_DESCRIPTION" type="xsd:string"/>
+                              <xsd:element name="LABELS" type="xsd:string"/>
+                              <xsd:element name="TMW_STATUS" type="xsd:string"/>
+                              <xsd:element name="EXTERNAL_ID" type="xsd:string"/>
+                              <xsd:element name="ADDED" type="xsd:dateTime"/>
+                              <xsd:element name="BAR_CODE" type="xsd:string"/>
+                              <xsd:element name="DESCRIPTION2" type="xsd:string"/>
+                              <xsd:element name="DIM_UNIT" type="xsd:string"/>
+                              <xsd:element name="LENGTH" type="xsd:double"/>
+                              <xsd:element name="WIDTH" type="xsd:double"/>
+                              <xsd:element name="HEIGHT" type="xsd:double"/>
+                              <xsd:element name="WEIGHT2" type="xsd:double"/>
+                              <xsd:element name="WEIGHT_UNIT" type="xsd:string"/>
+                           </xsd:sequence>
+                        </xsd:complexType>
+                     </xsd:element>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+         <xsd:attribute name="id" type="xsd:long" use="optional"/>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

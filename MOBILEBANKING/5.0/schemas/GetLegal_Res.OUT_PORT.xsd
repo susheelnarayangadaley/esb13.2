@@ -1,0 +1,28 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="GetLegalIDRp">
+        <xsd:complexType>
+            <xsd:sequence>
+          
+                <xsd:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xsd:string"/>
+                 <xsd:element maxOccurs="1" minOccurs="1" name="ErrorMsg" type="xsd:string"/>
+            
+			      
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="CifNo" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="FullName" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="1" name="IDNumber" type="xsd:string"/>
+                                        <xsd:element maxOccurs="1" minOccurs="1" name="BranchCode" type="xsd:string"/>
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Residence" type="xsd:string"/>
+									 <xsd:element maxOccurs="1" minOccurs="1" name="CustomerType" type="xsd:string"/>
+                                     
+									  <xsd:element maxOccurs="1" minOccurs="0" name="Sex" type="xsd:string"/>
+                                       
+                                     <xsd:element maxOccurs="1" minOccurs="0" name="Birthday" type="xsd:string"/>
+									  <xsd:element maxOccurs="1" minOccurs="0" name="Email" type="xsd:string"/>
+									   <xsd:element maxOccurs="1" minOccurs="0" name="Address" type="xsd:string"/>
+									     <xsd:element maxOccurs="1" minOccurs="0" name="ContactMobile" type="xsd:string"/>
+									   
+                    
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

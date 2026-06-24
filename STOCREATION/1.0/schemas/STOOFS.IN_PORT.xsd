@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ns1="www.fiorano.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="www.fiorano.com">
+   <xsd:element name="root">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element name="header" type="xsd:string"/>
+            <xsd:element name="CURRENCY">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="ns1:value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="ns1:totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CURRENT.AMOUNT.BAL">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="ns1:value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="ns1:totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CURRENT.FREQUENCY">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="ns1:value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="ns1:totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CURRENT.END.DATE">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="ns1:value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="ns1:totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CPTY.ACCT.NO">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element minOccurs="0" maxOccurs="unbounded" ref="ns1:value"/>
+                  </xsd:sequence>
+                  <xsd:attribute ref="ns1:totalPositions" use="optional"/>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:attribute name="totalPositions" type="xsd:int"/>
+   <xsd:attribute name="position" type="xsd:int"/>
+   <xsd:element name="value">
+      <xsd:complexType>
+         <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+               <xsd:attribute ref="ns1:position" use="optional"/>
+            </xsd:extension>
+         </xsd:simpleContent>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="Application-Context.XSD" mime="XSD" name="Application-Context" rootName="Root"/>
+    <mappermodel:Structure duplicates="" filePath="IN_PORT.XSD" mime="XSD" name="IN_PORT" rootName="{http://temenos.com/CPTWS/GetAccountListJoin/Output}Envelope">
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext14.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFER"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext15.XSD" mime="XSD" name="http://temenos.com/CPBGETACCOUNTLISTJOIN"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext16.XSD" mime="XSD" name=""/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext17.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext18.XSD" mime="XSD" name="http://temenos.com/CPTWS"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext19.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext20.XSD" mime="XSD" name="http://temenos.com/ACLOCKEDEVENTSBLOCKEDC"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext21.XSD" mime="XSD" name="http://temenos.com/CPBGETSCHFULL"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext22.XSD" mime="XSD" name="http://temenos.com/GETEDCFREEZEBLOCKAMT"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext23.XSD" mime="XSD" name="http://temenos.com/GETACCTNUMBER"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext24.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBACRTMB"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext25.XSD" mime="XSD" name="http://temenos.com/ACLOCKEDEVENTS"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext26.XSD" mime="XSD" name="http://jaxb.dev.java.net/array"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext27.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBWINGAPI"/>
+      <mappermodel:ExternalStructure filePath="IN_PORT_ext29.XSD" mime="XSD" name="http://temenos.com/FUNDSTRANSFERCPBBKGMB"/>
+    </mappermodel:Structure>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="Output1.XSD" mime="XSD" name="Output1" rootName="AccountListRp"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ErrorCode:0" x="714" y="20">
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="519" y="96">
+        <mappermodel:InputPins>bool,then,bool,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="=" type="31" x="267" y="20">
+        <mappermodel:InputPins>1,2</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="" type="22" x="20" y="82">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="124" type="22" x="267" y="90">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,STATUSCODE:0" x="267" y="152">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,ACCOUNTNUMB:0" x="18" y="6">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="3" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="6" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0,AccountNo:0" x="865" y="38">
+      <mappermodel:FunctionGraphNode label="If-Then-Else" type="41" x="561" y="80">
+        <mappermodel:InputPins>bool,then,bool,then,bool,else</mappermodel:InputPins>
+        <mappermodel:OutputPins>R</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="StartsWith" type="49" x="258" y="20">
+        <mappermodel:InputPins>str,start</mappermodel:InputPins>
+        <mappermodel:OutputPins>bool</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="30" type="22" x="20" y="82">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="StartsWith" type="49" x="258" y="152">
+        <mappermodel:InputPins>str,start</mappermodel:InputPins>
+        <mappermodel:OutputPins>bool</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:FunctionGraphNode label="31" type="22" x="20" y="144">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,ACCOUNTTYPE:0" x="20" y="20">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,ACCOUNTNUMB:0" x="258" y="222">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,BLOCKAMOUNT:0" x="258" y="90">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="2" inputIndex="1" outputID="3" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="0" outputID="2" outputIndex="0"/>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="1" outputID="5" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="2" outputID="4" outputIndex="0"/>
+      <mappermodel:Link inputID="2" inputIndex="0" outputID="6" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="5" outputID="7" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="1" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="1" inputIndex="3" outputID="8" outputIndex="0"/>
+      <mappermodel:Link inputID="4" inputIndex="0" outputID="6" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0,AccountCcy:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,ACCOUNTCCY:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0,AccountBalance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,ACCOUNTBALANCE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0,AccountBalanceAvaliable:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,ACCTAVLBAL:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0,AccountType:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,ACCOUNTTYPE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0,AccountJoinCode:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,CPBSPMCON:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0,BranchCode:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,BRANCHCODE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ErrorMsg:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,STATUDESC:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0,CustomerRole:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="IN_PORT:0,Envelope:0,Body:0,GetAccountListJoinResponse:0,[ZERO MANY]:0,CPBGETACCOUNTLISTJOINType:0,gCPBGETACCOUNTLISTJOINDetailType:0,[ZERO MANY]:0,mCPBGETACCOUNTLISTJOINDetailType:0,CUSTOMERROLE:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+  <mappermodel:UserXSL index="0" node="Output1:0,AccountListRp:0,ListAccount:0,[ONE MANY]:0,ListAccountDetail:0">&lt;xsl:variable name=&quot;pos&quot; select=&quot;position()&quot;/></mappermodel:UserXSL>
+</mappermodel:MapperProject>

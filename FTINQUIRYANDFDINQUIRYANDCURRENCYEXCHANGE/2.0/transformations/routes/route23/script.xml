@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <FDDetails>
+      <FD>
+        <xsl:attribute name="class">
+          <xsl:value-of select="'array'"></xsl:value-of>
+        </xsl:attribute>
+        <xsl:for-each select="$document_OUT_PORT/root/Record"><xsl:if test="(./ARR.ACCOUNT)!=('')">
+          <Element>
+            <Arrangement>
+              <xsl:value-of select="./ARRANGEMENT.ID"></xsl:value-of>
+            </Arrangement>
+            <Account>
+              <xsl:value-of select="./ARR.ACCOUNT"></xsl:value-of>
+            </Account>
+            <CustomerName>
+              <xsl:value-of select="./CUSTOMER.NAME"></xsl:value-of>
+            </CustomerName>
+            <Renewal_Date>
+              <xsl:value-of select="./RENEWAL.DATE"></xsl:value-of>
+            </Renewal_Date>
+            <Product>
+              <xsl:value-of select="./PRODUCT.NAME"></xsl:value-of>
+            </Product>
+            <Ccy>
+              <xsl:value-of select="./CURRENCY"></xsl:value-of>
+            </Ccy>
+            <Amount>
+              <xsl:value-of select="./AMOUNT"></xsl:value-of>
+            </Amount>
+            <Term>
+              <xsl:value-of select="./TERM"></xsl:value-of>
+            </Term>
+            <Value_Date>
+              <xsl:value-of select="./VALUE.DATE"></xsl:value-of>
+            </Value_Date>
+            <Maturity_Date>
+              <xsl:value-of select="./MATURITY.DATE"></xsl:value-of>
+            </Maturity_Date>
+            <Principal_CR_Account>
+              <xsl:value-of select="./PRINCIPAL_CR_ACCOUNT"></xsl:value-of>
+            </Principal_CR_Account>
+            <Interest_CR_Account>
+              <xsl:value-of select="./INTEREST_CR_ACCOUNT"></xsl:value-of>
+            </Interest_CR_Account>
+            <FDType>
+              <xsl:variable name="if0">
+                <xsl:choose>
+                  <xsl:when test="(./MATURITY.DATE)!=('')">
+                    <xsl:value-of select="'maturity'"></xsl:value-of>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:value-of select="'rollover'"></xsl:value-of>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:value-of select="$if0"></xsl:value-of>
+            </FDType>
+            <Interest_Rate>
+              <xsl:value-of select="./INT.RATE"></xsl:value-of>
+            </Interest_Rate>
+            <Channel>
+              <xsl:value-of select="./CHANNEL"></xsl:value-of>
+            </Channel>
+            <Interest_After_Tax>
+              <xsl:value-of select="./NET.INT"></xsl:value-of>
+            </Interest_After_Tax>
+            <Rollover>
+              <xsl:value-of select="./ROLL.TYPE"></xsl:value-of>
+            </Rollover>
+            <Update_Rollover_Type>
+              <xsl:value-of select="./UPDATE.ROLLOVER.TYPE"></xsl:value-of>
+            </Update_Rollover_Type>
+            <Close_Applicable>
+              <xsl:value-of select="./ClOSE.APPLICABLE"></xsl:value-of>
+            </Close_Applicable>
+            <Tax>
+              <xsl:value-of select="./TAX"></xsl:value-of>
+            </Tax>
+          </Element></xsl:if></xsl:for-each>
+      </FD>
+    </FDDetails>
+  </xsl:template>
+</xsl:stylesheet>

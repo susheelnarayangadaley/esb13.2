@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.fiorano.com/fesb/activity/Bill_Payment/Request" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/services/rest" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_payments__internal_fund_transfer__POST__Request" select="document('payments__internal_fund_transfer__POST__Request')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:SQL_CFG_1>
+      <ns1:InsertintoFT>
+        <ns1:iPayref>
+          <xsl:value-of select="substring-before(substring-after($document_payments__internal_fund_transfer__POST__Request/ns2:Request/Representations/Representation/Element,'&quot;transactionReference&quot;:&quot;'),'&quot;,')"></xsl:value-of>
+        </ns1:iPayref>
+        <ns1:json_request>
+          <xsl:value-of select="$document_payments__internal_fund_transfer__POST__Request/ns2:Request/Representations/Representation/Element"></xsl:value-of>
+        </ns1:json_request>
+        <ns1:create_date>
+          <xsl:value-of select="substring(datetime:dateTime(),'0','20')"></xsl:value-of>
+        </ns1:create_date>
+      </ns1:InsertintoFT>
+    </ns1:SQL_CFG_1>
+  </xsl:template>
+</xsl:stylesheet>

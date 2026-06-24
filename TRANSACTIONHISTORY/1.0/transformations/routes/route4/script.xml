@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns2="http://www.fiorano.com/SeylanESB" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://www.fiorano.com/Seylan/TransactionHistoryInquiry" xmlns:ns1="http://www.fiorano.com/services/rest" xmlns:CEFT_JPAY="CEFT_JPAY" xmlns:CardWS="CardWS" xmlns:CenturyDateConv="CenturyDateConv" xmlns:CenturyDateConverter="CenturyDateConverter" xmlns:Currency="Currency" xmlns:DateConversion="DateConversion" xmlns:DateTime="DateTime" xmlns:Decimals="Decimals" xmlns:ESB="ESB" xmlns:FormatQuery="FormatQuery" xmlns:RateConverter="RateConverter" xmlns:Text="Text" xmlns:TimeConversion="TimeConversion" xmlns:UtilityBIll="UtilityBIll" xmlns:Validation="Validation" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:paddzero="paddzero" xmlns:str="str" xmlns:strings="strings" extension-element-prefixes="datetime set math CEFT_JPAY CardWS CenturyDateConv CenturyDateConverter Currency DateConversion DateTime Decimals ESB FormatQuery RateConverter Text TimeConversion UtilityBIll Validation dateConversion myext paddzero str strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OutputPort" select="document('OutputPort')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Responses>
+      <Response>
+        <xsl:attribute name="Status">
+          <xsl:variable name="if0">
+            <xsl:choose>
+              <xsl:when test="($document_OutputPort/ns2:Output/ns2:RREC)=('R')">
+                <xsl:value-of select="'200'"></xsl:value-of>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="'400'"></xsl:value-of>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <xsl:value-of select="$if0"></xsl:value-of>
+        </xsl:attribute>
+        <Representations>
+          <Representation>
+            <xsl:attribute name="MediaType">
+              <xsl:value-of select="'application/xml'"></xsl:value-of>
+            </xsl:attribute>
+            <Element>
+              <ns3:TransactionHistoryInquiryResponse>
+                <ns3:Status>
+                  <ns3:Transaction_Reference>
+                    <xsl:value-of select="TH_Header/TransRef"></xsl:value-of>
+                  </ns3:Transaction_Reference>
+                  <ns3:Timestamp>
+                    <xsl:value-of select="DateTime:getISOTimestamp()"></xsl:value-of>
+                  </ns3:Timestamp>
+                  <ns3:Code>
+                    <xsl:variable name="if1">
+                      <xsl:choose>
+                        <xsl:when test="($document_OutputPort/ns2:Output/ns2:RREC)=('R')">
+                          <xsl:value-of select="'2100'"></xsl:value-of>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <xsl:value-of select="'2020'"></xsl:value-of>
+                        </xsl:otherwise>
+                      </xsl:choose>
+                    </xsl:variable>
+                    <xsl:value-of select="$if1"></xsl:value-of>
+                    <xsl:variable name="if2">
+                      <xsl:choose>
+                        <xsl:when test="($document_OutputPort/ns2:Output/ns2:RREC)=('R')">
+                          <xsl:value-of select="'2100'"></xsl:value-of>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <xsl:value-of select="'2020'"></xsl:value-of>
+                        </xsl:otherwise>
+                      </xsl:choose>
+                    </xsl:variable>
+                    <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'erc', $if2)"></xsl:value-of>
+                  </ns3:Code>
+                  <ns3:Message>
+                    <xsl:value-of select="ESB:getErrorDescriptionMapped(string(java:_getStringProperty($_TIF_MESSAGE_, 'erc')),string('2100|Account'))"></xsl:value-of>
+                  </ns3:Message>
+                  <ns3:Description>
+                    <xsl:value-of select="$document_OutputPort/ns2:Output/ns2:RMSG"></xsl:value-of>
+                  </ns3:Description>
+                </ns3:Status>
+              </ns3:TransactionHistoryInquiryResponse>
+            </Element>
+          </Representation>
+        </Representations>
+      </Response>
+    </ns1:Responses>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+<!--The list of Extensions defined by user-->
+</xsl:stylesheet>

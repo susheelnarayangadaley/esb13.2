@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/fesb/activity/DBQueryOnInput1/Out" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:string="string" xmlns:strings="strings" extension-element-prefixes="datetime set math dateConversion myext nestedJsonParser string strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <request>
+      <requestId>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:ID"></xsl:value-of>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:MOBILENUMBER"></xsl:value-of>
+      </requestId>
+      <requestData>
+        <id>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:CUSTOMER_ID"></xsl:value-of>
+        </id>
+        <type>
+          <xsl:value-of select="'individual'"></xsl:value-of>
+        </type>
+        <fullName>
+          <xsl:value-of select="concat($document_OUT_PORT/ns2:Result/ns2:row/ns2:FIRSTNAME,$document_OUT_PORT/ns2:Result/ns2:row/ns2:MIDNAME,$document_OUT_PORT/ns2:Result/ns2:row/ns2:LASTNAME)"></xsl:value-of>
+        </fullName>
+        <sex>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:GENDER"></xsl:value-of>
+        </sex>
+        <nationalities>
+          <xsl:attribute name="class">array</xsl:attribute>
+          <item>
+            <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:NATIONALITY"></xsl:value-of>
+          </item>
+        </nationalities>
+        <dateOfBirth>
+          <xsl:value-of select="substring($document_OUT_PORT/ns2:Result/ns2:row/ns2:DATEOFBIRTH,'1','10')"></xsl:value-of>
+        </dateOfBirth>
+        <placesOfBirth>
+          <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:PLACEOFBIRTH"></xsl:value-of>
+        </placesOfBirth>
+        <identityDocuments>
+          <xsl:attribute name="class">array</xsl:attribute>
+          <item>
+            <number>
+              <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:CNIC"></xsl:value-of>
+            </number>
+          </item>
+        </identityDocuments>
+        <addresses>
+          <xsl:attribute name="class">array</xsl:attribute>
+          <item>
+            <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:HOMEADDRESS"></xsl:value-of>
+          </item>
+        </addresses>
+      </requestData>
+      <profile>
+        <xsl:value-of select="$document_OUT_PORT/ns2:Result/ns2:row/ns2:KYC_STATUS"></xsl:value-of>
+      </profile>
+    </request>
+  </xsl:template>
+</xsl:stylesheet>

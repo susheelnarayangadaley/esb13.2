@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="Context"/>
+    <mappermodel:Structure duplicates="" filePath="makecall__POST__Request0.xsd" mime="XSD" name="makecall__POST__Request" rootName="{http://www.fiorano.com/services/rest}Request"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="OAUTH.resouce__POST__Request.xsd" mime="XSD" name="resouce__POST__Request" rootName="{http://www.fiorano.com/services/rest}Request"/>
+    <mappermodel:Structure duplicates="{JMS-Message:0,Properties:0,[ZERO MANY]:0}2" filePath="out_JMSMessage.DTD" mime="DTD" name="JMS-Message" rootName="Properties"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="resouce__POST__Request:0,Request:0,Representations:0,[Choice]:0,Representation:0,RepresentationParameters:0,client_id:0" x="297" y="20">
+      <mappermodel:FunctionGraphNode label="api" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="resouce__POST__Request:0,Request:0,Representations:0,[Choice]:0,Representation:0,RepresentationParameters:0,client_secret:0" x="362" y="20">
+      <mappermodel:FunctionGraphNode label="2gijbTMUq1G7YMJ4E7StVYws00pbJT7L" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="resouce__POST__Request:0,Request:0,Representations:0,[Choice]:0,Representation:0,RepresentationParameters:0,grant_type:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="client_credentials" type="22" x="204" y="87">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Properties:0,[ZERO MANY]:0,Property:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="makecall__POST__Request:0,Request:0,Representations:0,[Choice]:0,Representation:0,Element:0,ANY:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Properties:0,[ZERO MANY]:0,Property:0,name:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="payload" type="22" x="173" y="62">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Properties:0,[ZERO MANY]:1,Property:0,name:0" x="153" y="20">
+      <mappermodel:FunctionGraphNode label="dn" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Properties:0,[ZERO MANY]:2,Property:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="true" type="22" x="120" y="75">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Properties:0,[ZERO MANY]:2,Property:0,name:0" x="-1" y="-1">
+      <mappermodel:FunctionGraphNode label="makecall" type="22" x="142" y="59">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="JMS-Message:0,Properties:0,[ZERO MANY]:1,Property:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="makecall__POST__Request:0,Request:0,RequestParameters:0,dn:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="resouce__POST__Request:0,Request:0,ResourceURL:0" x="598" y="18">
+      <mappermodel:FunctionGraphNode label="https://demopbxeze.3cx.asia/connect/token" type="22" x="144" y="42">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+</mappermodel:MapperProject>

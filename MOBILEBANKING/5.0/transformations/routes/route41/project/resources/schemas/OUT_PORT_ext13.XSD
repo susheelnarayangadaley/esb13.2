@@ -1,0 +1,37 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://temenos.com/GETEDCFREEZEBLOCKAMT" xmlns:tns="http://temenos.com/CPBGETACCOUNTLISTJOIN" elementFormDefault="qualified" xmlns="http://temenos.com/CPBGETACCOUNTLISTJOIN" targetNamespace="http://temenos.com/CPBGETACCOUNTLISTJOIN">
+   <xsd:complexType name="CPBGETACCOUNTLISTJOINType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="gCPBGETACCOUNTLISTJOINDetailType">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCPBGETACCOUNTLISTJOINDetailType">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="CustomerCIF" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTNUMB" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTCCY" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTBALANCE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCTAVLBAL" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTTYPE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="BRANCHCODE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="POSTINGRESTRICT" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="BLOCKAMOUNT" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="MINBAL" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="STATUSCODE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="STATUDESC" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ATMRESPCODE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="IMREF" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="CPBSPMCON" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="CPBACCTTYPE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="CUSTOMERROLE" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

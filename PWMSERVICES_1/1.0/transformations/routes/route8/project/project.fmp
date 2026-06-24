@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappermodel:MapperProject xmlns:mappermodel="http://www.fiorano.com/tools/mapper/mappermodel" convertor="nameIndexed" version="3.0.2">
+  <mappermodel:Comments>Key in relevant comments</mappermodel:Comments>
+  <mappermodel:InputStructure>
+    <mappermodel:Structure duplicates="" filePath="applicationContextSchema.xsd" mime="XSD" name="Application-Context" rootName="AppContext"/>
+    <mappermodel:Structure duplicates="" filePath="TransHistory__GET__Response.xsd" mime="XSD" name="TransHistory__GET__Response" rootName="{http://www.fiorano.com/services/rest}Responses"/>
+  </mappermodel:InputStructure>
+  <mappermodel:OutputStructure>
+    <mappermodel:Structure duplicates="" filePath="AccountTransactionHistory__GET__Response0.xsd" mime="XSD" name="AccountTransactionHistory__GET__Response" rootName="{http://www.fiorano.com/services/rest}Responses"/>
+  </mappermodel:OutputStructure>
+  <mappermodel:Mappings>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Status:0" x="157" y="20">
+      <mappermodel:FunctionGraphNode label="200" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,MediaType:0" x="223" y="20">
+      <mappermodel:FunctionGraphNode label="application/xml" type="22" x="20" y="20">
+        <mappermodel:InputPins></mappermodel:InputPins>
+        <mappermodel:OutputPins>str</mappermodel:OutputPins>
+        <mappermodel:Properties/>
+      </mappermodel:FunctionGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,Status:0,Transaction_reference:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,Status:0,Transaction_Reference:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,Status:0,Timestamp:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,Status:0,Timestamp:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,Status:0,Code:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,Status:0,Code:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,Status:0,Message:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,Status:0,Message:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,Status:0,Description:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,Status:0,Description:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_branch:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_branch:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_basic_number:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_basic_number:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_suffix:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_suffix:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_short_name:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_short_name:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Customer_mnemonic:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Customer_mnemonic:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Customer_location:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Customer_location:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_type:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_type:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Owning_application_code:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Owning_application_code:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_structure:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_structure:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Currency_mnemonic:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Currency_mnemonic:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Currency_decimals:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Currency_decimals:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Internal_non_customer_account:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Internal_non_customer_account:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Deceased_or_liquidated:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Deceased_or_liquidated:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_blocked:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_blocked:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_inactive:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_inactive:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Account_closed:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Account_closed:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Contingent_account:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Contingent_account:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Date_from:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Date_from:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Date_to:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Date_to:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Starting_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Starting_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Number_of_recent_transactions:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Number_of_recent_transactions:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Statement_number:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Statement_number:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,AccountSummary:0,Available_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,AccountSummary:0,Available_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Posting_date:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Posting_date:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Value_date:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Value_date:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Posting_currency:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Posting_currency:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Posting_currency_decimals:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Posting_currency_decimals:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Transaction_code:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Transaction_code:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Transaction_code_mnemonic:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Transaction_code_mnemonic:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Transaction_Code_Name:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Transaction_Code_Name:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Input_branch_mnemonic:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Input_branch_mnemonic:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Account_branch_mnemonic:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Account_branch_mnemonic:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Posting_group:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Posting_group:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Posting_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Posting_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Print_transaction_code_name_as_narrative:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Print_transaction_code_name_as_narrative:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Transaction_Status:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Transaction_Status:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Users_own_reference:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Users_own_reference:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Sundry_reference_code:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Sundry_reference_code:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,User_code_1:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,User_code_1:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,User_code_2:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,User_code_2:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Number_of_items_within_this_posting:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Number_of_items_within_this_posting:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Statement_number:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Statement_number:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Narrative_record_exists:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Narrative_record_exists:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Narrative_1:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Narrative_1:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Narrative_2:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Narrative_2:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Narrative_3:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Narrative_3:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Narrative_4:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Narrative_4:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Additional_line_1:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Additional_line_1:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Additional_line_2:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Additional_line_2:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Additional_line_3:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Additional_line_3:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Additional_line_4:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Additional_line_4:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Additional_line_5:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Additional_line_5:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Additional_line_6:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Additional_line_6:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Original_currency:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Original_currency:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Original_currency_decimals:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Original_currency_decimals:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Original_amount:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Original_amount:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Posting_sequence_number:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Posting_sequence_number:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Running_balance:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Running_balance:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Event_key:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Event_key:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Available_Date:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Available_Date:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Timestamp:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Timestamp:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0,Transaction:0,Unique_key:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0,Unique_key:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+    <mappermodel:GraphModel inputPins="1,2" outputNode="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0" x="-1" y="-1">
+      <mappermodel:TreeGraphNode inputNode="TransHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,TransactionHistoryInquiryResponse:0,[ZERO MANY]:0,Transaction:0" x="-1" y="-1">
+        <mappermodel:InputPins>1st</mappermodel:InputPins>
+        <mappermodel:OutputPins>1st</mappermodel:OutputPins>
+      </mappermodel:TreeGraphNode>
+      <mappermodel:Link inputID="0" inputIndex="0" outputID="1" outputIndex="0"/>
+    </mappermodel:GraphModel>
+  </mappermodel:Mappings>
+  <mappermodel:Extensions/>
+  <mappermodel:UserXSL index="0" node="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0">&lt;Transaction class=&quot;array&quot;></mappermodel:UserXSL>
+  <mappermodel:UserXSL index="3" node="AccountTransactionHistory__GET__Response:0,Responses:0,[Choice]:0,Response:0,Representations:0,[Choice]:0,Representation:0,Element:0,AccountTransactionHistoryPWM_Response:0,[ZERO MANY]:0">&lt;/Transaction></mappermodel:UserXSL>
+</mappermodel:MapperProject>

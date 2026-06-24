@@ -1,0 +1,31 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBPPWSABILL">
+   <xsd:complexType name="FUNDSTRANSFERCPBPPWSABILLType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="DEBITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITTHEIRREF" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITTHEIRREF" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITCURRENCY" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITAMOUNT" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CHARGESACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="COMMISSIONAMT" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gLTXNNARRDR">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="LTXNNARRDR" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="gLTXNNARRCR">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="LTXNNARRCR" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

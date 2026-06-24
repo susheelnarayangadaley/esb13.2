@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="">
+   <xsd:element name="Root">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="Record">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="ID" type="xsd:string"/>
+                     <xsd:element name="AMOUNT" type="xsd:string"/>
+                     <xsd:element name="INSTALL" type="xsd:string"/>
+                     <xsd:element name="OS" type="xsd:string"/>
+                     <xsd:element name="AA" type="xsd:string"/>
+                     <xsd:element name="CYY" type="xsd:string"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

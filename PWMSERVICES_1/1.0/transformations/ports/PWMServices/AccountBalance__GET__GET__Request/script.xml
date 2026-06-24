@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.seylan.lk/AccountBalanceInquiryPWM" xmlns:ns4="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/services/rest" xmlns:CEFT_JPAY="CEFT_JPAY" xmlns:CardWS="CardWS" xmlns:CenturyDateConverter="CenturyDateConverter" xmlns:Currency="Currency" xmlns:DateConversion="DateConversion" xmlns:DateTime="DateTime" xmlns:Decimals="Decimals" xmlns:ENIQR="ENIQR" xmlns:ESB="ESB" xmlns:RSA="http://xml.apache.org/xslt/java" xmlns:RateConverter="RateConverter" xmlns:SHA256="http://xml.apache.org/xslt/java" xmlns:Text="Text" xmlns:TimeConversion="TimeConversion" xmlns:Utility="Utility" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:str="str" xmlns:strings="strings" extension-element-prefixes="datetime set math CEFT_JPAY CardWS CenturyDateConverter Currency DateConversion DateTime Decimals ENIQR ESB RSA RateConverter SHA256 Text TimeConversion Utility dateConversion myext str strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_AccountBalance__GET__GET__Request" select="document('AccountBalance__GET__GET__Request')"></xsl:variable>
+  <xsl:template match="/">
+    <AppContext>
+      <Transaction_ref>
+        <xsl:value-of select="'Constant'"></xsl:value-of>
+      </Transaction_ref>
+      <Account_category>
+        <xsl:value-of select="$document_AccountBalance__GET__GET__Request/ns2:Request/RequestParameters/AccountCategory"></xsl:value-of>
+      </Account_category>
+      <Account_number>
+        <xsl:value-of select="$document_AccountBalance__GET__GET__Request/ns2:Request/RequestParameters/AccountNumber"></xsl:value-of>
+      </Account_number>
+    </AppContext>
+  </xsl:template>
+</xsl:stylesheet>

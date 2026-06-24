@@ -1,0 +1,11 @@
+<!ELEMENT Charge EMPTY >
+<!ELEMENT Date ( #PCDATA ) >
+<!ELEMENT Interest ( #PCDATA ) >
+<!ELEMENT Outstanding ( #PCDATA ) >
+<!ELEMENT Principal ( #PCDATA ) >
+<!ELEMENT Record ( Date, Total.Due, Total_Cap, Principal, Interest, Charge, Tax, Total.Pymt, Outstanding ) >
+<!ELEMENT Tax EMPTY >
+<!ELEMENT Total.Due ( #PCDATA ) >
+<!ELEMENT Total.Pymt ( #PCDATA ) >
+<!ELEMENT Total_Cap ( #PCDATA ) >
+<!ELEMENT root ( Record+ ) >

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:AppendZero="AppendZero" xmlns:MD5Hex="http://xml.apache.org/xslt/java" xmlns:dateConversion="dateConversion" xmlns:multifields="multifields" xmlns:multifieldsstring="multifieldsstring" xmlns:myext="myext" xmlns:mytext="mytext" xmlns:rounding="rounding" xmlns:sringindex="sringindex" xmlns:strings="strings" extension-element-prefixes="datetime set math AppendZero MD5Hex dateConversion multifields multifieldsstring myext mytext rounding sringindex strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:Envelope>
+      <ns1:Body>
+        <ns1:Fault>
+          <faultcode>
+            <xsl:value-of select="'05'"></xsl:value-of>
+          </faultcode>
+          <faultstring>
+            <xsl:value-of select="'Invalid Sign'"></xsl:value-of>
+          </faultstring>
+        </ns1:Fault>
+      </ns1:Body>
+    </ns1:Envelope>
+  </xsl:template>
+</xsl:stylesheet>

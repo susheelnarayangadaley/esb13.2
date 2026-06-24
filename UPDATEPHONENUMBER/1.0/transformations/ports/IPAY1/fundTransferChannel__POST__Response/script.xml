@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.fiorano.com/accountinquiryreq" xmlns:ns3="http://www.fiorano.com/services/rest" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_fundTransferChannel__POST__Response" select="document('fundTransferChannel__POST__Response')"></xsl:variable>
+  <xsl:template match="/">
+    <ns2:root>
+      <ns2:refundFromCurrency>
+        <xsl:value-of select="ns2:root/ns2:refundFromCurrency"></xsl:value-of>
+      </ns2:refundFromCurrency>
+      <ns2:fromCurrency>
+        <xsl:value-of select="ns2:root/ns2:fromCurrency"></xsl:value-of>
+      </ns2:fromCurrency>
+      <ns2:toCurrency>
+        <xsl:value-of select="ns2:root/ns2:toCurrency"></xsl:value-of>
+      </ns2:toCurrency>
+      <ns2:fromBank>
+        <xsl:value-of select="ns2:root/ns2:fromBank"></xsl:value-of>
+      </ns2:fromBank>
+      <ns2:toBank>
+        <xsl:value-of select="ns2:root/ns2:toBank"></xsl:value-of>
+      </ns2:toBank>
+      <ns2:currency>
+        <xsl:value-of select="ns2:root/ns2:currency"></xsl:value-of>
+      </ns2:currency>
+      <ns2:errorMsg>
+        <xsl:value-of select="java:_setStringProperty($_TIF_MESSAGE_, 'FT', contains(java:com.fiorano.xslt.functions.base64.Base64.getDecodedString($document_fundTransferChannel__POST__Response/ns3:Responses/Response/Representations/Representation/Element),'&quot;responseCode&quot;:&quot;000&quot;'))"></xsl:value-of>
+        <xsl:value-of select="substring-before(substring-after(java:com.fiorano.xslt.functions.base64.Base64.getDecodedString($document_fundTransferChannel__POST__Response/ns3:Responses/Response/Representations/Representation/Element),'&quot;errorMsg&quot;:&quot;'),'&quot;')"></xsl:value-of>
+        <xsl:value-of select="substring-before(substring-after($document_fundTransferChannel__POST__Response/ns3:Responses/Response/Representations/Representation/Element,',\&quot;errorMsg\&quot;:\&quot;'),'\&quot;')"></xsl:value-of>
+      </ns2:errorMsg>
+      <ns2:inputChCode>
+        <xsl:value-of select="ns2:root/ns2:inputChCode"></xsl:value-of>
+      </ns2:inputChCode>
+      <ns2:inquiryAmount>
+        <xsl:value-of select="ns2:root/ns2:inquiryAmount"></xsl:value-of>
+      </ns2:inquiryAmount>
+      <ns2:receiverAccountNo>
+        <xsl:value-of select="ns2:root/ns2:receiverAccountNo"></xsl:value-of>
+      </ns2:receiverAccountNo>
+      <ns2:receiverBankCode>
+        <xsl:value-of select="ns2:root/ns2:receiverBankCode"></xsl:value-of>
+      </ns2:receiverBankCode>
+      <ns2:receiverName>
+        <xsl:value-of select="ns2:root/ns2:receiverName"></xsl:value-of>
+      </ns2:receiverName>
+      <ns2:responseCode>
+        <xsl:value-of select="substring-before(substring-after(java:com.fiorano.xslt.functions.base64.Base64.getDecodedString($document_fundTransferChannel__POST__Response/ns3:Responses/Response/Representations/Representation/Element),'&quot;responseCode&quot;:&quot;'),'&quot;')"></xsl:value-of>
+        <xsl:value-of select="substring-before(substring-after($document_fundTransferChannel__POST__Response/ns3:Responses/Response/Representations/Representation/Element,'&quot;responseCode\&quot;:\&quot;'),'\')"></xsl:value-of>
+      </ns2:responseCode>
+      <ns2:senderAccountNo>
+        <xsl:value-of select="ns2:root/ns2:senderAccountNo"></xsl:value-of>
+      </ns2:senderAccountNo>
+      <ns2:senderAccountPinNo>
+        <xsl:value-of select="ns2:root/ns2:senderAccountPinNo"></xsl:value-of>
+      </ns2:senderAccountPinNo>
+      <ns2:senderBankCode>
+        <xsl:value-of select="ns2:root/ns2:senderBankCode"></xsl:value-of>
+      </ns2:senderBankCode>
+      <ns2:traceNo>
+        <xsl:value-of select="ns2:root/ns2:traceNo"></xsl:value-of>
+      </ns2:traceNo>
+      <ns2:transactionCode>
+        <xsl:value-of select="ns2:root/ns2:transactionCode"></xsl:value-of>
+      </ns2:transactionCode>
+      <ns2:transactionUniqueNumber>
+        <xsl:value-of select="ns2:root/ns2:transactionUniqueNumber"></xsl:value-of>
+      </ns2:transactionUniqueNumber>
+      <ns2:remittanceTransactionUniqueNumber>
+        <xsl:value-of select="substring-before(substring-after(java:com.fiorano.xslt.functions.base64.Base64.getDecodedString($document_fundTransferChannel__POST__Response/ns3:Responses/Response/Representations/Representation/Element),'&quot;transactionUniqueNumber&quot;:&quot;'),'&quot;')"></xsl:value-of>
+      </ns2:remittanceTransactionUniqueNumber>
+      <ns2:channel>
+        <xsl:value-of select="ns2:root/ns2:channel"></xsl:value-of>
+      </ns2:channel>
+      <ns2:sourceAmount>
+        <xsl:value-of select="ns2:root/ns2:sourceAmount"></xsl:value-of>
+      </ns2:sourceAmount>
+      <ns2:FTTransactionUniqueNo>
+        <xsl:value-of select="ns2:root/ns2:FTTransactionUniqueNo"></xsl:value-of>
+      </ns2:FTTransactionUniqueNo>
+    </ns2:root>
+  </xsl:template>
+<!--The list of parameters defined by user-->
+  <xsl:param name="_TIF_MESSAGE_"></xsl:param>
+</xsl:stylesheet>

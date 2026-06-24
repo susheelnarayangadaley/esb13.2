@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns3="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.fiorano.com/fesb/activity/DB1/Request" xmlns:a="a" xmlns:chan1="chan1" xmlns:chan2="chan2" xmlns:con="con" xmlns:currentDateFormat="currentDateFormat" xmlns:dateConversion="dateConversion" xmlns:digitalSignature="http://xml.apache.org/xslt/java" xmlns:ds="ds" xmlns:getFieldArray="getFieldArray" xmlns:javascriptCode="javascriptCode" xmlns:myext="myext" xmlns:nestedJsonParser="nestedJsonParser" xmlns:test="test" xmlns:yesterdayDate="yesterdayDate" extension-element-prefixes="datetime set math a chan1 chan2 con currentDateFormat dateConversion digitalSignature ds getFieldArray javascriptCode myext nestedJsonParser test yesterdayDate">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT_1" select="document('OUT_PORT_1')"></xsl:variable>
+  <xsl:template match="/">
+    <ns1:SQL_CFG_1>
+      <xsl:for-each select="$document_OUT_PORT_1/result/matchResults">
+        <ns1:ins>
+          <ns1:entity_type>
+            <xsl:value-of select="./entityType"></xsl:value-of>
+          </ns1:entity_type>
+          <ns1:score>
+            <xsl:value-of select="./score"></xsl:value-of>
+          </ns1:score>
+          <ns1:list_name>
+            <xsl:value-of select="./list"></xsl:value-of>
+          </ns1:list_name>
+          <ns1:date_of_publication>
+            <xsl:value-of select="./dateOfPublication"></xsl:value-of>
+          </ns1:date_of_publication>
+          <ns1:check_result>
+            <xsl:value-of select="./../checkResult"></xsl:value-of>
+          </ns1:check_result>
+        </ns1:ins>
+      </xsl:for-each>
+    </ns1:SQL_CFG_1>
+  </xsl:template>
+</xsl:stylesheet>

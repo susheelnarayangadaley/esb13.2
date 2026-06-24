@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DB1/Response">
+   <xsd:element name="root">
+      <xsd:complexType>
+         <xsd:sequence>
+          
+                  <xsd:sequence>
+                     <xsd:element name="response_code" type="xsd:string"/>
+                     <xsd:element name="response_msg" type="xsd:string"/>
+
+                     <xsd:element name="settlement_acc" type="xsd:string"/>
+                     <xsd:element name="today_date" type="xsd:string"/>
+                     <xsd:element name="principal" type="xsd:string"/>
+                     <xsd:element name="late_payement" type="xsd:string"/>
+                     <xsd:element name="total" type="xsd:string"/>
+
+
+                  </xsd:sequence>
+            
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+</xsd:schema>

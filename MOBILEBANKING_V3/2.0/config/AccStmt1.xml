@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.8.0_40-ea" class="java.beans.XMLDecoder"> 
+ <object class="com.fiorano.services.xslt.configuration.XsltPM"> 
+  <void property="JMSMessageXSL"> 
+   <null/> 
+  </void> 
+  <void property="JMSMessageXSL1"> 
+   <null/> 
+  </void> 
+  <void property="XSL"> 
+   <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;1.0&quot; xmlns:xalan=&quot;http://xml.apache.org/xslt&quot; xmlns:datetime=&quot;http://exslt.org/dates-and-times&quot; xmlns:math=&quot;http://exslt.org/math&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:lxslt=&quot;http://xml.apache.org/xslt&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:java=&quot;http://xml.apache.org/xslt/java&quot; xmlns:set=&quot;http://exslt.org/sets&quot; exclude-result-prefixes=&quot;xalan java lxslt&quot; xmlns:ns3=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ns1=&quot;http://cpbank.com/statement/GetStatement/Input&quot; xmlns:ns2=&quot;http://cpbank.com/statement&quot; xmlns:AppendZero=&quot;AppendZero&quot; xmlns:EnDe=&quot;http://xml.apache.org/xslt/java&quot; xmlns:MD5Hex=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Md5UniCode=&quot;http://xml.apache.org/xslt/java&quot; xmlns:Remove=&quot;Remove&quot; xmlns:ReplaceText=&quot;ReplaceText&quot; xmlns:StringLength=&quot;StringLength&quot; xmlns:dateConversion=&quot;dateConversion&quot; xmlns:myext=&quot;myext&quot; xmlns:replace=&quot;replace&quot; xmlns:replaceStr=&quot;http://xml.apache.org/xslt/java&quot; xmlns:rounding=&quot;rounding&quot; xmlns:sringindex=&quot;sringindex&quot; xmlns:strings=&quot;strings&quot; xmlns:stringtext=&quot;stringtext&quot; xmlns:truncateString=&quot;truncateString&quot; extension-element-prefixes=&quot;datetime set math AppendZero EnDe MD5Hex Md5UniCode Remove ReplaceText StringLength dateConversion myext replace replaceStr rounding sringindex strings stringtext truncateString&quot;&gt;
+  &lt;xsl:import href=&quot;GLOBAL_FUNCLET_PATH&quot;&gt;&lt;/xsl:import&gt;
+  &lt;xsl:output method=&quot;xml&quot; indent=&quot;yes&quot; encoding=&quot;UTF-8&quot; xalan:indent-amount=&quot;2&quot; omit-xml-declaration=&quot;no&quot;&gt;&lt;/xsl:output&gt;
+  &lt;xsl:variable name=&quot;document&quot; select=&quot;/&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:variable name=&quot;document_Input1&quot; select=&quot;document(&apos;Input1&apos;)&quot;&gt;&lt;/xsl:variable&gt;
+  &lt;xsl:template match=&quot;/&quot;&gt;
+    &lt;ns1:Envelope&gt;
+      &lt;ns1:Body&gt;
+        &lt;ns2:GetStatementRequest&gt;
+          &lt;ns2:username&gt;
+            &lt;xsl:value-of select=&quot;&apos;ws.admin&apos;&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:username&gt;
+          &lt;ns2:password&gt;
+            &lt;xsl:value-of select=&quot;&apos;123Bank!&apos;&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:password&gt;
+          &lt;ns2:accountNumber&gt;
+            &lt;xsl:value-of select=&quot;$document_Input1/AccountStmtRq/AccountNo&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:accountNumber&gt;
+          &lt;ns2:fromDate&gt;
+            &lt;xsl:value-of select=&quot;$document_Input1/AccountStmtRq/FromDate&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:fromDate&gt;
+          &lt;ns2:toDate&gt;
+            &lt;xsl:value-of select=&quot;$document_Input1/AccountStmtRq/ToDate&quot;&gt;&lt;/xsl:value-of&gt;
+          &lt;/ns2:toDate&gt;
+        &lt;/ns2:GetStatementRequest&gt;
+      &lt;/ns1:Body&gt;
+    &lt;/ns1:Envelope&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</string> 
+  </void> 
+  <void property="configuredVersion"> 
+   <int>1200</int> 
+  </void> 
+  <void property="errorHandlingConfiguration"> 
+   <void property="errorActionsMap"> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>3</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>2</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>1</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.RetryAction"> 
+       <void property="configuration"> 
+        <object class="com.fiorano.edbc.framework.service.exception.RetryConfiguration"> 
+         <void property="otherActions"> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+            <void property="id"> 
+             <int>1</int> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+          <void method="put"> 
+           <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+            <void property="enabled"> 
+             <boolean>true</boolean> 
+            </void> 
+           </object> 
+           <int>1</int> 
+          </void> 
+         </void> 
+        </object> 
+       </void> 
+       <void property="id"> 
+        <int>2</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>4</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+    <void method="get"> 
+     <object class="com.fiorano.edbc.framework.service.exception.ServiceErrorID" method="getServiceErrorId"> 
+      <int>0</int> 
+     </object> 
+     <void method="clear"/> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>6</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="enabled"> 
+        <boolean>true</boolean> 
+       </void> 
+       <void property="id"> 
+        <int>1</int> 
+       </void> 
+      </object> 
+     </void> 
+     <void method="add"> 
+      <object class="com.fiorano.edbc.framework.service.exception.ErrorHandlingAction"> 
+       <void property="id"> 
+        <int>5</int> 
+       </void> 
+      </object> 
+     </void> 
+    </void> 
+   </void> 
+  </void> 
+  <void property="esbDefInPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="rootElementName"> 
+     <string>AccountStmtRq</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+    &lt;xsd:element name=&quot;AccountStmtRq&quot;&gt;&#13;
+        &#13;
+                       &lt;xsd:complexType&gt;&#13;
+                              &lt;xsd:sequence&gt;&#13;
+                              &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountType&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                   &#13;
+                                       &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;AccountNo&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                         &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;FromDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                           &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ToDate&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                             &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;LastId&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;SignData&quot; type=&quot;xsd:string&quot;/&gt;&#13;
+                                       &#13;
+                    &lt;/xsd:sequence&gt;&#13;
+                      &#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string></string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="esbDefOutPort"> 
+   <object class="fiorano.esb.record.ESBRecordDefinition"> 
+    <void property="importedStructures"> 
+     <object class="java.util.Hashtable"> 
+      <void method="put"> 
+       <string>http://cpbank.com/statement</string> 
+       <object class="java.util.ArrayList"> 
+        <void method="add"> 
+         <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xs:schema elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://cpbank.com/statement&quot; xmlns:sch=&quot;http://cpbank.com/statement&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:stat=&quot;http://cpbank.com/statement&quot; xmlns:tns=&quot;http://cpbank.com/statement&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#13;
+    &lt;!-- Request --&gt;&#13;
+    &lt;xs:element name=&quot;GetStatementRequest&quot;&gt;&#13;
+        &lt;xs:complexType&gt;&#13;
+            &lt;xs:sequence&gt;&#13;
+                &lt;xs:element name=&quot;username&quot; type=&quot;xs:string&quot;/&gt;&#13;
+                &lt;xs:element name=&quot;password&quot; type=&quot;xs:string&quot;/&gt;&#13;
+                &lt;xs:element name=&quot;accountNumber&quot; type=&quot;xs:string&quot;/&gt;&#13;
+                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;fromDate&quot; type=&quot;stat:YYYYMMDDDate&quot;/&gt;&#13;
+                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;toDate&quot; type=&quot;stat:YYYYMMDDDate&quot;/&gt;&#13;
+            &lt;/xs:sequence&gt;&#13;
+        &lt;/xs:complexType&gt;&#13;
+    &lt;/xs:element&gt;&#13;
+&#13;
+    &lt;!-- Response --&gt;&#13;
+    &lt;xs:element name=&quot;GetStatementResponse&quot;&gt;&#13;
+        &lt;xs:complexType&gt;&#13;
+            &lt;xs:sequence&gt;&#13;
+                &lt;xs:element name=&quot;status&quot; type=&quot;stat:status&quot;/&gt;&#13;
+                &lt;xs:element minOccurs=&quot;0&quot; name=&quot;transactions&quot; type=&quot;stat:transactionList&quot;/&gt;&#13;
+            &lt;/xs:sequence&gt;&#13;
+        &lt;/xs:complexType&gt;&#13;
+    &lt;/xs:element&gt;&#13;
+&#13;
+    &lt;!-- Status --&gt;&#13;
+    &lt;xs:simpleType name=&quot;status&quot;&gt;&#13;
+        &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#13;
+            &lt;xs:enumeration value=&quot;SUCCESS&quot;/&gt;&#13;
+            &lt;xs:enumeration value=&quot;FAILURE&quot;/&gt;&#13;
+            &lt;xs:enumeration value=&quot;ERROR&quot;/&gt;&#13;
+        &lt;/xs:restriction&gt;&#13;
+    &lt;/xs:simpleType&gt;&#13;
+&#13;
+    &lt;!-- Date Format --&gt;&#13;
+    &lt;xs:simpleType name=&quot;YYYYMMDDDate&quot;&gt;&#13;
+        &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#13;
+            &lt;xs:pattern value=&quot;[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])&quot;/&gt;&#13;
+            &lt;xs:length value=&quot;8&quot;/&gt;&#13;
+        &lt;/xs:restriction&gt;&#13;
+    &lt;/xs:simpleType&gt;&#13;
+&#13;
+    &lt;!-- Transaction List --&gt;&#13;
+    &lt;xs:complexType name=&quot;transactionList&quot;&gt;&#13;
+        &lt;xs:sequence&gt;&#13;
+            &lt;xs:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;transaction&quot; type=&quot;stat:transaction&quot;/&gt;&#13;
+        &lt;/xs:sequence&gt;&#13;
+    &lt;/xs:complexType&gt;&#13;
+&#13;
+    &lt;!-- Transaction with new fields --&gt;&#13;
+    &lt;xs:complexType name=&quot;transaction&quot;&gt;&#13;
+        &lt;xs:sequence&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;recid&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;bookingDate&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;reference&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;narrative&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;valueDate&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;debit&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;credit&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;currency&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;description&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;txnType&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;drCr&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;amount&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acboCrAcc&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acboCrName&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acboDrName&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acbiCrName&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;acbiDrName&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;bakongDesc&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;trxDt&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;txnTypeDescription&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;cbsCrName&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+            &lt;xs:element minOccurs=&quot;0&quot; name=&quot;cbsDrName&quot; nillable=&quot;true&quot; type=&quot;xs:string&quot;/&gt;&#13;
+        &lt;/xs:sequence&gt;&#13;
+    &lt;/xs:complexType&gt;&#13;
+&lt;/xs:schema&gt;&#13;
+</string> 
+        </void> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void property="rootElementName"> 
+     <string>Envelope</string> 
+    </void> 
+    <void property="structure"> 
+     <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;
+&lt;xsd:schema xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot; xmlns:tns=&quot;http://cpbank.com/statement&quot; xmlns:sch=&quot;http://cpbank.com/statement&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:ftns=&quot;http://cpbank.com/statement/GetStatement/Input&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; targetNamespace=&quot;http://cpbank.com/statement/GetStatement/Input&quot;&gt;&#13;
+    &lt;xsd:import namespace=&quot;http://cpbank.com/statement&quot;/&gt;&#13;
+    &lt;xsd:element name=&quot;Envelope&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence&gt;&#13;
+                &lt;xsd:element ref=&quot;ftns:Header&quot;/&gt;&#13;
+                &lt;xsd:element ref=&quot;ftns:Body&quot;/&gt;&#13;
+            &lt;/xsd:sequence&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+    &lt;xsd:element name=&quot;Header&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence/&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+    &lt;xsd:element name=&quot;Body&quot;&gt;&#13;
+        &lt;xsd:complexType&gt;&#13;
+            &lt;xsd:sequence&gt;&#13;
+                &lt;xsd:element ref=&quot;sch:GetStatementRequest&quot;/&gt;&#13;
+            &lt;/xsd:sequence&gt;&#13;
+        &lt;/xsd:complexType&gt;&#13;
+    &lt;/xsd:element&gt;&#13;
+&lt;/xsd:schema&gt;&#13;
+</string> 
+    </void> 
+    <void property="targetNamespace"> 
+     <string>http://cpbank.com/statement/GetStatement/Input</string> 
+    </void> 
+   </object> 
+  </void> 
+  <void property="inputStructureName"> 
+   <string>Input1</string> 
+  </void> 
+  <void property="project"> 
+   <string>project</string> 
+  </void> 
+  <void property="tfClassName"> 
+   <string></string> 
+  </void> 
+ </object> 
+</java> 

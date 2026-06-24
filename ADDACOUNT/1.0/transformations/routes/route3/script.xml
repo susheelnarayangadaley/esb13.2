@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xalan="http://xml.apache.org/xslt" xmlns:datetime="http://exslt.org/dates-and-times" xmlns:math="http://exslt.org/math" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:lxslt="http://xml.apache.org/xslt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://xml.apache.org/xslt/java" xmlns:set="http://exslt.org/sets" exclude-result-prefixes="xalan java lxslt" xmlns:ns1="http://www.w3.org/2001/XMLSchema" xmlns:Trim="Trim" xmlns:dateConversion="dateConversion" xmlns:datedifference="http://xml.apache.org/xslt/java" xmlns:myext="myext" xmlns:strings="strings" extension-element-prefixes="datetime set math Trim dateConversion datedifference myext strings">
+  <xsl:import href="GLOBAL_FUNCLET_PATH"></xsl:import>
+  <xsl:output method="xml" indent="yes" encoding="UTF-8" xalan:indent-amount="2" omit-xml-declaration="no"></xsl:output>
+  <xsl:variable name="document" select="/"></xsl:variable>
+  <xsl:variable name="document_OUT_PORT" select="document('OUT_PORT')"></xsl:variable>
+  <xsl:template match="/">
+    <root>
+      <status>
+        <xsl:value-of select="substring-before($document_OUT_PORT/root/header,'/')"></xsl:value-of>
+      </status>
+      <message>
+        <xsl:value-of select="'Success'"></xsl:value-of>
+      </message>
+      <transactionReference>
+        <xsl:value-of select="$document_OUT_PORT/root/IPAY.REF/value"></xsl:value-of>
+      </transactionReference>
+      <transactionDescription>
+        <xsl:value-of select="$document_OUT_PORT/root/IPAY.DESC/value"></xsl:value-of>
+      </transactionDescription>
+      <sourceCurrencyType>
+        <xsl:value-of select="$document_OUT_PORT/root/DEBIT.CURRENCY/value"></xsl:value-of>
+      </sourceCurrencyType>
+      <sourceAmount>
+        <xsl:value-of select="$document_OUT_PORT/root/CREDIT.AMOUNT/value"></xsl:value-of>
+      </sourceAmount>
+      <destinationCurrencyType>
+        <xsl:value-of select="$document_OUT_PORT/root/CREDIT.CURRENCY/value"></xsl:value-of>
+      </destinationCurrencyType>
+      <destinationAmount>
+        <xsl:value-of select="substring-after($document_OUT_PORT/root/AMOUNT.CREDITED/value,$document_OUT_PORT/root/CREDIT.CURRENCY/value)"></xsl:value-of>
+      </destinationAmount>
+    </root>
+  </xsl:template>
+</xsl:stylesheet>

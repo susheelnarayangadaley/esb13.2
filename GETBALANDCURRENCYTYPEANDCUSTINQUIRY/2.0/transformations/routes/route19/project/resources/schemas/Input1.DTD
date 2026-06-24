@@ -1,0 +1,12 @@
+<!ELEMENT Account_Id ( #PCDATA ) >
+<!ELEMENT Account_Officer ( #PCDATA ) >
+<!ELEMENT Ccy ( #PCDATA ) >
+<!ELEMENT Condition_Group EMPTY >
+<!ELEMENT Int_Booking EMPTY >
+<!ELEMENT Limit_Ref EMPTY >
+<!ELEMENT Mnemonic EMPTY >
+<!ELEMENT Online_Actual_Bal ( #PCDATA ) >
+<!ELEMENT Posting_Restrict EMPTY >
+<!ELEMENT Product ( #PCDATA ) >
+<!ELEMENT Record ( Account_Id | Account_Officer | Ccy | Condition_Group | Int_Booking | Limit_Ref | Mnemonic | Online_Actual_Bal | Posting_Restrict | Product )* >
+<!ELEMENT root ( Record ) >

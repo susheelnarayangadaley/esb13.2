@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<layout>
+  <subflow name="FIORANO.ESTUDIO.ROOT_FLOW" x="0" y="0">
+    <service-instance name="T24" x="900" y="199"/>
+    <service-instance name="GetAcStmt_Res" x="1253" y="476"/>
+    <service-instance name="FT" x="491" y="356"/>
+    <service-instance name="ResPFT" x="1276" y="403"/>
+    <service-instance name="ResPay" x="1328" y="300"/>
+    <service-instance name="InterestRate_Res" x="1391" y="174"/>
+    <service-instance name="AnnualFeeGet" x="1300" y="210"/>
+    <service-instance name="Acct2Act" x="834" y="128"/>
+    <service-instance name="QR" x="686" y="335"/>
+    <service-instance name="AccStmt" x="600" y="491"/>
+    <service-instance name="InterestRate" x="473" y="174"/>
+    <service-instance name="AnnualFee" x="535" y="65"/>
+    <service-instance name="AcState_Res" x="1032" y="467"/>
+    <service-instance name="GETFT" x="1058" y="403"/>
+    <service-instance name="GETPAY" x="1175" y="310"/>
+    <service-instance name="AnnualFee_Res" x="1162" y="160"/>
+    <service-instance name="InterestRateGet" x="1161" y="78"/>
+    <service-instance name="Statement" x="598" y="4"/>
+    <service-instance name="T24_Statement" x="885" y="-9"/>
+    <service-instance name="statementres" x="1038" y="-10"/>
+    <service-instance name="StmtRes" x="1434" y="-40"/>
+    <service-instance name="Resp" x="1204" y="-18"/>
+    <service-instance name="STMTService" x="928" y="522"/>
+    <service-instance name="AccStmt1" x="671" y="553"/>
+    <service-instance name="AcState_Res2" x="1199" y="582"/>
+    <remote-service-instance name="MOBILEBANKING_2_0.MB1" x="139" y="-97"/>
+  </subflow>
+  <shortcut-routes/>
+</layout>

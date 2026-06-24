@@ -1,0 +1,25 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="FundTransfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="transactionCurrencyType"/>
+        <xs:element type="xs:string" name="transactionAmount"/>
+        <xs:element type="xs:string" name="payerName"/>
+        <xs:element type="xs:string" name="fromAccount"/>
+        <xs:element type="xs:string" name="fromCurrencyType"/>
+        <xs:element type="xs:string" name="payeeName"/>
+        <xs:element type="xs:string" name="toAccount"/>
+        <xs:element type="xs:string" name="toCurrencyType"/>
+        <xs:element type="xs:string" name="transactionReference"/>
+	<xs:element type="xs:string" name="transactionDescription"/>
+         <xs:element type="xs:string" name="channel"/>  
+         <xs:element type="xs:string" name="branchid"/> 
+        <xs:element type="xs:string" name="subChannel"/>
+        <xs:element type="xs:string" name="chargeFrom"/>
+        <xs:element type="xs:string" name="chargeCurrency"/>
+        <xs:element type="xs:string" name="chargeAmount"/>
+        <xs:element type="xs:string" name="destinatonAccount"/>   
+</xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
