@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.fiorano.com/fesb/activity/DB1/Request">
+    <xsd:element name="SQL_CFG_1">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="ins">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="entity_type" type="xsd:string"/>
+                            <xsd:element name="score" type="xsd:decimal"/>
+                            <xsd:element name="list_name" type="xsd:string"/>
+                            <xsd:element name="date_of_publication" type="xsd:dateTime"/>
+                            <xsd:element name="check_result" type="xsd:string"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:long" use="optional"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
