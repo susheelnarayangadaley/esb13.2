@@ -1,1 +1,66 @@
-WSCPBTWSCPBWINGAPI__IN_PORT4.xsd
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBSWIFTOUTMB">
+   <xsd:complexType name="FUNDSTRANSFERCPBSWIFTOUTMBType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="DebitAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitAmount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitValueDate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DebitNarrative" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditNarrative" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditCurrency" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditAmount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditValueDate" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gORDERINGBANK">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="OrderingBank" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="CommissionCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCOMMISSIONTYPE">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCOMMISSIONTYPE">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="CommissionType" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="CommissionAmount" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="ProfitCentreDept" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Nameofbeneficiarybank" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Sendercustomername" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="SenderStreet" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="SenderBuildingNo" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Sendertownname" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="SenderCountry" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="NameofIntermediarybank" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorCustomerAccount" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Creditorcustomername" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="Creditorstreet" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorBuildingNo" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CreditorTownname" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CountryCode" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCPBFTREMARK">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="Purpos" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="AddressofIntermediaryBank" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="AddressofBeneficiarybank" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

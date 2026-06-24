@@ -1,7 +1,9 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBWATERBILL" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBWATERBILL" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBWATERBILL">
-   <xsd:complexType name="FUNDSTRANSFERCPBWATERBILLType">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBETAXPAYMENT">
+   <xsd:complexType name="FUNDSTRANSFERCPBETAXPAYMENTType">
       <xsd:sequence>
          <xsd:element minOccurs="0" name="DEBITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITCURRENCY" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITAMOUNT" type="xsd:string"/>
          <xsd:element minOccurs="0" name="DEBITTHEIRREF" type="xsd:string"/>
          <xsd:element minOccurs="0" name="CREDITTHEIRREF" type="xsd:string"/>
          <xsd:element minOccurs="0" name="CREDITACCTNO" type="xsd:string"/>

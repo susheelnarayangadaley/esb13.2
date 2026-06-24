@@ -1,75 +1,30 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/CUSTOMERCPBDMD" elementFormDefault="qualified" xmlns="http://temenos.com/CUSTOMERCPBDMD" targetNamespace="http://temenos.com/CUSTOMERCPBDMD">
-   <xsd:complexType name="CUSTOMERCPBDMDType">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBUTILITYBILL">
+   <xsd:complexType name="FUNDSTRANSFERCPBUTILITYBILLType">
       <xsd:sequence>
-         <xsd:element minOccurs="0" name="MNEMONIC" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="gSHORTNAME">
+         <xsd:element minOccurs="0" name="DEBITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITTHEIRREF" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITTHEIRREF" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITCURRENCY" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITAMOUNT" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CHARGESACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="COMMISSIONAMT" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gLTXNNARRDR">
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="SHORTNAME" type="xsd:string"/>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="LTXNNARRDR" type="xsd:string"/>
                </xsd:sequence>
                <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element minOccurs="0" name="gNAME1">
+         <xsd:element minOccurs="0" name="gLTXNNARRCR">
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="NAME1" type="xsd:string"/>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="LTXNNARRCR" type="xsd:string"/>
                </xsd:sequence>
                <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element minOccurs="0" name="gSTREET">
-            <xsd:complexType>
-               <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="STREET" type="xsd:string"/>
-               </xsd:sequence>
-               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
-            </xsd:complexType>
-         </xsd:element>
-         <xsd:element minOccurs="0" name="SECTOR" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="ACCOUNTOFFICER" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="INDUSTRY" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="TARGET" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="NATIONALITY" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTOMERSTATUS" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="RESIDENCE" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="gLEGALID">
-            <xsd:complexType>
-               <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mLEGALID">
-                     <xsd:complexType>
-                        <xsd:sequence>
-                           <xsd:element minOccurs="0" name="LEGALID" type="xsd:string"/>
-                           <xsd:element minOccurs="0" name="LEGALDOCNAME" type="xsd:string"/>
-                           <xsd:element minOccurs="0" name="LEGALHOLDERNAME" type="xsd:string"/>
-                           <xsd:element minOccurs="0" name="LEGALISSDATE" type="xsd:string"/>
-                           <xsd:element minOccurs="0" name="LEGALEXPDATE" type="xsd:string"/>
-                        </xsd:sequence>
-                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
-                     </xsd:complexType>
-                  </xsd:element>
-               </xsd:sequence>
-               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
-            </xsd:complexType>
-         </xsd:element>
-         <xsd:element minOccurs="0" name="LANGUAGE" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="TITLE" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="GIVENNAMES" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="FAMILYNAME" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="GENDER" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="DATEOFBIRTH" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="MARITALSTATUS" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="SMS1" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTPROVINCE" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTDISTRICT" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTCOMMUNE" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTVILLAGE" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTOWNERSHIP" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUKHSHRTNAME" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTPROVINCEP" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTDISTRICTP" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTCOMMUNEP" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CUSTVILLAGEP" type="xsd:string"/>
       </xsd:sequence>
       <xsd:attribute name="id" type="xsd:string" use="optional"/>
    </xsd:complexType>

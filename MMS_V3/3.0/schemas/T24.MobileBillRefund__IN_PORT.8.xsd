@@ -1,5 +1,5 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBEDCBILL" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBEDCBILL" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBEDCBILL">
-   <xsd:complexType name="FUNDSTRANSFERCPBEDCBILLType">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBSRBILL" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBSRBILL" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBSRBILL">
+   <xsd:complexType name="FUNDSTRANSFERCPBSRBILLType">
       <xsd:sequence>
          <xsd:element minOccurs="0" name="DEBITACCTNO" type="xsd:string"/>
          <xsd:element minOccurs="0" name="DEBITTHEIRREF" type="xsd:string"/>

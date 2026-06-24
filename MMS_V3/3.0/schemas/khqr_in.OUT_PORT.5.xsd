@@ -1,36 +1,50 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBRFTREMITTANCECONFIRM" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBRFTREMITTANCECONFIRM" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBRFTREMITTANCECONFIRM">
-   <xsd:complexType name="FUNDSTRANSFERCPBRFTREMITTANCECONFIRMType">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBBKGINCM" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBBKGINCM" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBBKGINCM">
+   <xsd:complexType name="FUNDSTRANSFERCPBBKGINCMType">
       <xsd:sequence>
-         <xsd:element minOccurs="0" name="DebitAccount" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="DebitCurrency" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="Amount" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="DebitValueDate" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CreditAccount" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CreditCurrency" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="CreditValueDate" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="gORDERINGBANK">
+         <xsd:element minOccurs="0" name="DEBITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITCURRENCY" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITAMOUNT" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITVALUEDATE" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITVALUEDATE" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCPBFTRCVANS">
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="OrderingBank" type="xsd:string"/>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="CPBFTRCVANS" type="xsd:string"/>
                </xsd:sequence>
                <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element minOccurs="0" name="gOVERRIDE">
+         <xsd:element minOccurs="0" name="INITBANK" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DBRTNAME" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="RECIEVEBANK" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CDRTNAME" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gCPBFTREMARK">
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="OVERRIDE" type="xsd:string"/>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="CPBFTREMARK" type="xsd:string"/>
                </xsd:sequence>
                <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
             </xsd:complexType>
          </xsd:element>
-         <xsd:element minOccurs="0" name="SenderPhoneNumber" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="ReceiverPhoneNumber" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="SenderBankCode" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="SenderName" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="ReceiverName" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="PassCode" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="InterUniqueID" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="FASTPAYID" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="FASTMSGID" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gLTXNNARRDR">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="LTXNNARRDR" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="gLTXNNARRCR">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="LTXNNARRCR" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
       </xsd:sequence>
       <xsd:attribute name="id" type="xsd:string" use="optional"/>
    </xsd:complexType>

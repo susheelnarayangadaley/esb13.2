@@ -1,5 +1,5 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBBKGMWTMB">
-   <xsd:complexType name="FUNDSTRANSFERCPBBKGMWTMBType">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBBKGMB" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBBKGMB" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBBKGMB">
+   <xsd:complexType name="FUNDSTRANSFERCPBBKGMBType">
       <xsd:sequence>
          <xsd:element minOccurs="0" name="DebitAccount" type="xsd:string"/>
          <xsd:element minOccurs="0" name="DebitNarrative" type="xsd:string"/>
@@ -7,7 +7,7 @@
          <xsd:element minOccurs="0" name="CreditAccount" type="xsd:string"/>
          <xsd:element minOccurs="0" name="CreditCurrency" type="xsd:string"/>
          <xsd:element minOccurs="0" name="CreditAmount" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="ChargesAcctNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ChargesAcctNo" type="xsd:string"/>
          <xsd:element minOccurs="0" name="COMMISSIONCODE" type="xsd:string"/>
          <xsd:element minOccurs="0" name="gCOMMISSIONTYPE">
             <xsd:complexType>
@@ -46,16 +46,6 @@
          <xsd:element minOccurs="0" name="RecievingBankBIC" type="xsd:string"/>
          <xsd:element minOccurs="0" name="OtherBankCreditAccount" type="xsd:string"/>
          <xsd:element minOccurs="0" name="Creditorcustomername" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="gKHQR">
-            <xsd:complexType>
-               <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="KHQR" type="xsd:string"/>
-               </xsd:sequence>
-               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
-            </xsd:complexType>
-         </xsd:element>
-         <xsd:element minOccurs="0" name="REVBANKNAME" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="TRXHASH" type="xsd:string"/>
       </xsd:sequence>
       <xsd:attribute name="id" type="xsd:string" use="optional"/>
    </xsd:complexType>

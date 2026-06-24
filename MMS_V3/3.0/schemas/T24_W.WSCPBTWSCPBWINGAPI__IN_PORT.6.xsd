@@ -1,1 +1,42 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.2-1 git-revision#dbe58a8. --><xsd:schema xmlns:ns0="http://jaxb.dev.java.net/array" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jaxb.dev.java.net/array"><xsd:complexType name="anyTypeArray"><xsd:sequence><xsd:element name="item" type="xsd:anyType" minOccurs="0" maxOccurs="unbounded" nillable="true"/></xsd:sequence></xsd:complexType></xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBWINGAPI" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBWINGAPI" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBWINGAPI">
+   <xsd:complexType name="FUNDSTRANSFERCPBWINGAPIType">
+      <xsd:sequence>
+         <xsd:element minOccurs="0" name="DEBITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITVALUEDATE" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="DEBITTHEIRREF" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITTHEIRREF" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITACCTNO" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITCURRENCY" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITAMOUNT" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CREDITVALUEDATE" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="gPAYMENTDETAILS">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="PAYMENTDETAILS" type="xsd:string"/>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="gCOMMISSIONTYPE">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCOMMISSIONTYPE">
+                     <xsd:complexType>
+                        <xsd:sequence>
+                           <xsd:element minOccurs="0" name="COMMISSIONTYPE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="COMMISSIONAMT" type="xsd:string"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
+                     </xsd:complexType>
+                  </xsd:element>
+               </xsd:sequence>
+               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
+            </xsd:complexType>
+         </xsd:element>
+         <xsd:element minOccurs="0" name="CHARGECODE" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="INITBANK" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="CDRTACCTNO" type="xsd:string"/>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="optional"/>
+   </xsd:complexType>
+</xsd:schema>

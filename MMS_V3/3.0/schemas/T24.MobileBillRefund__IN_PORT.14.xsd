@@ -1,41 +1,25 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD" elementFormDefault="qualified" xmlns="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD" targetNamespace="http://temenos.com/AAARRANGEMENTACTIVITYCPBDMD">
-   <xsd:complexType name="AAARRANGEMENTACTIVITYCPBDMDType">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/CPBGETACCOUNTLIST" elementFormDefault="qualified" xmlns="http://temenos.com/CPBGETACCOUNTLIST" targetNamespace="http://temenos.com/CPBGETACCOUNTLIST">
+   <xsd:complexType name="CPBGETACCOUNTLISTType">
       <xsd:sequence>
-         <xsd:element minOccurs="0" name="Arrangement" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="Activity" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="gCUSTOMER">
+         <xsd:element minOccurs="0" name="gCPBGETACCOUNTLISTDetailType">
             <xsd:complexType>
                <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="Customer" type="xsd:string"/>
-               </xsd:sequence>
-               <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
-            </xsd:complexType>
-         </xsd:element>
-         <xsd:element minOccurs="0" name="Product" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="Currency" type="xsd:string"/>
-         <xsd:element minOccurs="0" name="gPROPERTY">
-            <xsd:complexType>
-               <xsd:sequence>
-                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mPROPERTY">
+                  <xsd:element minOccurs="0" maxOccurs="unbounded" name="mCPBGETACCOUNTLISTDetailType">
                      <xsd:complexType>
                         <xsd:sequence>
-                           <xsd:element minOccurs="0" name="Property" type="xsd:string"/>
-                           <xsd:element minOccurs="0" name="sgFIELDNAME">
-                              <xsd:complexType>
-                                 <xsd:sequence>
-                                    <xsd:element minOccurs="0" maxOccurs="unbounded" name="FieldName">
-                                       <xsd:complexType>
-                                          <xsd:sequence>
-                                             <xsd:element minOccurs="0" name="FieldName" type="xsd:string"/>
-                                             <xsd:element minOccurs="0" name="FieldValue" type="xsd:string"/>
-                                          </xsd:sequence>
-                                          <xsd:attribute name="s" type="xsd:positiveInteger" use="optional"/>
-                                       </xsd:complexType>
-                                    </xsd:element>
-                                 </xsd:sequence>
-                                 <xsd:attribute name="sg" type="xsd:positiveInteger" use="optional"/>
-                              </xsd:complexType>
-                           </xsd:element>
+                           <xsd:element minOccurs="0" name="CustomerCIF" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTNUMB" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTCCY" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTBALANCE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCTAVLBAL" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ACCOUNTTYPE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="BRANCHCODE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="POSTINGRESTRICT" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="BLOCKAMOUNT" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="MINBAL" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="STATUSCODE" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="STATUDESC" type="xsd:string"/>
+                           <xsd:element minOccurs="0" name="ATMRESPCODE" type="xsd:string"/>
                         </xsd:sequence>
                         <xsd:attribute name="m" type="xsd:positiveInteger" use="optional"/>
                      </xsd:complexType>
@@ -45,6 +29,5 @@
             </xsd:complexType>
          </xsd:element>
       </xsd:sequence>
-      <xsd:attribute name="id" type="xsd:string" use="optional"/>
    </xsd:complexType>
 </xsd:schema>

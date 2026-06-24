@@ -1,5 +1,5 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBTHPAYMENT">
-   <xsd:complexType name="FUNDSTRANSFERCPBTHPAYMENTType">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://temenos.com/FUNDSTRANSFERCPBWINGOUT" elementFormDefault="qualified" xmlns="http://temenos.com/FUNDSTRANSFERCPBWINGOUT" targetNamespace="http://temenos.com/FUNDSTRANSFERCPBWINGOUT">
+   <xsd:complexType name="FUNDSTRANSFERCPBWINGOUTType">
       <xsd:sequence>
          <xsd:element minOccurs="0" name="DEBITACCTNO" type="xsd:string"/>
          <xsd:element minOccurs="0" name="DEBITTHEIRREF" type="xsd:string"/>
@@ -25,6 +25,9 @@
                <xsd:attribute name="g" type="xsd:positiveInteger" use="optional"/>
             </xsd:complexType>
          </xsd:element>
+         <xsd:element minOccurs="0" name="STATUSCODE" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="STATUDESC" type="xsd:string"/>
+         <xsd:element minOccurs="0" name="ATMRESPCODE" type="xsd:string"/>
       </xsd:sequence>
       <xsd:attribute name="id" type="xsd:string" use="optional"/>
    </xsd:complexType>
